@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_3EA52786138443B4861E2E923DF09EDE"
+        "MsmKey" = "8:_4FCDDBAB6F0B4AAFB51D13A46010D46C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -51,7 +51,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BD5BD10379704171B4D42F6D80CC4FE9"
+        "MsmKey" = "8:_F29E7C1BD1B24438B8F2D92B5F012103"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -172,10 +172,10 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3EA52786138443B4861E2E923DF09EDE"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4FCDDBAB6F0B4AAFB51D13A46010D46C"
             {
-            "SourcePath" = "8:..\\..\\Ms-PL_License.rtf"
-            "TargetName" = "8:Ms-PL_License.rtf"
+            "SourcePath" = "8:resources\\sampleInstallerBanner.bmp"
+            "TargetName" = "8:sampleInstallerBanner.bmp"
             "Tag" = "8:"
             "Folder" = "8:_E2EAEDAF368F4645A8D6819D29D8FDB3"
             "Condition" = "8:"
@@ -232,10 +232,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BD5BD10379704171B4D42F6D80CC4FE9"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F29E7C1BD1B24438B8F2D92B5F012103"
             {
-            "SourcePath" = "8:..\\..\\sampleInstallerBanner.bmp"
-            "TargetName" = "8:sampleInstallerBanner.bmp"
+            "SourcePath" = "8:resources\\Ms-PL_License.rtf"
+            "TargetName" = "8:Ms-PL_License.rtf"
             "Tag" = "8:"
             "Folder" = "8:_E2EAEDAF368F4645A8D6819D29D8FDB3"
             "Condition" = "8:"
@@ -552,7 +552,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_BD5BD10379704171B4D42F6D80CC4FE9"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -597,7 +597,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_BD5BD10379704171B4D42F6D80CC4FE9"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "EulaText"
@@ -609,7 +609,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:_3EA52786138443B4861E2E923DF09EDE"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "Sunken"
@@ -645,7 +645,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_BD5BD10379704171B4D42F6D80CC4FE9"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -668,7 +668,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_BD5BD10379704171B4D42F6D80CC4FE9"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -717,7 +717,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_BD5BD10379704171B4D42F6D80CC4FE9"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -749,7 +749,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_BD5BD10379704171B4D42F6D80CC4FE9"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "ShowProgress"
@@ -794,7 +794,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_BD5BD10379704171B4D42F6D80CC4FE9"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "UpdateText"
@@ -845,7 +845,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_BD5BD10379704171B4D42F6D80CC4FE9"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
@@ -883,7 +883,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_BD5BD10379704171B4D42F6D80CC4FE9"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "EulaText"
@@ -895,7 +895,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:_3EA52786138443B4861E2E923DF09EDE"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "Sunken"
@@ -931,7 +931,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_BD5BD10379704171B4D42F6D80CC4FE9"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"
@@ -980,7 +980,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_BD5BD10379704171B4D42F6D80CC4FE9"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "InstallAllUsersVisible"
@@ -1016,7 +1016,7 @@
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
                             "Setting" = "3:2"
-                            "Value" = "8:_BD5BD10379704171B4D42F6D80CC4FE9"
+                            "Value" = "8:"
                             "UsePlugInResources" = "11:TRUE"
                             }
                         }
