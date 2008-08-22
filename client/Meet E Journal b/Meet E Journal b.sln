@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjpLib", "ejpLib\EjpLib.csproj", "{A708C926-17FA-40FA-AA47-0738C26867B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EJPClient", "EjpClient\EJPClient.csproj", "{76F457BC-A245-48E0-8B3C-1710A1888A0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjpControls", "EjpControls\EjpControls.csproj", "{744EB356-2BEB-499B-AD22-96C9906913D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjsBridge", "EjsBridge\EjsBridge.csproj", "{95B1EA17-CD2C-4CED-8CE4-20CAD148293C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WlsBridge", "WlsBridge\WlsBridge.csproj", "{49C1A3A5-00DD-4A4A-9474-51CB94B78F12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sskkDebugTools", "sskkDebugTools\sskkDebugTools.csproj", "{F2BEFF60-6101-4249-8336-12932DF16110}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "eJournalPlus_ClientInstaller", "eJournalPlus_ClientInstaller\eJournalPlus_ClientInstaller.vdproj", "{5D5B7B26-3A42-488A-BF31-6E1F0394E759}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A708C926-17FA-40FA-AA47-0738C26867B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A708C926-17FA-40FA-AA47-0738C26867B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A708C926-17FA-40FA-AA47-0738C26867B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A708C926-17FA-40FA-AA47-0738C26867B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76F457BC-A245-48E0-8B3C-1710A1888A0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F457BC-A245-48E0-8B3C-1710A1888A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F457BC-A245-48E0-8B3C-1710A1888A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F457BC-A245-48E0-8B3C-1710A1888A0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{744EB356-2BEB-499B-AD22-96C9906913D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{744EB356-2BEB-499B-AD22-96C9906913D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{744EB356-2BEB-499B-AD22-96C9906913D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{744EB356-2BEB-499B-AD22-96C9906913D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B1EA17-CD2C-4CED-8CE4-20CAD148293C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B1EA17-CD2C-4CED-8CE4-20CAD148293C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B1EA17-CD2C-4CED-8CE4-20CAD148293C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B1EA17-CD2C-4CED-8CE4-20CAD148293C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49C1A3A5-00DD-4A4A-9474-51CB94B78F12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49C1A3A5-00DD-4A4A-9474-51CB94B78F12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49C1A3A5-00DD-4A4A-9474-51CB94B78F12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49C1A3A5-00DD-4A4A-9474-51CB94B78F12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2BEFF60-6101-4249-8336-12932DF16110}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2BEFF60-6101-4249-8336-12932DF16110}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2BEFF60-6101-4249-8336-12932DF16110}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2BEFF60-6101-4249-8336-12932DF16110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D5B7B26-3A42-488A-BF31-6E1F0394E759}.Debug|Any CPU.ActiveCfg = Debug
+		{5D5B7B26-3A42-488A-BF31-6E1F0394E759}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

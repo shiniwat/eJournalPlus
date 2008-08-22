@@ -1,0 +1,31 @@
+﻿<Window x:Class="ejpClient.ejpWindows.LoadingMessageWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="処理中" 
+    ResizeMode="NoResize" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen"
+	Width="350" Height="250">
+    <Window.Background>
+        <ImageBrush Stretch="None" TileMode="Tile" Viewport="0,0,20,20" ViewportUnits="Absolute" 
+                           ImageSource="pack://application:,,,/imgData/bgtile.png" />
+    </Window.Background>
+    <Grid x:Name="LayoutRoot" Margin="15,15,15,15">
+        <Rectangle Stroke="{x:Null}" Margin="0,0,0,0" RadiusX="15.5" RadiusY="15.5">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FF7FB2F0" Offset="0"/>
+                    <GradientStop Color="#FFFAFAFA" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" 
+                   Fill="#FFFFFFFF" Stroke="#FF7FB2F0" Margin="10,16,10,16" RadiusX="13.5" RadiusY="13.5"/>
+
+        <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Margin="8,16,12,16">
+
+            <TextBlock Width="108" Height="48" TextWrapping="Wrap" Canvas.Left="88" FontSize="36" Canvas.Top="17" 
+                       HorizontalAlignment="Left" x:Name="_l_WindowTitle" VerticalAlignment="Top" Text="処理中"/>
+            <TextBlock x:Name="_l_FirstXpsName" Width="180" Height="16" TextWrapping="Wrap" Text="処理中、しばらくお待ち下さい" Canvas.Left="58" Canvas.Top="85"/>
+            <ProgressBar IsIndeterminate="True" Width="220" Height="10" Canvas.Left="33" Canvas.Top="105" />
+        </Canvas>
+    </Grid>
+</Window>

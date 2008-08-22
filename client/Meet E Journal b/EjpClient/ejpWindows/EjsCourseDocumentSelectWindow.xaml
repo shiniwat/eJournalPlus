@@ -1,0 +1,55 @@
+﻿<Window x:Class="ejpClient.ejpWindows.EjsCourseDocumentSelectWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ejs="clr-namespace:ejpClient.ejpWindows"
+    Title="ドキュメントとを選択して下さい"
+    ResizeMode="NoResize" WindowStyle="ToolWindow" WindowStartupLocation="CenterOwner"
+	Width="600" Height="590">
+    <Window.Background>
+    <ImageBrush Stretch="None" TileMode="Tile" Viewport="0,0,20,20" ViewportUnits="Absolute" 
+                           ImageSource="pack://application:,,,/imgData/bgtile.png" />
+    </Window.Background>
+    <Window.Resources>
+        <ejs:ObservableCourseList x:Key="CourseList"/>
+        <ejs:CourseSqlDateConverter x:Key="SqlDateConverter"/>
+        <ejs:ejsDocumentNameConverter x:Key="ejsDocNameConverter"/>
+        <ejs:ejsDocumentDescriptionConverter x:Key="ejsDocDescConverter"/>
+    </Window.Resources>
+    <Grid x:Name="LayoutRoot" Margin="15,15,15,15">
+        <Rectangle Stroke="{x:Null}" Margin="0,0,0,0" RadiusX="15.5" RadiusY="15.5">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FF7FB2F0" Offset="0"/>
+                    <GradientStop Color="#FFFAFAFA" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Fill="#FFFFFFFF" Stroke="#FF7FB2F0" Margin="10,16,10,16" RadiusX="13.5" RadiusY="13.5"/>
+        <Canvas HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Margin="8,16,12,16" 
+                DataContext="{Binding Path=SelectedValue, ElementName=_cb_Courses, Mode=Default}">
+            <Rectangle Fill="{StaticResource MainToudaiLogo}" Width="215" Height="30" Canvas.Top="8" Canvas.Left="8" />
+            <Button Width="78.59" Height="Auto" Content="キャンセル" Canvas.Left="336.41" Canvas.Top="446" Click="On_BtnCancelClick"/>
+            <Button Width="78.59" Height="Auto" Content="OK" Canvas.Left="431" Canvas.Top="446" Click="On_BtnOKClick" IsEnabled="True"/>
+            <TextBlock Width="Auto" Height="Auto" TextWrapping="Wrap" Text="ログイン：" Canvas.Left="345" Canvas.Top="8" FontSize="10"/>
+            <TextBlock Width="Auto" Height="Auto" TextWrapping="Wrap" Text="" x:Name="_tb_LoginName" Canvas.Left="399" Canvas.Top="8" FontSize="10"/>
+            <TextBlock Width="Auto" Height="Auto" Canvas.Left="345" Canvas.Top="33.3" Text="コース：" TextWrapping="Wrap"/>
+            <ComboBox x:Name="_cb_Courses" Width="129" Height="Auto" Canvas.Left="397" Canvas.Top="31.3" IsSynchronizedWithCurrentItem="True"
+                      ItemsSource="{Binding Mode=OneWay, Source={StaticResource CourseList}}" DisplayMemberPath="_name" />
+            <ListView x:Name="_lv_Documents" Width="518" Height="304" Canvas.Left="8" Canvas.Top="72" IsSynchronizedWithCurrentItem="True"
+                      ItemsSource="{Binding Path=_documents, Mode=Default}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="400" DisplayMemberBinding="{Binding _name}" Header="ドキュメント名"/>
+                        <GridViewColumn Width="110" DisplayMemberBinding="{Binding _creationDate, Converter={StaticResource SqlDateConverter}}" Header="作成日時"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <TextBlock Width="Auto" Height="Auto" Canvas.Left="19" Canvas.Top="391" Text="ドキュメント名：" TextWrapping="Wrap"/>
+            <TextBlock Width="Auto" Height="Auto" Text="{Binding Path=SelectedValue, Converter={StaticResource ejsDocNameConverter}, 
+                ElementName=_lv_Documents, Mode=Default, FallbackValue=ドキュメントを選択して下さい}" TextWrapping="Wrap" Canvas.Left="119" Canvas.Top="391"/>
+            <TextBlock Width="Auto" Height="Auto" Text="説明：" TextWrapping="Wrap" Canvas.Left="19" Canvas.Top="419"/>
+            <TextBlock Width="Auto" Height="Auto" Text="{Binding Path=SelectedValue, Converter={StaticResource ejsDocDescConverter}, 
+                ElementName=_lv_Documents, Mode=Default, FallbackValue=ドキュメントを選択して下さい}" TextWrapping="Wrap" Canvas.Left="119" Canvas.Top="419"/>
+        </Canvas>
+    </Grid>
+</Window>

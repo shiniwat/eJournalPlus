@@ -1,0 +1,357 @@
+<UserControl x:Class="SiliconStudio.Meet.EjpControls.KnowledgeMap"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+    <UserControl.Resources>
+
+       
+        <DrawingBrush x:Key="MinusButton_def">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Geometry="F1 M 26.6667,26.6667L 0,26.6667L 0,0L 26.6667,0L 26.6667,26.6667 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF809AB6"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.49997,3.64014e-007" EndPoint="0.49997,0.952404">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                        <GradientStop Color="#FFCECBD3" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF060202" Geometry="F1 M 21.5,14.8333L 5.16667,14.8333L 5.16667,11.8333L 21.5,11.8333L 21.5,14.8333 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Key="MinusButton_pressed">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Geometry="F1 M 26.6667,26.6667L 0,26.6667L 0,0L 26.6667,0L 26.6667,26.6667 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF809AB6"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.49997,0.0178575" EndPoint="0.49997,0.982167">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#FFA8C7E6" Offset="0"/>
+                                        <GradientStop Color="#FFABCAEA" Offset="0.264038"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="0.870789"/>
+                                        <GradientStop Color="#FFA6CBEC" Offset="0.960678"/>
+                                        <GradientStop Color="#FFA6CBEC" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF060202" Geometry="F1 M 21.5,14.8333L 5.16667,14.8333L 5.16667,11.8333L 21.5,11.8333L 21.5,14.8333 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Key="PlusButton_def">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Geometry="F1 M 26.6667,26.6667L 0,26.6667L 0,0L 26.6667,0L 26.6667,26.6667 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF809AB6"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.49997,3.64014e-007" EndPoint="0.49997,0.952404">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                        <GradientStop Color="#FFCECBD3" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF060202" Geometry="F1 M 21.4998,11.8333L 14.8331,11.8333L 14.8331,5.16666L 11.8331,5.16666L 11.8331,11.8333L 5.16642,11.8333L 5.16642,14.8333L 11.8331,14.8333L 11.8331,21.5L 14.8331,21.5L 14.8331,14.8333L 21.4998,14.8333L 21.4998,11.8333 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Key="PlusButton_pressed">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Geometry="F1 M 26.6667,26.6667L 0,26.6667L 0,0L 26.6667,0L 26.6667,26.6667 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF809AB6"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.49997,0.0178575" EndPoint="0.49997,0.982167">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#FFA8C7E6" Offset="0"/>
+                                        <GradientStop Color="#FFABCAEA" Offset="0.264038"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="0.870789"/>
+                                        <GradientStop Color="#FFA6CBEC" Offset="0.960678"/>
+                                        <GradientStop Color="#FFA6CBEC" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF060202" Geometry="F1 M 21.4998,11.8333L 14.8331,11.8333L 14.8331,5.16666L 11.8331,5.16666L 11.8331,11.8333L 5.16642,11.8333L 5.16642,14.8333L 11.8331,14.8333L 11.8331,21.5L 14.8331,21.5L 14.8331,14.8333L 21.4998,14.8333L 21.4998,11.8333 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Key="mapLockBack_unChecked">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Geometry="F1 M 94.1667,10.0039C 94.1667,13.6862 91.181,16.6706 87.5,16.6706L 6.66667,16.6706C 2.98438,16.6706 0,13.6862 0,10.0039L 0,6.66666C 0,2.98569 2.98438,0 6.66667,0L 87.5,0C 91.181,0 94.1667,2.98569 94.1667,6.66666L 94.1667,10.0039 Z ">
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.499993,-0.0294072" EndPoint="0.499993,0.930017">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                        <GradientStop Color="#FFCFCCD4" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 15.5599,13L 15.5599,7.34634C 15.5599,7.06641 15.5859,5.85287 15.5599,4.95963L 12.8672,13L 11.5859,13L 8.86719,4.97266C 8.86719,5.85287 8.89323,7.06641 8.89323,7.34634L 8.89323,13L 7.64063,13L 7.64063,3.42578L 9.49349,3.42578L 12.2526,11.5195L 14.974,3.42578L 16.8125,3.42578L 16.8125,13L 15.5599,13 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 22.8932,9.44009C 22.707,9.58725 22.4141,9.694 20.9609,9.88022C 20.3867,9.95963 19.4661,10.1341 19.4661,11.013C 19.4661,11.7734 19.8542,12.2266 20.7344,12.2266C 21.8268,12.2266 22.8932,11.5195 22.8932,10.5872L 22.8932,9.44009 Z M 18.6003,8.14713C 18.6536,6.48047 19.7604,5.82681 21.4792,5.82681C 22.0404,5.82681 24.0677,5.98697 24.0677,7.77344L 24.0677,11.7865C 24.0677,12.0794 24.2135,12.1992 24.4531,12.1992C 24.5599,12.1992 24.707,12.1732 24.8398,12.1471L 24.8398,13C 24.6406,13.0534 24.4661,13.1341 24.2005,13.1341C 23.1602,13.1341 23,12.6003 22.9609,12.0664C 22.5065,12.5599 21.7995,13.1992 20.4401,13.1992C 19.1602,13.1992 18.2526,12.3867 18.2526,11.1862C 18.2526,10.6003 18.4271,9.24088 20.3737,9L 22.3073,8.75912C 22.5859,8.73306 22.9193,8.62631 22.9193,7.93359C 22.9193,7.19922 22.3867,6.80078 21.2799,6.80078C 19.9466,6.80078 19.7604,7.61328 19.6797,8.14713L 18.6003,8.14713 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 28.987,12.1862C 30.2669,12.1862 30.8672,11.0273 30.8672,9.4935C 30.8672,8.60025 30.7734,6.88022 28.9609,6.88022C 27.2669,6.88022 27.0807,8.70703 27.0807,9.83984C 27.0807,11.694 28.2396,12.1862 28.987,12.1862 Z M 25.9609,6.02734L 27.0677,6.02734L 27.0938,7.01303C 27.3737,6.61328 27.9063,5.82681 29.1732,5.82681C 31.026,5.82681 32.0807,7.34634 32.0807,9.306C 32.0807,10.9727 31.3867,13.1992 29.013,13.1992C 28.0807,13.1992 27.4661,12.7591 27.1328,12.2669L 27.1328,15.7591L 25.9609,15.7591L 25.9609,6.02734 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 38.6133,11.8529L 43.4661,11.8529L 43.4661,13L 37.3203,13L 37.3203,3.42578L 38.6133,3.42578L 38.6133,11.8529 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 47.4271,12.1732C 49.1068,12.1732 49.4531,10.4401 49.4531,9.5065C 49.4531,8.57422 49.1068,6.83984 47.4271,6.83984C 45.7474,6.83984 45.3997,8.57422 45.3997,9.5065C 45.3997,10.4401 45.7474,12.1732 47.4271,12.1732 Z M 47.4271,5.82681C 49.6536,5.82681 50.6667,7.70703 50.6667,9.5065C 50.6667,11.306 49.6536,13.1862 47.4271,13.1862C 45.2005,13.1862 44.1875,11.306 44.1875,9.5065C 44.1875,7.70703 45.2005,5.82681 47.4271,5.82681 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 56.3594,8.37369C 56.2135,7.44009 55.6927,6.88022 54.707,6.88022C 53.2526,6.88022 52.7865,8.26694 52.7865,9.5065C 52.7865,10.707 53.0807,12.1862 54.6927,12.1862C 55.4792,12.1862 56.1602,11.6003 56.3594,10.5326L 57.4935,10.5326C 57.3737,11.6393 56.6927,13.1992 54.6536,13.1992C 52.6927,13.1992 51.5339,11.7201 51.5339,9.70703C 51.5339,7.54688 52.5729,5.82681 54.8802,5.82681C 56.707,5.82681 57.401,7.16016 57.4935,8.37369L 56.3594,8.37369 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 64.4792,13L 62.974,13L 60.7995,9.48047L 59.8268,10.3607L 59.8268,13L 58.6927,13L 58.6927,3.42578L 59.8268,3.42578L 59.8268,8.97266L 62.8268,6.02734L 64.3203,6.02734L 61.6536,8.62631L 64.4792,13 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="M 71.3333,11.8333C 73.1667,7.66666 74.1667,4.83334 74.1667,4.83334L 75.4076,7.42319C 83,4.569 87.1068,7.36328 88.8333,10.069C 83.8333,6.73569 80.6667,8.16666 77.0443,10.2799L 78.3333,12.5C 78.3333,12.5 76.1667,12.1667 71.3333,11.8333 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Key="mapLockBack_Checked">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Geometry="F1 M 94.1667,10.0039C 94.1667,13.6862 91.181,16.6706 87.5,16.6706L 6.66667,16.6706C 2.98438,16.6706 0,13.6862 0,10.0039L 0,6.66666C 0,2.98569 2.98438,0 6.66667,0L 87.5,0C 91.181,0 94.1667,2.98569 94.1667,6.66666L 94.1667,10.0039 Z ">
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.500007,0.998517" EndPoint="0.500007,0.00484201">
+                                    <LinearGradientBrush.GradientStops>
+                                        <!--<GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                        <GradientStop Color="#FFCFCCD4" Offset="1"/>-->
+                                        <GradientStop Color="#FFF8E883" Offset="0"/>
+                                        <GradientStop Color="#FFFBF5B6" Offset="0.139"/>
+                                        <GradientStop Color="#FFF8E279" Offset="1"/>
+                                        <GradientStop Color="#FFFCB142" Offset="0.562"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 15.5599,13L 15.5599,7.34634C 15.5599,7.06641 15.5859,5.85287 15.5599,4.95963L 12.8672,13L 11.5859,13L 8.86719,4.97266C 8.86719,5.85287 8.89323,7.06641 8.89323,7.34634L 8.89323,13L 7.64063,13L 7.64063,3.42578L 9.49349,3.42578L 12.2526,11.5195L 14.974,3.42578L 16.8125,3.42578L 16.8125,13L 15.5599,13 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 22.8932,9.44009C 22.707,9.58725 22.4141,9.694 20.9609,9.88022C 20.3867,9.95963 19.4661,10.1341 19.4661,11.013C 19.4661,11.7734 19.8542,12.2266 20.7344,12.2266C 21.8268,12.2266 22.8932,11.5195 22.8932,10.5872L 22.8932,9.44009 Z M 18.6003,8.14713C 18.6536,6.48047 19.7604,5.82681 21.4792,5.82681C 22.0404,5.82681 24.0677,5.98697 24.0677,7.77344L 24.0677,11.7865C 24.0677,12.0794 24.2135,12.1992 24.4531,12.1992C 24.5599,12.1992 24.707,12.1732 24.8398,12.1471L 24.8398,13C 24.6406,13.0534 24.4661,13.1341 24.2005,13.1341C 23.1602,13.1341 23,12.6003 22.9609,12.0664C 22.5065,12.5599 21.7995,13.1992 20.4401,13.1992C 19.1602,13.1992 18.2526,12.3867 18.2526,11.1862C 18.2526,10.6003 18.4271,9.24088 20.3737,9L 22.3073,8.75912C 22.5859,8.73306 22.9193,8.62631 22.9193,7.93359C 22.9193,7.19922 22.3867,6.80078 21.2799,6.80078C 19.9466,6.80078 19.7604,7.61328 19.6797,8.14713L 18.6003,8.14713 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 28.987,12.1862C 30.2669,12.1862 30.8672,11.0273 30.8672,9.4935C 30.8672,8.60025 30.7734,6.88022 28.9609,6.88022C 27.2669,6.88022 27.0807,8.70703 27.0807,9.83984C 27.0807,11.694 28.2396,12.1862 28.987,12.1862 Z M 25.9609,6.02734L 27.0677,6.02734L 27.0938,7.01303C 27.3737,6.61328 27.9063,5.82681 29.1732,5.82681C 31.026,5.82681 32.0807,7.34634 32.0807,9.306C 32.0807,10.9727 31.3867,13.1992 29.013,13.1992C 28.0807,13.1992 27.4661,12.7591 27.1328,12.2669L 27.1328,15.7591L 25.9609,15.7591L 25.9609,6.02734 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 38.6133,11.8529L 43.4661,11.8529L 43.4661,13L 37.3203,13L 37.3203,3.42578L 38.6133,3.42578L 38.6133,11.8529 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 47.4271,12.1732C 49.1068,12.1732 49.4531,10.4401 49.4531,9.5065C 49.4531,8.57422 49.1068,6.83984 47.4271,6.83984C 45.7474,6.83984 45.3997,8.57422 45.3997,9.5065C 45.3997,10.4401 45.7474,12.1732 47.4271,12.1732 Z M 47.4271,5.82681C 49.6536,5.82681 50.6667,7.70703 50.6667,9.5065C 50.6667,11.306 49.6536,13.1862 47.4271,13.1862C 45.2005,13.1862 44.1875,11.306 44.1875,9.5065C 44.1875,7.70703 45.2005,5.82681 47.4271,5.82681 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 56.3594,8.37369C 56.2135,7.44009 55.6927,6.88022 54.707,6.88022C 53.2526,6.88022 52.7865,8.26694 52.7865,9.5065C 52.7865,10.707 53.0807,12.1862 54.6927,12.1862C 55.4792,12.1862 56.1602,11.6003 56.3594,10.5326L 57.4935,10.5326C 57.3737,11.6393 56.6927,13.1992 54.6536,13.1992C 52.6927,13.1992 51.5339,11.7201 51.5339,9.70703C 51.5339,7.54688 52.5729,5.82681 54.8802,5.82681C 56.707,5.82681 57.401,7.16016 57.4935,8.37369L 56.3594,8.37369 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="F1 M 64.4792,13L 62.974,13L 60.7995,9.48047L 59.8268,10.3607L 59.8268,13L 58.6927,13L 58.6927,3.42578L 59.8268,3.42578L 59.8268,8.97266L 62.8268,6.02734L 64.3203,6.02734L 61.6536,8.62631L 64.4792,13 Z "/>
+                        <GeometryDrawing Brush="#FF48BFFF" Geometry="M 71.3333,11.8333C 73.1667,7.66666 74.1667,4.83334 74.1667,4.83334L 75.4076,7.42319C 83,4.569 87.1068,7.36328 88.8333,10.069C 83.8333,6.73569 80.6667,8.16666 77.0443,10.2799L 78.3333,12.5C 78.3333,12.5 76.1667,12.1667 71.3333,11.8333 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Key="scaleLockBack_unChecked">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Geometry="F1 M 46.6667,26.6667L 0,26.6667L 0,0L 46.6667,0L 46.6667,26.6667 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF839EBC"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.5,3.64014e-007" EndPoint="0.5,0.952381">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                        <GradientStop Color="#FFCFCCD4" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F1 M 31.6211,17.5833L 14.8867,17.5833L 14.8867,9.08334L 31.6211,9.08334L 31.6211,17.5833 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF1D2088"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF1D2088" Geometry="M 35.1107,17.8451L 33.5781,17.9206L 36.0521,20.3945L 14.8867,20.4167L 14.8867,21.556L 36.1276,21.5326L 33.6536,24.043L 35.1107,24.1185L 38.2474,20.9805L 35.1107,17.8451 Z "/>
+                        <GeometryDrawing Brush="#FF1D2088" Geometry="M 11.4766,8.34506L 13.0091,8.26953L 10.5352,5.79556L 31.7005,5.77344L 31.7005,4.63412L 10.4596,4.65756L 12.9336,2.14713L 11.4766,2.07162L 8.33984,5.20963L 11.4766,8.34506 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Key="scaleLockBack_Checked">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Geometry="F1 M 46.6667,26.6667L 0,26.6667L 0,0L 46.6667,0L 46.6667,26.6667 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF839EBC"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush StartPoint="0.5,3.64014e-007" EndPoint="0.5,0.952381">
+                                    <LinearGradientBrush.GradientStops>
+                                        <!--<GradientStop Color="#FFABCCEC" Offset="0"/>
+                                        <GradientStop Color="#FFADCFF7" Offset="0.26404"/>
+                                        <GradientStop Color="#FFFFFFFF" Offset="0.87079"/>
+                                        <GradientStop Color="#FFA8D1F7" Offset="0.96068"/>
+                                        <GradientStop Color="#FFA8D1F7" Offset="1"/>-->
+                                        <GradientStop Color="#FFF8E883" Offset="0"/>
+                                        <GradientStop Color="#FFFBF5B6" Offset="0.139"/>
+                                        <GradientStop Color="#FFF8E279" Offset="1"/>
+                                        <GradientStop Color="#FFFCB142" Offset="0.562"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing Geometry="F1 M 31.6224,17.5833L 14.888,17.5833L 14.888,9.08334L 31.6224,9.08334L 31.6224,17.5833 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen Thickness="1.33333" LineJoin="Round" Brush="#FF1D2088"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="#FF1D2088" Geometry="M 35.112,17.8451L 33.5781,17.9206L 36.0521,20.3945L 14.888,20.4167L 14.888,21.556L 36.1276,21.5326L 33.6536,24.043L 35.112,24.1185L 38.2474,20.9805L 35.112,17.8451 Z "/>
+                        <GeometryDrawing Brush="#FF1D2088" Geometry="M 11.4766,8.34506L 13.0104,8.26953L 10.5365,5.79556L 31.7005,5.77344L 31.7005,4.63412L 10.4609,4.65756L 12.9349,2.14713L 11.4766,2.07162L 8.34115,5.20963L 11.4766,8.34506 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <ControlTemplate x:Key="MTB_maplock" TargetType="{x:Type ToggleButton}">
+            <Grid>
+                <Rectangle Fill="#FFFFFFFF" Stroke="{x:Null}" StrokeThickness="0" Margin="0,0,0,0" x:Name="rectangle"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter TargetName="rectangle" Property="Fill" Value="{StaticResource mapLockBack_unChecked}"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter TargetName="rectangle" Property="Fill" Value="{StaticResource mapLockBack_Checked}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        
+        <ControlTemplate x:Key="MTB_scalelock" TargetType="{x:Type ToggleButton}">
+            <Grid>
+                <Rectangle Fill="#FFFFFFFF" Stroke="{x:Null}" StrokeThickness="0" Margin="0,0,0,0" x:Name="rectangle"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter TargetName="rectangle" Property="Fill" Value="{StaticResource scaleLockBack_unChecked}"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter TargetName="rectangle" Property="Fill" Value="{StaticResource scaleLockBack_Checked}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="B_zoomPlus" TargetType="{x:Type Button}">
+            <Grid>
+                <Rectangle Fill="#FFFFFFFF" Stroke="{x:Null}" StrokeThickness="0" Margin="0,0,0,0" x:Name="rectangle"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsPressed" Value="False">
+                    <Setter TargetName="rectangle" Property="Fill" Value="{StaticResource PlusButton_def}"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="rectangle" Property="Fill" Value="{StaticResource PlusButton_pressed}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        
+        <ControlTemplate x:Key="B_zoomMinus" TargetType="{x:Type Button}">
+            <Grid>
+                <Rectangle Fill="#FFFFFFFF" Stroke="{x:Null}" StrokeThickness="0" Margin="0,0,0,0" x:Name="rectangle"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsPressed" Value="False">
+                    <Setter TargetName="rectangle" Property="Fill" Value="{StaticResource MinusButton_def}"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="rectangle" Property="Fill" Value="{StaticResource MinusButton_pressed}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <DrawingAttributes FitToCurve="False" Height="3" Color="Red" x:Key="VirtualSelectionZoneBrush" />
+        
+    </UserControl.Resources>
+
+    <Grid x:Name="RootGrid">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="25"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="25"/>
+    </Grid.RowDefinitions>
+
+        <ScrollViewer x:Name="_SC_Scroller" HorizontalContentAlignment="Stretch" 
+                  VerticalContentAlignment="Stretch" Grid.Row="1" 
+                  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <InkCanvas DragOver="OnMapCanvasDragOver" MouseMove="OnHittestMapCanvas" 
+                 PreviewMouseLeftButtonUp="OnMapCanvasPreviewMouseUp" 
+                 PreviewMouseLeftButtonDown="OnMapCanvasPreviewMouseDown" 
+                 StylusDown="OnStylusDown" StylusOutOfRange="OnStylusOutOfRange"
+                 StylusUp="OnStylusUp"
+                 x:Name="_IC_MapCanvas" Drop="OnMapCanvasDrop" AllowDrop="True" 
+                 Width="2200" Height="1400">
+                    <InkCanvas.DefaultDrawingAttributes>
+                        <DrawingAttributes Color="Red" FitToCurve="True" Height="3" StylusTip="Ellipse" Width="3" />
+                    </InkCanvas.DefaultDrawingAttributes>
+                </InkCanvas>
+
+                <Canvas x:Name="_cv_CommentSurface" MouseLeftButtonUp="_CMS_MouseLeftButtonUp" 
+                        Visibility="Collapsed" Background="Transparent"  StylusUp="_CMS_StylusUp"
+                        MouseLeftButtonDown="_CMS_MouseLeftButtonDown" StylusDown="_CMS_StylusDown"
+                        Width="2200" Height="1400" MouseMove="_CMS_MouseMove" StylusMove="_CMS_StylusMove"/>
+                
+            </Grid>
+        </ScrollViewer>
+
+        <ToggleButton x:Name="_B_ToggleMapLock" Checked="OnSetMapLock" Unchecked="OnReleaseMapLock" HorizontalAlignment="Right"
+                  Template="{DynamicResource MTB_maplock}" Margin="0,4,17,4" Width="85" Height="17"
+                  HorizontalContentAlignment="Right" VerticalContentAlignment="Stretch">
+            <ToggleButton.ToolTip>
+                <StackPanel>
+                    <Label Padding="1,5,1,1" FontSize="12" FontWeight="Bold">マップロック</Label>
+                    <TextBlock Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >ノードをレポートや<LineBreak/>他のマップに引用するために<LineBreak/>マップを固定します</TextBlock>
+                </StackPanel>
+            </ToggleButton.ToolTip>
+        </ToggleButton>
+
+        <ToggleButton HorizontalContentAlignment="Right" Checked="OnSetScaleLock" Unchecked="OnReleaseScaleLock"
+                  Template="{DynamicResource MTB_scalelock}" x:Name="_tb_ScaleLock" 
+                  Height="22" HorizontalAlignment="Right" Width="44"
+                  Margin="0,0,16,0" VerticalAlignment="Bottom" Grid.Row="2">
+            <ToggleButton.ToolTip>
+                <StackPanel>
+                    <Label Padding="1,5,1,1" FontSize="12" FontWeight="Bold">マップビュー</Label>
+                    <TextBlock Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >マップ全体を表示します</TextBlock>
+                </StackPanel>
+            </ToggleButton.ToolTip>
+        </ToggleButton>
+    
+    <Button x:Name="_b_IncreaseZoom" Click="OnIncreaseZoomKnowledgemap" Width="22" HorizontalAlignment="Right" 
+            Template="{DynamicResource B_zoomPlus}" Margin="0,3,103.815,0" Grid.Row="2" Visibility="Collapsed" />
+    
+    <Button x:Name="_b_DecreaseZoom" Click="OnDecreaseZoomKnowledgemap" Width="22" HorizontalAlignment="Right" 
+            Template="{DynamicResource B_zoomMinus}" Margin="0,3,232.238,0" Grid.Row="2" Visibility="Collapsed" />
+    
+    <Label x:Name="_l_CurrentZoomValue" HorizontalAlignment="Right" Margin="0,4,64.596,3" Width="34.747" Content="100%" 
+           FontSize="12" HorizontalContentAlignment="Center" 
+           Padding="0,0,0,0" VerticalContentAlignment="Center" Grid.Row="2"/>
+    
+        <Slider Grid.Row="2" HorizontalAlignment="Right" Margin="0,3.076,99.201,0.769" Name="_sl_ZoomSlider" Width="100"
+                Minimum="25" Maximum="200" Value="100" ValueChanged="OnKnowledgeMapZoomChanged" IsSnapToTickEnabled="True"/>
+    </Grid>
+</UserControl>
