@@ -231,9 +231,9 @@ namespace ejpClient
                 {
                     this._menuI_PublishToWLS.IsEnabled = false;
                     //assembly could not be found...
-                    throw new ApplicationException("Windows Live Spaces‚ÆÚ‘±‚·‚é‚½‚ß‚Ì•K—v‚Èƒtƒ@ƒCƒ‹‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ‚Å‚µ‚½B\n" +
-                                        "Windows Live Spaces‚ÉŒöŠJ‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚¹‚ñBeJournalPlus‚ğÄƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‰º‚³‚¢B\n" +
-                                        "(Windows Live SpacesˆÈŠO‚Ì‹@”\‚É‚Í‰e‹¿‚ª‚ ‚è‚Ü‚¹‚ñB)");
+                    throw new ApplicationException("Windows Live Spacesã¨æ¥ç¶šã™ã‚‹ãŸã‚ã®å¿…è¦ãªãƒ•ã‚¡ã‚¤ãƒ«ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã§ã—ãŸã€‚\n" +
+                                        "Windows Live Spacesã«å…¬é–‹ã™ã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã›ã‚“ã€‚eJournalPlusã‚’å†ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ä¸‹ã•ã„ã€‚\n" +
+                                        "(Windows Live Spacesä»¥å¤–ã®æ©Ÿèƒ½ã«ã¯å½±éŸ¿ãŒã‚ã‚Šã¾ã›ã‚“ã€‚)");
                 }
             }
 
@@ -263,8 +263,8 @@ namespace ejpClient
 						 "Creating and setting AppData path Failed" +
 						 "\nError: " + ex.Message);
 
-                    MessageBox.Show("ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Ìƒf[ƒ^‚ğ•Û‘¶‚·‚éƒtƒHƒ‹ƒ_‚ğì¬‚Å‚«‚Ü‚¹‚ñB\n"+
-                        "‚±‚Ì‚½‚ßC©“®•Û‘¶‚ğ‚·‚é‚±‚Æ‚Í‚Å‚«‚Ü‚¹‚ñB", "ƒGƒ‰[",
+                    MessageBox.Show("ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹ãƒ•ã‚©ãƒ«ãƒ€ã‚’ä½œæˆã§ãã¾ã›ã‚“ã€‚\n"+
+                        "ã“ã®ãŸã‚ï¼Œè‡ªå‹•ä¿å­˜ã‚’ã™ã‚‹ã“ã¨ã¯ã§ãã¾ã›ã‚“ã€‚", "ã‚¨ãƒ©ãƒ¼",
 						MessageBoxButton.OK, MessageBoxImage.Warning);
 					this._canAutoSave = false;
 				}
@@ -288,8 +288,8 @@ namespace ejpClient
 						 "Creating and setting Auto Save path Failed" +
 						 "\nError: " + ex.Message);
 
-                    MessageBox.Show("©“®•Û‘¶‚Ì‚½‚ß‚ÌƒtƒHƒ‹ƒ_‚ğì¬‚Å‚«‚Ü‚¹‚ñB\n" +
-                        "‚±‚Ì‚½‚ßC©“®•Û‘¶‚ğ‚·‚é‚±‚Æ‚Í‚Å‚«‚Ü‚¹‚ñB", "ƒGƒ‰[",
+                    MessageBox.Show("è‡ªå‹•ä¿å­˜ã®ãŸã‚ã®ãƒ•ã‚©ãƒ«ãƒ€ã‚’ä½œæˆã§ãã¾ã›ã‚“ã€‚\n" +
+                        "ã“ã®ãŸã‚ï¼Œè‡ªå‹•ä¿å­˜ã‚’ã™ã‚‹ã“ã¨ã¯ã§ãã¾ã›ã‚“ã€‚", "ã‚¨ãƒ©ãƒ¼",
                         MessageBoxButton.OK, MessageBoxImage.Warning);
                     this._canAutoSave = false;
                 }
@@ -319,7 +319,7 @@ namespace ejpClient
                          "Creating and setting App Settings path Failed" +
                          "\nError: " + ex.Message);
 
-                    MessageBox.Show("ƒAƒvƒŠƒP[ƒVƒ‡ƒ“İ’è‚ÌƒtƒHƒ‹ƒ_‚ğì¬‚Å‚«‚Ü‚¹‚ñB", "ƒGƒ‰[",
+                    MessageBox.Show("ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³è¨­å®šã®ãƒ•ã‚©ãƒ«ãƒ€ã‚’ä½œæˆã§ãã¾ã›ã‚“ã€‚", "ã‚¨ãƒ©ãƒ¼",
                         MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
@@ -340,8 +340,8 @@ namespace ejpClient
 						 "Creating and setting Temporary Assignment path Failed" +
 						 "\nError: " + ex.Message);
 
-                    MessageBox.Show("ˆê•Û‘¶‚Ì‚½‚ß‚ÌƒtƒHƒ‹ƒ_‚ğì¬‚Å‚«‚Ü‚¹‚ñB\n"+
-                        "ì‹Æ‚ğ‘±‚¯‚é‚±‚Æ‚ª‚Å‚«‚Ü‚¹‚ñB", "ƒGƒ‰[",
+                    MessageBox.Show("ä¸€æ™‚ä¿å­˜ã®ãŸã‚ã®ãƒ•ã‚©ãƒ«ãƒ€ã‚’ä½œæˆã§ãã¾ã›ã‚“ã€‚\n"+
+                        "ä½œæ¥­ã‚’ç¶šã‘ã‚‹ã“ã¨ãŒã§ãã¾ã›ã‚“ã€‚", "ã‚¨ãƒ©ãƒ¼",
                         MessageBoxButton.OK, MessageBoxImage.Error);
                     this.Close();
                 }
@@ -363,8 +363,8 @@ namespace ejpClient
 						 "Creating and setting Downloaded files path Failed" +
 						 "\nError: " + ex.Message);
 
-                    MessageBox.Show("ƒ_ƒEƒ“ƒ[ƒh‚·‚é‚½‚ß‚ÌƒtƒHƒ‹ƒ_‚ğì¬‚Å‚«‚Ü‚¹‚ñB\n" +
-                        "ì‹Æ‚ğ‘±‚¯‚é‚±‚Æ‚ª‚Å‚«‚Ü‚¹‚ñB", "ƒGƒ‰[",
+                    MessageBox.Show("ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã™ã‚‹ãŸã‚ã®ãƒ•ã‚©ãƒ«ãƒ€ã‚’ä½œæˆã§ãã¾ã›ã‚“ã€‚\n" +
+                        "ä½œæ¥­ã‚’ç¶šã‘ã‚‹ã“ã¨ãŒã§ãã¾ã›ã‚“ã€‚", "ã‚¨ãƒ©ãƒ¼",
                         MessageBoxButton.OK, MessageBoxImage.Error);
                     this.Close();
                 }
@@ -388,8 +388,8 @@ namespace ejpClient
 						 "Unhandled Application Wide Exception Occured" +
 						 "\nError: " + e.Exception.Message);
 
-            MessageBox.Show("Œ´ˆö‚ª•s–¾‚È–â‘è‚ª”­¶‚µ‚Ü‚µ‚½B\nƒƒbƒZ[ƒW‚Í:\n" + e.Exception.Message
-                + "\n\neJournalPlus‚ğ•Â‚¶‚Ü‚·B");
+            MessageBox.Show("åŸå› ãŒä¸æ˜ãªå•é¡ŒãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚\nãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã¯:\n" + e.Exception.Message
+                + "\n\neJournalPlusã‚’é–‰ã˜ã¾ã™ã€‚");
             e.Handled = true;
 
 			//Create and store Minidump.
@@ -411,7 +411,7 @@ namespace ejpClient
 						 "Due to an unhandled application wide exception I have tried to close the current assignement. This operation failed." +
 						 "\nError: " + ex.Message);
 
-                    MessageBox.Show("•Û‘¶‚É¸”s‚µ‚½ê‡‚ÍA\n" + this._autoSaveFilePath + "\n‚ğŠJ‚¢‚Ä‚İ‚Ä‰º‚³‚¢B");
+                    MessageBox.Show("ä¿å­˜ã«å¤±æ•—ã—ãŸå ´åˆã¯ã€\n" + this._autoSaveFilePath + "\nã‚’é–‹ã„ã¦ã¿ã¦ä¸‹ã•ã„ã€‚");
                 }
                 finally
                 {
@@ -463,8 +463,8 @@ namespace ejpClient
 							 "Unhandled Exception" +
 							 "\nError: " + ex.Message);
 
-                MessageBox.Show("‚±‚ÌƒAƒTƒCƒ“ƒƒ“ƒg‚Ìƒtƒ@ƒCƒ‹‚É\n–â‘è‚ğ”­Œ©‚µ‚½‚½‚ßAƒI[ƒgƒZ[ƒu‚ªo—ˆ‚Ü‚¹‚ñB\n"
-                    + "‰ü‚ß‚Ä•Ê‚Ì–¼‘O‚Åƒtƒ@ƒCƒ‹‚ğ•Û‘¶‚µ‚Ä‰º‚³‚¢B");
+                MessageBox.Show("ã“ã®ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã®ãƒ•ã‚¡ã‚¤ãƒ«ã«\nå•é¡Œã‚’ç™ºè¦‹ã—ãŸãŸã‚ã€ã‚ªãƒ¼ãƒˆã‚»ãƒ¼ãƒ–ãŒå‡ºæ¥ã¾ã›ã‚“ã€‚\n"
+                    + "æ”¹ã‚ã¦åˆ¥ã®åå‰ã§ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¿å­˜ã—ã¦ä¸‹ã•ã„ã€‚");
                 this._canAutoSave = false;
             }
             finally
@@ -567,7 +567,7 @@ namespace ejpClient
 						 "Attempting to start new assignment for new application instance failed" +
 						 "\nError: " + ex.Message);
 
-                    MessageBox.Show("¸”s‚µ‚Ü‚µ‚½.\n" + ex.Message);
+                    MessageBox.Show("å¤±æ•—ã—ã¾ã—ãŸ.\n" + ex.Message);
                     this.SetApplicationState(ApplicationState.Cold);
                 }
             }
@@ -586,7 +586,7 @@ namespace ejpClient
 						 "Attempting to start new empty assignment for new application instance failed" +
 						 "\nError: " + ex.Message);
 
-                    MessageBox.Show("¸”s‚µ‚Ü‚µ‚½.\n" + ex.Message);
+                    MessageBox.Show("å¤±æ•—ã—ã¾ã—ãŸ.\n" + ex.Message);
                     this.SetApplicationState(ApplicationState.Cold);
                 }
             }
@@ -850,8 +850,8 @@ namespace ejpClient
                 if (App._defaultDocumentPath == "" ||
                     App._defaultDocumentPath == null)
                 {
-                    path = this.GetOpenFileName("ejpƒtƒ@ƒCƒ‹ (*.ejp;*.cejp)|*.ejp;*.cejp|ƒRƒƒ“ƒg•t‚«ejpƒtƒ@ƒCƒ‹ (*.cejp)|*.cejp",
-                        "ƒRƒƒ“ƒgƒ‚[ƒh‚ÅŠJ‚­ƒtƒ@ƒCƒ‹‚ğ‘I‘ğ");
+                    path = this.GetOpenFileName("ejpãƒ•ã‚¡ã‚¤ãƒ« (*.ejp;*.cejp)|*.ejp;*.cejp|ã‚³ãƒ¡ãƒ³ãƒˆä»˜ãejpãƒ•ã‚¡ã‚¤ãƒ« (*.cejp)|*.cejp",
+                        "ã‚³ãƒ¡ãƒ³ãƒˆãƒ¢ãƒ¼ãƒ‰ã§é–‹ããƒ•ã‚¡ã‚¤ãƒ«ã‚’é¸æŠ");
                 }
                 else
                 {
@@ -922,7 +922,7 @@ namespace ejpClient
                          "Failed to open local commented assignment" +
                          "\nError: " + ex.Message);
 
-                MessageBox.Show("¸”s‚µ‚Ü‚µ‚½.\n" + ex.Message);
+                MessageBox.Show("å¤±æ•—ã—ã¾ã—ãŸ.\n" + ex.Message);
                 this.ClearUi();
 
                 //make sure the current working assignment is unloaded. 080603
@@ -986,7 +986,7 @@ namespace ejpClient
 						 "\nPath: " + path +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("İ’èƒtƒ@ƒCƒ‹‚ª‚ ‚è‚Ü‚¹‚ñB\nƒfƒtƒHƒ‹ƒgİ’è‚ÅÀs‚µ‚Ü‚·B");
+                MessageBox.Show("è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ãŒã‚ã‚Šã¾ã›ã‚“ã€‚\nãƒ‡ãƒ•ã‚©ãƒ«ãƒˆè¨­å®šã§å®Ÿè¡Œã—ã¾ã™ã€‚");
             }
         }
 
@@ -1009,7 +1009,7 @@ namespace ejpClient
 						 "\nPath: " + path +
 						 "\nError: " + ex.Message);
 
-                //MessageBox.Show("İ’èƒtƒ@ƒCƒ‹‚ğ•Û‘¶o—ˆ‚Ü‚¹‚ñ‚Å‚µ‚½B");
+                //MessageBox.Show("è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¿å­˜å‡ºæ¥ã¾ã›ã‚“ã§ã—ãŸã€‚");
             }
         }
 
@@ -1017,36 +1017,36 @@ namespace ejpClient
         {
             this._kmAreaColorsList = new Dictionary<string, SolidColorBrush>
             {
-                {"Ô", new SolidColorBrush(Color.FromArgb(255,255,0,0))},
-                {"•", new SolidColorBrush(Color.FromArgb(255,0,0,0))},
-                {"‰©", new SolidColorBrush(Color.FromArgb(255,255,255,0))},
-                {"—Î", new SolidColorBrush(Color.FromArgb(255,0,255,0))},
-                {"Â", new SolidColorBrush(Color.FromArgb(255,0,0,255))},
+                {"èµ¤", new SolidColorBrush(Color.FromArgb(255,255,0,0))},
+                {"é»’", new SolidColorBrush(Color.FromArgb(255,0,0,0))},
+                {"é»„", new SolidColorBrush(Color.FromArgb(255,255,255,0))},
+                {"ç·‘", new SolidColorBrush(Color.FromArgb(255,0,255,0))},
+                {"é’", new SolidColorBrush(Color.FromArgb(255,0,0,255))},
             };
 
             this._documentAreaPenColorsList = new Dictionary<string, SolidColorBrush>
             {
-                {"Ô", new SolidColorBrush(Color.FromArgb(255,255,0,0))},
-                {"‰©", new SolidColorBrush(Color.FromArgb(255,255,255,0))},
-                {"—Î", new SolidColorBrush(Color.FromArgb(255,0,255,0))},
-                {"Â", new SolidColorBrush(Color.FromArgb(255,0,0,255))},
+                {"èµ¤", new SolidColorBrush(Color.FromArgb(255,255,0,0))},
+                {"é»„", new SolidColorBrush(Color.FromArgb(255,255,255,0))},
+                {"ç·‘", new SolidColorBrush(Color.FromArgb(255,0,255,0))},
+                {"é’", new SolidColorBrush(Color.FromArgb(255,0,0,255))},
             };
 
             this._documentAreaMarkerColorsList = new Dictionary<string, SolidColorBrush>
             {
-                {"Ô", new SolidColorBrush(Color.FromArgb(100,255,0,0))},
-                {"‰©", new SolidColorBrush(Color.FromArgb(100,255,255,0))},
-                {"—Î", new SolidColorBrush(Color.FromArgb(100,0,255,0))},
-                {"Â", new SolidColorBrush(Color.FromArgb(100,0,0,255))},
+                {"èµ¤", new SolidColorBrush(Color.FromArgb(100,255,0,0))},
+                {"é»„", new SolidColorBrush(Color.FromArgb(100,255,255,0))},
+                {"ç·‘", new SolidColorBrush(Color.FromArgb(100,0,255,0))},
+                {"é’", new SolidColorBrush(Color.FromArgb(100,0,0,255))},
             };
 
             this._M_km_ColorSwatchButton.Items = this._kmAreaColorsList;
             this._M_ML_ColorSwatchButton.Items = this._documentAreaMarkerColorsList;
             this._M_PL_ColorSwatchButton.Items = this._documentAreaPenColorsList;
 
-            this._M_km_ColorSwatchButton.SetCurrentColor(this._kmAreaColorsList["Ô"]);
-            this._M_ML_ColorSwatchButton.SetCurrentColor(this._documentAreaMarkerColorsList["Ô"]);
-            this._M_PL_ColorSwatchButton.SetCurrentColor(this._documentAreaPenColorsList["Ô"]);
+            this._M_km_ColorSwatchButton.SetCurrentColor(this._kmAreaColorsList["èµ¤"]);
+            this._M_ML_ColorSwatchButton.SetCurrentColor(this._documentAreaMarkerColorsList["èµ¤"]);
+            this._M_PL_ColorSwatchButton.SetCurrentColor(this._documentAreaPenColorsList["èµ¤"]);
         }
 
         /// <summary>
@@ -1140,7 +1140,7 @@ namespace ejpClient
 						 "Failed to export Knowledge Map" +
 						 "\nError: " + ex.Message);
 
-				MessageBox.Show("ƒiƒŒƒbƒWƒ}ƒbƒv‚ğ‘‚«o‚µ‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show("ãƒŠãƒ¬ãƒƒã‚¸ãƒãƒƒãƒ—ã‚’æ›¸ãå‡ºã—ã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
         }
 
@@ -1173,7 +1173,7 @@ namespace ejpClient
                     }
                 }
                 if (!foundReportToExport)
-                    MessageBox.Show("‘‚«o‚µ‚½‚¢ƒŒƒ|[ƒg‚ğ‘I‘ğ‚µ‚Ä‰º‚³‚¢B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("æ›¸ãå‡ºã—ãŸã„ãƒ¬ãƒãƒ¼ãƒˆã‚’é¸æŠã—ã¦ä¸‹ã•ã„ã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex) 
             {
@@ -1183,7 +1183,7 @@ namespace ejpClient
 						 "Failed to export Report" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("ƒŒƒ|[ƒg‚ğ‘‚«o‚µ‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ãƒ¬ãƒãƒ¼ãƒˆã‚’æ›¸ãå‡ºã—ã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -1202,7 +1202,7 @@ namespace ejpClient
                 {
                     EjsBridge.ejsBridgeManager.EjsAddress = App._ejpSettings.EjsAddress;
                     ejpWindows.NewAssignmentWindow newAW = new ejpWindows.NewAssignmentWindow();
-                    newAW.WindowHeadline = "V‹Kì¬";
+                    newAW.WindowHeadline = "æ–°è¦ä½œæˆ";
                     newAW.Closed += delegate(object ws, EventArgs we)
                     {
                         if (newAW.CreateLocation ==
@@ -1252,7 +1252,7 @@ namespace ejpClient
 						 "Failed to Start new Assignment" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("¸”s‚µ‚Ü‚µ‚½.\n" + ex.Message);
+                MessageBox.Show("å¤±æ•—ã—ã¾ã—ãŸ.\n" + ex.Message);
                 this.SetApplicationState(ApplicationState.Cold);
             }
 		}
@@ -1314,7 +1314,7 @@ namespace ejpClient
 						 "Failed to export Assignment" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("ƒAƒTƒCƒ“ƒƒ“ƒg‚ğ‘‚«o‚µ‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B", "‘‚«o‚µ¸”s", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã‚’æ›¸ãå‡ºã—ã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "æ›¸ãå‡ºã—å¤±æ•—", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -1332,8 +1332,8 @@ namespace ejpClient
 
                 if(this._currentWorkingAssingment.IsPersisted == false)
                 {
-                    MessageBox.Show("•Ê‚ÌƒAƒTƒCƒ“ƒƒ“ƒg‚ğƒ}[ƒW‚·‚é‘O‚ÉCƒAƒTƒCƒ“ƒƒ“ƒg‚ğ•Û‘¶‚µ‚Ä‚­‚¾‚³‚¢B",
-                        "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("åˆ¥ã®ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã‚’ãƒãƒ¼ã‚¸ã™ã‚‹å‰ã«ï¼Œã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã‚’ä¿å­˜ã—ã¦ãã ã•ã„ã€‚",
+                        "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Information);
                     return;
                 }
 
@@ -1367,7 +1367,7 @@ namespace ejpClient
                         };
 
                         bgw.RunWorkerAsync();
-                        this._l_AppStatusLabel.Text = "ƒAƒTƒCƒ“ƒƒ“ƒg‚ğƒ_ƒEƒ“ƒ[ƒh’†B";
+                        this._l_AppStatusLabel.Text = "ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ä¸­ã€‚";
                         lmw.ShowDialog();
 
                         this.ImportAssignment(tempPath);
@@ -1389,7 +1389,7 @@ namespace ejpClient
                          "Failed to merge Ejs Assignment" +
                          "\nError: " + ex.Message);
 
-                MessageBox.Show("¸”s‚µ‚Ü‚µ‚½B\n" + ex.Message);
+                MessageBox.Show("å¤±æ•—ã—ã¾ã—ãŸã€‚\n" + ex.Message);
                 this.SetApplicationState(ApplicationState.Cold);
             }
         }
@@ -1403,7 +1403,7 @@ namespace ejpClient
 
             try
             {
-                string path = this.GetOpenFileName("Assignments (*.ejp)|*.ejp", "ejpƒtƒ@ƒCƒ‹‚ğ‘I‘ğ");
+                string path = this.GetOpenFileName("Assignments (*.ejp)|*.ejp", "ejpãƒ•ã‚¡ã‚¤ãƒ«ã‚’é¸æŠ");
                 if (path != "cancel")
                 {
                     this.ImportAssignment(path);
@@ -1422,7 +1422,7 @@ namespace ejpClient
 						 "Failed to import Assignment" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("¸”s‚µ‚Ü‚µ‚½B\n" + ex.Message);
+                MessageBox.Show("å¤±æ•—ã—ã¾ã—ãŸã€‚\n" + ex.Message);
                 this.SetApplicationState(ApplicationState.AssignmentLoaded);
             }
         }
@@ -1469,7 +1469,7 @@ namespace ejpClient
                                 };
 
                                 bgw.RunWorkerAsync();
-                                this._l_AppStatusLabel.Text = "ƒAƒTƒCƒ“ƒƒ“ƒg‚ğƒ_ƒEƒ“ƒ[ƒh’†B";
+                                this._l_AppStatusLabel.Text = "ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã‚’ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ä¸­ã€‚";
                                 lmw.ShowDialog();
 
                                 //While not good practice, the order of these
@@ -1513,7 +1513,7 @@ namespace ejpClient
 						 "Failed to open Ejs Assignment" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("¸”s‚µ‚Ü‚µ‚½B\n" + ex.Message);
+                MessageBox.Show("å¤±æ•—ã—ã¾ã—ãŸã€‚\n" + ex.Message);
                 this.SetApplicationState(ApplicationState.Cold);
             }
         }
@@ -1540,8 +1540,8 @@ namespace ejpClient
                 if (App._defaultDocumentPath == "" ||
                     App._defaultDocumentPath == null)
                 {
-                    path = this.GetOpenFileName("ejpƒtƒ@ƒCƒ‹ (*.ejp;*.cejp)|*.ejp;*.cejp|ƒRƒƒ“ƒg•t‚«ejpƒtƒ@ƒCƒ‹ (*.cejp)|*.cejp", 
-                        "‚Ó‚Â‚¤ƒ‚[ƒh‚ÅŠJ‚­ƒtƒ@ƒCƒ‹‚ğ‘I‘ğ");
+                    path = this.GetOpenFileName("ejpãƒ•ã‚¡ã‚¤ãƒ« (*.ejp;*.cejp)|*.ejp;*.cejp|ã‚³ãƒ¡ãƒ³ãƒˆä»˜ãejpãƒ•ã‚¡ã‚¤ãƒ« (*.cejp)|*.cejp", 
+                        "ãµã¤ã†ãƒ¢ãƒ¼ãƒ‰ã§é–‹ããƒ•ã‚¡ã‚¤ãƒ«ã‚’é¸æŠ");
                 }
                 else
                 {
@@ -1624,7 +1624,7 @@ namespace ejpClient
 						 "Failed to open local assignment" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("¸”s‚µ‚Ü‚µ‚½B\n" + ex.Message);
+                MessageBox.Show("å¤±æ•—ã—ã¾ã—ãŸã€‚\n" + ex.Message);
                 this.ClearUi();
 	
 				//make sure the current working assignment is unloaded. 080603
@@ -1702,7 +1702,7 @@ namespace ejpClient
 						 "Failed to publish assignment to Ejs" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("ƒAƒTƒCƒ“ƒƒ“ƒg‚ğŒöŠJ‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B", "•Û‘¶‚Ì¸”s", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã‚’å…¬é–‹ã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ä¿å­˜ã®å¤±æ•—", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -1805,12 +1805,12 @@ namespace ejpClient
                 {
                     if (workerCompletedArgs.Error.InnerException != null)
                         MessageBox.Show(
-                            "ŒöŠJ‚·‚é‚½‚ß‚Ìˆ—‚ª¸”s‚µ‚Ü‚µ‚½B\nƒƒbƒZ[ƒW‚ÍF\n\n" +
-                            workerCompletedArgs.Error.InnerException.Message, "ƒGƒ‰[", MessageBoxButton.OK,
+                            "å…¬é–‹ã™ã‚‹ãŸã‚ã®å‡¦ç†ãŒå¤±æ•—ã—ã¾ã—ãŸã€‚\nãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã¯ï¼š\n\n" +
+                            workerCompletedArgs.Error.InnerException.Message, "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK,
                             MessageBoxImage.Error);
                     else
                         MessageBox.Show(
-                            "ŒöŠJ‚·‚é‚½‚ß‚Ìˆ—‚ª¸”s‚µ‚Ü‚µ‚½B", "ƒGƒ‰[", MessageBoxButton.OK,
+                            "å…¬é–‹ã™ã‚‹ãŸã‚ã®å‡¦ç†ãŒå¤±æ•—ã—ã¾ã—ãŸã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK,
                             MessageBoxImage.Error);
                 }
                 
@@ -1820,9 +1820,9 @@ namespace ejpClient
             };
 
             bgw.RunWorkerAsync();
-            this._l_AppStatusLabel.Text = "ƒAƒTƒCƒ“ƒƒ“ƒgŒöŠJ’†B";
+            this._l_AppStatusLabel.Text = "ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆå…¬é–‹ä¸­ã€‚";
             lmw.ShowDialog();
-            MessageBox.Show("ŒöŠJ‚ª–³–I‚í‚è‚Ü‚µ‚½B", "ŒöŠJŠ®—¹", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("å…¬é–‹ãŒç„¡äº‹çµ‚ã‚ã‚Šã¾ã—ãŸã€‚", "å…¬é–‹å®Œäº†", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void _M_meet_OnPublishToWLS(object sender, RoutedEventArgs e)
@@ -1845,7 +1845,7 @@ namespace ejpClient
                             if(htmlRep == "")
                                 return;
 
-                            string postTitle = "eJournalPlus - ƒŒƒ|[ƒg" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+                            string postTitle = "eJournalPlus - ãƒ¬ãƒãƒ¼ãƒˆ" + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
 
                             byte[] kmByteArray = this._currentKnowledgeMapControl.ExportMapToByteArray();
                             foundReportToPublish = true;
@@ -1880,14 +1880,14 @@ namespace ejpClient
 
                             wlsbh.PostBlog(postTitle, builder.ToString());
 
-                            MessageBox.Show("ŒöŠJ‚ª–³–I‚í‚è‚Ü‚µ‚½B", "ŒöŠJŠ®—¹", MessageBoxButton.OK, MessageBoxImage.Information);
+                            MessageBox.Show("å…¬é–‹ãŒç„¡äº‹çµ‚ã‚ã‚Šã¾ã—ãŸã€‚", "å…¬é–‹å®Œäº†", MessageBoxButton.OK, MessageBoxImage.Information);
 
                             break;
                         }
                     }
                 }
                 if (!foundReportToPublish)
-                    MessageBox.Show("ŒöŠJ‚µ‚½‚¢ƒŒƒ|[ƒg‚ğ‘I‘ğ‚µ‚Ä‰º‚³‚¢B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("å…¬é–‹ã—ãŸã„ãƒ¬ãƒãƒ¼ãƒˆã‚’é¸æŠã—ã¦ä¸‹ã•ã„ã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (ApplicationException ex)
             {
@@ -1897,8 +1897,8 @@ namespace ejpClient
 						 "Failed to publish report to Windows Live Spaces" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("ƒAƒTƒCƒ“ƒƒ“ƒg‚ğŒöŠJ‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B\n" + ex.Message,
-                    "¸”s", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã‚’å…¬é–‹ã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚\n" + ex.Message,
+                    "å¤±æ•—", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -1934,7 +1934,7 @@ namespace ejpClient
                     }
                 }
                 if (!foundReportToExport)
-                    MessageBox.Show("ˆóü‚µ‚½‚¢ƒŒƒ|[ƒg‚ğ‘I‘ğ‚µ‚Ä‰º‚³‚¢B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("å°åˆ·ã—ãŸã„ãƒ¬ãƒãƒ¼ãƒˆã‚’é¸æŠã—ã¦ä¸‹ã•ã„ã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception ex)
             {
@@ -1944,7 +1944,7 @@ namespace ejpClient
 						 "Failed to pring Report" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("ƒŒƒ|[ƒg‚ğˆóü‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ãƒ¬ãƒãƒ¼ãƒˆã‚’å°åˆ·ã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -1967,7 +1967,7 @@ namespace ejpClient
 						 "Failed to print Knowledge Map" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("ƒiƒŒƒbƒWƒ}ƒbƒv‚ğˆóü‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ãƒŠãƒ¬ãƒƒã‚¸ãƒãƒƒãƒ—ã‚’å°åˆ·ã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -2027,7 +2027,7 @@ namespace ejpClient
                 {
                     EjsBridge.ejsBridgeManager.EjsAddress = App._ejpSettings.EjsAddress;
                     ejpWindows.NewAssignmentWindow newStudyW = new ejpWindows.NewAssignmentWindow();
-                    newStudyW.WindowHeadline = "ƒXƒ^ƒfƒB‚Ì’Ç‰Á";
+                    newStudyW.WindowHeadline = "ã‚¹ã‚¿ãƒ‡ã‚£ã®è¿½åŠ ";
                     newStudyW.Closed += delegate(object ws, EventArgs we)
                     {
                         ejpStudy newStudy = null;
@@ -2094,7 +2094,7 @@ namespace ejpClient
 						 "Failed to add new study" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("¸”s‚µ‚Ü‚µ‚½B\n" + ex.Message);
+                MessageBox.Show("å¤±æ•—ã—ã¾ã—ãŸã€‚\n" + ex.Message);
             }
         }
 
@@ -2121,7 +2121,7 @@ namespace ejpClient
                 t.Tag = this._currentWorkingStudy.MetaData.Id;
                 TextBlock headerT = new TextBlock
                 {
-                    Text = "ƒŒƒ|[ƒg " +
+                    Text = "ãƒ¬ãƒãƒ¼ãƒˆ " +
                     this._currentWorkingStudy.Reports.Count.ToString(),
                     Tag = t,
                     AllowDrop = true
@@ -2147,7 +2147,7 @@ namespace ejpClient
 						 "Failed to add new report to study" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("ƒŒƒ|[ƒg‚Í“ñ–‡‚æ‚èì¬o—ˆ‚Ü‚¹‚ñ");
+                MessageBox.Show("ãƒ¬ãƒãƒ¼ãƒˆã¯äºŒæšã‚ˆã‚Šä½œæˆå‡ºæ¥ã¾ã›ã‚“");
             }
         }
 
@@ -2167,10 +2167,10 @@ namespace ejpClient
             if (this._currentWorkingAssingment.IsPersisted == false)
             {
                 addKM = false;
-                if (MessageBox.Show("ƒiƒŒƒbƒWƒ}ƒbƒv‚ğ’Ç‰Á‚·‚é‚½‚ß\n" +
-                    "ƒtƒ@ƒCƒ‹‚ğ•Û‘¶‚µ‚È‚¯‚ê‚Î‚È‚è‚Ü‚¹‚ñB\n\n" +
-                    "ƒtƒ@ƒCƒ‹‚ğ•Û‘¶‚µ‚ÄAƒiƒŒƒbƒWƒ}ƒbƒv‚ğ’Ç‰Á‚µ‚Ü‚·‚©H",
-                    "ƒiƒŒƒbƒWƒ}ƒbƒv‚Ì’Ç‰Á", MessageBoxButton.YesNo, MessageBoxImage.Question)
+                if (MessageBox.Show("ãƒŠãƒ¬ãƒƒã‚¸ãƒãƒƒãƒ—ã‚’è¿½åŠ ã™ã‚‹ãŸã‚\n" +
+                    "ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¿å­˜ã—ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ã€‚\n\n" +
+                    "ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¿å­˜ã—ã¦ã€ãƒŠãƒ¬ãƒƒã‚¸ãƒãƒƒãƒ—ã‚’è¿½åŠ ã—ã¾ã™ã‹ï¼Ÿ",
+                    "ãƒŠãƒ¬ãƒƒã‚¸ãƒãƒƒãƒ—ã®è¿½åŠ ", MessageBoxButton.YesNo, MessageBoxImage.Question)
                     == MessageBoxResult.Yes)
                     addKM = true;
                 else
@@ -2209,7 +2209,7 @@ namespace ejpClient
 
                 TextBlock headerT = new TextBlock
                 {
-                    Text = "ƒiƒŒƒbƒWƒ}ƒbƒv " +
+                    Text = "ãƒŠãƒ¬ãƒƒã‚¸ãƒãƒƒãƒ— " +
                     this._currentWorkingStudy.KnowledgeMaps.Count.ToString(),
                     Tag = t,
                     AllowDrop = true
@@ -2285,7 +2285,7 @@ namespace ejpClient
 						 "Failed to add new Knowledge Map to study" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("ƒiƒŒƒbƒWƒ}ƒbƒv‚Í“ñ–‡‚æ‚èì¬o—ˆ‚Ü‚¹‚ñ");
+                MessageBox.Show("ãƒŠãƒ¬ãƒƒã‚¸ãƒãƒƒãƒ—ã¯äºŒæšã‚ˆã‚Šä½œæˆå‡ºæ¥ã¾ã›ã‚“");
             }
         }
 
@@ -2305,18 +2305,18 @@ namespace ejpClient
                 bool deleteCurrentGuide = false;
                 if (this._currentKnowledgeMapControl == null)
                 {
-                    MessageBox.Show("ƒKƒCƒh‚ğİ’è‚½‚¢ƒiƒŒƒbƒWƒ}ƒbƒv‚ğ‘I‘ğ‚µ‚Ä‰º‚³‚¢B",
-                        "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("ã‚¬ã‚¤ãƒ‰ã‚’è¨­å®šãŸã„ãƒŠãƒ¬ãƒƒã‚¸ãƒãƒƒãƒ—ã‚’é¸æŠã—ã¦ä¸‹ã•ã„ã€‚",
+                        "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Information);
                     return;
                 }
 
                 if (this._currentKnowledgeMapControl.HasGuide)
                 {
                     if (MessageBox.Show(
-                        "\nƒKƒCƒh‚Í‚·‚Å‚Éİ’è‚µ‚Ä‚ ‚è‚Ü‚·BV‚µ‚¢ƒKƒCƒh‚ğİ’è‚·‚é‚½‚ß\n" +
-                        "‚±‚ÌƒKƒCƒh‚ğíœ‚µ‚È‚¯‚ê‚Î‚È‚è‚Ü‚¹‚ñB\n\n" +
-                        "Œ»İ‚ÌƒKƒCƒh‚ğíœ‚µ‚ÄAV‚µ‚¢ƒKƒCƒh‚ğİ’è‚µ‚Ü‚·‚©H",
-                        "ƒKƒCƒh‚Ìİ’è", MessageBoxButton.YesNo, MessageBoxImage.Question)
+                        "\nã‚¬ã‚¤ãƒ‰ã¯ã™ã§ã«è¨­å®šã—ã¦ã‚ã‚Šã¾ã™ã€‚æ–°ã—ã„ã‚¬ã‚¤ãƒ‰ã‚’è¨­å®šã™ã‚‹ãŸã‚\n" +
+                        "ã“ã®ã‚¬ã‚¤ãƒ‰ã‚’å‰Šé™¤ã—ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ã€‚\n\n" +
+                        "ç¾åœ¨ã®ã‚¬ã‚¤ãƒ‰ã‚’å‰Šé™¤ã—ã¦ã€æ–°ã—ã„ã‚¬ã‚¤ãƒ‰ã‚’è¨­å®šã—ã¾ã™ã‹ï¼Ÿ",
+                        "ã‚¬ã‚¤ãƒ‰ã®è¨­å®š", MessageBoxButton.YesNo, MessageBoxImage.Question)
                         == MessageBoxResult.Yes)
                         deleteCurrentGuide = true;
                     else
@@ -2348,7 +2348,7 @@ namespace ejpClient
                          "Failed to Import Guide to KnowledgeMap" +
                          "\nError: " + ex.Message);
 
-                MessageBox.Show("‰æ‘œ‚Ì“Ç‚İ‚İ‚É¸”s‚µ‚Ü‚µ‚½B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ç”»åƒã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             SiliconStudio.DebugManagers.DebugReporter.ReportMethodLeave();
         }
@@ -2366,15 +2366,15 @@ namespace ejpClient
                 bool deleteCurrentGuide = false;
                 if (this._currentKnowledgeMapControl == null)
                 {
-                    MessageBox.Show("ƒKƒCƒh‚ğİ’è‚½‚¢ƒiƒŒƒbƒWƒ}ƒbƒv‚ğ‘I‘ğ‚µ‚Ä‰º‚³‚¢B",
-                        "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("ã‚¬ã‚¤ãƒ‰ã‚’è¨­å®šãŸã„ãƒŠãƒ¬ãƒƒã‚¸ãƒãƒƒãƒ—ã‚’é¸æŠã—ã¦ä¸‹ã•ã„ã€‚",
+                        "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Information);
                     return;
                 }
 
                 if (this._currentKnowledgeMapControl.HasGuide)
                 {
                     if (MessageBox.Show(
-                        "ƒKƒCƒh‚Ííœ‚µ‚Ü‚·‚©H", "ƒKƒCƒhíœ", MessageBoxButton.YesNo, MessageBoxImage.Question)
+                        "ã‚¬ã‚¤ãƒ‰ã¯å‰Šé™¤ã—ã¾ã™ã‹ï¼Ÿ", "ã‚¬ã‚¤ãƒ‰å‰Šé™¤", MessageBoxButton.YesNo, MessageBoxImage.Question)
                         == MessageBoxResult.Yes)
                         deleteCurrentGuide = true;
                     else
@@ -2383,8 +2383,8 @@ namespace ejpClient
                 else
                 {
                     MessageBox.Show(
-                        "‘I‘ğ‚µ‚Ä‚ ‚éƒiƒŒƒbƒWƒ}ƒbƒv‚Í‚Ü‚¾ƒKƒCƒhİ’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB",@
-                        "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Information);
+                        "é¸æŠã—ã¦ã‚ã‚‹ãƒŠãƒ¬ãƒƒã‚¸ãƒãƒƒãƒ—ã¯ã¾ã ã‚¬ã‚¤ãƒ‰è¨­å®šã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚",ã€€
+                        "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Information);
                         return;
                 }
 
@@ -2399,7 +2399,7 @@ namespace ejpClient
                          "Failed to Delete KnowledgeMap Guide" +
                          "\nError: " + ex.Message);
 
-                MessageBox.Show("ƒKƒCƒh‚Ìíœ‚É¸”s‚µ‚Ü‚µ‚½B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ã‚¬ã‚¤ãƒ‰ã®å‰Šé™¤ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             SiliconStudio.DebugManagers.DebugReporter.ReportMethodLeave();
         }
@@ -2453,7 +2453,7 @@ namespace ejpClient
 						 "Failed to Import Image to KnowledgeMap" +
 						 "\nError: " + ex.Message);
 
-				MessageBox.Show("‰æ‘œ‚Ì“Ç‚Ş‚İ‚É¸”s‚µ‚Ü‚µ‚½B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show("ç”»åƒã®èª­ã‚€è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 
 
@@ -2469,7 +2469,7 @@ namespace ejpClient
 
             if (this._currentWorkingStudy == null)
             {
-                MessageBox.Show("‚Ü‚¸Å‰‚ÉXPSƒhƒLƒ…ƒƒ“ƒg‚ğ’Ç‰Á‚µ‚½‚¢ƒXƒ^ƒfƒB‚ğ‘I‚ñ‚Å‚­‚¾‚³‚¢B");
+                MessageBox.Show("ã¾ãšæœ€åˆã«XPSãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’è¿½åŠ ã—ãŸã„ã‚¹ã‚¿ãƒ‡ã‚£ã‚’é¸ã‚“ã§ãã ã•ã„ã€‚");
                 return;
             }
 
@@ -2477,7 +2477,7 @@ namespace ejpClient
             {
                 EjsBridge.ejsBridgeManager.EjsAddress = App._ejpSettings.EjsAddress;
                 ejpWindows.NewAssignmentWindow newDocuementW = new ejpWindows.NewAssignmentWindow();
-                newDocuementW.WindowHeadline = "ƒXƒ^ƒfƒB‚ÉƒhƒLƒ…ƒƒ“ƒg‚Ì’Ç‰Á";
+                newDocuementW.WindowHeadline = "ã‚¹ã‚¿ãƒ‡ã‚£ã«ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã®è¿½åŠ ";
                 newDocuementW.DisableNoSelect();
                 newDocuementW.Closed += delegate(object ws, EventArgs we)
                 {
@@ -2515,7 +2515,7 @@ namespace ejpClient
 						 "Failed to Add XPS Document to study" +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("¸”s‚µ‚Ü‚µ‚½B\n" + ex.Message);
+                MessageBox.Show("å¤±æ•—ã—ã¾ã—ãŸã€‚\n" + ex.Message);
             }
           
         }
@@ -3032,7 +3032,7 @@ namespace ejpClient
                          "Failed to Save assignment" +
                          "\nError: " + ex.Message);
 
-                    MessageBox.Show("ƒAƒTƒCƒ“ƒƒ“ƒg‚ğ•Û‘¶‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B", "•Û‘¶‚Ì¸”s", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã‚’ä¿å­˜ã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ä¿å­˜ã®å¤±æ•—", MessageBoxButton.OK, MessageBoxImage.Error);
                     this._canAutoSave = false;
                 }
             }
@@ -3059,7 +3059,7 @@ namespace ejpClient
                          "Failed to Save assignment" +
                          "\nError: " + ex.Message);
 
-                    MessageBox.Show("ƒAƒTƒCƒ“ƒƒ“ƒg‚ğ•Û‘¶‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B", "•Û‘¶‚Ì¸”s", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã‚’ä¿å­˜ã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ä¿å­˜ã®å¤±æ•—", MessageBoxButton.OK, MessageBoxImage.Error);
                     this._canAutoSave = false;
                 }
             }
@@ -3071,8 +3071,8 @@ namespace ejpClient
 
         private bool CloseCurrentAssignment()
         {
-            MessageBoxResult respons = MessageBox.Show("•ÒW‚³‚ê‚½€–Ú‚ğ•Û‘¶‚µ‚Ü‚·‚©H",
-                "•Û‘¶‚µ‚Ü‚·‚©H", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+            MessageBoxResult respons = MessageBox.Show("ç·¨é›†ã•ã‚ŒãŸé …ç›®ã‚’ä¿å­˜ã—ã¾ã™ã‹ï¼Ÿ",
+                "ä¿å­˜ã—ã¾ã™ã‹ï¼Ÿ", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
 
             bool saveOnClose = false;
 
@@ -3136,9 +3136,9 @@ namespace ejpClient
 						 "\nError: " + ex.Message);
 
                 if(saveOnClose)
-                    MessageBox.Show("ƒAƒTƒCƒ“ƒƒ“ƒg‚ğ•Û‘¶‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B", "•Û‘¶‚Ì¸”s", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã‚’ä¿å­˜ã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ä¿å­˜ã®å¤±æ•—", MessageBoxButton.OK, MessageBoxImage.Error);
                 else
-                    MessageBox.Show("ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ğ•Â‚¶‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚’é–‰ã˜ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Error);
                 
                 return false;
             }
@@ -3184,8 +3184,8 @@ namespace ejpClient
             {
                 if (this._currentWorkingAssingment.IsPersisted == false)
                 {
-                    MessageBox.Show("•Ê‚ÌƒAƒTƒCƒ“ƒƒ“ƒg‚ğƒ}[ƒW‚·‚é‘O‚ÉCƒAƒTƒCƒ“ƒƒ“ƒg‚ğ•Û‘¶‚µ‚Ä‚­‚¾‚³‚¢B",
-                        "ƒGƒ‰[",MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("åˆ¥ã®ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã‚’ãƒãƒ¼ã‚¸ã™ã‚‹å‰ã«ï¼Œã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã‚’ä¿å­˜ã—ã¦ãã ã•ã„ã€‚",
+                        "ã‚¨ãƒ©ãƒ¼",MessageBoxButton.OK, MessageBoxImage.Information);
                     return;
                 }
                 List<ejpStudy> importedStudies = this._currentWorkingAssingment.Import(targetPath);
@@ -3216,8 +3216,8 @@ namespace ejpClient
                     this._currentXpsDocumentViewer.HasInputFocus = true;
                 }
                 else
-                    MessageBox.Show("“Ç‚İ‚à‚¤‚Æ‚µ‚½ƒAƒTƒCƒ“ƒƒ“ƒg‚ÍˆÈ‘O‚©‚ç‚±‚ÌƒAƒTƒCƒ“ƒƒ“ƒg‚ÉŠÜ‚Ü‚ê‚Ä‚¢‚éB", 
-                        "¸”s", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("èª­ã¿è¾¼ã‚‚ã†ã¨ã—ãŸã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã¯ä»¥å‰ã‹ã‚‰ã“ã®ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã«å«ã¾ã‚Œã¦ã„ã‚‹ã€‚", 
+                        "å¤±æ•—", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             catch (Exception ex)
             {
@@ -3228,7 +3228,7 @@ namespace ejpClient
 						 "\nTarget Path: " + targetPath +
 						 "\nError: " + ex.Message);
 
-                MessageBox.Show("ƒAƒTƒCƒ“ƒƒ“ƒg‚ğ“Ç‚İ‚à‚¤‚Æ‚µ‚½‚ç¸”s‚µ‚Ü‚µ‚½B\n"+ex.Message, "¸”s", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ã‚¢ã‚µã‚¤ãƒ³ãƒ¡ãƒ³ãƒˆã‚’èª­ã¿è¾¼ã‚‚ã†ã¨ã—ãŸã‚‰å¤±æ•—ã—ã¾ã—ãŸã€‚\n"+ex.Message, "å¤±æ•—", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -3381,7 +3381,7 @@ namespace ejpClient
                 if (study.KnowledgeMaps.Count < 2)
                 {
                     TabItem t = new TabItem();
-                    t.ToolTip = "V‚µ‚¢ƒiƒŒƒbƒWƒ}ƒbƒv";
+                    t.ToolTip = "æ–°ã—ã„ãƒŠãƒ¬ãƒƒã‚¸ãƒãƒƒãƒ—";
                     t.Name = "newKMTab";
                     t.Tag = study.MetaData.Id;
                     t.MouseLeftButtonUp += delegate(object sender, MouseButtonEventArgs e)
@@ -3403,7 +3403,7 @@ namespace ejpClient
                 if (study.Reports.Count < 2)
                 {
                     TabItem t = new TabItem();
-                    t.ToolTip = "V‚µ‚¢ƒŒƒ|[ƒg";
+                    t.ToolTip = "æ–°ã—ã„ãƒ¬ãƒãƒ¼ãƒˆ";
                     t.Name = "newReportTab";
                     t.Tag = study.MetaData.Id;
                     t.MouseLeftButtonUp += delegate(object sender, MouseButtonEventArgs e)
@@ -3440,7 +3440,7 @@ namespace ejpClient
 				TabItem t = new TabItem();
                 t.Tag = study.MetaData.Id;
 
-                TextBlock headerT = new TextBlock { Text = "ƒiƒŒƒbƒWƒ}ƒbƒv " + kmCounter.ToString(), Tag = t, AllowDrop=true };
+                TextBlock headerT = new TextBlock { Text = "ãƒŠãƒ¬ãƒƒã‚¸ãƒãƒƒãƒ— " + kmCounter.ToString(), Tag = t, AllowDrop=true };
                 headerT.DragEnter += new DragEventHandler(headerT_PreviewDragEnter);
                 headerT.MouseLeftButtonUp += new MouseButtonEventHandler(KM_GotFocus);
                 t.Header = headerT;
@@ -3614,7 +3614,7 @@ namespace ejpClient
 				TabItem t = new TabItem();
                 t.Tag = study.MetaData.Id;
 
-                TextBlock headerT = new TextBlock { Text = "ƒŒƒ|[ƒg " + repCounter.ToString(), Tag = t, AllowDrop = true };
+                TextBlock headerT = new TextBlock { Text = "ãƒ¬ãƒãƒ¼ãƒˆ " + repCounter.ToString(), Tag = t, AllowDrop = true };
                 headerT.DragEnter += new DragEventHandler(headerT_PreviewDragEnter);
                 headerT.MouseLeftButtonUp += new MouseButtonEventHandler(Report_GotFocus);
                 t.Header = headerT;
@@ -3823,9 +3823,9 @@ namespace ejpClient
 			this._tb_KnowledgeMaps.Items.Clear();
 			this._tb_XpsDocumentsAndReports.Items.Clear();
             this.UnCheckEntireToolbar();
-            this._M_ML_ColorSwatchButton.SetCurrentColor(this._documentAreaMarkerColorsList["Ô"]);
-            this._M_PL_ColorSwatchButton.SetCurrentColor(this._documentAreaPenColorsList["Ô"]);
-            this._M_km_ColorSwatchButton.SetCurrentColor(this._kmAreaColorsList["Ô"]);
+            this._M_ML_ColorSwatchButton.SetCurrentColor(this._documentAreaMarkerColorsList["èµ¤"]);
+            this._M_PL_ColorSwatchButton.SetCurrentColor(this._documentAreaPenColorsList["èµ¤"]);
+            this._M_km_ColorSwatchButton.SetCurrentColor(this._kmAreaColorsList["èµ¤"]);
             this._previousKmTool = Tool.Select;
 
             this.SetToolBoxState(ToolBoxState.None);
@@ -3839,11 +3839,11 @@ namespace ejpClient
         {
             string versionPart = "MEET eJournalPlus 1.0.0 ";
             if (this._currentWorkingAssingment == null)
-                this.Title = versionPart + " - ƒtƒ@ƒCƒ‹–¢ì¬";
+                this.Title = versionPart + " - ãƒ•ã‚¡ã‚¤ãƒ«æœªä½œæˆ";
             else if (this._currentWorkingAssingment.IsPersisted)
                 this.Title = versionPart + this._currentWorkingAssingment.FilePackagePath;
             else
-                this.Title = versionPart + "’ˆÓF‚Ü‚¾1“x‚à•Û‘¶‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ";
+                this.Title = versionPart + "æ³¨æ„ï¼šã¾ã 1åº¦ã‚‚ä¿å­˜ã•ã‚Œã¦ã„ã¾ã›ã‚“";
         }
 
 		private string GetOpenFileName(string extensionMask, string dialogTitle)
@@ -4089,8 +4089,8 @@ namespace ejpClient
         private bool ReqConsent_SwitchToCommentAMode()
         {
             if (MessageBox.Show(
-                    "ƒRƒƒ“ƒgƒ‚[ƒh‚ÉØ‚è‘Ö‚¦‚Ü‚·B\n\n‹X‚µ‚¢‚Å‚·‚©H", 
-                    "ƒ‚[ƒh‚ª•Ï‚í‚é", 
+                    "ã‚³ãƒ¡ãƒ³ãƒˆãƒ¢ãƒ¼ãƒ‰ã«åˆ‡ã‚Šæ›¿ãˆã¾ã™ã€‚\n\nå®œã—ã„ã§ã™ã‹ï¼Ÿ", 
+                    "ãƒ¢ãƒ¼ãƒ‰ãŒå¤‰ã‚ã‚‹", 
                     MessageBoxButton.YesNo, 
                     MessageBoxImage.Question) == MessageBoxResult.Yes)
                 return true;
@@ -4106,8 +4106,8 @@ namespace ejpClient
         private bool ReqConsent_SwitchToNormalAMode()
         {
             if (MessageBox.Show(
-                    "•’Ê‚Ìƒ‚[ƒh‚ÉØ‚è‘Ö‚¦‚é‚ÆA\nƒRƒƒ“ƒg‚Í‘S‚Ä‚È‚­‚È‚è‚Ü‚·I\n\n‹X‚µ‚¢‚Å‚·‚©H",
-                    "ƒ‚[ƒh‚ª•Ï‚í‚é",
+                    "æ™®é€šã®ãƒ¢ãƒ¼ãƒ‰ã«åˆ‡ã‚Šæ›¿ãˆã‚‹ã¨ã€\nã‚³ãƒ¡ãƒ³ãƒˆã¯å…¨ã¦ãªããªã‚Šã¾ã™ï¼\n\nå®œã—ã„ã§ã™ã‹ï¼Ÿ",
+                    "ãƒ¢ãƒ¼ãƒ‰ãŒå¤‰ã‚ã‚‹",
                     MessageBoxButton.YesNo,
                     MessageBoxImage.Question) == MessageBoxResult.Yes)
                 return true;
@@ -4344,7 +4344,7 @@ namespace ejpClient
         private void OnRemoveStudyFromAssignment(object sender, RoutedEventArgs e)
         {
             if (
-                MessageBox.Show("ƒXƒ^ƒbƒfƒB‚ğíœ‚µ‚Ü‚·‚©H",
+                MessageBox.Show("ã‚¹ã‚¿ãƒƒãƒ‡ã‚£ã‚’å‰Šé™¤ã—ã¾ã™ã‹ï¼Ÿ",
                 "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 this._currentWorkingAssingment.RemoveStudy(

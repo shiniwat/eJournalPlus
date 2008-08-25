@@ -288,7 +288,7 @@ namespace SiliconStudio.Meet.EjpControls
                     this._l_LinkPercentage.Content = p2.ToString() +"%";
             }
 
-            this._l_MojiCount.Content = total.ToString() + "•¶š";
+            this._l_MojiCount.Content = total.ToString() + "æ–‡å­—";
             
         }
 
@@ -431,8 +431,8 @@ namespace SiliconStudio.Meet.EjpControls
             {
                 if (this.IsEditingLocked)
                 {
-                    MessageBox.Show("‚±‚ÌƒŠƒ|[ƒg‚ÍAŒ»İ•ÒWo—ˆ‚Ü‚¹‚ñ",
-                        "ƒŒƒ|[ƒg‚ªƒƒbƒN‚³‚ê‚Ä‚¢‚éB", MessageBoxButton.OK, MessageBoxImage.Stop);
+                    MessageBox.Show("ã“ã®ãƒªãƒãƒ¼ãƒˆã¯ã€ç¾åœ¨ç·¨é›†å‡ºæ¥ã¾ã›ã‚“",
+                        "ãƒ¬ãƒãƒ¼ãƒˆãŒãƒ­ãƒƒã‚¯ã•ã‚Œã¦ã„ã‚‹ã€‚", MessageBoxButton.OK, MessageBoxImage.Stop);
                     return;
                 }
 
@@ -474,8 +474,8 @@ namespace SiliconStudio.Meet.EjpControls
             catch (Exception ex)
             {
                 //TODO: Fix message...
-                MessageBox.Show("‚±‚ÌˆÊ’u‚Éˆø—po—ˆ‚Ü‚¹‚ñ‚Å‚µ‚½B‚à‚¤ˆê“x‘¼‚ÌˆÊ’u‚Å‚µ‚ÄŒ©‚Ä‰º‚³‚¢B\n\n"
-                    + "i•Ê‚Ìˆø—p‚Ìã‚É‚Í‘Ê–Ú‚Å‚·‚æj", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ã“ã®ä½ç½®ã«å¼•ç”¨å‡ºæ¥ã¾ã›ã‚“ã§ã—ãŸã€‚ã‚‚ã†ä¸€åº¦ä»–ã®ä½ç½®ã§è©¦ã—ã¦è¦‹ã¦ä¸‹ã•ã„ã€‚\n\n"
+                    + "ï¼ˆåˆ¥ã®å¼•ç”¨ã®ä¸Šã«ã¯é§„ç›®ã§ã™ã‚ˆï¼‰", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 		}
 
@@ -529,7 +529,7 @@ namespace SiliconStudio.Meet.EjpControls
                             {
                                 tr.Text = uriIw.Explanation;
                                 Hyperlink h = new Hyperlink(tp1, tp2);
-                                h.ToolTip = new Label() { Content = "ƒRƒ“ƒgƒ[ƒ‹ƒ{ƒ^ƒ“{ƒNƒŠƒbƒN‚ÅƒŠƒ“ƒNæ‚ğ•\¦‚µ‚Ü‚·" };
+                                h.ToolTip = new Label() { Content = "ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒœã‚¿ãƒ³ï¼‹ã‚¯ãƒªãƒƒã‚¯ã§ãƒªãƒ³ã‚¯å…ˆã‚’è¡¨ç¤ºã—ã¾ã™" };
                                 h.NavigateUri = new Uri(uriIw.Url);
                                 h.Foreground = Brushes.Blue;
                                 h.RequestNavigate += new RequestNavigateEventHandler(h_Click);
@@ -544,7 +544,7 @@ namespace SiliconStudio.Meet.EjpControls
 								   "\nReport ID: " + this._reportObject.Id.ToString() +
 								   "\nError: " + ex.Message);
 
-                                MessageBox.Show("ƒŠƒ“ƒN‚ğì¬‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B\nUrl‚ğ³‚µ‚­“ü—Í‚µ‚½‚©‚Ç‚¤‚©‚ğŠm‚©‚ß‚½ã‚à‚¤ˆê“x‚µ‚Ä‚İ‚Ä‚­‚¾‚³‚¢B", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                MessageBox.Show("ãƒªãƒ³ã‚¯ã‚’ä½œæˆã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚\nUrlã‚’æ­£ã—ãå…¥åŠ›ã—ãŸã‹ã©ã†ã‹ã‚’ç¢ºã‹ã‚ãŸä¸Šã‚‚ã†ä¸€åº¦è©¦ã—ã¦ã¿ã¦ãã ã•ã„ã€‚", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                             }
                         }
                         else
@@ -565,7 +565,7 @@ namespace SiliconStudio.Meet.EjpControls
 								   "\nReport ID: " + this._reportObject.Id.ToString() +
 								   "\nError: " + ex.Message);
 
-                                MessageBox.Show("ƒŠƒ“ƒN‚ğì¬‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B\nUrl‚ğ³‚µ‚­“ü—Í‚µ‚½‚©‚Ç‚¤‚©‚ğŠm‚©‚ß‚½ã‚à‚¤ˆê“x‚µ‚Ä‚İ‚Ä‚­‚¾‚³‚¢B", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                MessageBox.Show("ãƒªãƒ³ã‚¯ã‚’ä½œæˆã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚\nUrlã‚’æ­£ã—ãå…¥åŠ›ã—ãŸã‹ã©ã†ã‹ã‚’ç¢ºã‹ã‚ãŸä¸Šã‚‚ã†ä¸€åº¦è©¦ã—ã¦ã¿ã¦ãã ã•ã„ã€‚", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                             }
                         }
                         tr.Select(tp1, tp2);
@@ -684,7 +684,7 @@ namespace SiliconStudio.Meet.EjpControls
 								   "\nReport ID: " + this._reportObject.Id.ToString() +
 								   "\nError: " + ex.Message);
 
-                MessageBox.Show("ƒŒƒ|[ƒg‚ğ‘‚«o‚·‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ãƒ¬ãƒãƒ¼ãƒˆã‚’æ›¸ãå‡ºã™ã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -707,7 +707,7 @@ namespace SiliconStudio.Meet.EjpControls
 								   "\nReport ID: " + this._reportObject.Id.ToString() +
 								   "\nError: " + ex.Message);
 
-                MessageBox.Show("ƒŒƒ|[ƒg‚ğHTML‰»‚µ‚½Û‚É¸”s‚µ‚Ü‚µ‚½B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ãƒ¬ãƒãƒ¼ãƒˆã‚’HTMLåŒ–ã—ãŸéš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Error);
                 return "";
             }
         }
@@ -745,7 +745,7 @@ namespace SiliconStudio.Meet.EjpControls
 								   "\nReport ID: " + this._reportObject.Id.ToString() +
 								   "\nError: " + ex.Message);
 
-                MessageBox.Show("ˆóü‚·‚éÛ‚É¸”s‚µ‚Ü‚µ‚½B", "ƒGƒ‰[", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("å°åˆ·ã™ã‚‹éš›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "ã‚¨ãƒ©ãƒ¼", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
