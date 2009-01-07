@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://meet.ejs/services" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="http://meet.ejs/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://meet.ejs/services/Imports">
+      <xsd:import namespace="http://meet.ejs/services" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/EjsPublicService" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/EjsPublicService.AssignmentOp" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/EjsPublicService.CourseOp" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/EjsPublicService.UserOp" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="EjsPublicService_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_Authenticate_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q1:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_UpdateUserPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_UpdateUserPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_UpdateUserPassword_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q2:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_InvalidateToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:InvalidateToken" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_InvalidateToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InvalidateTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_InvalidateToken_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q3:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAllAssignments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAssignments" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAllAssignments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllAssignmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAllAssignments_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q4:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_SaveAndUploadAssignment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAndUploadAssignment" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_SaveAndUploadAssignment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAndUploadAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_SaveAndUploadAssignment_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q5:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_SaveStudyMetaData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStudyMetaData" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_SaveStudyMetaData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStudyMetaDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_SaveStudyMetaData_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q6:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAllCourseDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCourseDocuments" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAllCourseDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCourseDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAllCourseDocuments_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q7:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAssignment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssignment" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAssignment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAssignment_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q8:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_RegisterNewUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewUser" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_RegisterNewUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_RegisterNewUser_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q9:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAllRegisteredUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRegisteredUsers" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAllRegisteredUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRegisteredUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAllRegisteredUsers_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q10:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetRegisteredCoursesForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegisteredCoursesForUser" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetRegisteredCoursesForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRegisteredCoursesForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetRegisteredCoursesForUser_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q11:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_AddDocumentToCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDocumentToCourse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_AddDocumentToCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDocumentToCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_AddDocumentToCourse_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q12:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetCourseDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourseDocument" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetCourseDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourseDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetCourseDocument_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q13:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAllRegisteredCourses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRegisteredCourses" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAllRegisteredCourses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRegisteredCoursesResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_GetAllRegisteredCourses_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q14:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_RegisterNewCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewCourse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_RegisterNewCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_RegisterNewCourse_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q15:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_RegisterUserToCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserToCourse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_RegisterUserToCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserToCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_RegisterUserToCourse_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q16:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_DeleteAssignment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAssignment" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_DeleteAssignment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAssignmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="EjsPublicService_DeleteAssignment_ejsFailureReportFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/EjsPublicService" name="detail" element="q17:ejsFailureReport" />
+  </wsdl:message>
+  <wsdl:portType name="EjsPublicService">
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/Authenticate" message="tns:EjsPublicService_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/AuthenticateResponse" message="tns:EjsPublicService_Authenticate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/AuthenticateejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_Authenticate_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/UpdateUserPassword" message="tns:EjsPublicService_UpdateUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/UpdateUserPasswordResponse" message="tns:EjsPublicService_UpdateUserPassword_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/UpdateUserPasswordejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_UpdateUserPassword_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InvalidateToken">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/InvalidateToken" message="tns:EjsPublicService_InvalidateToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/InvalidateTokenResponse" message="tns:EjsPublicService_InvalidateToken_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/InvalidateTokenejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_InvalidateToken_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAssignments">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAllAssignments" message="tns:EjsPublicService_GetAllAssignments_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAllAssignmentsResponse" message="tns:EjsPublicService_GetAllAssignments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAllAssignmentsejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_GetAllAssignments_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAndUploadAssignment">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/SaveAndUploadAssignment" message="tns:EjsPublicService_SaveAndUploadAssignment_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/SaveAndUploadAssignmentResponse" message="tns:EjsPublicService_SaveAndUploadAssignment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/SaveAndUploadAssignmentejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_SaveAndUploadAssignment_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveStudyMetaData">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/SaveStudyMetaData" message="tns:EjsPublicService_SaveStudyMetaData_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/SaveStudyMetaDataResponse" message="tns:EjsPublicService_SaveStudyMetaData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/SaveStudyMetaDataejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_SaveStudyMetaData_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCourseDocuments">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAllCourseDocuments" message="tns:EjsPublicService_GetAllCourseDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAllCourseDocumentsResponse" message="tns:EjsPublicService_GetAllCourseDocuments_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAllCourseDocumentsejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_GetAllCourseDocuments_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignment">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAssignment" message="tns:EjsPublicService_GetAssignment_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAssignmentResponse" message="tns:EjsPublicService_GetAssignment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAssignmentejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_GetAssignment_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewUser">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/RegisterNewUser" message="tns:EjsPublicService_RegisterNewUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/RegisterNewUserResponse" message="tns:EjsPublicService_RegisterNewUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/RegisterNewUserejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_RegisterNewUser_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegisteredUsers">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAllRegisteredUsers" message="tns:EjsPublicService_GetAllRegisteredUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAllRegisteredUsersResponse" message="tns:EjsPublicService_GetAllRegisteredUsers_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAllRegisteredUsersejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_GetAllRegisteredUsers_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegisteredCoursesForUser">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/GetRegisteredCoursesForUser" message="tns:EjsPublicService_GetRegisteredCoursesForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/GetRegisteredCoursesForUserResponse" message="tns:EjsPublicService_GetRegisteredCoursesForUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/GetRegisteredCoursesForUserejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_GetRegisteredCoursesForUser_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDocumentToCourse">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/AddDocumentToCourse" message="tns:EjsPublicService_AddDocumentToCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/AddDocumentToCourseResponse" message="tns:EjsPublicService_AddDocumentToCourse_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/AddDocumentToCourseejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_AddDocumentToCourse_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseDocument">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/GetCourseDocument" message="tns:EjsPublicService_GetCourseDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/GetCourseDocumentResponse" message="tns:EjsPublicService_GetCourseDocument_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/GetCourseDocumentejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_GetCourseDocument_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegisteredCourses">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAllRegisteredCourses" message="tns:EjsPublicService_GetAllRegisteredCourses_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAllRegisteredCoursesResponse" message="tns:EjsPublicService_GetAllRegisteredCourses_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/GetAllRegisteredCoursesejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_GetAllRegisteredCourses_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewCourse">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/RegisterNewCourse" message="tns:EjsPublicService_RegisterNewCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/RegisterNewCourseResponse" message="tns:EjsPublicService_RegisterNewCourse_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/RegisterNewCourseejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_RegisterNewCourse_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUserToCourse">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/RegisterUserToCourse" message="tns:EjsPublicService_RegisterUserToCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/RegisterUserToCourseResponse" message="tns:EjsPublicService_RegisterUserToCourse_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/RegisterUserToCourseejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_RegisterUserToCourse_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAssignment">
+      <wsdl:input wsaw:Action="http://meet.ejs/services/EjsPublicService/DeleteAssignment" message="tns:EjsPublicService_DeleteAssignment_InputMessage" />
+      <wsdl:output wsaw:Action="http://meet.ejs/services/EjsPublicService/DeleteAssignmentResponse" message="tns:EjsPublicService_DeleteAssignment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://meet.ejs/services/EjsPublicService/DeleteAssignmentejsFailureReportFault" name="ejsFailureReportFault" message="tns:EjsPublicService_DeleteAssignment_ejsFailureReportFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
