@@ -1,0 +1,19 @@
+﻿<UserControl x:Uid="UserControl_1" x:Class="SiliconStudio.Meet.EjpControls.ReportQuoteBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="Auto" Width="Auto" Margin="25,16,25,16">
+    <Grid x:Uid="Grid_1">
+        <Grid x:Uid="Grid_2" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Uid="RowDefinition_1" Height="20"/>
+                <RowDefinition x:Uid="RowDefinition_2" Height="*"/>
+            </Grid.RowDefinitions>
+            <Rectangle x:Uid="Rectangle_1" Fill="#FFFFFFFF" Stroke="#FF000000" Grid.Row="0" Grid.RowSpan="2"/>
+            <Rectangle x:Uid="_r_ColorStripe" Name="_r_ColorStripe" Fill="#FFFF0000" Stroke="#FF000000" Grid.Row="0" RadiusX="0" RadiusY="0"/>
+            <TextBlock x:Uid="_tb_Content" x:Name="_tb_Content" Margin="8,8,8,30" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" ScrollViewer.CanContentScroll="True" 
+                       Grid.Row="1" Grid.RowSpan="2" Text="Content" />
+            <Label x:Uid="_l_SourceLabel" x:Name="_l_SourceLabel" HorizontalAlignment="Right" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="Auto" Height="Auto" 
+                   Content="Source: " Padding="0,0,0,0" Grid.Row="1"/> 
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,680 @@
+﻿<Window
+    x:Uid="Window_1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2006" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    xmlns:meet="clr-namespace:SiliconStudio.Meet.EjpControls;assembly=EjpControls" 
+    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+    x:Class="ejpClient.Window1" WindowState="Maximized"
+    Title="MEET eJournalPlus" Height="700" Width="1000" Closing="OnApplicationClosing"
+    PreviewMouseMove="OnMagnifierMove">
+    
+    <Window.Resources>
+
+        <BooleanToVisibilityConverter x:Uid="BooleanToVisibilityConverter_1" x:Key="BoolToVisConverter" />
+
+        <Style x:Uid="Style_1" TargetType="TabItem">
+            <Setter x:Uid="Setter_1" Property="BorderThickness" Value="3"/>
+            <Setter x:Uid="Setter_2" Property="Template">
+                <Setter.Value>
+                    <ControlTemplate x:Uid="ControlTemplate_1" TargetType="{x:Type TabItem}">
+                        <Border x:Uid="Border_1" HorizontalAlignment="Stretch" Padding="0,0,2,0" VerticalAlignment="Stretch">
+                            <Grid x:Uid="_template_TI_RootGrid" x:Name="_template_TI_RootGrid" AllowDrop="True" >
+                                <Grid x:Uid="Grid_1">
+                                    <Border x:Uid="TabHeaderBorder" x:Name="TabHeaderBorder" CornerRadius="3,3,0,0" Background="{StaticResource knowledgeMapTabBG}"
+                                           BorderBrush="#AA6094D3"
+                                           BorderThickness="1">
+                                    </Border>
+                                </Grid>
+                                <Border x:Uid="Border_2" BorderThickness="0" Padding="4,2,4,2">
+                                <ContentPresenter x:Uid="Content" x:Name="Content" ContentSource="Header" Margin="4,2,4,1"
+                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Border>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger x:Uid="Trigger_1" Property="IsSelected" Value="true">
+                                <Setter x:Uid="Setter_3" Property="Panel.ZIndex" Value="1"/>
+                                <Setter x:Uid="Setter_4" Property="Background" TargetName="TabHeaderBorder" Value="{StaticResource knowledgeMapTabBG_selected}"/>
+                            </Trigger>
+
+                            <Trigger x:Uid="Trigger_2" Property="Content" Value="{x:Null}">
+                                <Setter x:Uid="Setter_5" Property="Panel.ZIndex" Value="1"/>
+                                <Setter x:Uid="Setter_6" Property="Background" TargetName="TabHeaderBorder" Value="{StaticResource TabBG_createNew}"/>
+                                <Setter x:Uid="Setter_7" Property="Width" TargetName="TabHeaderBorder" Value="30"/>
+                            </Trigger>
+                            
+                            <MultiTrigger x:Uid="MultiTrigger_1">
+                                <MultiTrigger.Conditions>
+                                    <Condition x:Uid="Condition_1" Property="IsSelected" Value="true"/>
+                                    <Condition x:Uid="Condition_2" Property="TabStripPlacement" Value="Top"/>
+                                </MultiTrigger.Conditions>
+                                <Setter x:Uid="Setter_8" Property="Margin" Value="-2,-2,-2,-1"/>
+                            </MultiTrigger>
+                            <MultiTrigger x:Uid="MultiTrigger_2">
+                                <MultiTrigger.Conditions>
+                                    <Condition x:Uid="Condition_3" Property="IsSelected" Value="true"/>
+                                    <Condition x:Uid="Condition_4" Property="TabStripPlacement" Value="Bottom"/>
+                                </MultiTrigger.Conditions>
+                                <Setter x:Uid="Setter_9" Property="Margin" Value="-2,-1,-2,-2"/>
+                            </MultiTrigger>
+                            <MultiTrigger x:Uid="MultiTrigger_3">
+                                <MultiTrigger.Conditions>
+                                    <Condition x:Uid="Condition_5" Property="IsSelected" Value="true"/>
+                                    <Condition x:Uid="Condition_6" Property="TabStripPlacement" Value="Left"/>
+                                </MultiTrigger.Conditions>
+                                <Setter x:Uid="Setter_10" Property="Margin" Value="-2,-2,-1,-2"/>
+                            </MultiTrigger>
+                            <MultiTrigger x:Uid="MultiTrigger_4">
+                                <MultiTrigger.Conditions>
+                                    <Condition x:Uid="Condition_7" Property="IsSelected" Value="true"/>
+                                    <Condition x:Uid="Condition_8" Property="TabStripPlacement" Value="Right"/>
+                                </MultiTrigger.Conditions>
+                                <Setter x:Uid="Setter_11" Property="Margin" Value="-1,-2,-2,-2"/>
+                            </MultiTrigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Uid="Style_2" TargetType="{x:Type ToolTip}">
+            <Setter x:Uid="Setter_12" Property="OverridesDefaultStyle" Value="true"/>
+            <Setter x:Uid="Setter_13" Property="Template">
+                <Setter.Value>
+                    <ControlTemplate x:Uid="ControlTemplate_2" TargetType="{x:Type ToolTip}">
+                        <Grid x:Uid="Border" Name="Border" Background="Transparent" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                            <Rectangle x:Uid="Rectangle_1" Stroke="Black" StrokeThickness="0.7">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush x:Uid="LinearGradientBrush_1" StartPoint="0.5,0.0708979" EndPoint="0.5,1.2239">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStop x:Uid="GradientStop_1" Color="#FFFFFFFF" Offset="0"/>
+                                            <GradientStop x:Uid="GradientStop_2" Color="#FFCBCBCB" Offset="1"/>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <ContentPresenter x:Uid="ContentPresenter_1" Margin="7,0,7,0" HorizontalAlignment="Left" VerticalAlignment="Top" TextBlock.Foreground="Black" TextBlock.FontSize="11" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <DataTemplate x:Uid="DataTemplate_1" x:Key="StudyListDataTemplate">
+            <Grid x:Uid="Grid_2" AllowDrop="True" Tag="{Binding Path=IdString}" Background="{x:Null}"
+                  DragEnter="_LB_StudyList_DragOver" Drop="_LB_StudyList_DragOver">
+                <Grid.ContextMenu>
+                    <ContextMenu x:Uid="dt_mi_ContextMenu" Name="dt_mi_ContextMenu" Opened="OnStudyItemContextMenuOpen">
+                        <MenuItem x:Uid="dt_mi_AddStudy" Header="スタディを追加" Name="dt_mi_AddStudy" Click="_M_meet_OnAddNewStudy" />
+                        <MenuItem x:Uid="dt_mi_RenameStudy" Header="スタディ名の変更" Name="dt_mi_RenameStudy" Click="OnRenameStudy" />
+                        <MenuItem x:Uid="dt_mi_DeleteStudy" Header="スタディの削除" Name="dt_mi_DeleteStudy" Click="OnRemoveStudyFromAssignment" /> 
+                    </ContextMenu>
+                </Grid.ContextMenu>
+                
+                <Rectangle x:Uid="dt_stBack" Fill="{DynamicResource StudyIcon}" x:Name="dt_stBack"/>
+                <Rectangle x:Uid="dt_stBackSel" Fill="{DynamicResource StudyIconSelected}" x:Name="dt_stBackSel">
+                    
+                    <Rectangle.Style>
+                        <Style x:Uid="Style_3">
+                            <Style.Triggers>
+                                <DataTrigger x:Uid="DataTrigger_1" Binding="{Binding Path=IsSelected, 
+                                                               RelativeSource={
+                                                                    RelativeSource Mode=FindAncestor,
+                                                                    AncestorType={x:Type ListBoxItem} }}"
+                                             Value="False">
+                                    <Setter x:Uid="Setter_14" Property="Rectangle.Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Rectangle.Style>
+                </Rectangle>
+                <TextBlock x:Uid="_l_StudyName" TextWrapping="Wrap" Margin="5,2,5,2" 
+                           Padding="0,1,0,0" x:Name="_l_StudyName"
+                           Text="{Binding Path=Title}"/>
+                
+                <TextBox x:Uid="dt_StudyNameTB" Name="dt_StudyNameTB" Margin="5,-50,5,0" VerticalAlignment="Top"
+                           Padding="0,1,0,0" FontSize="9" Text="{Binding Path=Title, Mode=TwoWay}" />
+                
+            </Grid>
+            <DataTemplate.Triggers>
+                <EventTrigger x:Uid="EventTrigger_1" SourceName="dt_mi_RenameStudy" RoutedEvent="MenuItem.Click">
+                    <BeginStoryboard x:Uid="BeginStoryboard_1">
+                        <Storyboard x:Uid="Storyboard_1" Storyboard.TargetName="dt_StudyNameTB" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                            <ThicknessAnimation x:Uid="ThicknessAnimation_1" To="5,2,5,2" Duration="0:0:0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger x:Uid="EventTrigger_2" SourceName="dt_StudyNameTB" RoutedEvent="TextBox.LostFocus">
+                    <BeginStoryboard x:Uid="BeginStoryboard_2">
+                        <Storyboard x:Uid="Storyboard_2" Storyboard.TargetName="dt_StudyNameTB" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                            <ThicknessAnimation x:Uid="ThicknessAnimation_2" To="5,-50,5,0" Duration="0:0:0.5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <Trigger x:Uid="Trigger_3" Property="IsMouseOver" Value="True">
+                    <Setter x:Uid="Setter_15" Property="Fill" Value="{StaticResource StudyIconMouseOver}" TargetName="dt_stBack" />
+                </Trigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+    </Window.Resources>
+    
+    <Grid x:Uid="Grid_3">
+    <Grid x:Uid="LayoutRoot" x:Name="LayoutRoot" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition x:Uid="ColumnDefinition_1" Width="88"/>
+			<ColumnDefinition x:Uid="ColumnDefinition_2" Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition x:Uid="RowDefinition_1" Height="54"/>
+			<RowDefinition x:Uid="RowDefinition_2" Height="*"/>
+            <RowDefinition x:Uid="RowDefinition_3" Height="30"/>
+		</Grid.RowDefinitions>
+
+        
+        
+        <Rectangle x:Uid="Rectangle_2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                   Fill="{DynamicResource TopStripBGBrush}" />
+        <Image x:Uid="Image_1" Width="153" Height="32" HorizontalAlignment="Left" Margin="70,0,0,7" VerticalAlignment="Bottom" 
+               Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Source="pack://application:,,,/imgData/logo_name_0918.png" />
+
+        <Menu x:Uid="_m_MainMenu" x:Name="_m_MainMenu" VerticalAlignment="Top" Height="40" Width="0" HorizontalContentAlignment="Left" 
+              VerticalContentAlignment="Center" d:LayoutOverrides="GridBox">
+            <MenuItem x:Uid="topmenuItem" x:Name="topmenuItem" Width="Auto" Height="Auto" VerticalContentAlignment="Center" Header="" 
+                      HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Padding="13,10,0,10">
+                <!--Start new-->
+                <MenuItem x:Uid="MenuItem_1" VerticalContentAlignment="Center" VerticalAlignment="Center" Click="_M_meet_OnStartNewAssignment">
+                    <MenuItem.Header>
+                        <TextBlock x:Uid="TextBlock_1" Text="新規作成" VerticalAlignment="Center" />
+                    </MenuItem.Header>
+                    <MenuItem.Icon>
+                        <Image x:Uid="Image_2" Height="40" Source="pack://application:,,,/imgData/01-assignment_new.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator x:Uid="Separator_1" />
+                
+                <!--Open Assignment-->
+                <MenuItem x:Uid="MenuItem_2" VerticalContentAlignment="Center" Click="_M_meet_OnOpenLocalAssignment">
+                    <MenuItem.Header>
+                        <TextBlock x:Uid="TextBlock_2" Text="開く" VerticalAlignment="Center" MouseLeftButtonUp="_M_meet_DefaultOpenCommand" />
+                    </MenuItem.Header>
+                    <MenuItem.Icon>
+                        <Image x:Uid="Image_3" Height="40" Source="pack://application:,,,/imgData/05-opening.png"/>
+                    </MenuItem.Icon>
+                    <MenuItem x:Uid="MenuItem_3" Header="このコンピュータのファイル（ふつうに開く）" Click="_M_meet_OnOpenLocalAssignment"/>
+                    <MenuItem x:Uid="_menuI_OpenLocalCA" Header="このコンピュータのファイル（コメントモードで開く）" IsEnabled="True" x:Name="_menuI_OpenLocalCA" Click="_M_meet_OnOpenLocalCommentedAssignmentEX"/>
+                    <MenuItem x:Uid="_menuI_OpenAssignmentOnline" Header="公開サーバのファイル" IsEnabled="False" x:Name="_menuI_OpenAssignmentOnline" Click="_M_meet_OnOpenEjsAssignment"/>
+                </MenuItem>
+                <Separator x:Uid="Separator_2" />
+                
+                <!--Save Assignment-->
+                    <MenuItem x:Uid="_menuI_Save" VerticalContentAlignment="Center" x:Name="_menuI_Save" Click="_M_meet_OnSaveAssignment">
+                        <MenuItem.Header>
+                            <TextBlock x:Uid="TextBlock_3" Text="上書き保存" VerticalAlignment="Center" />
+                    </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <Image x:Uid="Image_4" Height="40" Source="pack://application:,,,/imgData/04-save.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator x:Uid="Separator_3" />
+                    <MenuItem x:Uid="_menuI_SaveAs" VerticalContentAlignment="Center" x:Name="_menuI_SaveAs" Click="_M_meet_OnSaveAssignmentAs">
+                        <MenuItem.Header>
+                            <TextBlock x:Uid="TextBlock_4" Text="名前を付けて保存" VerticalAlignment="Center" />
+                    </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <Image x:Uid="Image_5" Height="40" Source="pack://application:,,,/imgData/04-save.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                <Separator x:Uid="Separator_4" />
+                
+                <!--Publish-->
+                    <MenuItem x:Uid="_menuI_Publish" VerticalContentAlignment="Center" x:Name="_menuI_Publish">
+                        <MenuItem.Header>
+                            <TextBlock x:Uid="TextBlock_5" Text="公開" VerticalAlignment="Center" MouseLeftButtonUp="_M_meet_DefaultPublishCommand" />
+                    </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <Image x:Uid="Image_6" Height="40" Source="pack://application:,,,/imgData/05-opening.png"/>
+                        </MenuItem.Icon>
+                        <MenuItem x:Uid="_menuI_PublishToEJS" x:Name="_menuI_PublishToEJS" Click="_M_meet_OnPublishToEjs">
+                            <MenuItem.Header>
+                                <TextBlock x:Uid="TextBlock_6" Text="公開サーバに公開" VerticalAlignment="Center" />
+                        </MenuItem.Header>
+                            <MenuItem.Icon>
+                                <Image x:Uid="Image_7" Height="40" Source="pack://application:,,,/imgData/05-opening.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Uid="_menuI_PublishToWLS" IsEnabled="True" x:Name="_menuI_PublishToWLS" Click="_M_meet_OnPublishToWLS">
+                            <MenuItem.Header>
+                                <TextBlock x:Uid="TextBlock_7" Text="Live Spaceに公開" VerticalAlignment="Center" />
+                        </MenuItem.Header>
+                            <MenuItem.Icon>
+                                <Image x:Uid="Image_8" Height="40" Source="pack://application:,,,/imgData/wlp.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <Separator x:Uid="Separator_5" />
+                
+                <!--Import Assignments and Media-->
+                    <MenuItem x:Uid="_menuH_Import" VerticalContentAlignment="Center" x:Name="_menuH_Import">
+                        <MenuItem.Header>
+                            <TextBlock x:Uid="TextBlock_8" Text="読み込み" MouseLeftButtonUp="_M_meet_DefaultImportCommand" VerticalAlignment="Center" />
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <Image x:Uid="Image_9" Height="40" Source="pack://application:,,,/imgData/09-import_assignment.png"/>
+                        </MenuItem.Icon>
+                        <MenuItem x:Uid="MenuItem_4" Header="XPSドキュメントの読み込み" Click="_M_meet_OnAddXpsDocumentToStudy"/>
+                        <MenuItem x:Uid="MenuItem_5" IsEnabled="True" Header="このコンピュータのejpファイルの読み込み" Click="_M_meet_OnImportAssignment"/>
+                        <MenuItem x:Uid="_menuI_MergeFromEjs" x:Name="_menuI_MergeFromEjs" IsEnabled="True" 
+                                  Header="公開サーバ上のejpファイルの読み込み" Click="_M_meet_OnImportAssignmentFromEjs"/>
+                        <MenuItem x:Uid="MenuItem_6" IsEnabled="True" Header="ナレッジマップのガイドの読み込み" Click="_M_meet_OnSetKnowledgeMapGuide"/>
+                        <MenuItem x:Uid="MenuItem_7" IsEnabled="True" Header="ナレッジマップのガイドの削除" Click="_M_meet_OnClearKnowledgeMapGuide"/>
+                        <MenuItem x:Uid="MenuItem_8" IsEnabled="True" Header="画像ファイルの読み込み" Click="_M_meet_OnImportImage"/>
+                    </MenuItem>
+                    <Separator x:Uid="Separator_6" />
+
+                <!--Export-->
+                    <MenuItem x:Uid="_menuH_Export" x:Name="_menuH_Export" VerticalContentAlignment="Center">
+                        <MenuItem.Header>
+                            <TextBlock x:Uid="TextBlock_9" Text="書き出し" VerticalAlignment="Center" MouseLeftButtonUp="_M_meet_DefaultExportCommand" />
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <Image x:Uid="Image_10" Height="40" Source="pack://application:,,,/imgData/08-save_assignment.png"/>
+                        </MenuItem.Icon>
+                        <MenuItem x:Uid="_menuI_ExportReport" x:Name="_menuI_ExportReport" IsEnabled="False" Header="レポートの書き出し" Click="_M_meet_OnExportReport"/>
+                        <MenuItem x:Uid="_menuI_ExportKM" x:Name="_menuI_ExportKM" IsEnabled="False" Header="ナレッジマップの書き出し" Click="_M_meet_OnExportKnowledgeMap"/>
+                        <!--<MenuItem x:Name="_menuI_Export" Header="アサインメントを書き出す" Click="_M_meet_OnExportAssignment"/>-->
+                    </MenuItem>
+                    <Separator x:Uid="Separator_7" />
+
+                <!--Printing-->
+                    <MenuItem x:Uid="_menuI_Print" VerticalContentAlignment="Center" x:Name="_menuI_Print">
+                        <MenuItem.Header>
+                            <TextBlock x:Uid="TextBlock_10" Text="印刷" VerticalAlignment="Center" MouseLeftButtonUp="_M_meet_DefaultPrintCommand" />
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <Image x:Uid="Image_11" Height="40" Source="pack://application:,,,/imgData/10-print.png"/>
+                        </MenuItem.Icon>
+                        <MenuItem x:Uid="MenuItem_9" Header="レポートの印刷" Click="_M_meet_OnPrintReport"/>
+                        <MenuItem x:Uid="MenuItem_10" Header="Knowledge Mapの印刷" Click="_M_meet_OnPrintKnowledgeMap" IsEnabled="False" />
+                    </MenuItem>
+                    <Separator x:Uid="Separator_8" />
+                
+                <!--Settings-->
+                    <MenuItem x:Uid="_menuH_Settings" x:Name="_menuH_Settings" VerticalContentAlignment="Center" Click="_M_meet_OnOpenSettingsWindow">
+                        <MenuItem.Header>
+                            <TextBlock x:Uid="TextBlock_11" Text="機能設定" VerticalAlignment="Center" />
+                    </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <Image x:Uid="Image_12" Height="40" Source="pack://application:,,,/imgData/11-setting.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator x:Uid="Separator_9" />
+
+                    <!--About-->
+                    <MenuItem x:Uid="MenuItem_11" VerticalContentAlignment="Center" VerticalAlignment="Center" Click="_M_meet_OnShowAboutSplash">
+                        <MenuItem.Header>
+                            <TextBlock x:Uid="TextBlock_12" Text="このソフトウェアについて" VerticalAlignment="Center" />
+                    </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <Image x:Uid="Image_13" Height="40" Source="pack://application:,,,/imgData/about.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator x:Uid="Separator_10" />
+
+                    <!--Closing Assignments and Application-->
+                    <MenuItem x:Uid="_menuI_Close" VerticalContentAlignment="Center" x:Name="_menuI_Close">
+                        <MenuItem.Header>
+                            <TextBlock x:Uid="TextBlock_13" Text="閉じる" VerticalAlignment="Center" />
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <Image x:Uid="Image_14" Height="40" Source="pack://application:,,,/imgData/12-close.png"/>
+                        </MenuItem.Icon>
+                        <MenuItem x:Uid="_menuI_CloseCurrentFile" x:Name="_menuI_CloseCurrentFile" Header="このファイルを閉じる" Click="_M_meet_OnCloseAssignment"/>
+                        <MenuItem x:Uid="MenuItem_12" Header="eJournalPlusの終了" Click="_M_meet_OnStartQuit"/>
+                    </MenuItem>
+                    
+                
+                <!--Study Related-->
+                    <!--<MenuItem VerticalContentAlignment="Center" x:Name="_menuH_Study" >
+                        <MenuItem.Header>
+                            <TextBlock Text="スタディ" VerticalAlignment="Center" />
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <Image Height="40" Source="pack://application:,,,/imgData/03-study.png"/>
+                        </MenuItem.Icon>
+                        <MenuItem Header="スタディを追加" Click="_M_meet_OnAddNewStudy"/>
+                    </MenuItem>
+                    <Separator />
+                
+                    <MenuItem VerticalContentAlignment="Center" Height="50" HorizontalContentAlignment="Center" Click="_M_meet_OnStartQuit">
+                        <MenuItem.Header>
+                            <TextBlock Text="終了" VerticalAlignment="Center" />
+                        </MenuItem.Header>
+                        <MenuItem.Icon>
+                            <Image Height="40" Source="pack://application:,,,/imgData/close.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>-->
+            </MenuItem>
+        </Menu>
+
+        <Grid x:Uid="_g_MainTabGrid" x:Name="_g_MainTabGrid" Grid.Row="1" Margin="0,0,0,0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.Background>
+                <ImageBrush x:Uid="ImageBrush_1" Stretch="None" TileMode="Tile" Viewport="0,0,20,20" ViewportUnits="Absolute" 
+                           ImageSource="pack://application:,,,/imgData/bgtile.png" />
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Uid="ColumnDefinition_3" Width="*"/>
+                <ColumnDefinition x:Uid="ColumnDefinition_4" Width="*"/>
+            </Grid.ColumnDefinitions>
+            <GridSplitter x:Uid="_gS_MainDivider" x:Name="_gS_MainDivider" Margin="0,0,-6,0" Width="12">
+                <GridSplitter.Background>
+                    <LinearGradientBrush x:Uid="LinearGradientBrush_2" EndPoint="1,0.5" StartPoint="0,0.5">
+                        <GradientStop x:Uid="GradientStop_3" Color="#FFE1E1E1" Offset="0"/>
+                        <GradientStop x:Uid="GradientStop_4" Color="#FF405A7B" Offset="1"/>
+                        <GradientStop x:Uid="GradientStop_5" Color="#FF74A1D8" Offset="0.082"/>
+                        <GradientStop x:Uid="GradientStop_6" Color="#FFE7E7E7" Offset="0.067"/>
+                        <GradientStop x:Uid="GradientStop_7" Color="#FF74A1D8" Offset="0.904"/>
+                        <GradientStop x:Uid="GradientStop_8" Color="#FF73A1D8" Offset="0.913"/>
+                    </LinearGradientBrush>
+                </GridSplitter.Background>
+            </GridSplitter>
+            <Grid x:Uid="Grid_4" Margin="8,18,8,8">
+                <TabControl x:Uid="_tb_XpsDocumentsAndReports" x:Name="_tb_XpsDocumentsAndReports" Margin="0,0,4,0" Background="#AA6094D3" 
+                            BorderBrush="{x:Null}" IsSynchronizedWithCurrentItem="True">
+                </TabControl>
+            </Grid>
+            <Grid x:Uid="Grid_5" Margin="8,18,8,8" Grid.Column="1">
+                <TabControl x:Uid="_tb_KnowledgeMaps" x:Name="_tb_KnowledgeMaps" SelectionChanged="_km_OnSelectedKmChanged" 
+                            Margin="4,0,0,0" Background="#AA6094D3" BorderBrush="{x:Null}" 
+                            IsSynchronizedWithCurrentItem="True">
+                </TabControl>
+            </Grid>
+        </Grid>
+
+        <Image x:Uid="Image_15" MouseLeftButtonUp="Image_MouseLeftButtonUp" Width="81" Height="81" HorizontalAlignment="Left" 
+               Margin="-20,-20,0,0" VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" 
+               Grid.RowSpan="2" Source="pack://application:,,,/imgData/logo_0918.png" />
+        
+        <!--Main tool Box-->
+		<ToolBar x:Uid="_meet_MainToolBox" x:Name="_meet_MainToolBox" ToolBarTray.IsLocked="True" Margin="140,0,0,1" 
+                 Grid.Column="1" HorizontalContentAlignment="Right">
+			<ToolBar.Background>
+				<LinearGradientBrush x:Uid="LinearGradientBrush_3" EndPoint="0,1" StartPoint="0,0">
+					<GradientStop x:Uid="GradientStop_9" Color="#FF58B2F0" Offset="0"/>
+					<GradientStop x:Uid="GradientStop_10" Color="#FFA0CBEA" Offset="1"/>
+				</LinearGradientBrush>
+			</ToolBar.Background>
+
+                <meet:PenLineButton x:Uid="_M_PL_ColorSwatchButton" x:Name="_M_PL_ColorSwatchButton" Margin="4,2,0.3,2" Width="60" Height="41">
+                    <meet:PenLineButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_1">
+                            <Label x:Uid="Label_1" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">ペン</Label>
+                            <Label x:Uid="Label_2" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >右の▼ボタンから色を選びます</Label>
+                        </StackPanel>
+                    </meet:PenLineButton.ToolTip>
+                </meet:PenLineButton>
+                <meet:MarkerLineButton x:Uid="_M_ML_ColorSwatchButton" x:Name="_M_ML_ColorSwatchButton" Margin="0.3,2,0.3,2" Width="60" Height="41">
+                    <meet:MarkerLineButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_2">
+                            <Label x:Uid="Label_3" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">マーカー</Label>
+                            <Label x:Uid="Label_4" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >右の▼ボタンから色を選びます</Label>
+                        </StackPanel>
+                    </meet:MarkerLineButton.ToolTip>
+                </meet:MarkerLineButton>
+                <Separator x:Uid="Separator_11" />
+
+                <ToggleButton x:Uid="_mtb_Eraser" x:Name="_mtb_Eraser" Template="{DynamicResource MTB_eraser}" Margin="0.3,2,0.3,2" 
+                          Width="40" Height="41" Checked="_M_da_OnSetInputErase" Unchecked="_M_da_OnUnSetInputErase">
+                    <ToggleButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_3">
+                            <Label x:Uid="Label_5" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">消しゴム</Label>
+                            <TextBlock x:Uid="TextBlock_14" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >選択中，あるいはこれから選ぶ<LineBreak x:Uid="LineBreak_1"/>線やオブジェクトを削除します</TextBlock>
+                        </StackPanel>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+                <Button x:Uid="_mtb_Undo" x:Name="_mtb_Undo" Command="ApplicationCommands.Undo" CommandParameter="{x:Null}"
+                    Template="{DynamicResource MB_Undo}" Margin="0.3,2,0.3,2" Width="40" Height="41">
+                    <Button.ToolTip>
+                       <Label x:Uid="Label_6" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">元に戻す</Label>
+                    </Button.ToolTip>
+                </Button>
+                <Button x:Uid="_mtb_Redo" x:Name="_mtb_Redo" Command="ApplicationCommands.Redo" CommandParameter="{x:Null}" 
+                    Template="{DynamicResource MB_Redo}" Margin="0.3,2,0.3,2" Width="40" Height="41">
+                    <Button.ToolTip>
+                        <Label x:Uid="Label_7" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">やり直し</Label>
+                    </Button.ToolTip>
+                </Button>
+                <Separator x:Uid="Separator_12" />
+
+      <!--TextBox Tools-->
+            <!--TextBox Tool-->
+                <ToggleButton x:Uid="_mtb_Moji" x:Name="_mtb_Moji" Template="{DynamicResource MTB_moji}" Margin="0.3,2,0.3,2" Width="40" Height="41" Checked="_M_da_OnSetModeLabel" Unchecked="_M_km_OnSetMode_None">
+                <ToggleButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_4">
+                            <Label x:Uid="Label_8" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">テキストボックス</Label>
+                        </StackPanel>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+            <!--Decrease Font Size-->
+                <Button x:Uid="_mtb_Moji_S" x:Name="_mtb_Moji_S"  Template="{DynamicResource MB_Moji_S}" Margin="0.3,2,0.3,2" Width="40" Height="41" Click="_M_da_OnDecreaseEntityFontSize">
+                    <Button.ToolTip>
+                        <StackPanel x:Uid="StackPanel_5">
+                            <Label x:Uid="Label_9" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">文字の縮小</Label>
+                            <TextBlock x:Uid="TextBlock_15" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >ナレッジマップの<LineBreak x:Uid="LineBreak_2"/>文字を小さくします</TextBlock>
+                        </StackPanel>
+                    </Button.ToolTip>
+                </Button>
+            <!--Increase Font Size-->
+                <Button x:Uid="_mtb_Moji_L" x:Name="_mtb_Moji_L" Template="{DynamicResource MB_Moji_L}"  Margin="0.3,2,0.3,2" Width="40" Height="41" Click="_M_da_OnIncreaseEntityFontSize">
+                    <Button.ToolTip>
+                        <StackPanel x:Uid="StackPanel_6">
+                            <Label x:Uid="Label_10" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">文字の拡大</Label>
+                            <TextBlock x:Uid="TextBlock_16" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >ナレッジマップの<LineBreak x:Uid="LineBreak_3"/>文字を大きくします</TextBlock>
+                        </StackPanel>
+                    </Button.ToolTip>
+                </Button>
+                <Separator x:Uid="Separator_13" />
+            
+        <!--Drawing Tools-->
+            <!--FreeHand-->
+                <ToggleButton x:Uid="_mtb_Curve" x:Name="_mtb_Curve" Template="{DynamicResource MTB_curve}" Margin="0.3,2,0.3,2" Width="40" Height="41" Checked="_M_km_OnSetModeFreehand" Unchecked="_M_km_OnSetMode_None">
+                    <ToggleButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_7">
+                            <Label x:Uid="Label_11" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">フリーハンド</Label>
+                            <TextBlock x:Uid="TextBlock_17" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >自由に線を描きます</TextBlock>
+                        </StackPanel>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+            <!--Line Tool-->
+                <ToggleButton x:Uid="_mtb_Line" x:Name="_mtb_Line" Template="{DynamicResource MTB_line}" Margin="0.3,2,0.3,2" Width="40" Height="41" Checked="_M_km_OnSetModeLine" Unchecked="_M_km_OnSetMode_None">
+                    <ToggleButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_8">
+                            <Label x:Uid="Label_12" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">直線</Label>
+                            <TextBlock x:Uid="TextBlock_18" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >直線を描きます</TextBlock>
+                        </StackPanel>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+            <!--Single Arrow Tool-->
+                <ToggleButton x:Uid="_mtb_SingleArrow" x:Name="_mtb_SingleArrow" Template="{DynamicResource MTB_single_arrow}" Margin="0.3,2,0.3,2" Width="40" Height="41" Checked="_M_km_OnSetModeSimpleArrow" Unchecked="_M_km_OnSetMode_None">
+                    <ToggleButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_9">
+                            <Label x:Uid="Label_13" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">矢印</Label>
+                            <TextBlock x:Uid="TextBlock_19" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >矢印を描きます</TextBlock>
+                        </StackPanel>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+            <!--Double Arrow Tool-->
+                <ToggleButton x:Uid="_mtb_DoubleArrow" x:Name="_mtb_DoubleArrow" Template="{DynamicResource MTB_double_arrow}" Margin="0.3,2,0.3,2" Width="40" Height="41" Checked="_M_km_OnSetModeDoubleArrow" Unchecked="_M_km_OnSetMode_None">
+                    <ToggleButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_10">
+                            <Label x:Uid="Label_14" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">両端矢印</Label>
+                            <TextBlock x:Uid="TextBlock_20" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >両方の終端が矢印の<LineBreak x:Uid="LineBreak_4"/>線を描きます</TextBlock>
+                        </StackPanel>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+            <!--Square Tool-->
+                <ToggleButton x:Uid="_mtb_Square" x:Name="_mtb_Square" Template="{DynamicResource MTB_square}" Margin="0.3,2,0.3,2" Width="40" Height="41" Checked="_M_km_OnSetModeSquare" Unchecked="_M_km_OnSetMode_None">
+                    <ToggleButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_11">
+                            <Label x:Uid="Label_15" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">四角形描画</Label>
+                            <TextBlock x:Uid="TextBlock_21" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >四角形を描きます</TextBlock>
+                        </StackPanel>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+            <!--Circle Tool-->
+                <ToggleButton x:Uid="_mtb_Circle" x:Name="_mtb_Circle" Template="{DynamicResource MTB_circle}" Margin="0.3,2,0.3,2" Width="40" Height="41" Checked="_M_km_OnSetModeCircle" Unchecked="_M_km_OnSetMode_None">
+                     <ToggleButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_12">
+                            <Label x:Uid="Label_16" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">だ円描画</Label>
+                            <TextBlock x:Uid="TextBlock_22" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >円またはだ円<LineBreak x:Uid="LineBreak_5"/>を描きます</TextBlock>
+                        </StackPanel>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+            <!--Note Tool-->
+                <ToggleButton x:Uid="_mtb_Note" x:Name="_mtb_Note" Template="{DynamicResource MTB_note}" Margin="0.3,2,0.3,2" Width="40" Height="41" Checked="_M_km_OnSetModeNote" Unchecked="_M_km_OnSetMode_None">
+                    <ToggleButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_13">
+                            <Label x:Uid="Label_17" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">自分の意見</Label>
+                            <TextBlock x:Uid="TextBlock_23" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >自分の意見を書くこと<LineBreak x:Uid="LineBreak_6"/>ができるノード<LineBreak x:Uid="LineBreak_7"/>を作れます</TextBlock>
+                        </StackPanel>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+                <Separator x:Uid="Separator_14" />
+            
+        <!--Meta Tools-->
+            <!--Color Swatch-->
+                <meet:ColorSwatchButton x:Uid="_M_km_ColorSwatchButton" x:Name="_M_km_ColorSwatchButton" Margin="0.3,2,0.3,2" Width="60" Height="41">
+                    <meet:ColorSwatchButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_14">
+                            <Label x:Uid="Label_18" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">右の▼ボタンから色を選びます</Label>
+                            <TextBlock x:Uid="TextBlock_24" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >ノードの色はドキュメント<LineBreak x:Uid="LineBreak_8"/>の線の色と同期します</TextBlock>
+                        </StackPanel>
+                    </meet:ColorSwatchButton.ToolTip>
+                </meet:ColorSwatchButton>
+            <!--Lasso Select Tool-->
+                <ToggleButton x:Uid="_mtb_Select" x:Name="_mtb_Select" Template="{DynamicResource MTB_select}" Margin="0.3,2,0.3,2" Width="34" Height="41" Checked="_M_km_OnSetModeSelect" Unchecked="_M_km_OnSetMode_None">
+                    <ToggleButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_15">
+                            <Label x:Uid="Label_19" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">選択</Label>
+                            <TextBlock x:Uid="TextBlock_25" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >オブジェクトを選択します</TextBlock>
+                        </StackPanel>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+            </ToolBar>
+
+        <!--Comment Tool Box-->
+            <ToolBar x:Uid="_meet_CommentToolBox" IsTabStop="False" x:Name="_meet_CommentToolBox" ToolBarTray.IsLocked="True" Margin="140,-400,0,400" 
+                 Grid.Column="1" HorizontalContentAlignment="Right">
+                <ToolBar.Background>
+                    <LinearGradientBrush x:Uid="LinearGradientBrush_4" EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop x:Uid="GradientStop_11" Color="#FFC6F961" Offset="0"/>
+                        <GradientStop x:Uid="GradientStop_12" Color="#FFF3FFDA" Offset="1"/>
+                    </LinearGradientBrush>
+                </ToolBar.Background>
+
+                <ToggleButton x:Uid="_mtbCA_AddPushPinTool" x:Name="_mtbCA_AddPushPinTool" Template="{DynamicResource MTB_pushPin}" Margin="0.3,2,0.3,2" Width="40" Height="41" 
+                              Checked="_M_km_OnSetCAModeAddPushPin" Unchecked="_M_OnSetMode_ReleasePushPinMode">
+                    <ToggleButton.ToolTip>
+                        <StackPanel x:Uid="StackPanel_16">
+                            <Label x:Uid="Label_20" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">プッシュピンコメント</Label>
+                            <TextBlock x:Uid="TextBlock_26" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >レポートやナレッジマップの上に<LineBreak x:Uid="LineBreak_9"/>プッシュピンでコメントをふせんのように<LineBreak x:Uid="LineBreak_10"/>貼ることができます</TextBlock>
+                        </StackPanel>
+                    </ToggleButton.ToolTip>
+                </ToggleButton>
+
+                <Button x:Uid="_mtbCA_SetDocumentModeNormal" x:Name="_mtbCA_SetDocumentModeNormal" Template="{DynamicResource MB_goToNormalAssignmentMode}"  Margin="0.3,2,0.3,2" Width="40" Height="41" Click="_M_A_SetDocumentModeNormal">
+                    <Button.ToolTip>
+                        <StackPanel x:Uid="StackPanel_17">
+                            <Label x:Uid="Label_21" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">タイトル</Label>
+                            <TextBlock x:Uid="TextBlock_27" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >説明</TextBlock>
+                        </StackPanel>
+                    </Button.ToolTip>
+                </Button>
+                
+            </ToolBar>
+
+            <!--StatusBar-->
+        <Grid x:Uid="Grid_6" Background="{StaticResource defB_StatusBarBG}" Margin="0" Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Uid="ColumnDefinition_5" Width="0.4*"/>
+                <ColumnDefinition x:Uid="ColumnDefinition_6" Width="150"/>
+                <ColumnDefinition x:Uid="ColumnDefinition_7" Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--Status text label-->
+            <TextBlock x:Uid="_l_AppStatusLabel" Margin="15,0,15,0" Grid.Column="0" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="12" Text="Idle" x:Name="_l_AppStatusLabel" />
+            
+            <!--Application Wide Functions-->
+            <StackPanel x:Uid="StackPanel_18" Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Left">
+                <ToggleButton x:Uid="_tb_MagnifierButton" Template="{DynamicResource MB_Magnifier}" x:Name="_tb_MagnifierButton" Padding="0" Width="25" Height="25" /> 
+                <Slider x:Uid="_sl_MagnifierFactor" ValueChanged="OnMagnifierFactorChanged" x:Name="_sl_MagnifierFactor" Minimum="50" Maximum="300" 
+                        Width="50" Value="170" IsDirectionReversed="True" VerticalAlignment="Center" />
+                
+            </StackPanel>
+            
+            <!--Study list-->
+            <Button x:Uid="_ScrollStudyLeft" Template="{StaticResource MB_ScrollStudyList_left}" x:Name="_ScrollStudyLeft" Grid.Column="2" Width="25" Height="25" Margin="2.5"
+                       HorizontalAlignment="Left" VerticalAlignment="Center" Click="OnScrollStudyListLeft" />
+            
+            <!--LayoutUpdated="_LB_StudyList_LayoutUpdated"-->
+            
+            <ListBox x:Uid="_LB_StudyList" Margin="30,3,35,3" BorderThickness="0" Grid.Column="2"
+                 SelectionChanged="OnSelectedStudyChanged" Grid.Row="2" 
+                 ItemTemplate="{DynamicResource StudyListDataTemplate}"
+                 IsSynchronizedWithCurrentItem="True"
+                 x:Name="_LB_StudyList" 
+                 ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                 ScrollViewer.CanContentScroll="True"
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                <ListBox.Background>
+                    <LinearGradientBrush x:Uid="LinearGradientBrush_5" EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop x:Uid="GradientStop_13" Color="#FF58B2F0" Offset="0"/>
+                        <GradientStop x:Uid="GradientStop_14" Color="#FFA0CBEA" Offset="1"/>
+                    </LinearGradientBrush>
+                </ListBox.Background>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate x:Uid="ItemsPanelTemplate_1">
+                        <VirtualizingStackPanel x:Uid="VirtualizingStackPanel_1" Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ContextMenu>
+                    <ContextMenu x:Uid="ContextMenu_1" Opened="OnStudyListContextMenuOpen">
+                        <MenuItem x:Uid="MenuItem_13" Header="スタディを追加" Name="dt_mi_AddStudy" IsEnabled="False" Click="_M_meet_OnAddNewStudy" />
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+            </ListBox>
+
+            <Button x:Uid="_ScrollStudyRight" Template="{StaticResource MB_ScrollStudyList_right}" x:Name="_ScrollStudyRight" Grid.Column="2" Width="25" Height="25" Margin="2.5,2.5,7.5,2.5"
+                       HorizontalAlignment="Right" VerticalAlignment="Center" Click="OnScrollStudyListRight" />
+            
+        </Grid>
+    </Grid>
+    
+    <!--Magnifier stuff-->
+        <Canvas x:Uid="Canvas_1" HorizontalAlignment="Left" VerticalAlignment="Top"> 
+            <Canvas x:Uid="mg_bgCanvas" Name="mg_bgCanvas" IsHitTestVisible="False"
+                    Visibility="{Binding ElementName=_tb_MagnifierButton,Path=IsChecked,Converter={StaticResource BoolToVisConverter}}">
+                
+                <Rectangle x:Uid="Rectangle_3" RadiusX="25" RadiusY="25" Width="249" Height="249" Fill="White" />
+                <Rectangle x:Uid="mg_Visual" Stroke="#FF4161B7" RadiusX="25" RadiusY="25" Width="251" Height="251" 
+                           Name="mg_Visual" StrokeThickness="5">
+                    <Rectangle.Fill>
+                        <VisualBrush x:Uid="VisualBrush_1" ViewboxUnits="Absolute" Viewbox="0,0,50,50"
+                         ViewportUnits="RelativeToBoundingBox" Viewport="0,0,1,1"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle x:Uid="Rectangle_4" RadiusX="25" RadiusY="25" Canvas.Left="2" Canvas.Top="2" 
+                           StrokeThickness="5" Width="247" Height="247" Stroke="#FF5C7EDA">
+                </Rectangle>
+            </Canvas>
+        </Canvas>
+    </Grid>
+
+    
+    
+    
+</Window>

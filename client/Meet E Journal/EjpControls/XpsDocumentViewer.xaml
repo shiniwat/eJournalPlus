@@ -1,0 +1,413 @@
+﻿<UserControl x:Uid="UserControl_1" x:Class="SiliconStudio.Meet.EjpControls.XpsDocumentViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ejpConstrols="clr-namespace:SiliconStudio.Meet.EjpControls.Helpers"
+    xmlns:annotations="clr-namespace:System.Windows.Annotations;assembly=PresentationFramework"
+    xmlns:System_Windows_Documents="clr-namespace:System.Windows.Documents;assembly=PresentationUI">
+    <UserControl.Resources>
+
+        <LinearGradientBrush x:Uid="LinearGradientBrush_1" x:Key="LineHandleDefaultBGBrush" StartPoint="0.499979,-5.31378e-005" EndPoint="0.499979,1.15269">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop x:Uid="GradientStop_1" Color="#80FFFFFF" Offset="0"/>
+                <GradientStop x:Uid="GradientStop_2" Color="#80C61922" Offset="1"/>
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+        
+        <LinearGradientBrush x:Uid="LinearGradientBrush_2" x:Key="LineHandleSelectedBGBrush">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop x:Uid="GradientStop_3" Color="#FFF8E883" Offset="0"/>
+                <GradientStop x:Uid="GradientStop_4" Color="#FFFBF5B6" Offset="0.139"/>
+                <GradientStop x:Uid="GradientStop_5" Color="#FFF8E279" Offset="1"/>
+                <GradientStop x:Uid="GradientStop_6" Color="#FFFCB142" Offset="0.562"/>
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <DrawingBrush x:Uid="DrawingBrush_1" x:Key="lineHandleS_default">
+           <DrawingBrush.Drawing>
+                    <DrawingGroup x:Uid="DrawingGroup_1">
+                        <DrawingGroup.Children>
+                            <GeometryDrawing x:Uid="GeometryDrawing_1" Brush="#A6C61A23" Geometry="F1 M 402.408,304.018L 402.444,311.977L 398,311.977L 398,296.023L 410,296.023L 402.408,304.018 Z "/>
+                        </DrawingGroup.Children>
+                    </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Uid="DrawingBrush_2" x:Key="lineHandleE_default">
+            <DrawingBrush.Drawing>
+                <DrawingGroup x:Uid="DrawingGroup_2">
+                    <DrawingGroup.Children>
+                        <GeometryDrawing x:Uid="GeometryDrawing_2" Brush="#A6C61A23" Geometry="F1 M 405.591,303.982L 405.555,296.023L 410,296.023L 410,311.977L 398,311.977L 405.591,303.982 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Uid="DrawingBrush_3" x:Key="lineHandleS_selected">
+            <DrawingBrush.Drawing>
+                <DrawingGroup x:Uid="DrawingGroup_3">
+                    <DrawingGroup.Children>
+                        <GeometryDrawing x:Uid="GeometryDrawing_3" Brush="{StaticResource LineHandleSelectedBGBrush}" Geometry="F1 M 410,309.227C 410,310.759 408.759,312 407.228,312L 400.772,312C 399.241,312 398,310.759 398,309.227L 398,298.773C 398,297.241 399.241,296 400.772,296L 407.228,296C 408.759,296 410,297.241 410,298.773L 410,309.227 Z "/>
+                        <GeometryDrawing x:Uid="GeometryDrawing_4" Brush="#C0FFFFFF" Geometry="F1 M 400.602,303.844L 403.384,301.545L 406.167,299.248L 406.167,303.844L 406.167,308.438L 403.384,306.142L 400.602,303.844 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Uid="DrawingBrush_4" x:Key="lineHandleE_selected">
+            <DrawingBrush.Drawing>
+                <DrawingGroup x:Uid="DrawingGroup_4">
+                    <DrawingGroup.Children>
+                        <GeometryDrawing x:Uid="GeometryDrawing_5" Brush="{StaticResource LineHandleSelectedBGBrush}" Geometry="F1 M 410,309.227C 410,310.759 408.759,312 407.228,312L 400.772,312C 399.241,312 398,310.759 398,309.227L 398,298.773C 398,297.241 399.241,296 400.772,296L 407.228,296C 408.759,296 410,297.241 410,298.773L 410,309.227 Z "/>
+                        <GeometryDrawing x:Uid="GeometryDrawing_6" Brush="#C0FFFFFF" Geometry="F1 M 407.5,303.844L 404.716,301.545L 401.935,299.248L 401.935,303.844L 401.935,308.438L 404.716,306.142L 407.5,303.844 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+
+        <DrawingBrush x:Uid="DrawingBrush_5" x:Key="MinusButton_def">
+            <DrawingBrush.Drawing>
+                <DrawingGroup x:Uid="DrawingGroup_5">
+                    <DrawingGroup.Children>
+                        <GeometryDrawing x:Uid="GeometryDrawing_7" Geometry="F1 M 26.6667,26.6667L 0,26.6667L 0,0L 26.6667,0L 26.6667,26.6667 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen x:Uid="Pen_1" Thickness="1.33333" LineJoin="Round" Brush="#FF809AB6"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush x:Uid="LinearGradientBrush_3" StartPoint="0.49997,3.64014e-007" EndPoint="0.49997,0.952404">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop x:Uid="GradientStop_7" Color="#FFFFFFFF" Offset="0"/>
+                                        <GradientStop x:Uid="GradientStop_8" Color="#FFCECBD3" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing x:Uid="GeometryDrawing_8" Brush="#FF060202" Geometry="F1 M 21.5,14.8333L 5.16667,14.8333L 5.16667,11.8333L 21.5,11.8333L 21.5,14.8333 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Uid="DrawingBrush_6" x:Key="MinusButton_pressed">
+            <DrawingBrush.Drawing>
+                <DrawingGroup x:Uid="DrawingGroup_6">
+                    <DrawingGroup.Children>
+                        <GeometryDrawing x:Uid="GeometryDrawing_9" Geometry="F1 M 26.6667,26.6667L 0,26.6667L 0,0L 26.6667,0L 26.6667,26.6667 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen x:Uid="Pen_2" Thickness="1.33333" LineJoin="Round" Brush="#FF809AB6"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush x:Uid="LinearGradientBrush_4" StartPoint="0.49997,0.0178575" EndPoint="0.49997,0.982167">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop x:Uid="GradientStop_9" Color="#FFA8C7E6" Offset="0"/>
+                                        <GradientStop x:Uid="GradientStop_10" Color="#FFABCAEA" Offset="0.264038"/>
+                                        <GradientStop x:Uid="GradientStop_11" Color="#FFFFFFFF" Offset="0.870789"/>
+                                        <GradientStop x:Uid="GradientStop_12" Color="#FFA6CBEC" Offset="0.960678"/>
+                                        <GradientStop x:Uid="GradientStop_13" Color="#FFA6CBEC" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing x:Uid="GeometryDrawing_10" Brush="#FF060202" Geometry="F1 M 21.5,14.8333L 5.16667,14.8333L 5.16667,11.8333L 21.5,11.8333L 21.5,14.8333 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Uid="DrawingBrush_7" x:Key="PlusButton_def">
+            <DrawingBrush.Drawing>
+                <DrawingGroup x:Uid="DrawingGroup_7">
+                    <DrawingGroup.Children>
+                        <GeometryDrawing x:Uid="GeometryDrawing_11" Geometry="F1 M 26.6667,26.6667L 0,26.6667L 0,0L 26.6667,0L 26.6667,26.6667 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen x:Uid="Pen_3" Thickness="1.33333" LineJoin="Round" Brush="#FF809AB6"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush x:Uid="LinearGradientBrush_5" StartPoint="0.49997,3.64014e-007" EndPoint="0.49997,0.952404">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop x:Uid="GradientStop_14" Color="#FFFFFFFF" Offset="0"/>
+                                        <GradientStop x:Uid="GradientStop_15" Color="#FFCECBD3" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing x:Uid="GeometryDrawing_12" Brush="#FF060202" Geometry="F1 M 21.4998,11.8333L 14.8331,11.8333L 14.8331,5.16666L 11.8331,5.16666L 11.8331,11.8333L 5.16642,11.8333L 5.16642,14.8333L 11.8331,14.8333L 11.8331,21.5L 14.8331,21.5L 14.8331,14.8333L 21.4998,14.8333L 21.4998,11.8333 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Uid="DrawingBrush_8" x:Key="PlusButton_pressed">
+            <DrawingBrush.Drawing>
+                <DrawingGroup x:Uid="DrawingGroup_8">
+                    <DrawingGroup.Children>
+                        <GeometryDrawing x:Uid="GeometryDrawing_13" Geometry="F1 M 26.6667,26.6667L 0,26.6667L 0,0L 26.6667,0L 26.6667,26.6667 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen x:Uid="Pen_4" Thickness="1.33333" LineJoin="Round" Brush="#FF809AB6"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush x:Uid="LinearGradientBrush_6" StartPoint="0.49997,0.0178575" EndPoint="0.49997,0.982167">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop x:Uid="GradientStop_16" Color="#FFA8C7E6" Offset="0"/>
+                                        <GradientStop x:Uid="GradientStop_17" Color="#FFABCAEA" Offset="0.264038"/>
+                                        <GradientStop x:Uid="GradientStop_18" Color="#FFFFFFFF" Offset="0.870789"/>
+                                        <GradientStop x:Uid="GradientStop_19" Color="#FFA6CBEC" Offset="0.960678"/>
+                                        <GradientStop x:Uid="GradientStop_20" Color="#FFA6CBEC" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing x:Uid="GeometryDrawing_14" Brush="#FF060202" Geometry="F1 M 21.4998,11.8333L 14.8331,11.8333L 14.8331,5.16666L 11.8331,5.16666L 11.8331,11.8333L 5.16642,11.8333L 5.16642,14.8333L 11.8331,14.8333L 11.8331,21.5L 14.8331,21.5L 14.8331,14.8333L 21.4998,14.8333L 21.4998,11.8333 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Uid="DrawingBrush_9" x:Key="commentBubbleDrawing">
+            <DrawingBrush.Drawing>
+                <DrawingGroup x:Uid="DrawingGroup_9">
+                    <DrawingGroup.Children>
+                        <GeometryDrawing x:Uid="GeometryDrawing_15" Geometry="F1 M 293.052,159.267L 304.198,159.267L 317.185,111.556L 329.125,159.267L 402.059,159.267C 422.277,159.267 438.667,178.239 438.667,201.642L 438.667,270.069C 438.667,293.472 422.277,312.444 402.059,312.444L 293.052,312.444C 272.834,312.444 256.444,293.472 256.444,270.069L 256.444,201.642C 256.444,178.239 272.834,159.267 293.052,159.267 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen x:Uid="Pen_5" Thickness="5" LineJoin="Round" Brush="#FF2AB7D1"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush x:Uid="LinearGradientBrush_7" StartPoint="0.5,1.01568" EndPoint="0.5,-0.0156807">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop x:Uid="GradientStop_21" Color="#FF058198" Offset="0"/>
+                                        <GradientStop x:Uid="GradientStop_22" Color="#FFFFFFFF" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing x:Uid="GeometryDrawing_16" Geometry="F1 M 295.667,164.547L 398.667,164.547C 415.235,164.547 428.667,177.979 428.667,194.547L 428.667,199.556C 428.667,216.124 415.235,229.556 398.667,229.556L 295.667,229.556C 279.098,229.556 265.667,216.124 265.667,199.556L 265.667,194.547C 265.667,177.979 279.098,164.547 295.667,164.547 Z ">
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush x:Uid="LinearGradientBrush_8" StartPoint="0.5,1.73016" EndPoint="0.5,-0.730161">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop x:Uid="GradientStop_23" Color="#27FFFFFF" Offset="0"/>
+                                        <GradientStop x:Uid="GradientStop_24" Color="#27FFFFFF" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing x:Uid="GeometryDrawing_17" Geometry="F1 M 295.667,239.66L 398.667,239.66C 415.235,239.66 428.667,253.091 428.667,269.66L 428.667,274.668C 428.667,291.237 415.235,304.668 398.667,304.668L 295.667,304.668C 279.098,304.668 265.667,291.237 265.667,274.668L 265.667,269.66C 265.667,253.091 279.098,239.66 295.667,239.66 Z ">
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush x:Uid="LinearGradientBrush_9" StartPoint="0.5,-0.73016" EndPoint="0.5,1.73016">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop x:Uid="GradientStop_25" Color="#27FFFFFF" Offset="0"/>
+                                        <GradientStop x:Uid="GradientStop_26" Color="#27FFFFFF" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing x:Uid="GeometryDrawing_18" Geometry="F1 M 280.556,190L 410.778,190">
+                            <GeometryDrawing.Pen>
+                                <Pen x:Uid="Pen_6" Thickness="10" LineJoin="Round" Brush="#FF307AA0"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing x:Uid="GeometryDrawing_19" Geometry="F1 M 280.556,234L 410.778,234">
+                            <GeometryDrawing.Pen>
+                                <Pen x:Uid="Pen_7" Thickness="10" LineJoin="Round" Brush="#FF307AA0"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing x:Uid="GeometryDrawing_20" Geometry="F1 M 280.556,274.445L 410.778,274.445">
+                            <GeometryDrawing.Pen>
+                                <Pen x:Uid="Pen_8" Thickness="10" LineJoin="Round" Brush="#FF307AA0"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Uid="DrawingBrush_10" x:Key="scaleLockToPageWidth">
+            <DrawingBrush.Drawing>
+                <DrawingGroup x:Uid="DrawingGroup_10">
+                    <DrawingGroup.Children>
+                        <GeometryDrawing x:Uid="GeometryDrawing_21" Geometry="F1 M 0,0L 46.6673,0L 46.6673,26.6667L 0,26.6667L 0,0 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen x:Uid="Pen_9" Thickness="1.33333" LineJoin="Round" Brush="#FF839EBC"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush x:Uid="LinearGradientBrush_10" StartPoint="0.49998,0.0238095" EndPoint="0.49998,0.976214">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop x:Uid="GradientStop_27" Color="#FFFFFFFF" Offset="0"/>
+                                        <GradientStop x:Uid="GradientStop_28" Color="#FFCFCCD4" Offset="1"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing x:Uid="GeometryDrawing_22" Geometry="F1 M 31.7012,17.5833L 14.9661,17.5833L 14.9661,9.08334L 31.7012,9.08334L 31.7012,17.5833 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen x:Uid="Pen_10" Thickness="1.33333" LineJoin="Round" Brush="#FF1D2088"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing x:Uid="GeometryDrawing_23" Brush="#FF1D2088" Geometry="M 8.79297,16.8099L 10.3255,16.7344L 7.85156,14.2604L 14.3503,14.2383L 14.3503,13.099L 7.77604,13.1224L 10.25,10.612L 8.79297,10.5365L 5.65625,13.6745L 8.79297,16.8099 Z "/>
+                        <GeometryDrawing x:Uid="GeometryDrawing_24" Brush="#FF1D2088" Geometry="M 37.8809,10.5365L 36.347,10.612L 38.821,13.0859L 32.3236,13.1094L 32.3236,14.2474L 38.8965,14.224L 36.4225,16.7344L 37.8809,16.8099L 41.0163,13.6719L 37.8809,10.5365 Z "/>
+                        <GeometryDrawing x:Uid="GeometryDrawing_25" Brush="#FF1D2088" Geometry="M 20.1992,5.50781L 20.2747,7.03906L 22.748,4.56509L 22.7715,9.70313L 23.9095,9.70313L 23.8861,4.48959L 26.3965,6.96353L 26.472,5.50781L 23.334,2.36978L 20.1992,5.50781 Z "/>
+                        <GeometryDrawing x:Uid="GeometryDrawing_26" Brush="#FF1D2088" Geometry="M 26.472,21.2318L 26.3965,19.7005L 23.9225,22.1745L 23.8991,17.0365L 22.7611,17.0365L 22.7845,22.25L 20.2747,19.776L 20.1992,21.2318L 23.3366,24.3698L 26.472,21.2318 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <DrawingBrush x:Uid="DrawingBrush_11" x:Key="scaleLockToPageWidth_pressed">
+            <DrawingBrush.Drawing>
+                <DrawingGroup x:Uid="DrawingGroup_11">
+                    <DrawingGroup.Children>
+                        <GeometryDrawing x:Uid="GeometryDrawing_27" Geometry="F1 M 46.6667,26.6667L 0,26.6667L 0,0L 46.6667,0L 46.6667,26.6667 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen x:Uid="Pen_11" Thickness="1.33333" LineJoin="Round" Brush="#FF839EBC"/>
+                            </GeometryDrawing.Pen>
+                            <GeometryDrawing.Brush>
+                                <LinearGradientBrush x:Uid="LinearGradientBrush_11" StartPoint="0.5,0.0178575" EndPoint="0.5,0.982144">
+                                    <LinearGradientBrush.GradientStops>
+                                        <GradientStop x:Uid="GradientStop_29" Color="#FFF8E883" Offset="0"/>
+                                        <GradientStop x:Uid="GradientStop_30" Color="#FFFBF5B6" Offset="0.139"/>
+                                        <GradientStop x:Uid="GradientStop_31" Color="#FFF8E279" Offset="1"/>
+                                        <GradientStop x:Uid="GradientStop_32" Color="#FFFCB142" Offset="0.562"/>
+                                    </LinearGradientBrush.GradientStops>
+                                </LinearGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                        <GeometryDrawing x:Uid="GeometryDrawing_28" Geometry="F1 M 31.7005,17.5833L 14.9661,17.5833L 14.9661,9.08334L 31.7005,9.08334L 31.7005,17.5833 Z ">
+                            <GeometryDrawing.Pen>
+                                <Pen x:Uid="Pen_12" Thickness="1.33333" LineJoin="Round" Brush="#FF1D2088"/>
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+                        <GeometryDrawing x:Uid="GeometryDrawing_29" Brush="#FF1D2088" Geometry="M 8.79297,16.8099L 10.3255,16.7344L 7.85156,14.2604L 14.3503,14.2383L 14.3503,13.099L 7.77604,13.1224L 10.25,10.612L 8.79297,10.5365L 5.65625,13.6745L 8.79297,16.8099 Z "/>
+                        <GeometryDrawing x:Uid="GeometryDrawing_30" Brush="#FF1D2088" Geometry="M 37.8802,10.5365L 36.3477,10.612L 38.8216,13.0859L 32.3229,13.1094L 32.3229,14.2474L 38.8971,14.224L 36.4232,16.7344L 37.8802,16.8099L 41.0169,13.6719L 37.8802,10.5365 Z "/>
+                        <GeometryDrawing x:Uid="GeometryDrawing_31" Brush="#FF1D2088" Geometry="M 20.1992,5.50781L 20.2747,7.03906L 22.7487,4.56509L 22.7721,9.70313L 23.9102,9.70313L 23.8867,4.48959L 26.3971,6.96353L 26.4727,5.50781L 23.3346,2.36978L 20.1992,5.50781 Z "/>
+                        <GeometryDrawing x:Uid="GeometryDrawing_32" Brush="#FF1D2088" Geometry="M 26.4727,21.2318L 26.3971,19.7005L 23.9232,22.1745L 23.8997,17.0365L 22.7617,17.0365L 22.7852,22.25L 20.2747,19.776L 20.1992,21.2318L 23.3372,24.3698L 26.4727,21.2318 Z "/>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+
+        <ejpConstrols:ZoomToString x:Uid="ejpConstrols:ZoomToString_1" x:Key="ZoomToStringConverter"/>
+        <Style x:Uid="Style_1" x:Key="SimpleDocViewerStyle" BasedOn="{x:Null}" TargetType="{x:Type DocumentViewer}">
+            <Setter x:Uid="Setter_1" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+            <Setter x:Uid="Setter_2" Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+            <Setter x:Uid="Setter_3" Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter x:Uid="Setter_4" Property="ContextMenu" Value="{DynamicResource {ComponentResourceKey ResourceId=PUIDocumentViewerContextMenu, TypeInTargetAssembly={x:Type System_Windows_Documents:PresentationUIStyleResources}}}"/>
+            <Setter x:Uid="Setter_5" Property="Template">
+                <Setter.Value>
+                    <ControlTemplate x:Uid="ControlTemplate_1" TargetType="{x:Type DocumentViewer}">
+                        <Border x:Uid="Border_1" Focusable="False" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid x:Uid="Grid_1" Background="{TemplateBinding Background}" KeyboardNavigation.TabNavigation="Local">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition x:Uid="ColumnDefinition_1" Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition x:Uid="RowDefinition_1" Height="Auto"/>
+                                    <RowDefinition x:Uid="RowDefinition_2" Height="*"/>
+                                    <RowDefinition x:Uid="RowDefinition_3" Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <ScrollViewer x:Uid="PART_ContentHost" Focusable="{TemplateBinding Focusable}" IsTabStop="true" TabIndex="1" x:Name="PART_ContentHost" Grid.Column="0" Grid.Row="1" CanContentScroll="true" HorizontalScrollBarVisibility="Auto"/>
+                                <DockPanel x:Uid="DockPanel_1" Grid.Row="1">
+                                    <FrameworkElement x:Uid="FrameworkElement_1" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}" DockPanel.Dock="Right"/>
+                                </DockPanel>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <ControlTemplate x:Uid="ControlTemplate_2" x:Key="MTB_scalelock" TargetType="{x:Type ToggleButton}">
+            <Grid x:Uid="Grid_2">
+                <Rectangle x:Uid="rectangle" Fill="#FFFFFFFF" Stroke="{x:Null}" StrokeThickness="0" Margin="0,0,0,0" x:Name="rectangle"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger x:Uid="Trigger_1" Property="IsChecked" Value="False">
+                    <Setter x:Uid="Setter_6" TargetName="rectangle" Property="Fill" Value="{StaticResource scaleLockToPageWidth}"/>
+                </Trigger>
+                <Trigger x:Uid="Trigger_2" Property="IsChecked" Value="True">
+                    <Setter x:Uid="Setter_7" TargetName="rectangle" Property="Fill" Value="{StaticResource scaleLockToPageWidth_pressed}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Uid="ControlTemplate_3" x:Key="B_zoomPlus" TargetType="{x:Type Button}">
+            <Grid x:Uid="Grid_3">
+                <Rectangle x:Uid="Rectangle_1" Fill="#FFFFFFFF" Stroke="{x:Null}" StrokeThickness="0" Margin="0,0,0,0" x:Name="rectangle"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger x:Uid="Trigger_3" Property="IsPressed" Value="False">
+                    <Setter x:Uid="Setter_8" TargetName="rectangle" Property="Fill" Value="{StaticResource PlusButton_def}"/>
+                </Trigger>
+                <Trigger x:Uid="Trigger_4" Property="IsPressed" Value="True">
+                    <Setter x:Uid="Setter_9" TargetName="rectangle" Property="Fill" Value="{StaticResource PlusButton_pressed}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Uid="ControlTemplate_4" x:Key="B_zoomMinus" TargetType="{x:Type Button}">
+            <Grid x:Uid="Grid_4">
+                <Rectangle x:Uid="Rectangle_2" Fill="#FFFFFFFF" Stroke="{x:Null}" StrokeThickness="0" Margin="0,0,0,0" x:Name="rectangle"/>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger x:Uid="Trigger_5" Property="IsPressed" Value="False">
+                    <Setter x:Uid="Setter_10" TargetName="rectangle" Property="Fill" Value="{StaticResource MinusButton_def}"/>
+                </Trigger>
+                <Trigger x:Uid="Trigger_6" Property="IsPressed" Value="True">
+                    <Setter x:Uid="Setter_11" TargetName="rectangle" Property="Fill" Value="{StaticResource MinusButton_pressed}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+    </UserControl.Resources>
+
+    <Grid x:Uid="Grid_5">
+        <DocumentViewer x:Uid="_dA_DV_DocumentViewer" Margin="0,25,0,25" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                        Style="{DynamicResource SimpleDocViewerStyle}"
+                    ScrollViewer.VerticalScrollBarVisibility="Visible" x:Name="_dA_DV_DocumentViewer">
+
+            <DocumentViewer.ContextMenu>
+                <ContextMenu x:Uid="_cm_DocumentLineContextMenu" x:Name="_cm_DocumentLineContextMenu">
+                    <MenuItem x:Uid="MenuItem_1" Header="Add Comment" Click="OnAddNoteToDocumentLine" />
+                    <MenuItem x:Uid="MenuItem_2" Header="Remove Comment" Click="OnRemoveNoteFromDocumentLine" />
+                </ContextMenu>
+            </DocumentViewer.ContextMenu>
+            
+        </DocumentViewer>
+
+        <StackPanel x:Uid="StackPanel_1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,16,3" >
+            <TextBlock x:Uid="TextBlock_1" Text="Page: " />
+            <TextBlock x:Uid="_tb_CurrentPageNo" x:Name="_tb_CurrentPageNo" HorizontalAlignment="Right" Text="0" />
+            <TextBlock x:Uid="TextBlock_2" Text=" / " />
+            <TextBlock x:Uid="_tb_TotalPageCnt" x:Name="_tb_TotalPageCnt" HorizontalAlignment="Right" Text="0" />
+        </StackPanel>
+        
+        <Button x:Uid="Button_1" Command="NavigationCommands.DecreaseZoom" 
+            CommandTarget="{Binding ElementName=_dA_DV_DocumentViewer}" 
+            Height="22" Width="22" HorizontalAlignment="Right" Template="{DynamicResource B_zoomMinus}"
+            Margin="0,0,230,0" VerticalAlignment="Bottom" Click="OnZoomDocumentOut" Visibility="Collapsed" />
+        
+        <Button x:Uid="Button_2" Command="NavigationCommands.IncreaseZoom" 
+            CommandTarget="{Binding ElementName=_dA_DV_DocumentViewer}" 
+            Width="22" Height="22" HorizontalAlignment="Right" Template="{DynamicResource B_zoomPlus}"
+            Margin="0,0,104.052,0" VerticalAlignment="Bottom" Click="OnZoomDocumentIn" Visibility="Collapsed" />
+
+        <ToggleButton x:Uid="_tb_ScaleLock" Checked="OnToggleScaleLock" Unchecked="OnToggleScaleLock"
+                      Template="{DynamicResource MTB_scalelock}"
+            Height="22" HorizontalAlignment="Right" Width="44"
+            Margin="0,0,16,0" VerticalAlignment="Bottom"
+                      x:Name="_tb_ScaleLock">
+            <ToggleButton.ToolTip>
+                <StackPanel x:Uid="StackPanel_2">
+                    <Label x:Uid="Label_1" Padding="1,5,1,1" FontSize="12" FontWeight="Bold"></Label>
+                    <TextBlock x:Uid="TextBlock_3" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >ウィンドウ幅に合わせて<LineBreak x:Uid="LineBreak_1"/>ドキュメントを拡大または縮小します</TextBlock>
+                </StackPanel>
+            </ToggleButton.ToolTip>
+        </ToggleButton>
+
+        <Label x:Uid="Label_2" Height="18" Content="{Binding ElementName=_dA_DV_DocumentViewer, Path=Zoom, Converter={StaticResource ZoomToStringConverter}}" 
+               Padding="0,0,0,0" VerticalContentAlignment="Center" Margin="0,0,65.366,3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="34.884" />
+
+        <Slider x:Uid="_sl_ZoomSlider" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Margin="66.7,0,100.05,0.769" Name="_sl_ZoomSlider" Minimum="25" Maximum="200" 
+                Value="100" ValueChanged="OnKnowledgeMapZoomChanged" IsSnapToTickEnabled="True" Height="22" />
+
+    </Grid>
+</UserControl>

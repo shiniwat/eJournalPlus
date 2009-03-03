@@ -1,0 +1,32 @@
+﻿<Window x:Uid="Window_1" x:Class="ejpClient.ejpWindows.EjsLoginWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="E Journal Server Login"
+	ResizeMode="NoResize" WindowStyle="ToolWindow" WindowStartupLocation="CenterOwner"
+	Width="503" Height="334">
+    <Window.Background>
+        <ImageBrush x:Uid="ImageBrush_1" Stretch="None" TileMode="Tile" Viewport="0,0,20,20" ViewportUnits="Absolute" 
+                           ImageSource="pack://application:,,,/imgData/bgtile.png" />
+    </Window.Background>
+
+    <Grid x:Uid="LayoutRoot" x:Name="LayoutRoot" Margin="15,15,15,15">
+        <Rectangle x:Uid="Rectangle_1" Stroke="{x:Null}" Margin="0,0,0,0" RadiusX="15.5" RadiusY="15.5">
+            <Rectangle.Fill>
+                <LinearGradientBrush x:Uid="LinearGradientBrush_1" EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop x:Uid="GradientStop_1" Color="#FF7FB2F0" Offset="0"/>
+                    <GradientStop x:Uid="GradientStop_2" Color="#FFFAFAFA" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Uid="Rectangle_2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Fill="#FFFFFFFF" Stroke="#FF7FB2F0" Margin="10,16,10,16" RadiusX="13.5" RadiusY="13.5"/>
+        <Canvas x:Uid="Canvas_1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Margin="10,16,10,16">
+            <Rectangle x:Uid="Rectangle_3" Fill="{StaticResource MainToudaiLogo}" Width="215" Height="30" Canvas.Top="7" Canvas.Left="11" />
+            <Button x:Uid="Button_1" Width="78.59" Height="Auto" Content="キャンセル" Canvas.Left="186.41" Canvas.Top="191" Click="On_BtnCancelClick"/>
+            <Button x:Uid="Button_2" Width="78.59" Height="Auto" Content="OK" Canvas.Left="281" Canvas.Top="191" Click="On_BtnOKClick"/>
+            <TextBlock x:Uid="TextBlock_1" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="User Name:" Canvas.Left="87.867" Canvas.Top="85"/>
+			<TextBox x:Uid="_tb_UserName" FontSize="12" Width="165" Height="24" Text="" TextWrapping="NoWrap" MaxLength="50" MaxLines="1" x:Name="_tb_UserName" Canvas.Left="194.59" Canvas.Top="82"/>
+			<TextBlock x:Uid="TextBlock_2" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="Password:" Canvas.Left="97.69" Canvas.Top="136"/>
+			<PasswordBox x:Uid="_tbPw_Password" Width="165" Height="24" Canvas.Left="194.59" Canvas.Top="133" MaxLength="50" x:Name="_tbPw_Password"/>
+		</Canvas>
+    </Grid>
+</Window>

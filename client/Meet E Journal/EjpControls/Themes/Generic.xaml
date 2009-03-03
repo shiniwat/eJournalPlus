@@ -1,0 +1,61 @@
+﻿<ResourceDictionary
+    x:Uid="ResourceDictionary_1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SiliconStudio.Meet.EjpControls">
+
+
+    <Style x:Uid="Style_1" TargetType="{x:Type local:MarkerLineButton}">
+        <Setter x:Uid="Setter_1" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Uid="ControlTemplate_1" TargetType="{x:Type local:MarkerLineButton}">
+                    <Border x:Uid="Border_1" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Uid="Style_2" TargetType="{x:Type local:ReportQuoteBoxEX}">
+        <Setter x:Uid="Setter_2" Property="Template">
+            <Setter.Value>
+                <ControlTemplate x:Uid="ControlTemplate_2" TargetType="{x:Type local:ReportQuoteBoxEX}">
+                    <Border x:Uid="Border_2" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid x:Uid="Grid_1" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto">
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Uid="RowDefinition_1" Height="25"/>
+                                <RowDefinition x:Uid="RowDefinition_2" Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Rectangle x:Uid="Rectangle_1" Fill="White"
+                                       Stroke="#FF000000" Grid.Row="0" Grid.RowSpan="2"/>
+                            
+                            <Rectangle x:Uid="PART_RECTCOLORSTRIPE" x:Name="PART_RECTCOLORSTRIPE" 
+                                       Fill="{Binding Path=Fill, Mode=TwoWay,
+                                       UpdateSourceTrigger=PropertyChanged,
+                                       RelativeSource={RelativeSource TemplatedParent}}" 
+                                       Stroke="#FF000000" Grid.Row="0" RadiusX="0" RadiusY="0"/>
+                            
+                            <TextBlock x:Uid="PART_TBTITLE" x:Name="PART_TBTITLE" Margin="8,4,0,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                                       TextWrapping="NoWrap" ScrollViewer.CanContentScroll="False" 
+                                       Grid.Row="0" Grid.RowSpan="1" FontSize="12"
+                                       Text="{Binding Path=QuoteTitle, Mode=TwoWay,
+                                       UpdateSourceTrigger=PropertyChanged,
+                                       RelativeSource={RelativeSource TemplatedParent}}" />
+                            
+                            <TextBlock x:Uid="PART_TBCONTENT" x:Name="PART_TBCONTENT" Margin="8,9,8,8" ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                                       TextWrapping="Wrap" ScrollViewer.CanContentScroll="True" 
+                                       Grid.Row="1" Grid.RowSpan="2" 
+                                       Text="{Binding Path=QuoteContent, Mode=TwoWay,
+                                       UpdateSourceTrigger=PropertyChanged,
+                                       RelativeSource={RelativeSource TemplatedParent}}" />
+                            
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

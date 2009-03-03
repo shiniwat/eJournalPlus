@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ApplicationIconRound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ApplicationIconRound.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ERR_AsgOpenFailed_Version" xml:space="preserve">
+    <value>This assignment was created with an earlier version of eJournalPlus, therefore it cannot be opened in Comment Mode. If you wish do upgrade this Assignment, first open it in Normal Mode, then re-publish it to eJournalPlus Server. After this you can open the new Published version in Comment Mode.</value>
+  </data>
+  <data name="ERR_AsgToMergeAlreadyExists" xml:space="preserve">
+    <value>The assignment you wish to import is already included in the current assignment.</value>
+  </data>
+  <data name="ERR_CannotDelOthersAsg" xml:space="preserve">
+    <value>Other person's assignment cannot be deleted</value>
+  </data>
+  <data name="ERR_ChooseKMToImportGuide" xml:space="preserve">
+    <value>Please select the Knowledge Map you wish to import the guide image.</value>
+  </data>
+  <data name="ERR_ChooseReportToExport" xml:space="preserve">
+    <value>Please select the Report you wish to export.</value>
+  </data>
+  <data name="ERR_ChooseReportToPrint" xml:space="preserve">
+    <value>Please select the Report you wish to print</value>
+  </data>
+  <data name="ERR_ChooseReportToPublish" xml:space="preserve">
+    <value>Please select the Report you wish to publish</value>
+  </data>
+  <data name="ERR_EjsUrlInvalid" xml:space="preserve">
+    <value>eJournalPlus Server address is invald. Make sure you include the http:// part of the Url.</value>
+  </data>
+  <data name="ERR_ErrorReportNetworkFailed" xml:space="preserve">
+    <value>Failed to access to the website for reporting errors or troubles. Make sure your network connection available.</value>
+  </data>
+  <data name="ERR_ExportKMFailed" xml:space="preserve">
+    <value>Failed to export the Knowledge Map</value>
+  </data>
+  <data name="ERR_ExportReportFailed" xml:space="preserve">
+    <value>Failed to export the Report</value>
+  </data>
+  <data name="ERR_MustChooseStudyToAddXps" xml:space="preserve">
+    <value>Please select the study you wish to add the XPS document.</value>
+  </data>
+  <data name="ERR_MustLogInBeforePublishAsg" xml:space="preserve">
+    <value>You must log in eJournalPlus Server before publishing your assignment.</value>
+  </data>
+  <data name="ERR_MustSaveBefireAddingKM" xml:space="preserve">
+    <value>Please save this file before adding a Knowledge Map. Are you sure to save this file and add a new Knowledge Map?</value>
+  </data>
+  <data name="ERR_MustSaveBeforeMerge" xml:space="preserve">
+    <value>Please save this assignment before merging another assignment.</value>
+  </data>
+  <data name="ERR_MustSaveStudyBeforeAddingGuide" xml:space="preserve">
+    <value>Please save this assignment before adding a guide image on new study. The application deletes the guide at this time.</value>
+  </data>
+  <data name="ERR_NameNeededToPusblishAsg" xml:space="preserve">
+    <value>You must input the assignment name before publishing.</value>
+  </data>
+  <data name="ERR_SelectedKMHasNoGuide" xml:space="preserve">
+    <value>Selected Knowledge Map has no guide image.</value>
+  </data>
+  <data name="ERR_UndoCountInvalid" xml:space="preserve">
+    <value>Undo Count does not contain a valid number.</value>
+  </data>
+  <data name="ERR_UnknownError" xml:space="preserve">
+    <value>Unknown error.</value>
+  </data>
+  <data name="ERR_WlsUrlInvalid" xml:space="preserve">
+    <value>The Windows Live Spaces address is invald. Make sure you include the http:// part of the Url.</value>
+  </data>
+  <data name="EX_AddKMFailed_Max" xml:space="preserve">
+    <value>No more than 2 Knowledge Maps are allowed.</value>
+  </data>
+  <data name="EX_AddReportFailed_Max" xml:space="preserve">
+    <value>No more than 2 Reports are allowed.</value>
+  </data>
+  <data name="EX_AsgCreateFromXPSFailed" xml:space="preserve">
+    <value>Failed to create new Assignment from the given document.</value>
+  </data>
+  <data name="EX_AsgDelFailed" xml:space="preserve">
+    <value>Failed to delete the assignment you selected.</value>
+  </data>
+  <data name="EX_AsgMergeFailed" xml:space="preserve">
+    <value>Failed to merge assignments.</value>
+  </data>
+  <data name="EX_AsgOpenFailed" xml:space="preserve">
+    <value>Failed to open assignment.</value>
+  </data>
+  <data name="EX_AsgPublishFailed" xml:space="preserve">
+    <value>Failed to publish the assignment.</value>
+  </data>
+  <data name="EX_AsgSaveFailed" xml:space="preserve">
+    <value>Failed to save the assignment.</value>
+  </data>
+  <data name="EX_AutoSavedDisabled" xml:space="preserve">
+    <value>Autosave function was disabled because this assignment contains critical troubles. Please save as another assignment.</value>
+  </data>
+  <data name="EX_CloseAppFailed" xml:space="preserve">
+    <value>Close the application failed.</value>
+  </data>
+  <data name="EX_CourseRegFailed" xml:space="preserve">
+    <value>Failed to register you the course. Try back after a while.</value>
+  </data>
+  <data name="EX_CreateAppDownloadFolderFailed" xml:space="preserve">
+    <value>Failed to create a download folder. The application cannot proceed the transaction.</value>
+  </data>
+  <data name="EX_CreateAppFoldersFailed" xml:space="preserve">
+    <value>Failed to create a data folder for the application. Autosave function is diabled.</value>
+  </data>
+  <data name="EX_CreateAppTempFolderFailed" xml:space="preserve">
+    <value>Failed to create a temporary folder for the autosave function. The application cannot proceed the transaction.</value>
+  </data>
+  <data name="EX_DelGuideFailed" xml:space="preserve">
+    <value>Failed to delete the guide image.</value>
+  </data>
+  <data name="EX_ExportAsgFailed" xml:space="preserve">
+    <value>Failed to export the assignment</value>
+  </data>
+  <data name="EX_GetCommentCountFailed" xml:space="preserve">
+    <value>Failed to get the comment count for the current working assignment.</value>
+  </data>
+  <data name="EX_LoadImageFileFailed" xml:space="preserve">
+    <value>Import image failed.</value>
+  </data>
+  <data name="EX_NoSettingsFile" xml:space="preserve">
+    <value>Failed to load eJournalPlus configulation file. The application starts in default configulation.</value>
+  </data>
+  <data name="EX_PrintKMFailed" xml:space="preserve">
+    <value>Failed to print the Knowledge Map.</value>
+  </data>
+  <data name="EX_PrintReportFailed" xml:space="preserve">
+    <value>Failed to print the Report.</value>
+  </data>
+  <data name="EX_UnhandledException" xml:space="preserve">
+    <value>The application encountered unknown error. The application is now closing. Please make sure the autosaved files in your home directory\My Documents\eJournalPlus\Autosave. Message is:</value>
+  </data>
+  <data name="EX_UnhandledSaveFailed" xml:space="preserve">
+    <value>Open the autosaved files if you failed to save assignments.</value>
+  </data>
+  <data name="EX_WlsDLLLoadFailed" xml:space="preserve">
+    <value>Necessary files for connecting Windows Live Spaces are not found. Publishing assignment on Windows Live Space is disabled. Please reinstall eJournalPlus client if you wish to use this function.</value>
+  </data>
+  <data name="EX_WorkingAsgNotSet" xml:space="preserve">
+    <value>The Current Working Assignment is not set.</value>
+  </data>
+  <data name="Q_DelAsg" xml:space="preserve">
+    <value>Do you wish to delete the selected assignment?</value>
+  </data>
+  <data name="Q_DelGuide" xml:space="preserve">
+    <value>Do you wish to delete the selected guide?</value>
+  </data>
+  <data name="Q_DelStudy" xml:space="preserve">
+    <value>Do you wish to delete the selected study?</value>
+  </data>
+  <data name="Q_OpenAsComAsg" xml:space="preserve">
+    <value>This assignment contains some comments. Are you sure to open in the Comment mode?</value>
+  </data>
+  <data name="Q_OverwriteCurrentAsg" xml:space="preserve">
+    <value>Are you sure to overwrite the current file?</value>
+  </data>
+  <data name="Q_ReplaceCurrentKMGuide" xml:space="preserve">
+    <value>Guide has been already set. Are you sure to delete the current guide and import new guide image?</value>
+  </data>
+  <data name="Q_SaveChangesToAsg" xml:space="preserve">
+    <value>Do you wish to save the current working version?</value>
+  </data>
+  <data name="Q_SwtichToCommentMode" xml:space="preserve">
+    <value>Do you wish to change to the comment mode?</value>
+  </data>
+  <data name="Q_SwtichToNormalMode" xml:space="preserve">
+    <value>All of the comments will be transformed into normal nodes in the normal mode. Are you sure to change to the normal mode?</value>
+  </data>
+  <data name="Str_AppVersionString" xml:space="preserve">
+    <value>MEET eJournalPlus 1.1.0 RC19</value>
+  </data>
+  <data name="Str_AuthErrorTitle" xml:space="preserve">
+    <value>Authentication Error</value>
+  </data>
+  <data name="Str_ConnFailedTitle" xml:space="preserve">
+    <value>Connection Failed</value>
+  </data>
+  <data name="Str_DlgTitle_AddStudy" xml:space="preserve">
+    <value>Add Study</value>
+  </data>
+  <data name="Str_DlgTitle_AddXps" xml:space="preserve">
+    <value>Add a Document on the Study</value>
+  </data>
+  <data name="Str_DlgTitle_OpenAsg" xml:space="preserve">
+    <value>Select ejp file</value>
+  </data>
+  <data name="Str_DlgTitle_OpenComAsg" xml:space="preserve">
+    <value>Select the file to open in the Comment Mode</value>
+  </data>
+  <data name="Str_DlgTitle_OpenXPS" xml:space="preserve">
+    <value>Select XPS document</value>
+  </data>
+  <data name="Str_DlgTitle_StartNew" xml:space="preserve">
+    <value>Create New</value>
+  </data>
+  <data name="Str_ErrorTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Str_KnowledgeMapLiteral" xml:space="preserve">
+    <value>Knowledge Map</value>
+  </data>
+  <data name="Str_Msg_AsgPublished" xml:space="preserve">
+    <value>Publishing has been completed.</value>
+  </data>
+  <data name="Str_NoAsgOpenedCreated" xml:space="preserve">
+    <value>- No File Opened</value>
+  </data>
+  <data name="Str_NoAsgSet" xml:space="preserve">
+    <value>No Assignment Set</value>
+  </data>
+  <data name="Str_NoNameAssignmentTitle" xml:space="preserve">
+    <value>Untitled</value>
+  </data>
+  <data name="Str_PasswdUpdated" xml:space="preserve">
+    <value>Your password was updated. You need to log in again.</value>
+  </data>
+  <data name="Str_ProcessingEndedTitle" xml:space="preserve">
+    <value>The process is completed.</value>
+  </data>
+  <data name="Str_ReportLiteral" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="Str_ToolTip_NewKMTab" xml:space="preserve">
+    <value>New Knowledge Map</value>
+  </data>
+  <data name="Str_ToolTip_NewReportTab" xml:space="preserve">
+    <value>New Report</value>
+  </data>
+  <data name="Str_UiLblDownloadingAsg" xml:space="preserve">
+    <value>Downloading an assignment...Please wait...</value>
+  </data>
+  <data name="Str_UiLblIdle" xml:space="preserve">
+    <value>Idle</value>
+  </data>
+  <data name="Str_UiLblNone" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="Str_UiLbl_Black" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="Str_UiLbl_Blue" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="Str_UiLbl_FileLiteral" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Str_UiLbl_FirstXPSLocation" xml:space="preserve">
+    <value>Please select document...</value>
+  </data>
+  <data name="Str_UiLbl_FirstXPSName" xml:space="preserve">
+    <value>Please select document...</value>
+  </data>
+  <data name="Str_UiLbl_Green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="Str_UiLbl_Red" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="Str_UiLbl_Yellow" xml:space="preserve">
+    <value>Yellow</value>
+  </data>
+  <data name="Str_UI_BtnOpen" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="Str_UI_BtnOpenAsgForMerge" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="Str_Ui_LblComments" xml:space="preserve">
+    <value> Comments: </value>
+  </data>
+  <data name="Str_UndefinedError" xml:space="preserve">
+    <value>Failed.</value>
+  </data>
+  <data name="Str_VersionErrorTitle" xml:space="preserve">
+    <value>Version Error</value>
+  </data>
+  <data name="Str_WarnTitle" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="Str_WlsPostTitle" xml:space="preserve">
+    <value>eJournalPlus - Report</value>
+  </data>
+  <data name="Str_Wrn_UnsavedAsg" xml:space="preserve">
+    <value>Note: This assignment has not been saved yet.</value>
+  </data>
+</root>
