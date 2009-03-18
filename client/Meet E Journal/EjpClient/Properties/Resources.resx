@@ -403,4 +403,7 @@
   <data name="Str_Wrn_UnsavedAsg" xml:space="preserve">
     <value>注意：まだ1度も保存されていません</value>
   </data>
+  <data name="ERR_NoLiveSpaceUriSet" xml:space="preserve">
+    <value>Erronous or No Live Space Url. You must specify the Url to your Live Space first. This is done under the main menu, Application Settings.</value>
+  </data>
 </root>

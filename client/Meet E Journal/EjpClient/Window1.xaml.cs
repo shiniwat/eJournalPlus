@@ -1672,6 +1672,14 @@ namespace ejpClient
 			if (e != null)
 				e.Handled = true;
 
+			if (string.IsNullOrEmpty(App._ejpSettings.LiveSpaceUri))
+			{
+				MessageBox.Show(Properties.Resources.ERR_NoLiveSpaceUriSet,
+					Properties.Resources.Str_ErrorTitle,
+					MessageBoxButton.OK, MessageBoxImage.Error);
+				return;
+			}
+
 			try
 			{
 				bool foundReportToPublish = false;
@@ -1690,9 +1698,8 @@ namespace ejpClient
 							byte[] kmByteArray = this._currentKnowledgeMapControl.ExportMapToByteArray();
 							foundReportToPublish = true;
 
-							WlsBridge.WLSBridgeHelper wlsbh = new WLSBridgeHelper();
+							WlsBridge.WLSBridgeHelper wlsbh = new WLSBridgeHelper(App._ejpSettings.LiveSpaceUri);
 
-							//push the KM Image
 							wlsbh.EnsureAlbumExist();
 
 							//make sure the user is authenticated
@@ -1702,6 +1709,7 @@ namespace ejpClient
 							string kmImageLocation = null;
 							string kmImageName = string.Format("KnowledgeMap_{0}", DateTime.Now.ToString("yy_MMMM_d-HH_MM_ss"));
 
+							//push the KM Image
 							kmImageLocation = wlsbh.PutPhoto(kmImageName, kmByteArray, "image/png");
 
 							//Wrap up the post in a complete HTML envelope and add the 

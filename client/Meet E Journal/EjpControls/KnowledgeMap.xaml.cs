@@ -969,7 +969,7 @@ namespace SiliconStudio.Meet.EjpControls
 				if (u3 != this._currentlyHoveringUiElement)
 				{
 					if (this._currentlyHoveringUiElement != null)
-						this._currentlyHoveringUiElement.Effect = null;
+						this._currentlyHoveringUiElement.Effect = null; //sp1 - Set to BitmapEffect for non-sp1 comp.
 					u3.Effect = new DropShadowEffect() { ShadowDepth = 10, Color = Colors.Black, BlurRadius = 7 };
 					this._currentlyHoveringUiElement = u3;
 				}
@@ -978,7 +978,7 @@ namespace SiliconStudio.Meet.EjpControls
 			{
 				if (this._currentlyHoveringUiElement != null)
 				{
-					this._currentlyHoveringUiElement.Effect = null;
+					this._currentlyHoveringUiElement.Effect = null;  //sp1 - Set to BitmapEffect for non-sp1 comp.
 					this._currentlyHoveringUiElement = null;
 				}
 			}
@@ -1269,7 +1269,7 @@ namespace SiliconStudio.Meet.EjpControls
 				{
 					if (this._knowledgeMapGuideControl != null)
 					{
-						//The Guide responds to none of our fance effects :)
+						//The Guide responds to none of our fancy effects :)
 						if (uie == this._knowledgeMapGuideControl)
 							continue;
 					}

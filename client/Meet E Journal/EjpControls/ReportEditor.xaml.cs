@@ -328,7 +328,7 @@ namespace SiliconStudio.Meet.EjpControls
 			{
 				if (format.Contains("KnowledgeMapImageEntity"))
 				{
-					e.Effects = DragDropEffects.None;
+					e.Effects = DragDropEffects.None;  //sp1 - Set to BitmapEffect for non-sp1 comp.
 					e.Handled = true;
 					return;
 				}

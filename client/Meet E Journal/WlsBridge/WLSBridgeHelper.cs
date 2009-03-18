@@ -32,11 +32,14 @@ namespace WlsBridge
 		private const string _localAppIDString =
 			"EJournalPlus";
 
+		private string _userSpaceUri = string.Empty;
+
 		/// <summary>
 		/// Constructor, parameterless
 		/// </summary>
-		public WLSBridgeHelper()
+		public WLSBridgeHelper(string userSpaceUri)
 		{
+			this._userSpaceUri = userSpaceUri;
 			_manager = IdentityManager.CreateInstance(_localAppIDString, "eJournalPlus");
 		}
 

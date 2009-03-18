@@ -221,6 +221,15 @@ namespace ejpClient.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Erronous or No Live Space Url. You must specify the Url to your Live Space first. This is done under the main menu, Application Settings..
+        /// </summary>
+        internal static string ERR_NoLiveSpaceUriSet {
+            get {
+                return ResourceManager.GetString("ERR_NoLiveSpaceUriSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 選択してあるナレッジマップはまだガイド設定されていません。.
         /// </summary>
         internal static string ERR_SelectedKMHasNoGuide {
