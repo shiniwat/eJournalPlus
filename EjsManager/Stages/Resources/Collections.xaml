@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:src="clr-namespace:SiliconStudio.Meet.EjsManager">
+    
+    <src:ObservableCourseList x:Key="CompleteCoursesList"/>
+    <src:ObservableCourseList x:Key="CompleteCoursesForNewDocumentList"/>
+    <src:ObservableUserList x:Key="CompleteUsersList"/>
+    <src:ObservableAssignmentList x:Key="CompleteAssignmentsList"/>
+    <src:ObservableCourseDocumentList x:Key="CompleteCourseDocumentsList"/>
+    <src:ObservableCourseRegistrationList x:Key="CompleteCourseRegistrationsList"/>
+    
+</ResourceDictionary>

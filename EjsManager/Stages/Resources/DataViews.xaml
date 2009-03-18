@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <GridView x:Key="views_ServerSessionsView" AllowsColumnReorder="true" ColumnHeaderToolTip="Courses">
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_lastName}" Header="Last Name" Width="200"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_firstName}" Header="First Name" Width="200"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_isAuthenticated}" Header="Is Authenticated" Width="200" />
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_creationTimeStamp}" Header="Logged In" Width="200"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_expireTimeStamp, Converter={StaticResource conv_DateTimeToExpireStatus}}" Header="Token Expires" Width="200"/>
+    </GridView>
+    
+    <GridView x:Key="views_CoursesListView" AllowsColumnReorder="true" ColumnHeaderToolTip="Courses">
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_name}" Header="Name" Width="100"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_description}" Header="Description" Width="150" />
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_owner}" Header="Owner" Width="100"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_creationDate}" Header="Created" Width="180"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_isActive}" Header="Is Active" Width="100"/>
+    </GridView>
+    
+    <GridView x:Key="views_UsersListView" AllowsColumnReorder="true" ColumnHeaderToolTip="Users">
+        <GridViewColumn DisplayMemberBinding="{Binding Path=LastName}" Header="Last Name" Width="100"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=FirstName}" Header="First Name" Width="100" />
+        <GridViewColumn DisplayMemberBinding="{Binding Path=UserName}" Header="User Name" Width="100" />
+        <GridViewColumn DisplayMemberBinding="{Binding Path=Email}" Header="Email" Width="100"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=UserGroupId, Converter={StaticResource conv_GIDtoGName}}" Header="Email" Width="100"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=DatabaseName}" Header="Database Name" Width="100"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=IsAccountActive}" Header="Is Active" Width="100"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Header="Id" Width="60"/>
+    </GridView>
+    
+    <GridView x:Key="views_CourseDocumentsListView" AllowsColumnReorder="true" ColumnHeaderToolTip="Course Documents">
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_name}" Header="Name" Width="150"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_description}" Header="Description" Width="150" />
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_courseId, Converter={StaticResource conv_CourseIDToName}}" Header="Course" Width="100" />
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_creationDate}" Header="Created" Width="180"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=_isAvailable}" Header="Is Active" Width="100"/>
+    </GridView>
+    
+    <GridView x:Key="views_UsersListGroupedByCourseView" AllowsColumnReorder="true" ColumnHeaderToolTip="Users">
+        <GridViewColumn DisplayMemberBinding="{Binding Path=UserInfoObject.LastName}" Header="Last Name" Width="100"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=UserInfoObject.FirstName}" Header="First Name" Width="100" />
+        <GridViewColumn DisplayMemberBinding="{Binding Path=UserInfoObject.UserName}" Header="User Name" Width="100" />
+        <GridViewColumn DisplayMemberBinding="{Binding Path=UserInfoObject.Email}" Header="Email" Width="100"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=UserInfoObject.DatabaseName}" Header="Database Name" Width="100"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=UserInfoObject.IsAccountActive}" Header="Is Active" Width="100"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=UserInfoObject.Id}" Header="Id" Width="60"/>
+    </GridView>
+    
+    <CollectionViewSource x:Key='views_UserCourseRegistrationsView' Source="{Binding Source={StaticResource CompleteCourseRegistrationsList}}">
+        <CollectionViewSource.GroupDescriptions>
+            <PropertyGroupDescription PropertyName="CourseId" />
+        </CollectionViewSource.GroupDescriptions>
+    </CollectionViewSource>
+
+</ResourceDictionary>

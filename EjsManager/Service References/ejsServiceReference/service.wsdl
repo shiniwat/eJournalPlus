@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:i0="http://meet.ejs/services" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="ejsPublicService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://meet.ejs/services" location="" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_EjsPublicService" type="i0:EjsPublicService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRecord">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/UpdateUserRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserRecord">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/DeleteUserRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserPassword">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/UpdateUserPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InvalidateToken">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/InvalidateToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewUser">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/RegisterNewUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegisteredUsers">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/GetAllRegisteredUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAssignment">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/DeleteAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="HideAssignment">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/HideAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RestoreAssignment">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/RestoreAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAssignments">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/GetAllAssignments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAndUploadAssignment">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/SaveAndUploadAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveStudyMetaData">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/SaveStudyMetaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAssignment">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/GetAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommentsMergedAssignment">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/GetCommentsMergedAssignment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCourseDocuments">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/GetAllCourseDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegisteredCoursesForUser">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/GetRegisteredCoursesForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AddDocumentToCourse">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/AddDocumentToCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourseDocument">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/UpdateCourseDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCourseDocument">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/DeleteCourseDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseDocument">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/GetCourseDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegisteredCourses">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/GetAllRegisteredCourses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRegisteredCourseRegistrations">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/GetAllRegisteredCourseRegistrations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewCourse">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/RegisterNewCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUserToCourse">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/RegisterUserToCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUserToCourse_adm">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/RegisterUserToCourse_adm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromCourse">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/RemoveUserFromCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCourseRecord">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/DeleteCourseRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourseRecord">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/UpdateCourseRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentServerStats">
+      <soap:operation soapAction="http://meet.ejs/services/EjsPublicService/GetCurrentServerStats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ejsFailureReportFault">
+        <soap:fault use="literal" name="ejsFailureReportFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ejsPublicService">
+    <wsdl:port name="BasicHttpBinding_EjsPublicService" binding="tns:BasicHttpBinding_EjsPublicService">
+      <soap:address location="http://localhost/EJS/PublicService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

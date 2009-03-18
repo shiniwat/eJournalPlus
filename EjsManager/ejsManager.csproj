@@ -1,0 +1,280 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)'==''">Debug</Configuration>
+    <DefaultClrNameSpace>ejsMngrGuiSketch</DefaultClrNameSpace>
+    <AssemblyName>ejsManager</AssemblyName>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <AlwaysCompileMarkupFilesInSeparateDomain>false</AlwaysCompileMarkupFilesInSeparateDomain>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SiliconStudio.Meet.EjsManager</RootNamespace>
+    <ApplicationIcon>ApplicationIconRound.ico</ApplicationIcon>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <ProjectGuid>{ADE3E238-E61A-41C1-A32A-AD8702D424EE}</ProjectGuid>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AggregateTypes\mngCourseRegistration.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Service References\ejsServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceOperations\ejsConnector.cs" />
+    <Compile Include="Stages\CollectionClasses.cs" />
+    <Compile Include="Stages\ejsManagerStage.cs" />
+    <Compile Include="Stages\ejsStage_Assignments.xaml.cs">
+      <DependentUpon>ejsStage_Assignments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\ejsStage_Courses.xaml.cs">
+      <DependentUpon>ejsStage_Courses.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\ejsStage_Documents.xaml.cs">
+      <DependentUpon>ejsStage_Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\ejsStage_Login.xaml.cs">
+      <DependentUpon>ejsStage_Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\ejsStage_Server.xaml.cs">
+      <DependentUpon>ejsStage_Server.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\ejsStage_Users.xaml.cs">
+      <DependentUpon>ejsStage_Users.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\StageNames_consts.cs" />
+    <Compile Include="ValueConverter\ValueConverters.cs" />
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddNewCourseDocument.xaml.cs">
+      <DependentUpon>AddNewCourseDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddNewCourseWindow.xaml.cs">
+      <DependentUpon>AddNewCourseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddNewItemWindow.cs" />
+    <Compile Include="Windows\AddNewUserWindow.xaml.cs">
+      <DependentUpon>AddNewUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BusyDialog.xaml.cs">
+      <DependentUpon>BusyDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CourseRegistrationsWindow.xaml.cs">
+      <DependentUpon>CourseRegistrationsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SqlInputValidator.cs" />
+    <Page Include="Resources\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ControlTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ValueConverters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stages\Resources\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stages\Resources\Collections.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stages\ejsStage_Assignments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stages\ejsStage_Courses.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stages\ejsStage_Documents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stages\ejsStage_Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stages\ejsStage_Server.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stages\ejsStage_Users.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Stages\Resources\DataViews.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\AddNewCourseDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddNewCourseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddNewUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BusyDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CourseRegistrationsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ejsServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ejsServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ejsServiceReference\EjsPublicService.AssignmentOp.xsd" />
+    <None Include="Service References\ejsServiceReference\EjsPublicService.CourseOp.xsd" />
+    <None Include="Service References\ejsServiceReference\EjsPublicService.ServerOp.xsd" />
+    <None Include="Service References\ejsServiceReference\EjsPublicService.UserOp.xsd" />
+    <None Include="Service References\ejsServiceReference\EjsPublicService.xsd" />
+    <None Include="Service References\ejsServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ejsServiceReference\service.wsdl" />
+    <None Include="Service References\ejsServiceReference\service.xsd" />
+    <None Include="Service References\ejsServiceReference\services.wsdl" />
+    <None Include="Service References\ejsServiceReference\services.xsd" />
+    <None Include="Service References\ejsServiceReference\SiliconStudio.Meet.EjsManager.ejsServiceReference.ejsAssignment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ejsServiceReference\SiliconStudio.Meet.EjsManager.ejsServiceReference.ejsCourse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ejsServiceReference\SiliconStudio.Meet.EjsManager.ejsServiceReference.ejsCourseDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ejsServiceReference\SiliconStudio.Meet.EjsManager.ejsServiceReference.ejsCourseRegistration.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ejsServiceReference\SiliconStudio.Meet.EjsManager.ejsServiceReference.ejsServerStats.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ejsServiceReference\SiliconStudio.Meet.EjsManager.ejsServiceReference.ejsSessionToken.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ejsServiceReference\SiliconStudio.Meet.EjsManager.ejsServiceReference.ejsUserInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ejsServiceReference\System.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Stages\imgData\aTvD.png" />
+    <Resource Include="Stages\imgData\aTvS.png" />
+    <Resource Include="Stages\imgData\caTvD.png" />
+    <Resource Include="Stages\imgData\caTvS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Stages\imgData\bgtile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Stages\imgData\aNA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ApplicationIconRound.ico" />
+  </ItemGroup>
+</Project>

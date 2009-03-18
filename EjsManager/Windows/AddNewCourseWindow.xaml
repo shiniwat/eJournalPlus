@@ -1,0 +1,33 @@
+﻿<src:AddNewItemWindow x:Class="SiliconStudio.Meet.EjsManager.AddNewCourseWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:SiliconStudio.Meet.EjsManager"
+    Title="Register a new Course" Height="300" Width="300"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="ToolWindow"
+        >
+    <Grid>
+
+        <Rectangle Grid.Column="0" Fill="{StaticResource StagePanelBackground}" StrokeThickness="1" Margin="2"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RadiusX="4" RadiusY="4" />
+
+        <Label HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" 
+                   Content="Register a new User:" FontSize="12" Grid.Column="0"/>
+
+        <TextBox TextChanged="_dv_CheckStringInput" MaxLength="150" Margin="8,51.81,8,0" VerticalAlignment="Top" TextWrapping="NoWrap" x:Name="_tb_Name"/>
+        <Label HorizontalAlignment="Left" Margin="8,35.57,0,0" VerticalAlignment="Top" Content="Course Name:" FontSize="11" Padding="0,0,0,0"/>
+        <TextBox TextChanged="_dv_CheckStringInput" MaxLength="500" TextWrapping="NoWrap" Margin="8,99.57,8,0" VerticalAlignment="Top" x:Name="_tb_Description"/>
+        <Label Content="Description:" FontSize="11" Padding="0,0,0,0" HorizontalAlignment="Left" Margin="8,83.33,0,0" VerticalAlignment="Top"/>
+        <CheckBox Margin="8,182,0,40" Content="Is Active" x:Name="_cb_IsActive" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox TextChanged="_dv_CheckStringInput" MaxLength="200" TextWrapping="NoWrap" x:Name="_tb_Owner" Margin="8,148.775,8,0" VerticalAlignment="Top"/>
+        <Label Content="Owner:" FontSize="11" Padding="0,0,0,0" HorizontalAlignment="Left" Margin="8,132.535,0,0" VerticalAlignment="Top"/>
+
+        <Label HorizontalAlignment="Left" Margin="3,0,0,30" VerticalAlignment="Bottom" Content="* All Fields must be filled in." FontSize="10" />
+        
+        <Button HorizontalAlignment="Left" Margin="8,0,0,8" VerticalAlignment="Bottom" Width="Auto"
+                    Height="Auto" Content="Register" Click="OnAddNewItem"/>
+        <Button HorizontalAlignment="Right" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="Auto" 
+                    Height="Auto" Content="Cancel" Click="OnCancel"/>
+
+    </Grid>
+</src:AddNewItemWindow>

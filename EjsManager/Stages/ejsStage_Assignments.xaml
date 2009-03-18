@@ -1,0 +1,67 @@
+﻿<src:ejsManagerStage x:Class="SiliconStudio.Meet.EjsManager.ejsStage_Assignments"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:src="clr-namespace:SiliconStudio.Meet.EjsManager">
+    <Grid Background="{StaticResource StageBackground}" x:Name="_stageG_Assignments">
+        
+        <Rectangle Grid.Column="0" Fill="{StaticResource StagePanelBackground}" StrokeThickness="1" Margin="16" Height="63"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Top" RadiusX="4" RadiusY="4" />
+        
+        <Label HorizontalAlignment="Left" Margin="16,16,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Assignments" FontSize="16" />
+        <Label HorizontalAlignment="Left" Margin="16,37,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Manage Assignments in the eJournal Server" FontSize="10" />
+        
+        <Grid Margin="16,80,16,67" DataContext="{Binding Path=SelectedItem, ElementName=_tv_Assignments, Mode=Default}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Column="0" Fill="{StaticResource StagePanelBackground}" StrokeThickness="1" Margin="2"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RadiusX="4" RadiusY="4" />
+
+            <Rectangle Grid.Column="1" Fill="{StaticResource StagePanelBackground}" StrokeThickness="1" Margin="2"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RadiusX="4" RadiusY="4" />
+
+            <Label HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" 
+                   Content="Selected Assignment:" FontSize="12" Grid.Column="0"/>
+
+            <Label Margin="8,51.81,8,0" VerticalAlignment="Top" Height="Auto" Content="{Binding Assignment.Title}" x:Name="_l_Title"/>
+            <Label HorizontalAlignment="Left" Margin="8,35.57,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Title:" FontSize="11" Padding="0,0,0,0"/>
+            <Label Height="Auto" Content="{Binding Assignment.Description}" Margin="8,99,8,0" VerticalAlignment="Top" x:Name="_l_Description"/>
+            <Label Width="Auto" Height="Auto" Content="Description:" FontSize="11" Padding="0,0,0,0" HorizontalAlignment="Left" Margin="8,83,0,0" VerticalAlignment="Top"/>
+            <Label Width="Auto" Height="Auto" Content="Published By:" FontSize="11" Padding="0,0,0,0" HorizontalAlignment="Left" Margin="8,132,0,0" />
+            <Label Width="Auto" Height="Auto" Content="{Binding Assignment.OwnerName}" FontSize="11" Padding="8,0,0,0" HorizontalAlignment="Left" Margin="8,148,0,0" VerticalAlignment="Top"/>
+            <Label Width="Auto" Height="Auto" Content="Study Count:" FontSize="11" Padding="0,0,0,0" HorizontalAlignment="Left" Margin="8,175,0,0" VerticalAlignment="Top"/>
+            <Label Width="Auto" Height="Auto" Content="Comments:" FontSize="11" Padding="0,0,0,0" HorizontalAlignment="Right" Margin="0,175,8,0" VerticalAlignment="Top"/>
+            <Label Width="Auto" Height="Auto" Content="{Binding Assignment.StudyCount}" FontSize="11" Padding="8,0,0,60" HorizontalAlignment="Left" Margin="8,191,0,0" VerticalAlignment="Top"/>
+            <Label Width="Auto" Height="Auto" Content="{Binding Assignment.CommentCount}" FontSize="11" Padding="0,0,8,60" HorizontalAlignment="Right" Margin="0,191,8,0" VerticalAlignment="Top"/>
+
+            <Label Width="Auto" Height="Auto" Content="Is Available" FontSize="11" 
+                   HorizontalAlignment="Left" Margin="20,214,8,0" VerticalAlignment="Top"/>
+            
+            <!--<CheckBox Margin="8,220,80,50" Height="Auto" IsChecked="{Binding Assignment.IsAvailable}" IsEnabled="False"
+                      x:Name="_cb_IsAvailable" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>-->
+            
+            <Label HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" 
+                   Content="All Assignments:" FontSize="12" Grid.Column="1"/>
+            
+            <TreeView x:Name="_tv_Assignments" HorizontalAlignment="Stretch" Background="#AAFFFFFF"
+                       Grid.Column="1" Margin="8,25,8,38" />
+
+            <Button HorizontalAlignment="Right" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="Auto" 
+                    Height="Auto" Content="Hide" Click="OnHideCurrentItem"/>
+            
+            <Button HorizontalAlignment="Right" Margin="0,0,50,8" VerticalAlignment="Bottom" Width="Auto" 
+                    Height="Auto" Content="Delete" Click="OnDeleteCurrentItem"/>
+            
+            <Button HorizontalAlignment="Left" Margin="8,0,0,8" VerticalAlignment="Bottom" Width="Auto" 
+                    Height="Auto" Content="Make Available" Click="OnRestoreCurrentItem"/>
+            
+            <Button HorizontalAlignment="Right" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="Auto" 
+                    Height="Auto" Content="Update List" Grid.Column="1" Click="OnUpdateList"/>
+        </Grid>
+        
+        
+        
+    </Grid>
+</src:ejsManagerStage>

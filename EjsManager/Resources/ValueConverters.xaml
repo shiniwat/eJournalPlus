@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:src="clr-namespace:SiliconStudio.Meet.EjsManager">
+    
+    <src:CourseIDToNameConverter x:Key="conv_CourseIDToName" />
+    <src:CourseIDToObject x:Key="conv_CourseIDToObject" />
+    <src:DateTimeToStatus x:Key="conv_DateTimeToExpireStatus" />
+    <src:BoolFlip x:Key="conv_BoolFlipper" />
+    <src:UserGroupIdToTeacherStatus x:Key="conv_GIDtoTeacherStatus" />
+    <src:UserGroupIdToGroupName x:Key="conv_GIDtoGName" />
+    
+</ResourceDictionary>

@@ -1,0 +1,83 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="SiliconStudio.Meet.EjsManager.MainWindow"
+    xmlns:src="clr-namespace:SiliconStudio.Meet.EjsManager"
+	x:Name="Window"
+	Title="eJournalPlus Server Manager"
+	Width="800" Height="590" MinHeight="700" MinWidth="1000" WindowStartupLocation="CenterScreen">
+	<Grid x:Name="LayoutRoot" >
+        <Grid.Background>
+            <ImageBrush Stretch="None" TileMode="Tile" Viewport="0,0,20,20" ViewportUnits="Absolute" 
+                           ImageSource="pack://application:,,,/Stages/imgData/bgtile.png" />
+        </Grid.Background>
+        <Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="16"/>
+				<RowDefinition Height="100"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="20"/>
+			</Grid.RowDefinitions>
+			<Grid Margin="8,0,8,0" Grid.Row="1" Background="#2468BFFF" IsEnabled="True">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="100"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Button x:Name="_mtb_Courses" Click="OnGoToStage" Tag="Courses" Margin="4,4,4,18" Content="Courses" Grid.Column="1" FontSize="9" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFE2E2E2" Template="{DynamicResource StageSelectButtonTemplate}" IsEnabled="True"/>
+				<Button x:Name="_mtb_Documents" Click="OnGoToStage" Tag="Documents" Margin="4,4,4,18" Content="Documents" Grid.Column="2" FontSize="9" Foreground="#FFD4D4D4" Template="{DynamicResource StageSelectButtonTemplate}"/>
+				<Button x:Name="_mtb_Users" Click="OnGoToStage" Tag="Users" Margin="4,4,4,18" Content="Users" Grid.Column="3" FontSize="9" Foreground="#FFD4D4D4" Template="{DynamicResource StageSelectButtonTemplate}"/>
+				<Button x:Name="_mtb_Assignments" Click="OnGoToStage" Tag="Assignments" Margin="4,4,4,18" Content="Assignments" Grid.Column="4" FontSize="9" Foreground="#FFD4D4D4" Template="{DynamicResource StageSelectButtonTemplate}"/>
+				<Button x:Name="_mtb_Server" Click="OnGoToStage" Tag="Server" Margin="4,4,4,18" Content="Server" Grid.Column="5" FontSize="9" Foreground="#FFD4D4D4" Template="{DynamicResource StageSelectButtonTemplate}"/>
+				<Button x:Name="_mtb_Exit" Click="OnExit" Tag="Exit" Margin="4,4,4,18" Content="Exit" Grid.Column="6" FontSize="9" Foreground="#FFD4D4D4" Template="{DynamicResource StageSelectButtonTemplate}" />
+				<Ellipse Fill="{DynamicResource SelectedFuncEllipseBrush}" x:Name="_be_Courses" Stroke="{x:Null}" HorizontalAlignment="Center" Margin="0,0,0,6" VerticalAlignment="Bottom" Width="8" Height="8" Grid.Column="1" Visibility="Hidden"/>
+				<Ellipse Fill="{DynamicResource SelectedFuncEllipseBrush}" x:Name="_be_Documents" Stroke="{x:Null}" HorizontalAlignment="Center" Margin="0,0,0,6" VerticalAlignment="Bottom" Width="8" Height="8" Grid.Column="2" Visibility="Hidden"/>
+				<Ellipse Fill="{DynamicResource SelectedFuncEllipseBrush}" x:Name="_be_Users" Stroke="{x:Null}" HorizontalAlignment="Center" Margin="0,0,0,6" VerticalAlignment="Bottom" Width="8" Height="8" Grid.Column="3" Visibility="Hidden"/>
+				<Ellipse Fill="{DynamicResource SelectedFuncEllipseBrush}" x:Name="_be_Assignments" Stroke="{x:Null}" HorizontalAlignment="Center" Margin="0,0,0,6" VerticalAlignment="Bottom" Width="8" Height="8" Grid.Column="4" Visibility="Hidden"/>
+				<Ellipse Fill="{DynamicResource SelectedFuncEllipseBrush}" x:Name="_be_Server" Stroke="{x:Null}" HorizontalAlignment="Center" Margin="0,0,0,6" VerticalAlignment="Bottom" Width="8" Height="8" Grid.Column="5" Visibility="Hidden"/>
+				<Ellipse Fill="{DynamicResource SelectedFuncEllipseBrush}" x:Name="_be_Exit" Stroke="{x:Null}" HorizontalAlignment="Center" Margin="0,0,0,6" VerticalAlignment="Bottom" Width="8" Height="8" Grid.Column="6" Visibility="Hidden"/>
+			</Grid>
+			<Label HorizontalAlignment="Left" Margin="4,0,0,0" Width="Auto" Content="eJournal Server Manager v.1" FontSize="9" Padding="0,0,0,0"/>
+			<Label HorizontalAlignment="Left" Margin="4,0,0,0" VerticalAlignment="Center" Width="Auto" Content="Status:" FontSize="9" Padding="0,0,0,0" Grid.Row="3"/>
+			<Label x:Name="_l_ApplicationStatus" Width="Auto" Content="Idle" FontSize="9" Padding="0,0,0,0" HorizontalAlignment="Left" Margin="41,0,0,0" VerticalAlignment="Center" Grid.Row="3"/>
+			<Label x:Name="_l_LoginStatus" Width="Auto" Content="Please Log In" FontSize="9" Padding="0,0,0,0" HorizontalAlignment="Right" Margin="0,0,4,0" VerticalAlignment="Center" Grid.Row="3"/>
+			<src:ejsStage_Login 
+                RequestGoToStage="OnRequestGoToStage" 
+                UserAuthenticated="OnUserAuthenticated" 
+                AsyncOperationStarted="OnStageAsyncOperationStarted" 
+                AsyncOperationCompleted="OnStageAsyncOperationCompleted"
+                Visibility="Collapsed" Margin="8,0,8,0" Grid.Row="2" x:Name="_stage_Login" />
+            <src:ejsStage_Courses 
+                RequestGoToStage="OnRequestGoToStage" 
+                AsyncOperationStarted="OnStageAsyncOperationStarted" 
+                AsyncOperationCompleted="OnStageAsyncOperationCompleted"
+                CourseDataUpdated="OnCourseDataUpdated"
+                Visibility="Collapsed" Margin="8,0,8,0" Grid.Row="2" x:Name="_stage_Courses" />
+            <src:ejsStage_Documents 
+                RequestGoToStage="OnRequestGoToStage" 
+                AsyncOperationStarted="OnStageAsyncOperationStarted" 
+                AsyncOperationCompleted="OnStageAsyncOperationCompleted"
+                Visibility="Collapsed" Margin="8,0,8,0" Grid.Row="2" x:Name="_stage_Documents" />
+			<src:ejsStage_Users 
+                RequestGoToStage="OnRequestGoToStage" 
+                AsyncOperationStarted="OnStageAsyncOperationStarted" 
+                AsyncOperationCompleted="OnStageAsyncOperationCompleted"
+                Visibility="Collapsed" Margin="8,0,8,0" Grid.Row="2" x:Name="_stage_Users" />
+			<src:ejsStage_Assignments 
+                RequestGoToStage="OnRequestGoToStage" 
+                AsyncOperationStarted="OnStageAsyncOperationStarted" 
+                AsyncOperationCompleted="OnStageAsyncOperationCompleted"
+                Visibility="Collapsed" Margin="8,0,8,0" Grid.Row="2" x:Name="_stage_Assignments" />
+            <src:ejsStage_Server 
+                RequestGoToStage="OnRequestGoToStage" 
+                AsyncOperationStarted="OnStageAsyncOperationStarted" 
+                AsyncOperationCompleted="OnStageAsyncOperationCompleted"
+                Visibility="Collapsed" Margin="8,0,8,0" Grid.Row="2" x:Name="_stage_Server" />
+		</Grid>
+	</Grid>
+</Window>

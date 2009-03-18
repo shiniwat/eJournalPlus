@@ -1,0 +1,110 @@
+﻿<src:ejsManagerStage x:Class="SiliconStudio.Meet.EjsManager.ejsStage_Users"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:src="clr-namespace:SiliconStudio.Meet.EjsManager">
+    <Grid Background="{StaticResource StageBackground}" x:Name="_stageG_Users">
+        
+        <Rectangle Grid.Column="0" Fill="{StaticResource StagePanelBackground}" StrokeThickness="1" Margin="16" Height="63"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Top" RadiusX="4" RadiusY="4" />
+        
+        <Label HorizontalAlignment="Left" Margin="16,16,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Users" FontSize="16" />
+        <Label HorizontalAlignment="Left" Margin="16,37,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Manage and Register Users in the eJournal Server" FontSize="10" />
+
+        <Grid Margin="16,80,16,67" DataContext="{Binding ElementName=_lv_UserList, Mode=Default, Path=SelectedItem}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Column="1" Fill="{StaticResource StagePanelBackground}" StrokeThickness="1" Margin="2"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RadiusX="4" RadiusY="4" />
+
+            <Grid Grid.Column="0" x:Name="_g_Details">
+      
+                <Rectangle Grid.Column="0" Fill="{StaticResource StagePanelBackground}" StrokeThickness="1" Margin="2"
+                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RadiusX="4" RadiusY="4" />
+                
+                <Label HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" 
+                   Content="Selected User:" FontSize="12" Grid.Column="0"/>
+
+                <TextBox TextChanged="_dv_CheckStringInput" MaxLength="100" Margin="8,51.81,8,0" VerticalAlignment="Top" Height="Auto" Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" x:Name="_tb_FirstName"/>
+                <Label HorizontalAlignment="Left" Margin="8,35.57,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Content="Last Name:" FontSize="11" Padding="0,0,0,0"/>
+                <TextBox TextChanged="_dv_CheckStringInput" MaxLength="100" Height="Auto" Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" Margin="8,99.57,8,0" VerticalAlignment="Top" x:Name="_tb_LastName"/>
+                <Label Width="Auto" Height="Auto" Content="First Name:" FontSize="11" Padding="0,0,0,0" HorizontalAlignment="Left" Margin="8,83.33,0,0" VerticalAlignment="Top"/>
+                <CheckBox Margin="8,288,0,40" Height="Auto" IsChecked="{Binding IsAccountActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Content="Can Login" x:Name="_cb_CanLogin" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBox TextChanged="_dv_CheckStringInput" MaxLength="128" Height="Auto" Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" x:Name="_tb_Email" Margin="8,148.775,8,0" VerticalAlignment="Top"/>
+                <Label Width="Auto" Height="Auto" Content="Email:" FontSize="11" Padding="0,0,0,0" HorizontalAlignment="Left" Margin="8,132.535,0,0" VerticalAlignment="Top"/>
+                <TextBox TextChanged="_dv_CheckStringInput" MaxLength="50" Height="Auto" Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="NoWrap" x:Name="_tb_UserName" Margin="8,200,8,0" VerticalAlignment="Top"/>
+                <Label Width="Auto" Height="Auto" Content="User Name:" FontSize="11" Padding="0,0,0,0" HorizontalAlignment="Left" Margin="8,183.76,0,0" x:Name="_l_UserName" VerticalAlignment="Top"/>
+                <TextBox TextChanged="_dv_CheckStringInput" MaxLength="512" Height="Auto" Text="" TextWrapping="NoWrap" x:Name="_tb_Password" Margin="8,252.028,8,0" VerticalAlignment="Top"/>
+                <Label Width="Auto" Height="Auto" Content="Set New Password:" FontSize="11" Padding="0,0,0,0" HorizontalAlignment="Left" Margin="8,235.788,0,0" VerticalAlignment="Top"/>
+                
+                <CheckBox Margin="8,288,8,0" Content="Is a Teacher" x:Name="_cb_IsTeacher" 
+                          IsChecked="{Binding UserGroupId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource conv_GIDtoTeacherStatus}}"
+                          VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Right"/>
+                
+                <Button HorizontalAlignment="Left" Margin="8,315,0,40" VerticalAlignment="Top" Content="Edit Course Registrations" Click="OnSetCourseRegistrations"/>
+                
+            </Grid>
+
+            <Label HorizontalAlignment="Left" Margin="8,0,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" 
+                   Content="All Users:" FontSize="12" Grid.Column="1"/>
+
+            <CheckBox Margin="100,4,8,40" Padding="4,1,4,0" Height="Auto" Content="Group By Course" 
+                      x:Name="_cb_GroupListByCourse" Checked="OnGroupUserListByCourse" Unchecked="OnListAllUsersUnGrouped"
+                      VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="1"/>
+
+            <ListView Background="Transparent" ItemsSource="{Binding Mode=OneWay, Source={StaticResource CompleteUsersList}}" 
+                      IsSynchronizedWithCurrentItem="True" Grid.Column="1"
+                      Margin="8,25,8,38" x:Name="_lv_UserList"
+                      ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Stretch"
+                      View="{DynamicResource views_UsersListView}">
+
+                <ListView.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.ContainerStyle>
+                            <Style TargetType="{x:Type GroupItem}">
+                                <Setter Property="Margin" Value="0,0,0,5"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type GroupItem}">
+                                            <Expander IsExpanded="True" BorderBrush="#FFA4B97F" BorderThickness="0,0,0,1">
+                                                <Expander.Header>
+                                                    <DockPanel>
+                                                        <TextBlock FontWeight="Bold" Text="{Binding Path=Name, Converter={StaticResource conv_CourseIDToName}}" Margin="5,0,0,0" />
+                                                        <TextBlock FontWeight="Bold" Text="{Binding Path=ItemCount}" Margin="25,0,0,0" />
+                                                    </DockPanel>
+                                                </Expander.Header>
+                                                <Expander.Content>
+                                                    <ItemsPresenter />
+                                                </Expander.Content>
+                                            </Expander>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </GroupStyle.ContainerStyle>
+                    </GroupStyle>
+                </ListView.GroupStyle>
+
+
+            </ListView>
+
+            
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="8,0,0,8" VerticalAlignment="Bottom" Width="Auto">
+                <Button Margin="2" Content="Update" Click="OnUpdateCurrentItem" x:Name="_b_Update"/>
+                <Button Margin="2" Content="Create New" Click="OnCreateNew"/>
+                <Button Margin="2" Content="Delete" Click="OnDeleteCurrentItem" x:Name="_b_Delete"/>
+            </StackPanel>
+            
+            <Button HorizontalAlignment="Right" Margin="0,0,8,8" VerticalAlignment="Bottom" Width="Auto" 
+                    Height="Auto" Content="Update List" Grid.Column="1" Click="OnUpdateList"/>
+
+        </Grid>
+        
+        <Label HorizontalAlignment="Left" Margin="16,8,0,40" VerticalAlignment="Bottom" Content="Warning:" FontSize="12" />
+        <Label HorizontalAlignment="Left" Margin="16,8,0,27" VerticalAlignment="Bottom" Content="Changes are not saved until you Press the Update Button!" FontSize="10" />
+        <Label HorizontalAlignment="Left" Margin="16,8,0,14" VerticalAlignment="Bottom" Content="All Fields (except Password) must be filled in." FontSize="10" />
+    </Grid>
+</src:ejsManagerStage>

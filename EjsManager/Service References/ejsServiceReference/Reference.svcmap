@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aca5a247-60bc-42c3-bb6c-6c9be592f489" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://133.11.55.170/EJS/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="services.wsdl" MetadataType="Wsdl" ID="581b75b6-f4a0-48ed-aac9-a1283d6a8001" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="91e17bd6-26c1-4530-82e5-a2cdf9806069" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
+    <MetadataFile FileName="services.xsd" MetadataType="Schema" ID="796e2302-20e8-47dc-883c-0950f45ce0c9" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="bbec8aa6-071b-42b9-a1c4-b4f111a52e8e" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
+    <MetadataFile FileName="EjsPublicService.xsd" MetadataType="Schema" ID="db6724c7-71d9-4b4b-8e40-bb8f14a03303" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="15a932ae-ea42-4997-9889-f61027397099" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
+    <MetadataFile FileName="EjsPublicService.UserOp.xsd" MetadataType="Schema" ID="ee9eb6d8-e1a3-4cd3-8014-3ea244d890c7" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
+    <MetadataFile FileName="EjsPublicService.AssignmentOp.xsd" MetadataType="Schema" ID="92f415b5-699a-4098-b389-734da60062ed" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
+    <MetadataFile FileName="EjsPublicService.CourseOp.xsd" MetadataType="Schema" ID="dcc1a77e-9313-4774-a504-0e117d831a09" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
+    <MetadataFile FileName="EjsPublicService.ServerOp.xsd" MetadataType="Schema" ID="3831b33b-9605-4fd5-af26-7a85ea8379b2" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
