@@ -22,9 +22,9 @@
         <GridViewColumn DisplayMemberBinding="{Binding Path=FirstName}" Header="First Name" Width="100" />
         <GridViewColumn DisplayMemberBinding="{Binding Path=UserName}" Header="User Name" Width="100" />
         <GridViewColumn DisplayMemberBinding="{Binding Path=Email}" Header="Email" Width="100"/>
-        <GridViewColumn DisplayMemberBinding="{Binding Path=UserGroupId, Converter={StaticResource conv_GIDtoGName}}" Header="Email" Width="100"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=UserGroupId, Converter={StaticResource conv_GIDtoGName}}" Header="Group" Width="100"/>
         <GridViewColumn DisplayMemberBinding="{Binding Path=DatabaseName}" Header="Database Name" Width="100"/>
-        <GridViewColumn DisplayMemberBinding="{Binding Path=IsAccountActive}" Header="Is Active" Width="100"/>
+        <GridViewColumn DisplayMemberBinding="{Binding Path=IsAccountActive}" Header="Can Login" Width="100"/>
         <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Header="Id" Width="60"/>
     </GridView>
     
