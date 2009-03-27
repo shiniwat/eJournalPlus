@@ -200,7 +200,7 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 		/// </summary>
 		public ejpExternalImageEntityWrapper ImportImageFileToStudy(string filePath, ejpKnowledgeMap targetKM)
 		{
-			DebugManagers.DebugReporter.ReportMethodEnter();
+			//DebugManagers.DebugReporter.ReportMethodEnter();
 
 			ejpExternalImageEntityWrapper wrapper =
 				EjpLib.AssignmentOperations.LocalAssignmentFileOperations.ImportImageFileToPackage(
@@ -211,7 +211,7 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 				targetKM.Id,
 				Helpers.IdManipulation.GetNewGuid());
 
-			DebugManagers.DebugReporter.ReportMethodLeave();
+			//DebugManagers.DebugReporter.ReportMethodLeave();
 
 			return wrapper;
 		}
@@ -222,7 +222,7 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
         /// </summary>
         public ejpExternalImageEntityWrapper ImportKnowledgeMapGuideToStudy(string filePath, ejpKnowledgeMap targetKM)
         {
-            DebugManagers.DebugReporter.ReportMethodEnter();
+            //DebugManagers.DebugReporter.ReportMethodEnter();
 
             ejpExternalImageEntityWrapper wrapper =
                 EjpLib.AssignmentOperations.LocalAssignmentFileOperations.ImportImageFileToPackage(
@@ -244,7 +244,7 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
                 SourceUri = wrapper.SourceUri
             };
 
-            DebugManagers.DebugReporter.ReportMethodLeave();
+            //DebugManagers.DebugReporter.ReportMethodLeave();
 
             return wrapper;
         }

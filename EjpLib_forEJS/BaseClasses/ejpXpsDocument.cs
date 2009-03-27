@@ -87,10 +87,10 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
                 }
                 catch (ArgumentNullException)
                 {
-					SiliconStudio.DebugManagers.DebugReporter.Report(
-						SiliconStudio.DebugManagers.MessageType.Warning,
-						"Accessor: InternalDocumentId - Value is Null",
-						"The Identifier property of the XpsDocument contains no data. Adding new Id."); 
+					//SiliconStudio.DebugManagers.DebugReporter.Report(
+					//	SiliconStudio.DebugManagers.MessageType.Warning,
+                    System.Diagnostics.Debug.Assert(false, 
+						"Accessor: InternalDocumentId - Value is Null\n The Identifier property of the XpsDocument contains no data. Adding new Id."); 
                     
                     g = Helpers.IdManipulation.GetNewGuid();
                     this._xpsDocument.CoreDocumentProperties.Identifier = g.ToString();
@@ -98,10 +98,10 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
                 }
                 catch (FormatException)
                 {
-					SiliconStudio.DebugManagers.DebugReporter.Report(
-						SiliconStudio.DebugManagers.MessageType.Warning,
-						"Accessor: InternalDocumentId - Value is not Valid",
-						"The data stored in the Identifier property of the XpsDocument is not in a valid format."); 
+					//SiliconStudio.DebugManagers.DebugReporter.Report(
+					//	SiliconStudio.DebugManagers.MessageType.Warning,
+                    System.Diagnostics.Debug.Assert(false, 
+						"Accessor: InternalDocumentId - Value is not Valid\n The data stored in the Identifier property of the XpsDocument is not in a valid format."); 
 
                     return Guid.Empty;
                 }
@@ -144,12 +144,13 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
             }
             catch (Exception ex)
             {
-				SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Error,
-					"Failed to create Xps Document Instance",
-					"\nPath: " + path +
-					"\nIs External To Assignment: " + isExternalToAssignment.ToString() +
-					"\nError: " + ex.Message);
+				//SiliconStudio.DebugManagers.DebugReporter.Report(
+				//	SiliconStudio.DebugManagers.MessageType.Error,
+                System.Diagnostics.Debug.Assert(false, ex.Message);
+				//	"Failed to create Xps Document Instance",
+				//	"\nPath: " + path +
+				//	"\nIs External To Assignment: " + isExternalToAssignment.ToString() +
+				//	"\nError: " + ex.Message);
             }
 
 		}// end:Constructor()
@@ -157,9 +158,9 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 		public ejpXpsDocument(Stream data, string path, 
             bool isExternalToAssignment, Guid parentStudyId)
 		{
-			SiliconStudio.DebugManagers.DebugReporter.Report(
-				SiliconStudio.DebugManagers.MessageType.Information,
-                "Creating new Document", "Creating ejp wrapper for xps document with path: " + path);
+			//SiliconStudio.DebugManagers.DebugReporter.Report(
+			//	SiliconStudio.DebugManagers.MessageType.Information,
+            //  "Creating new Document", "Creating ejp wrapper for xps document with path: " + path);
 
 			this._isExternalToAssignment = isExternalToAssignment;
 			this._xpsDocumentPath = path;
@@ -176,12 +177,13 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 			}
 			catch (Exception ex)
 			{
-				SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Error,
-					"Failed to create Xps Document Instance",
-                    "\nPath: " + path + 
-					"\nIs External To Assignment: " + isExternalToAssignment.ToString() +
-					"\nError: " + ex.Message);
+				//SiliconStudio.DebugManagers.DebugReporter.Report(
+				//	SiliconStudio.DebugManagers.MessageType.Error,
+				//	"Failed to create Xps Document Instance",
+                //  "\nPath: " + path + 
+				//	"\nIs External To Assignment: " + isExternalToAssignment.ToString() +
+				//	"\nError: " + ex.Message);
+                System.Diagnostics.Debug.Assert(false, ex.Message);
 				throw;
 			}
 
@@ -197,10 +199,10 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 		/// </summary>
 		public void UpdatePackageReference(Stream data, string path)
 		{
-			SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Information,
-					"Updating Package Reference",
-					"\nPath: " + path);
+			//SiliconStudio.DebugManagers.DebugReporter.Report(
+			//		SiliconStudio.DebugManagers.MessageType.Information,
+			//		"Updating Package Reference",
+			//		"\nPath: " + path);
 
 			this._xpsDocumentPath = path;
 			this._packageUri = new Uri(path, UriKind.Absolute);
@@ -216,11 +218,12 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 			}
 			catch (Exception ex)
 			{
-				SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Error,
-					"Failed to Update Package Reference",
-					"\nPath: " + path +
-					"\nError: " + ex.Message);
+				//SiliconStudio.DebugManagers.DebugReporter.Report(
+				//	SiliconStudio.DebugManagers.MessageType.Error,
+				//	"Failed to Update Package Reference",
+				//	"\nPath: " + path +
+				//	"\nError: " + ex.Message);
+                System.Diagnostics.Debug.Assert(false, ex.Message);
                 
 				throw;
 			}

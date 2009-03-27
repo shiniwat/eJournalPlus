@@ -31,7 +31,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 		private static String targetPackagePath;
 
         //holds a list of Uris to image parts that have not yet been persisted...
-        private static List<string> _unsavedImageParts = new List<string>();
+        internal static List<string> _unsavedImageParts = new List<string>();
         #region Static Methods
 
 		#region Saving
@@ -169,10 +169,10 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
         /// <param name="XPSDocumentTitle">Title (FileName without extension) of the first XPS file to add to the Assignment Package's First Study.</param>
         public static void ExportAssignment(BaseClasses.ejpAssignment assignment, string path)
         {
-			SiliconStudio.DebugManagers.DebugReporter.Report(SiliconStudio.DebugManagers.MessageType.Information,
-							"EjpLib - Local Assignment Operations",
-							"Exporting Assignment " + assignment.MetaData.Title +
-							"\nPath: " + assignment.FilePackagePath);
+			//SiliconStudio.DebugManagers.DebugReporter.Report(SiliconStudio.DebugManagers.MessageType.Information,
+			//				"EjpLib - Local Assignment Operations",
+			//				"Exporting Assignment " + assignment.MetaData.Title +
+			//				"\nPath: " + assignment.FilePackagePath);
 
             if (LocalAssignmentFileOperations.targetPackage == null)
                 throw new ApplicationException("There is no Package to save...");
@@ -220,7 +220,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 		/// <summary>
 		/// Remove all the volitile parts of the package.
 		/// </summary>
-		private static void ClearPackageVolitileParts(Package targetPackage, AssignmentSaveMode saveMode)
+		internal static void ClearPackageVolitileParts(Package targetPackage, AssignmentSaveMode saveMode)
 		{
 			//Loop through existing study MetaData Parts.
 			List<string> reletionshipsToDelete = new List<string>();
@@ -383,12 +383,12 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 		/// <summary>
 		/// Adds the Meta data part to an Assignment Package
 		/// </summary>
-		private static void AddMetaDataToPackage(Package targetPackage, Uri uri,
+		internal static void AddMetaDataToPackage(Package targetPackage, Uri uri,
 			string relationship, TargetMode relationshipTargetMode, ejpAssignmentMetaData metaData)
 		{
-			SiliconStudio.DebugManagers.DebugReporter.Report(SiliconStudio.DebugManagers.MessageType.Information,
-				"EjpLib - Local Assignment Operations",
-							"Adding MetaData to Assignment " + metaData.Title);
+			//SiliconStudio.DebugManagers.DebugReporter.Report(SiliconStudio.DebugManagers.MessageType.Information,
+			//	"EjpLib - Local Assignment Operations",
+			//				"Adding MetaData to Assignment " + metaData.Title);
 
 			PackagePart p = null;
 
@@ -425,7 +425,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 		/// <summary>
 		/// Adds the Meta data part of a Study to an Assignment Package.
 		/// </summary>
-		private static PackagePart AddStudyMetaDataToPackage(Package targetPackage, string relationship,
+		internal static PackagePart AddStudyMetaDataToPackage(Package targetPackage, string relationship,
 			TargetMode relationshipTargetMode, int NewStudyId, BaseClasses.ejpStudyMetaData metaData)
 		{
 			//Add the Study Meta Data part.
@@ -458,7 +458,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 		/// Add a Study to an Assignment Package. This function will add all the Reports, 
 		/// Knowledge Maps and XPS documents off all the Study.
 		/// </summary>
-		private static void AddStudyToPackage(Package targetPackage, PackagePart parentMetaPart, 
+		internal static void AddStudyToPackage(Package targetPackage, PackagePart parentMetaPart, 
 			int studyId, ejpStudy study, bool addXpsDocuments, AssignmentSaveMode saveMode, string packageFilePath,
             bool UpdateXpsReferences)
 		{
@@ -985,7 +985,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 					SourceUri = newObjectPath 
 				};
 
-			DebugManagers.DebugReporter.ReportMethodLeave();
+			//DebugManagers.DebugReporter.ReportMethodLeave();
 
 			return wrapper;
 		}
@@ -1043,7 +1043,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 		/// </summary>
 		/// <param name="source">Source stream to copy data from.</param>
 		/// <param name="target">Target stream to copy data to.</param>
-		private static void WriteStreamToPackagePart(Stream source, Stream target)
+		internal static void WriteStreamToPackagePart(Stream source, Stream target)
 		{
 			const int bufSize = 0x1000;
 			byte[] buf = new byte[bufSize];
@@ -1127,7 +1127,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 		/// </summary>
 		/// <param name="sourcePackage"></param>
 		/// <returns></returns>
-		private static void ImportMetaDataFromPackage(Package sourcePackage, ejpAssignment targetAssignment)
+		internal static void ImportMetaDataFromPackage(Package sourcePackage, ejpAssignment targetAssignment)
 		{
 
             ejpAssignmentMetaData md = null;
@@ -1166,7 +1166,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 		/// <param name="sourcePackage">The in memory package object containing the Assignment</param>
 		/// <param name="targetAssignment">The in memory Assignment to be populated with data</param>
 		/// <param name="packageFilePath">The local file path to the physical Assignment on disk</param>
-		private static void ImportStudiesFromPackage(Package sourcePackage, ejpAssignment targetAssignment, string packageFilePath)
+		internal static void ImportStudiesFromPackage(Package sourcePackage, ejpAssignment targetAssignment, string packageFilePath)
 		{
 
 			//Resolve the package relationship to the metadata part.

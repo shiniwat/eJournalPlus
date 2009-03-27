@@ -74,12 +74,12 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 
 		private ejpAssignment(Guid id, string title, bool isManagedByEJournalServer, Guid ownerUserId)
 		{
-			SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Information,
-					"EjpLib - ejpAssignment Constructor",
-					"Creating new Assignment Instance" +
-					"\nTitle: " + title +
-					"\nIs Managed by EJS: " + isManagedByEJournalServer.ToString());
+			//SiliconStudio.DebugManagers.DebugReporter.Report(
+			//		SiliconStudio.DebugManagers.MessageType.Information,
+			//		"EjpLib - ejpAssignment Constructor",
+			//		"Creating new Assignment Instance" +
+			//		"\nTitle: " + title +
+			//		"\nIs Managed by EJS: " + isManagedByEJournalServer.ToString());
 
 			this._metaData = new ejpAssignmentMetaData(id, title, -1, DateTime.Now, 
                 DateTime.Now, 1, 0, SiliconStudio.Meet.EjpLib.Enumerations.AssignmentType.WorkingAssignment, 
@@ -97,12 +97,12 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 
 		public void Save()
 		{
-			SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Information,
-					"EjpLib - ejpAssignment",
-					"Saving Assignment" +
-					"\nTitle: " + this.MetaData.Title +
-					"\nPath: " + this._filePackagePath);
+			//SiliconStudio.DebugManagers.DebugReporter.Report(
+			//		SiliconStudio.DebugManagers.MessageType.Information,
+			//		"EjpLib - ejpAssignment",
+			//		"Saving Assignment" +
+			//		"\nTitle: " + this.MetaData.Title +
+			//		"\nPath: " + this._filePackagePath);
 
 
             EjpLib.AssignmentOperations.LocalAssignmentFileOperations.SaveAssignment(this, AssignmentOperations.AssignmentSaveMode.Save);
@@ -112,12 +112,12 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 		public void SaveAs()
 		{
 
-			SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Information,
-					"EjpLib - ejpAssignment",
-					"Saving Assignment As" +
-					"\nTitle: " + this.MetaData.Title +
-					"\nPath: " + this._filePackagePath);
+			//SiliconStudio.DebugManagers.DebugReporter.Report(
+			//		SiliconStudio.DebugManagers.MessageType.Information,
+			//		"EjpLib - ejpAssignment",
+			//		"Saving Assignment As" +
+			//		"\nTitle: " + this.MetaData.Title +
+			//		"\nPath: " + this._filePackagePath);
 
             //holds the uris to the Xps packages before they are updated in the
             //save as operation. 080405
@@ -146,34 +146,34 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 
 		public void Export(string targetPath)
 		{
-			SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Information,
-					"EjpLib - ejpAssignment",
-					"Exporting Assignment" +
-					"\nTitle: " + this.MetaData.Title +
-					"\nPath: " + this._filePackagePath +
-					"\nNew Path: " + targetPath);
+			//SiliconStudio.DebugManagers.DebugReporter.Report(
+			//		SiliconStudio.DebugManagers.MessageType.Information,
+			//		"EjpLib - ejpAssignment",
+			//		"Exporting Assignment" +
+			//		"\nTitle: " + this.MetaData.Title +
+			//		"\nPath: " + this._filePackagePath +
+			//		"\nNew Path: " + targetPath);
 
 			EjpLib.AssignmentOperations.LocalAssignmentFileOperations.ExportAssignment(this, targetPath);
 		}
 
         public ejpStudy CreateNewStudy()
         {
-			SiliconStudio.DebugManagers.DebugReporter.Report(
-						 SiliconStudio.DebugManagers.MessageType.Information,
-						 "EjpLib - ejpAssignment",
-						 "Adding new (Empty) Study");
+			//SiliconStudio.DebugManagers.DebugReporter.Report(
+			//			 SiliconStudio.DebugManagers.MessageType.Information,
+			//			 "EjpLib - ejpAssignment",
+			//			 "Adding new (Empty) Study");
 
 			//Add a number to the new study title if there are already 
 			//unnamed studies in the assignment.
 			int nameCounter = 0;
 			foreach (ejpStudy existingStudy in this._studies)
 			{
-                if (existingStudy.Title.Contains("ñºèÃñ¢ê›íË (")
-                    || existingStudy.Title == "ñºèÃñ¢ê›íË")
+                if (existingStudy.Title.Contains("ÂêçÁß∞Êú™Ë®≠ÂÆö (")
+                    || existingStudy.Title == "ÂêçÁß∞Êú™Ë®≠ÂÆö")
 					nameCounter += 1;
 			}
-            string newStudyTitle = "ñºèÃñ¢ê›íË";
+            string newStudyTitle = "ÂêçÁß∞Êú™Ë®≠ÂÆö";
 			if (nameCounter != 0)
 				newStudyTitle += " (" + nameCounter.ToString() + ")";
 
@@ -186,11 +186,11 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 
         public void RemoveStudy(Guid idOfStudyToRemove)
         {
-			SiliconStudio.DebugManagers.DebugReporter.Report(
-						 SiliconStudio.DebugManagers.MessageType.Information,
-						 "EjpLib - ejpAssignment",
-						 "Removing Study" +
-						 "\nStudy ID: " + idOfStudyToRemove.ToString());
+			//SiliconStudio.DebugManagers.DebugReporter.Report(
+			//			 SiliconStudio.DebugManagers.MessageType.Information,
+			//			 "EjpLib - ejpAssignment",
+			//			 "Removing Study" +
+			//			 "\nStudy ID: " + idOfStudyToRemove.ToString());
 
             ejpStudy studyToRemove = new ejpStudy();
             foreach (ejpStudy study in this._studies)
@@ -210,15 +210,15 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 
 		internal ejpStudy CreateNewStudy(string firstXpsDocumentPath, string xpsDocumentTitle, Guid xpsDocumentId)
 		{
-			SiliconStudio.DebugManagers.DebugReporter.Report(
-						 SiliconStudio.DebugManagers.MessageType.Information,
-						 "EjpLib - ejpAssignment",
-						 "Adding new Study" +
-						 "\nFirst XPS Document Path :" + firstXpsDocumentPath +
-						 "\nFirst XPS Document Title :" + xpsDocumentTitle);
+			//SiliconStudio.DebugManagers.DebugReporter.Report(
+			//			 SiliconStudio.DebugManagers.MessageType.Information,
+			//			 "EjpLib - ejpAssignment",
+			//			 "Adding new Study" +
+			//			 "\nFirst XPS Document Path :" + firstXpsDocumentPath +
+			//			 "\nFirst XPS Document Title :" + xpsDocumentTitle);
 
             ejpStudy s = new ejpStudy(this._metaData.Id, Helpers.IdManipulation.GetNewGuid(),
-                "ñºèÃñ¢ê›íË", -1, firstXpsDocumentPath, true, xpsDocumentId, xpsDocumentTitle);
+                "ÂêçÁß∞Êú™Ë®≠ÂÆö", -1, firstXpsDocumentPath, true, xpsDocumentId, xpsDocumentTitle);
             s.AddReport();
             s.AddKnowledgeMap();
 			this._studies.Add(s);
@@ -252,12 +252,12 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 
 		public void Dispose()
 		{
-			SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Information,
-					"EjpLib - ejpAssignment",
-					"Disposing Assignment" +
-					"\nTitle: " + this.MetaData.Title +
-					"\nPath: " + this._filePackagePath);
+			//SiliconStudio.DebugManagers.DebugReporter.Report(
+			//		SiliconStudio.DebugManagers.MessageType.Information,
+			//		"EjpLib - ejpAssignment",
+			//		"Disposing Assignment" +
+			//		"\nTitle: " + this.MetaData.Title +
+			//		"\nPath: " + this._filePackagePath);
 
 			if (this._isDisposed == false)
 			{
@@ -295,13 +295,13 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 			try
 			{
 
-				SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Information,
-					"EjpLib - ejpAssignment",
-					"Creating Assignment" +
-					"\nTitle: " + title +
-					"\nFirst XPS Document Path: " + firstXPSDocumentPath +
-					"\nTemp File Path: " + tempFilePath);
+				//SiliconStudio.DebugManagers.DebugReporter.Report(
+				//	SiliconStudio.DebugManagers.MessageType.Information,
+				//	"EjpLib - ejpAssignment",
+				//	"Creating Assignment" +
+				//	"\nTitle: " + title +
+				//	"\nFirst XPS Document Path: " + firstXPSDocumentPath +
+				//	"\nTemp File Path: " + tempFilePath);
 
 				//TODO: Improve.
 				ejpAssignment a = new ejpAssignment(Helpers.IdManipulation.GetNewGuid(), title, 
@@ -320,14 +320,15 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 			}
 			catch (Exception ex)
 			{
-				SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Error,
-					"EjpLib - ejpAssignment",
-					"Creating Assignment Failed" +
-					"\nTitle: " + title +
-					"\nFirst XPS Document Path: " + firstXPSDocumentPath +
-					"\nTemp File Path: " + tempFilePath +
-					"\nError :" + ex.Message);
+				//SiliconStudio.DebugManagers.DebugReporter.Report(
+				//	SiliconStudio.DebugManagers.MessageType.Error,
+				//	"EjpLib - ejpAssignment",
+				//	"Creating Assignment Failed" +
+				//	"\nTitle: " + title +
+				//	"\nFirst XPS Document Path: " + firstXPSDocumentPath +
+				//	"\nTemp File Path: " + tempFilePath +
+				//	"\nError :" + ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.Message);
 
 				return null;
 			}
@@ -338,12 +339,12 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
         {
             try
             {
-				SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Information,
-					"EjpLib - ejpAssignment",
-					"Creating Empty Assignment" +
-					"\nTitle: " + title +
-					"\nTemp File Path: " + tempFilePath);
+				//SiliconStudio.DebugManagers.DebugReporter.Report(
+				//	SiliconStudio.DebugManagers.MessageType.Information,
+				//	"EjpLib - ejpAssignment",
+				//	"Creating Empty Assignment" +
+				//	"\nTitle: " + title +
+				//	"\nTemp File Path: " + tempFilePath);
 
                 //TODO: Improve.
                 ejpAssignment a = new ejpAssignment(Helpers.IdManipulation.GetNewGuid(), title, 
@@ -360,13 +361,14 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
             }
             catch (Exception ex)
             {
-				SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Error,
-					"EjpLib - ejpAssignment",
-					"Creating Empty Assignment Failed" +
-					"\nTitle: " + title +
-					"\nTemp File Path: " + tempFilePath +
-					"\nError :" + ex.Message);
+				//SiliconStudio.DebugManagers.DebugReporter.Report(
+				//	SiliconStudio.DebugManagers.MessageType.Error,
+				//	"EjpLib - ejpAssignment",
+				//	"Creating Empty Assignment Failed" +
+				//	"\nTitle: " + title +
+				//	"\nTemp File Path: " + tempFilePath +
+				//	"\nError :" + ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.Message);
 
                 return null;
             }
@@ -374,10 +376,10 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 
         public static void ReleaseAllImportedAssignments()
         {
-			SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Information,
-					"EjpLib - ejpAssignment",
-					"Releasing all touched XPS Document by emptying the application Package Store");
+			//SiliconStudio.DebugManagers.DebugReporter.Report(
+			//		SiliconStudio.DebugManagers.MessageType.Information,
+			//		"EjpLib - ejpAssignment",
+			//		"Releasing all touched XPS Document by emptying the application Package Store");
 
             try
             {
@@ -386,21 +388,22 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
             }
             catch (Exception ex)
             {
-				SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Error,
-					"EjpLib - ejpAssignment",
-					"Failed to Releas all touched XPS Document by emptying the application Package Store" +
-					"\nError :" + ex.Message);
-            }
+				//SiliconStudio.DebugManagers.DebugReporter.Report(
+				//	SiliconStudio.DebugManagers.MessageType.Error,
+				//	"EjpLib - ejpAssignment",
+				//	"Failed to Releas all touched XPS Document by emptying the application Package Store" +
+				//	"\nError :" + ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+			}
         }
 
         public List<ejpStudy> Import(string path)
         {
-			SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Information,
-					"EjpLib - ejpAssignment",
-					"Importing an Assignment Package" +
-					"\nPath: " + path);
+			//SiliconStudio.DebugManagers.DebugReporter.Report(
+			//		SiliconStudio.DebugManagers.MessageType.Information,
+			//		"EjpLib - ejpAssignment",
+			//		"Importing an Assignment Package" +
+			//		"\nPath: " + path);
 
             ejpAssignment a = AssignmentOperations.LocalAssignmentFileOperations.ImportAssignment(path, false);
 
@@ -559,11 +562,11 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 
 		public static ejpAssignment Open(string path)
 		{
-			SiliconStudio.DebugManagers.DebugReporter.Report(
-					SiliconStudio.DebugManagers.MessageType.Information,
-					"EjpLib - ejpAssignment",
-					"Opening an Assignment" +
-					"\nPath: " + path);
+			//SiliconStudio.DebugManagers.DebugReporter.Report(
+			//		SiliconStudio.DebugManagers.MessageType.Information,
+			//		"EjpLib - ejpAssignment",
+			//		"Opening an Assignment" +
+			//		"\nPath: " + path);
 
 			ejpAssignment a = AssignmentOperations.LocalAssignmentFileOperations.OpenAssignment(path);
 			a.IsPersisted = true;
