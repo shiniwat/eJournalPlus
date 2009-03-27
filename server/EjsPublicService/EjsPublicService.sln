@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjsWcfService", "EjsWcfServ
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EjsWcfSetup", "EjsWcfSetup\EjsWcfSetup.vdproj", "{C314A7D6-0C3A-455A-B832-FAA15C7D1D83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjpLib", "..\..\svn\EjpLib_forEJS\EjpLib.csproj", "{A708C926-17FA-40FA-AA47-0738C26867B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjpLib", "..\EjpLib_forEJS\EjpLib.csproj", "{A708C926-17FA-40FA-AA47-0738C26867B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

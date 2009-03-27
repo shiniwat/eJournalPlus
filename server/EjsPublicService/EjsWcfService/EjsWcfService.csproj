@@ -94,7 +94,7 @@
     <Compile Include="UserOp\RemoteUserOperations.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\svn\EjpLib_forEJS\EjpLib.csproj">
+    <ProjectReference Include="..\..\EjpLib_forEJS\EjpLib.csproj">
       <Project>{A708C926-17FA-40FA-AA47-0738C26867B1}</Project>
       <Name>EjpLib</Name>
     </ProjectReference>
