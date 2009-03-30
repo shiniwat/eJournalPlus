@@ -1,0 +1,226 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{744EB356-2BEB-499B-AD22-96C9906913D6}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <RootNamespace>SiliconStudio.Meet.EjpControls</RootNamespace>
+    <AssemblyName>EjpControls</AssemblyName>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>library</OutputType>
+    <ApplicationVersion>1.0.0.*</ApplicationVersion>
+    <!-- Most people will use Publish dialog in Visual Studio to increment this -->
+    <MinFrameworkVersionRequired>3.0</MinFrameworkVersionRequired>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="PresentationFramework.Aero">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationUI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\Framework\v3.0\WPF\PresentationUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.IdentityModel" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DocumentLineCommentNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DocumentLineHandle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KnowledgeMap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="KnowledgeMapComment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KnowledgeMapEntityComment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KnowledgeMapImageEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KnowledgeMapTextEntity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MarkerLineButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PenLineButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReportEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReportQuoteBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SwitchButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\ReportUrlInputWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XpsDocumentViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="KnowledgeMap.xaml.cs">
+      <DependentUpon>KnowledgeMap.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DocumentLineCommentNote.xaml.cs">
+      <DependentUpon>DocumentLineCommentNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentLineHandle.xaml.cs">
+      <DependentUpon>DocumentLineHandle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Enumerations\E_DocuementAreaInputMethod.cs" />
+    <Compile Include="Enumerations\E_DocumentAreaDrawingMode.cs" />
+    <Compile Include="Enumerations\E_DocumentEntityAdornerType.cs" />
+    <Compile Include="Enumerations\E_KnowledgeMapTextEntityType.cs" />
+    <Compile Include="Enumerations\E_PenLineGlyphsPosition.cs" />
+    <Compile Include="Helpers\DragDropImage.cs" />
+    <Compile Include="Helpers\DragDropQuote.cs" />
+    <Compile Include="Helpers\DocumentLine.cs" />
+    <Compile Include="Helpers\FlowDocToHTMLConverter.cs" />
+    <Compile Include="Helpers\ValueConverters.cs" />
+    <Compile Include="InkTransformerHelper.cs" />
+    <Compile Include="KnowledgeMapComment.xaml.cs">
+      <DependentUpon>KnowledgeMapComment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KnowledgeMapConnectedLine.cs" />
+    <Compile Include="KnowledgeMapEntityBase.cs" />
+    <Compile Include="KnowledgeMapEntityComment.xaml.cs">
+      <DependentUpon>KnowledgeMapEntityComment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KnowledgeMapImageEntity.xaml.cs">
+      <DependentUpon>KnowledgeMapImageEntity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KnowledgeMapTextEntity.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>KnowledgeMapTextEntity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MarkerLineButton.xaml.cs">
+      <DependentUpon>MarkerLineButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PenLineButton.xaml.cs">
+      <DependentUpon>PenLineButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReportEditor.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>ReportEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQuoteBox.xaml.cs">
+      <DependentUpon>ReportQuoteBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportQuoteBoxEX.cs" />
+    <Compile Include="SwitchButton.xaml.cs">
+      <DependentUpon>SwitchButton.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Windows\ReportUrlInputWindow.xaml.cs">
+      <DependentUpon>ReportUrlInputWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XpsDocumentViewer.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>XpsDocumentViewer.xaml</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ejpLib\EjpLib.csproj">
+      <Project>{A708C926-17FA-40FA-AA47-0738C26867B1}</Project>
+      <Name>EjpLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\sskkDebugTools\sskkDebugTools.csproj">
+      <Project>{F2BEFF60-6101-4249-8336-12932DF16110}</Project>
+      <Name>sskkDebugTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

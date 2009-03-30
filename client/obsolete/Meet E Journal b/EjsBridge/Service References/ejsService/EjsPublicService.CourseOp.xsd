@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EjsPublicService.CourseOp" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EjsPublicService.CourseOp" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfejsCourseDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ejsCourseDocument" nillable="true" type="tns:ejsCourseDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfejsCourseDocument" nillable="true" type="tns:ArrayOfejsCourseDocument" />
+  <xs:complexType name="ejsCourseDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_byteSize" type="xs:long" />
+      <xs:element minOccurs="0" name="_courseId" type="xs:int" />
+      <xs:element minOccurs="0" name="_creationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="_description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_documentId" type="ser:guid" />
+      <xs:element minOccurs="0" name="_id" type="xs:int" />
+      <xs:element minOccurs="0" name="_isAvailable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="_name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ejsCourseDocument" nillable="true" type="tns:ejsCourseDocument" />
+  <xs:complexType name="ArrayOfejsCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ejsCourse" nillable="true" type="tns:ejsCourse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfejsCourse" nillable="true" type="tns:ArrayOfejsCourse" />
+  <xs:complexType name="ejsCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_creationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="_description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_documents" nillable="true" type="tns:ArrayOfejsCourseDocument" />
+      <xs:element minOccurs="0" name="_id" type="xs:int" />
+      <xs:element minOccurs="0" name="_isActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_owner" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ejsCourse" nillable="true" type="tns:ejsCourse" />
+</xs:schema>

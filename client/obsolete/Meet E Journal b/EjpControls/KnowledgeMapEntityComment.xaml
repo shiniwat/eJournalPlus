@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="SiliconStudio.Meet.EjpControls.KnowledgeMapEntityCommentNote"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="150" Width="150">
+    <Grid HorizontalAlignment="Stretch" x:Name="_g_MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="15"/>
+        </Grid.RowDefinitions>
+        <Rectangle Stroke="#FF1F4893" RadiusX="7.5" RadiusY="7.5" Grid.RowSpan="3">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,-0.023" StartPoint="0.5,1.023">
+                    <GradientStop Color="#FF6272A9" Offset="0"/>
+                    <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                    <GradientStop Color="#FFC5CAEE" Offset="0.365"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBox Margin="3,3,3,3" Grid.Row="1" Text="" TextWrapping="Wrap" BorderThickness="0,0,0,0" 
+                 BorderBrush="{x:Null}" FontSize="11" Background="#38FFFFFF" x:Name="_tb_NoteArea"
+                 AcceptsReturn="True" MaxLength="15000" />
+        <Rectangle Margin="3,0,3,0" VerticalAlignment="Top" Height="2" Stroke="{x:Null}" RadiusX="0" 
+                   RadiusY="0" Grid.Row="2" Fill="#FF103E8E" RenderTransformOrigin="0.5,0.5" />
+        <Grid HorizontalAlignment="Right" Margin="0,2,0,0" Width="14.283" Grid.Row="2" x:Name="_g_ResizeGrid">
+            <Rectangle Margin="0,1.609,3.144,0" Fill="#FF103E8E" Stroke="{x:Null}" RadiusX="0" RadiusY="0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="2" Height="2"/>
+            <Rectangle Fill="#FF103E8E" Stroke="{x:Null}" RadiusX="0" RadiusY="0" HorizontalAlignment="Right" Margin="0,4.599,3.144,6.401" Width="2"/>
+            <Rectangle Fill="#FF103E8E" Stroke="{x:Null}" RadiusX="0" RadiusY="0" HorizontalAlignment="Right" Margin="0,0,3.144,3.391" Width="2" VerticalAlignment="Bottom" Height="2"/>
+            <Rectangle Fill="#FF103E8E" Stroke="{x:Null}" RadiusX="0" RadiusY="0" Margin="6.283,0,6,3.391" VerticalAlignment="Bottom" Height="2"/>
+            <Rectangle Fill="#FF103E8E" Stroke="{x:Null}" RadiusX="0" RadiusY="0" Margin="3.139,0,0,3.391" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="2" Height="2"/>
+            <Rectangle Fill="#FF103E8E" Stroke="{x:Null}" RadiusX="0" RadiusY="0" Margin="6.283,4.599,6,6.401"/>
+            <Rectangle x:Name="_r_ResizeGhost" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="Transparent" Stroke="{x:Null}" />
+        </Grid>
+        <Grid Margin="0,0,0,0">
+            <Rectangle Margin="1,1,1,1" Stroke="{x:Null}" RadiusX="7.5" RadiusY="7.5">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,-0.023" StartPoint="0.5,1.023">
+                        <GradientStop Color="#FF2669AB" Offset="0"/>
+                        <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="_r_MoveGhost" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="Transparent" Stroke="{x:Null}" />
+            <Grid HorizontalAlignment="Right" Margin="0,2.569,7.996,2" Width="13.388" x:Name="_g_CloseGrid">
+                <Rectangle Stroke="#FF1F4893" Margin="0,1,0,1">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1">
+                            <GradientStop Color="#FF8AB6E2" Offset="0"/>
+                            <GradientStop Color="#FFF4FCF5" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle Margin="1.621,0,1.581,2.534" VerticalAlignment="Bottom" Height="1" Stroke="#FF1F4893" StrokeThickness="0" Fill="#FF1F4893"/>
+                <Rectangle x:Name="_r_CloseGhost" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="Transparent" Stroke="{x:Null}" />
+            </Grid>
+            <Grid Margin="34,2,34,0" VerticalAlignment="Top" Height="2" Width="84">
+                <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="7" Height="2" Stroke="{x:Null}" RadiusX="0" RadiusY="0" Fill="#FF1F4893" />
+                <Rectangle VerticalAlignment="Top" Height="2" Stroke="{x:Null}" RadiusX="0" RadiusY="0" Fill="#FF1F4893" HorizontalAlignment="Right" Width="7" Margin="0,0,21,0"/>
+                <Rectangle VerticalAlignment="Top" Height="2" Stroke="{x:Null}" RadiusX="0" RadiusY="0" Fill="#FF1F4893" HorizontalAlignment="Center" Width="7"/>
+                <Rectangle VerticalAlignment="Top" Height="2" Stroke="{x:Null}" RadiusX="0" RadiusY="0" Fill="#FF1F4893" HorizontalAlignment="Left" Width="7" Margin="21,0,0,0"/>
+                <Rectangle HorizontalAlignment="Right" VerticalAlignment="Top" Width="7" Height="2" Stroke="{x:Null}" RadiusX="0" RadiusY="0" Fill="#FF1F4893"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>

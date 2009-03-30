@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://meet.ejs/services" elementFormDefault="qualified" targetNamespace="http://meet.ejs/services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/EjsPublicService" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/EjsPublicService.AssignmentOp" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/EjsPublicService.CourseOp" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/EjsPublicService.UserOp" />
+  <xs:element name="Authenticate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SourceId" type="q1:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthenticateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="AuthenticateResult" nillable="true" type="q2:ejsSessionToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="OldPassword" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserPasswordResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InvalidateToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q3:ejsSessionToken" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InvalidateTokenResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllAssignments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q4:ejsSessionToken" />
+        <xs:element minOccurs="0" name="IncludeNotAvailable" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllAssignmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/EjsPublicService.AssignmentOp" minOccurs="0" name="GetAllAssignmentsResult" nillable="true" type="q5:ArrayOfejsAssignment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAndUploadAssignment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q6:ejsSessionToken" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/EjsPublicService.AssignmentOp" minOccurs="0" name="assignment" nillable="true" type="q7:ejsAssignment" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAndUploadAssignmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveAndUploadAssignmentResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveStudyMetaData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q8:ejsSessionToken" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/EjsPublicService.AssignmentOp" minOccurs="0" name="study" nillable="true" type="q9:ejsStudyMetaData" />
+        <xs:element minOccurs="0" name="parentAssignmentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveStudyMetaDataResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCourseDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q10:ejsSessionToken" />
+        <xs:element minOccurs="0" name="IncludeNotAvailable" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllCourseDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/EjsPublicService.CourseOp" minOccurs="0" name="GetAllCourseDocumentsResult" nillable="true" type="q11:ArrayOfejsCourseDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssignment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q12:ejsSessionToken" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EjsPublicService.AssignmentOp" minOccurs="0" name="assignment" nillable="true" type="q13:ejsAssignment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssignmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAssignmentResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterNewUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q14:ejsSessionToken" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/EjsPublicService.UserOp" minOccurs="0" name="newUser" nillable="true" type="q15:ejsUserInfo" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userGroupId" type="xs:int" />
+        <xs:element minOccurs="0" name="isAccountActive" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterNewUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRegisteredUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q16:ejsSessionToken" />
+        <xs:element minOccurs="0" name="UserGroupId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRegisteredUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/EjsPublicService.UserOp" minOccurs="0" name="GetAllRegisteredUsersResult" nillable="true" type="q17:ArrayOfejsUserInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegisteredCoursesForUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q18:ejsSessionToken" />
+        <xs:element minOccurs="0" name="includeCourseDocuments" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegisteredCoursesForUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/EjsPublicService.CourseOp" minOccurs="0" name="GetRegisteredCoursesForUserResult" nillable="true" type="q19:ArrayOfejsCourse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDocumentToCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q20:ejsSessionToken" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/EjsPublicService.CourseOp" minOccurs="0" name="Document" nillable="true" type="q21:ejsCourseDocument" />
+        <xs:element minOccurs="0" name="CourseId" type="xs:int" />
+        <xs:element minOccurs="0" name="DocumentData" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDocumentToCourseResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCourseDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q22:ejsSessionToken" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/EjsPublicService.CourseOp" minOccurs="0" name="Document" nillable="true" type="q23:ejsCourseDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCourseDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCourseDocumentResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRegisteredCourses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q24:ejsSessionToken" />
+        <xs:element minOccurs="0" name="includeDisabledCourses" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllRegisteredCoursesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/EjsPublicService.CourseOp" minOccurs="0" name="GetAllRegisteredCoursesResult" nillable="true" type="q25:ArrayOfejsCourse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterNewCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q26:ejsSessionToken" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/EjsPublicService.CourseOp" minOccurs="0" name="NewCourse" nillable="true" type="q27:ejsCourse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterNewCourseResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUserToCourse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q28:ejsSessionToken" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/EjsPublicService.CourseOp" minOccurs="0" name="Course" nillable="true" type="q29:ejsCourse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUserToCourseResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAssignment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/EjsPublicService" minOccurs="0" name="Token" nillable="true" type="q30:ejsSessionToken" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/EjsPublicService.AssignmentOp" minOccurs="0" name="Assignment" nillable="true" type="q31:ejsAssignment" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAssignmentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
