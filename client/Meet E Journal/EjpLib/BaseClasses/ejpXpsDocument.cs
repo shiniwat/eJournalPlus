@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Packaging;
+using System.Windows;
 using System.Windows.Xps.Packaging;
 
 namespace SiliconStudio.Meet.EjpLib.BaseClasses
@@ -113,7 +114,7 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 			this._isExternalToAssignment = isExternalToAssignment;
 
 			if (!File.Exists(path))
-				throw new IOException(Properties.Resources.EX_Fnf_XPSNotFound);
+				throw new IOException(Application.Current.Resources["EX_Fnf_XPSNotFound"] as string);//Properties.Resources.EX_Fnf_XPSNotFound);
 
 			this._xpsDocumentPath = path;
 			this._packageUri = new Uri(path, UriKind.Absolute);
@@ -128,7 +129,7 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 
 				this._xpsPackage = PackageStore.GetPackage(this._packageUri);
 				if ((this._xpsPackage == null) || (this._xpsDocument == null))
-					throw new Exception(Properties.Resources.EX_Fnf_XPSNotFound);
+					throw new Exception(Application.Current.Resources["EX_Fnf_XPSNotFound"] as string);//Properties.Resources.EX_Fnf_XPSNotFound);
 
 				this.GetFixedDocumentSequenceUri();
 			}

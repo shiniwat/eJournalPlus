@@ -66,7 +66,7 @@ namespace ejpClient.ejpWindows
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Properties.Resources.EX_CourseRegFailed);
+				MessageBox.Show(Application.Current.Resources["EX_CourseRegFailed"] as string);//Properties.Resources.EX_CourseRegFailed);
 			}
 		}
 

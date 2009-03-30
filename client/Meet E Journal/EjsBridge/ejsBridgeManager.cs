@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows;
 using System.ServiceModel;
 using EjsBridge.ejsService;
 
@@ -39,10 +40,11 @@ namespace EjsBridge
 			{
 				throw new ApplicationException(ex.Detail._header + "\n" + ex.Detail._message);
 			}
-			catch (Exception)
-			{
-				throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
-			}
+			//	[shiniwa] We just do NOT need this. Let's do NOT translate arbitrary exceptions to ApplicationException
+			//catch (Exception)
+			//{
+			//	throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+			//}
 			finally
 			{
 				if (_client != null)
@@ -97,10 +99,11 @@ namespace EjsBridge
 			{
 				throw new ApplicationException(ex.Detail._header + "\n" + ex.Detail._message);
 			}
-			catch (Exception)
-			{
-				throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
-			}
+			//	let's do not translate arbitrary exception to AppicationException here.
+			//catch (Exception)
+			//{
+			//	throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+			//}
 			finally
 			{
 				if (_client != null)
@@ -129,10 +132,10 @@ namespace EjsBridge
 
 				throw new ApplicationException(ex.Detail._header + "\n" + ex.Detail._message);
 			}
-			catch (Exception)
-			{
-				throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
-			}
+			//catch (Exception)
+			//{
+			//	throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+			//}
 			finally
 			{
 				if (_client != null)
@@ -161,10 +164,10 @@ namespace EjsBridge
 
 				throw new ApplicationException(ex.Detail._header + "\n" + ex.Detail._message);
 			}
-			catch (Exception)
-			{
-				throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
-			}
+			//catch (Exception)
+			//{
+			//	throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+			//}
 			finally
 			{
 				if (_client != null)
@@ -195,7 +198,7 @@ namespace EjsBridge
 			catch (Exception)
 			{
 				sessionToken._isAuthenticated = false;
-				throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+				//throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
 			}
 			finally
 			{
@@ -237,7 +240,8 @@ namespace EjsBridge
 			catch (Exception)
 			{
 				sessionToken._isAuthenticated = false;
-				throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+				//throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+				throw;
 			}
 			finally
 			{
@@ -271,8 +275,9 @@ namespace EjsBridge
 
 				int NewID = _client.SaveAndUploadAssignment(sessionToken, assignment, data);
 
-				if (NewID == -1)
-					throw new ApplicationException(Properties.Resources.EX_AsgUploadFailed);
+				//	 let's do not throw ApplicationException here.
+				//if (NewID == -1)
+				//	throw new ApplicationException(Properties.Resources.EX_AsgUploadFailed);
 
 				return NewID;
 
@@ -287,7 +292,8 @@ namespace EjsBridge
 			catch (Exception)
 			{
 				sessionToken._isAuthenticated = false;
-				throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+				//throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+				throw;
 			}
 			finally
 			{
@@ -313,10 +319,10 @@ namespace EjsBridge
 
 				throw new ApplicationException(ex.Detail._header + "\n" + ex.Detail._message);
 			}
-			catch (Exception)
-			{
-				throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
-			}
+			//catch (Exception)
+			//{
+			//	throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+			//}
 			finally
 			{
 				if (_client != null)
@@ -346,7 +352,8 @@ namespace EjsBridge
 			catch (Exception)
 			{
 				sessionToken._isAuthenticated = false;
-				throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+				//throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+				throw;
 			}
 			finally
 			{
@@ -387,7 +394,8 @@ namespace EjsBridge
 			catch (Exception)
 			{
 				sessionToken._isAuthenticated = false;
-				throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+				//throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+				throw;
 			}
 			finally
 			{
@@ -430,7 +438,8 @@ namespace EjsBridge
 			catch (Exception)
 			{
 				sessionToken._isAuthenticated = false;
-				throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+				//throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+				throw;
 			}
 			finally
 			{
@@ -458,7 +467,7 @@ namespace EjsBridge
 			catch (Exception)
 			{
 				sessionToken._isAuthenticated = false;
-				throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
+				//throw new ApplicationException(Properties.Resources.EX_EjsConnectionFailed);
 			}
 			finally
 			{

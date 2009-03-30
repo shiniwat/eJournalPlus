@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO.Packaging;
+using System.Windows;
 
 namespace SiliconStudio.Meet.EjpLib.BaseClasses
 {
@@ -134,14 +135,15 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 		{
 			//Add a number to the new study title if there are already 
 			//unnamed studies in the assignment.
+			string unnamed = Application.Current.Resources["Str_UnnamedStudyTitle"] as string;
 			int nameCounter = 0;
 			foreach (ejpStudy existingStudy in this._studies)
 			{
-				if (existingStudy.Title.Contains(Properties.Resources.Str_UnnamedStudyTitle + " (")
-					|| existingStudy.Title == Properties.Resources.Str_UnnamedStudyTitle)
+				if (existingStudy.Title.Contains(unnamed + " (")
+					|| existingStudy.Title == unnamed)
 					nameCounter += 1;
 			}
-			string newStudyTitle = Properties.Resources.Str_UnnamedStudyTitle;
+			string newStudyTitle = unnamed;
 			if (nameCounter != 0)
 				newStudyTitle += " (" + nameCounter.ToString() + ")";
 
@@ -172,8 +174,9 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 
 		internal ejpStudy CreateNewStudy(string firstXpsDocumentPath, string xpsDocumentTitle, Guid xpsDocumentId)
 		{
+			string unnamed = Application.Current.Resources["Str_UnnamedStudyTitle"] as string;
 			ejpStudy s = new ejpStudy(this._metaData.Id, Helpers.IdManipulation.GetNewGuid(),
-				Properties.Resources.Str_UnnamedStudyTitle, -1, firstXpsDocumentPath, true, xpsDocumentId, xpsDocumentTitle);
+				unnamed, -1, firstXpsDocumentPath, true, xpsDocumentId, xpsDocumentTitle);
 			s.AddReport();
 			s.AddKnowledgeMap();
 			this._studies.Add(s);

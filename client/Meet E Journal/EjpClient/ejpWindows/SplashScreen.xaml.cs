@@ -61,8 +61,9 @@ namespace ejpClient.ejpWindows
 			}
 			catch (Exception)
 			{
-				System.Windows.MessageBox.Show(Properties.Resources.ERR_ErrorReportNetworkFailed,
-					Properties.Resources.Str_ConnFailedTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				System.Windows.MessageBox.Show(Application.Current.Resources["ERR_ErrorReportNetworkFailed"] as string,//Properties.Resources.ERR_ErrorReportNetworkFailed,
+					Application.Current.Resources["Str_ConnFailedTitle"] as string,//Properties.Resources.Str_ConnFailedTitle, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 

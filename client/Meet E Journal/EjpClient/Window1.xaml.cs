@@ -221,7 +221,7 @@ namespace ejpClient
 				{
 					this._menuI_PublishToWLS.IsEnabled = false;
 					//assembly could not be found...
-					throw new ApplicationException(Properties.Resources.EX_WlsDLLLoadFailed);
+					throw new ApplicationException(Application.Current.Resources["EX_WlsDLLLoadFailed"] as string);
 				}
 			}
 
@@ -245,7 +245,8 @@ namespace ejpClient
 				}
 				catch (Exception)
 				{
-					MessageBox.Show(Properties.Resources.EX_CreateAppFoldersFailed, Properties.Resources.Str_ErrorTitle,
+					MessageBox.Show(Application.Current.Resources["EX_CreateAppFoldersFailed"] as string,//Properties.Resources.EX_CreateAppFoldersFailed, 
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle,
 						MessageBoxButton.OK, MessageBoxImage.Warning);
 					this._canAutoSave = false;
 				}
@@ -262,7 +263,8 @@ namespace ejpClient
 				}
 				catch (Exception)
 				{
-					MessageBox.Show(Properties.Resources.EX_CreateAppFoldersFailed, Properties.Resources.Str_ErrorTitle,
+					MessageBox.Show(Application.Current.Resources["EX_CreateAppFoldersFailed"] as string, //Properties.Resources.EX_CreateAppFoldersFailed, 
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle,
 						MessageBoxButton.OK, MessageBoxImage.Warning);
 					this._canAutoSave = false;
 				}
@@ -286,7 +288,8 @@ namespace ejpClient
 				}
 				catch (Exception)
 				{
-					MessageBox.Show(Properties.Resources.EX_CreateAppFoldersFailed, Properties.Resources.Str_ErrorTitle,
+					MessageBox.Show(Application.Current.Resources["EX_CreateAppFoldersFailed"] as string,//Properties.Resources.EX_CreateAppFoldersFailed, 
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle,
 						MessageBoxButton.OK, MessageBoxImage.Warning);
 				}
 			}
@@ -301,8 +304,8 @@ namespace ejpClient
 				}
 				catch (Exception)
 				{
-					MessageBox.Show(Properties.Resources.EX_CreateAppTempFolderFailed,
-						Properties.Resources.Str_ErrorTitle,
+					MessageBox.Show(Application.Current.Resources["EX_CreateAppTempFolderFailed"] as string,//Properties.Resources.EX_CreateAppTempFolderFailed,
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle,
 						MessageBoxButton.OK, MessageBoxImage.Error);
 					this.Close();
 				}
@@ -318,8 +321,8 @@ namespace ejpClient
 				}
 				catch (Exception)
 				{
-					MessageBox.Show(Properties.Resources.EX_CreateAppDownloadFolderFailed,
-						Properties.Resources.Str_ErrorTitle,
+					MessageBox.Show(Application.Current.Resources["EX_CreateAppDownloadFolderFailed"] as string,//Properties.Resources.EX_CreateAppDownloadFolderFailed,
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle,
 						MessageBoxButton.OK, MessageBoxImage.Error);
 					this.Close();
 				}
@@ -335,7 +338,8 @@ namespace ejpClient
 		private void Current_DispatcherUnhandledException(
 			object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
 		{
-			MessageBox.Show(Properties.Resources.EX_UnhandledException + e.Exception.Message);
+			MessageBox.Show(Application.Current.Resources["EX_UnhandledException"] as string//Properties.Resources.EX_UnhandledException 
+				+ e.Exception.Message);
 
 			e.Handled = true;
 
@@ -352,7 +356,8 @@ namespace ejpClient
 				}
 				catch (Exception)
 				{
-					MessageBox.Show(Properties.Resources.EX_UnhandledSaveFailed + "\n" + this._autoSaveFilePath);
+					MessageBox.Show(Application.Current.Resources["EX_UnhandledSaveFailed"] as string 
+						+ "\n" + this._autoSaveFilePath);
 				}
 				finally
 				{
@@ -399,7 +404,7 @@ namespace ejpClient
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Properties.Resources.EX_AutoSavedDisabled);
+				MessageBox.Show(Application.Current.Resources["EX_AutoSavedDisabled"] as string);//Properties.Resources.EX_AutoSavedDisabled);
 				this._canAutoSave = false;
 			}
 			finally
@@ -499,7 +504,8 @@ namespace ejpClient
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show(Properties.Resources.ERR_UnknownError + "\n" + ex.Message);
+					MessageBox.Show(Application.Current.Resources["ERR_UnknownError"] as string//Properties.Resources.ERR_UnknownError 
+						+ "\n" + ex.Message);
 					this.SetApplicationState(ApplicationState.Cold);
 				}
 			}
@@ -512,7 +518,8 @@ namespace ejpClient
 				}
 				catch (Exception ex)
 				{
-					MessageBox.Show(Properties.Resources.ERR_UnknownError + "\n" + ex.Message);
+					MessageBox.Show(Application.Current.Resources["ERR_UnknownError"] as string//Properties.Resources.ERR_UnknownError 
+						+ "\n" + ex.Message);
 					this.SetApplicationState(ApplicationState.Cold);
 				}
 			}
@@ -748,8 +755,8 @@ namespace ejpClient
 				if (App._defaultDocumentPath == "" ||
 					App._defaultDocumentPath == null)
 				{
-					path = this.GetOpenFileName("ejp " + Properties.Resources.Str_UiLbl_FileLiteral + " (*.ejp;*.cejp)|*.ejp;*.cejp|CEjp " + Properties.Resources.Str_UiLbl_FileLiteral + " (*.cejp)|*.cejp",
-						Properties.Resources.Str_DlgTitle_OpenComAsg);
+					path = this.GetOpenFileName("ejp " + Application.Current.Resources["Str_UiLbl_FileLiteral"] as string + " (*.ejp;*.cejp)|*.ejp;*.cejp|CEjp " + Application.Current.Resources["Str_UiLbl_FileLiteral"] as string + " (*.cejp)|*.cejp",
+						Application.Current.Resources["Str_DlgTitle_OpenComAsg"] as string);
 				}
 				else
 				{
@@ -814,7 +821,8 @@ namespace ejpClient
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(Properties.Resources.ERR_UnknownError + "\n" + ex.Message);
+				MessageBox.Show(Application.Current.Resources["ERR_UnknownError"] as string//Properties.Resources.ERR_UnknownError 
+					+ "\n" + ex.Message);
 				this.ClearUi();
 
 				//make sure the current working assignment is unloaded. 080603
@@ -871,7 +879,7 @@ namespace ejpClient
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Properties.Resources.EX_NoSettingsFile);
+				MessageBox.Show(Application.Current.Resources["EX_NoSettingsFile"] as string);//Properties.Resources.EX_NoSettingsFile);
 			}
 		}
 
@@ -894,36 +902,36 @@ namespace ejpClient
 		{
 			this._kmAreaColorsList = new Dictionary<string, SolidColorBrush>
             {
-                {Properties.Resources.Str_UiLbl_Red, new SolidColorBrush(Color.FromArgb(255,255,0,0))},
-                {Properties.Resources.Str_UiLbl_Yellow, new SolidColorBrush(Color.FromArgb(255,255,255,0))},
-                {Properties.Resources.Str_UiLbl_Green, new SolidColorBrush(Color.FromArgb(255,0,255,0))},
-                {Properties.Resources.Str_UiLbl_Blue, new SolidColorBrush(Color.FromArgb(255,0,0,255))},
-				{Properties.Resources.Str_UiLbl_Black, new SolidColorBrush(Color.FromArgb(255,0,0,0))},
+                {Application.Current.Resources["Str_UiLbl_Red"] as string, new SolidColorBrush(Color.FromArgb(255,255,0,0))},
+                {Application.Current.Resources["Str_UiLbl_Yellow"] as string, new SolidColorBrush(Color.FromArgb(255,255,255,0))},
+                {Application.Current.Resources["Str_UiLbl_Green"] as string, new SolidColorBrush(Color.FromArgb(255,0,255,0))},
+                {Application.Current.Resources["Str_UiLbl_Blue"] as string, new SolidColorBrush(Color.FromArgb(255,0,0,255))},
+				{Application.Current.Resources["Str_UiLbl_Black"] as string, new SolidColorBrush(Color.FromArgb(255,0,0,0))},
             };
 
 			this._documentAreaPenColorsList = new Dictionary<string, SolidColorBrush>
             {
-                {Properties.Resources.Str_UiLbl_Red, new SolidColorBrush(Color.FromArgb(255,255,0,0))},
-                {Properties.Resources.Str_UiLbl_Yellow, new SolidColorBrush(Color.FromArgb(255,255,255,0))},
-                {Properties.Resources.Str_UiLbl_Green, new SolidColorBrush(Color.FromArgb(255,0,255,0))},
-                {Properties.Resources.Str_UiLbl_Blue, new SolidColorBrush(Color.FromArgb(255,0,0,255))},
+                {Application.Current.Resources["Str_UiLbl_Red"] as string, new SolidColorBrush(Color.FromArgb(255,255,0,0))},
+                {Application.Current.Resources["Str_UiLbl_Yellow"] as string, new SolidColorBrush(Color.FromArgb(255,255,255,0))},
+                {Application.Current.Resources["Str_UiLbl_Green"] as string, new SolidColorBrush(Color.FromArgb(255,0,255,0))},
+                {Application.Current.Resources["Str_UiLbl_Blue"] as string, new SolidColorBrush(Color.FromArgb(255,0,0,255))},
             };
 
 			this._documentAreaMarkerColorsList = new Dictionary<string, SolidColorBrush>
             {
-                {Properties.Resources.Str_UiLbl_Red, new SolidColorBrush(Color.FromArgb(100,255,0,0))},
-                {Properties.Resources.Str_UiLbl_Yellow, new SolidColorBrush(Color.FromArgb(100,255,255,0))},
-                {Properties.Resources.Str_UiLbl_Green, new SolidColorBrush(Color.FromArgb(100,0,255,0))},
-                {Properties.Resources.Str_UiLbl_Blue, new SolidColorBrush(Color.FromArgb(100,0,0,255))},
+                {Application.Current.Resources["Str_UiLbl_Red"] as string, new SolidColorBrush(Color.FromArgb(100,255,0,0))},
+                {Application.Current.Resources["Str_UiLbl_Yellow"] as string, new SolidColorBrush(Color.FromArgb(100,255,255,0))},
+                {Application.Current.Resources["Str_UiLbl_Green"] as string, new SolidColorBrush(Color.FromArgb(100,0,255,0))},
+                {Application.Current.Resources["Str_UiLbl_Blue"] as string, new SolidColorBrush(Color.FromArgb(100,0,0,255))},
             };
 
 			this._M_km_ColorSwatchButton.Items = this._kmAreaColorsList;
 			this._M_ML_ColorSwatchButton.Items = this._documentAreaMarkerColorsList;
 			this._M_PL_ColorSwatchButton.Items = this._documentAreaPenColorsList;
 
-			this._M_km_ColorSwatchButton.SetCurrentColor(this._kmAreaColorsList[Properties.Resources.Str_UiLbl_Red]);
-			this._M_ML_ColorSwatchButton.SetCurrentColor(this._documentAreaMarkerColorsList[Properties.Resources.Str_UiLbl_Red]);
-			this._M_PL_ColorSwatchButton.SetCurrentColor(this._documentAreaPenColorsList[Properties.Resources.Str_UiLbl_Red]);
+			this._M_km_ColorSwatchButton.SetCurrentColor(this._kmAreaColorsList[Application.Current.Resources["Str_UiLbl_Red"] as string]);
+			this._M_ML_ColorSwatchButton.SetCurrentColor(this._documentAreaMarkerColorsList[Application.Current.Resources["Str_UiLbl_Red"] as string]);
+			this._M_PL_ColorSwatchButton.SetCurrentColor(this._documentAreaPenColorsList[Application.Current.Resources["Str_UiLbl_Red"] as string]);
 		}
 
 		/// <summary>
@@ -1014,7 +1022,11 @@ namespace ejpClient
 			try
 			{
 				winForms.SaveFileDialog exportMapDialog = new winForms.SaveFileDialog();
-				exportMapDialog.Filter = "Png " + Properties.Resources.Str_UiLbl_FileLiteral + " (*.png)|*.png;|Jpg" + Properties.Resources.Str_UiLbl_FileLiteral + " (*.jpg)|*.jpg|Bmp" + Properties.Resources.Str_UiLbl_FileLiteral + " (*.bmp)|*.bmp";
+				exportMapDialog.Filter = "Png " + 
+					Application.Current.Resources["Str_UiLbl_FileLiteral"] as string +
+					" (*.png)|*.png;|Jpg" +
+					Application.Current.Resources["Str_UiLbl_FileLiteral"] as string + 
+					" (*.jpg)|*.jpg|Bmp" + Application.Current.Resources["Str_UiLbl_FileLiteral"] as string + " (*.bmp)|*.bmp";
 				exportMapDialog.AddExtension = true;
 
 				if (exportMapDialog.ShowDialog() == winForms.DialogResult.OK)
@@ -1024,7 +1036,9 @@ namespace ejpClient
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Properties.Resources.ERR_ExportKMFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["ERR_ExportKMFailed"] as string,//Properties.Resources.ERR_ExportKMFailed, 
+					Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
@@ -1046,7 +1060,7 @@ namespace ejpClient
 						{
 							foundReportToExport = true;
 							winForms.SaveFileDialog exportReportDialog = new winForms.SaveFileDialog();
-							exportReportDialog.Filter = "Rtf " + Properties.Resources.Str_UiLbl_FileLiteral + " (*.rtf)|*.rtf";
+							exportReportDialog.Filter = "Rtf " + Application.Current.Resources["Str_UiLbl_FileLiteral"] as string + " (*.rtf)|*.rtf";
 
 							if (exportReportDialog.ShowDialog() == winForms.DialogResult.OK)
 							{
@@ -1057,11 +1071,15 @@ namespace ejpClient
 					}
 				}
 				if (!foundReportToExport)
-					MessageBox.Show(Properties.Resources.ERR_ChooseReportToExport, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+					MessageBox.Show(Application.Current.Resources["ERR_ChooseReportToExport"] as string,//Application.Current.Resources["ERR_ChooseReportToExport, 
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Information);
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Properties.Resources.ERR_ExportReportFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["ERR_ExportReportFailed"] as string,//Properties.Resources.ERR_ExportReportFailed, 
+					Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
@@ -1078,7 +1096,7 @@ namespace ejpClient
 				{
 					EjsBridge.ejsBridgeManager.EjsAddress = App._ejpSettings.EjsAddress;
 					ejpWindows.NewAssignmentWindow newAW = new ejpWindows.NewAssignmentWindow();
-					newAW.WindowHeadline = Properties.Resources.Str_DlgTitle_StartNew;
+					newAW.WindowHeadline = Application.Current.Resources["Str_DlgTitle_StartNew"] as string;
 					newAW.Closed += delegate(object ws, EventArgs we)
 					{
 						if (newAW.CreateLocation ==
@@ -1121,7 +1139,8 @@ namespace ejpClient
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(Properties.Resources.ERR_UnknownError + "\n" + ex.Message);
+				MessageBox.Show(Application.Current.Resources["ERR_UnknownError"] as string//Properties.Resources.ERR_UnknownError 
+					+ "\n" + ex.Message);
 				this.SetApplicationState(ApplicationState.Cold);
 			}
 		}
@@ -1175,7 +1194,9 @@ namespace ejpClient
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Properties.Resources.EX_ExportAsgFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["EX_ExportAsgFailed"] as string,//Properties.Resources.EX_ExportAsgFailed, 
+					Application.Current.Resources["Str_ErrorTitle"] as string, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
@@ -1193,8 +1214,9 @@ namespace ejpClient
 
 				if (this._currentWorkingAssingment.IsPersisted == false)
 				{
-					MessageBox.Show(Properties.Resources.ERR_MustSaveBeforeMerge,
-						Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+					MessageBox.Show(Application.Current.Resources["ERR_MustSaveBeforeMerge"] as string,//Properties.Resources.ERR_MustSaveBeforeMerge,
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Information);
 					return;
 				}
 
@@ -1223,12 +1245,12 @@ namespace ejpClient
 						bgw.RunWorkerCompleted += delegate(object s4, RunWorkerCompletedEventArgs workerCompletedArgs)
 						{
 							lmw.Close();
-							this._l_AppStatusLabel.Text = Properties.Resources.Str_UiLblIdle;
+							this._l_AppStatusLabel.Text = Application.Current.Resources["Str_UiLblIdle"] as string;
 							bgw.Dispose();
 						};
 
 						bgw.RunWorkerAsync();
-						this._l_AppStatusLabel.Text = Properties.Resources.Str_UiLblDownloadingAsg;
+						this._l_AppStatusLabel.Text = Application.Current.Resources["Str_UiLblDownloadingAsg"] as string;
 						lmw.ShowDialog();
 
 						this.ImportAssignment(tempPath);
@@ -1244,7 +1266,8 @@ namespace ejpClient
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(Properties.Resources.ERR_UnknownError + "\n" + ex.Message);
+				MessageBox.Show(Application.Current.Resources["ERR_UnknownError"] as string//Properties.Resources.ERR_UnknownError 
+					+ "\n" + ex.Message);
 				this.SetApplicationState(ApplicationState.Cold);
 			}
 		}
@@ -1258,7 +1281,7 @@ namespace ejpClient
 
 			try
 			{
-				string path = this.GetOpenFileName("Assignment " + Properties.Resources.Str_UiLbl_FileLiteral + " (*.ejp)|*.ejp", Properties.Resources.Str_DlgTitle_OpenAsg);
+				string path = this.GetOpenFileName("Assignment " + Application.Current.Resources["Str_UiLbl_FileLiteral"] as string + " (*.ejp)|*.ejp", Application.Current.Resources["Str_DlgTitle_OpenAsg"] as string);
 				if (path != "cancel")
 				{
 					this.ImportAssignment(path);
@@ -1271,7 +1294,8 @@ namespace ejpClient
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(Properties.Resources.ERR_UnknownError + "\n" + ex.Message);
+				MessageBox.Show(Application.Current.Resources["ERR_UnknownError"] as string //Properties.Resources.ERR_UnknownError 
+					+ "\n" + ex.Message);
 				this.SetApplicationState(ApplicationState.AssignmentLoaded);
 			}
 		}
@@ -1322,12 +1346,12 @@ namespace ejpClient
 								bgw.RunWorkerCompleted += delegate(object s4, RunWorkerCompletedEventArgs workerCompletedArgs)
 								{
 									lmw.Close();
-									this._l_AppStatusLabel.Text = Properties.Resources.Str_UiLblIdle;
+									this._l_AppStatusLabel.Text = Application.Current.Resources["Str_UiLblIdle"] as string;
 									bgw.Dispose();
 								};
 
 								bgw.RunWorkerAsync();
-								this._l_AppStatusLabel.Text = Properties.Resources.Str_UiLblDownloadingAsg;
+								this._l_AppStatusLabel.Text = Application.Current.Resources["Str_UiLblDownloadingAsg"] as string;
 								lmw.ShowDialog();
 
 								//While not good practice, the order of these
@@ -1365,7 +1389,8 @@ namespace ejpClient
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(Properties.Resources.ERR_UnknownError + "\n" + ex.Message);
+				MessageBox.Show(Application.Current.Resources["ERR_UnknownError"] as string //Properties.Resources.ERR_UnknownError 
+					+ "\n" + ex.Message);
 				this.SetApplicationState(ApplicationState.Cold);
 			}
 		}
@@ -1392,8 +1417,11 @@ namespace ejpClient
 				if (App._defaultDocumentPath == "" ||
 					App._defaultDocumentPath == null)
 				{
-					path = this.GetOpenFileName("ejp " + Properties.Resources.Str_UiLbl_FileLiteral + " (*.ejp;*.cejp)|*.ejp;*.cejp|CEjp " + Properties.Resources.Str_UiLbl_FileLiteral + " (*.cejp)|*.cejp",
-						Properties.Resources.Str_DlgTitle_OpenAsg);
+					path = this.GetOpenFileName("ejp " + Application.Current.Resources["Str_UiLbl_FileLiteral"] as string 
+						+ " (*.ejp;*.cejp)|*.ejp;*.cejp|CEjp " 
+						+ Application.Current.Resources["Str_UiLbl_FileLiteral"] as string 
+						+ " (*.cejp)|*.cejp",
+						Application.Current.Resources["Str_DlgTitle_OpenAsg"] as string);
 				}
 				else
 				{
@@ -1471,7 +1499,8 @@ namespace ejpClient
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(Properties.Resources.ERR_UnknownError + "\n" + ex.Message);
+				MessageBox.Show(Application.Current.Resources["ERR_UnknownError"] as string//Properties.Resources.ERR_UnknownError 
+					+ "\n" + ex.Message);
 				this.ClearUi();
 
 				//make sure the current working assignment is unloaded. 080603
@@ -1543,7 +1572,9 @@ namespace ejpClient
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Properties.Resources.EX_AsgPublishFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["EX_AsgPublishFailed"] as string,//Properties.Resources.EX_AsgPublishFailed, 
+					Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
@@ -1618,6 +1649,13 @@ namespace ejpClient
 				Id =
 				EjsBridge.ejsBridgeManager.SaveAndUploadNewAssignment(App._currentEjpStudent.SessionToken,
 				   tempPath, dbAssignMent);
+				if (Id == -1)
+				{
+					//	This is a exception!
+					string msg = Application.Current.Resources["EX_AsgUploadFailed"].ToString();
+					MessageBox.Show(msg);
+					return;		
+				}
 
 				this._currentWorkingAssingment.MetaData.EJSDatabaseId = Id;
 
@@ -1646,11 +1684,15 @@ namespace ejpClient
 				{
 					if (workerCompletedArgs.Error.InnerException != null)
 						MessageBox.Show(
-							Properties.Resources.EX_AsgPublishFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK,
+							Application.Current.Resources["EX_AsgPublishFailed"] as string,//Properties.Resources.EX_AsgPublishFailed, 
+							Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+							MessageBoxButton.OK,
 							MessageBoxImage.Error);
 					else
 						MessageBox.Show(
-							Properties.Resources.EX_AsgPublishFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK,
+							Application.Current.Resources["EX_AsgPublishFailed"] as string,//Properties.Resources.EX_AsgPublishFailed, 
+							Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+							MessageBoxButton.OK,
 							MessageBoxImage.Error);
 				}
 
@@ -1662,7 +1704,8 @@ namespace ejpClient
 			bgw.RunWorkerAsync();
 			this._l_AppStatusLabel.Text = "";
 			lmw.ShowDialog();
-			MessageBox.Show(Properties.Resources.Str_Msg_AsgPublished, Properties.Resources.Str_ProcessingEndedTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+			MessageBox.Show(Application.Current.Resources["Str_Msg_AsgPublished"] as string, Application.Current.Resources["Str_ProcessingEndedTitle"] as string, 
+				MessageBoxButton.OK, MessageBoxImage.Information);
 		}
 
 		private void _M_meet_OnPublishToWLS(object sender, RoutedEventArgs e)
@@ -1674,8 +1717,8 @@ namespace ejpClient
 
 			if (string.IsNullOrEmpty(App._ejpSettings.LiveSpaceUri))
 			{
-				MessageBox.Show(Properties.Resources.ERR_NoLiveSpaceUriSet,
-					Properties.Resources.Str_ErrorTitle,
+				MessageBox.Show(Application.Current.Resources["ERR_NoLiveSpaceUriSet"] as string, //Properties.Resources.ERR_NoLiveSpaceUriSet,
+					Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle,
 					MessageBoxButton.OK, MessageBoxImage.Error);
 				return;
 			}
@@ -1693,7 +1736,8 @@ namespace ejpClient
 							if (htmlRep == "")
 								return;
 
-							string postTitle = Properties.Resources.Str_WlsPostTitle + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+							string postTitle = Application.Current.Resources["Str_WlsPostTitle"] as string 
+								+ DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
 
 							byte[] kmByteArray = this._currentKnowledgeMapControl.ExportMapToByteArray();
 							foundReportToPublish = true;
@@ -1728,19 +1772,23 @@ namespace ejpClient
 
 							wlsbh.PostBlog(postTitle, builder.ToString());
 
-							MessageBox.Show(Properties.Resources.Str_Msg_AsgPublished, Properties.Resources.Str_ProcessingEndedTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+							MessageBox.Show(Application.Current.Resources["Str_Msg_AsgPublished"] as string,
+								 Application.Current.Resources["Str_ProcessingEndedTitle"] as string, 
+								 MessageBoxButton.OK, MessageBoxImage.Information);
 
 							break;
 						}
 					}
 				}
 				if (!foundReportToPublish)
-					MessageBox.Show("", Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+					MessageBox.Show("", Application.Current.Resources["Str_ErrorTitle"] as string, 
+						MessageBoxButton.OK, MessageBoxImage.Information);
 			}
 			catch (ApplicationException ex)
 			{
-				MessageBox.Show(Properties.Resources.EX_AsgPublishFailed,
-					Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["EX_AsgPublishFailed"] as string,//Properties.Resources.EX_AsgPublishFailed,
+					Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
@@ -1776,11 +1824,15 @@ namespace ejpClient
 					}
 				}
 				if (!foundReportToExport)
-					MessageBox.Show(Properties.Resources.ERR_ChooseReportToPrint, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+					MessageBox.Show(Application.Current.Resources["ERR_ChooseReportToPrint"] as string, //Properties.Resources.ERR_ChooseReportToPrint, 
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Information);
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Properties.Resources.EX_PrintReportFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["EX_PrintReportFailed"] as string,//Properties.Resources.EX_PrintReportFailed, 
+					Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
@@ -1797,7 +1849,9 @@ namespace ejpClient
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Properties.Resources.EX_PrintKMFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["EX_PrintKMFailed"] as string,//Properties.Resources.EX_PrintKMFailed, 
+					Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
@@ -1857,7 +1911,7 @@ namespace ejpClient
 				{
 					EjsBridge.ejsBridgeManager.EjsAddress = App._ejpSettings.EjsAddress;
 					ejpWindows.NewAssignmentWindow newStudyW = new ejpWindows.NewAssignmentWindow();
-					newStudyW.WindowHeadline = Properties.Resources.Str_DlgTitle_AddStudy;
+					newStudyW.WindowHeadline = Application.Current.Resources["Str_DlgTitle_AddStudy"] as string;
 					newStudyW.Closed += delegate(object ws, EventArgs we)
 					{
 						ejpStudy newStudy = null;
@@ -1920,7 +1974,8 @@ namespace ejpClient
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(Properties.Resources.ERR_UnknownError + "\n" + ex.Message);
+				MessageBox.Show(Application.Current.Resources["ERR_UnknownError"] as string//Properties.Resources.ERR_UnknownError 
+					+ "\n" + ex.Message);
 			}
 		}
 
@@ -1947,7 +2002,7 @@ namespace ejpClient
 				t.Tag = this._currentWorkingStudy.MetaData.Id;
 				TextBlock headerT = new TextBlock
 				{
-					Text = Properties.Resources.Str_ReportLiteral + " " +
+					Text = Application.Current.Resources["Str_ReportLiteral"] as string + " " +
 					this._currentWorkingStudy.Reports.Count.ToString(),
 					Tag = t,
 					AllowDrop = true
@@ -1967,7 +2022,7 @@ namespace ejpClient
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Properties.Resources.EX_AddReportFailed_Max);
+				MessageBox.Show(Application.Current.Resources["EX_AddReportFailed_Max"] as string);//Properties.Resources.EX_AddReportFailed_Max);
 			}
 		}
 
@@ -1987,8 +2042,9 @@ namespace ejpClient
 			if (this._currentWorkingAssingment.IsPersisted == false)
 			{
 				addKM = false;
-				if (MessageBox.Show(Properties.Resources.ERR_MustSaveBefireAddingKM,
-					Properties.Resources.Str_WarnTitle, MessageBoxButton.YesNo, MessageBoxImage.Question)
+				if (MessageBox.Show(Application.Current.Resources["ERR_MustSaveBefireAddingKM"] as string,//Properties.Resources.ERR_MustSaveBefireAddingKM,
+					Application.Current.Resources["Str_WarnTitle"] as string,//Properties.Resources.Str_WarnTitle, 
+					MessageBoxButton.YesNo, MessageBoxImage.Question)
 					== MessageBoxResult.Yes)
 					addKM = true;
 				else
@@ -2032,7 +2088,7 @@ namespace ejpClient
 
 				TextBlock headerT = new TextBlock
 				{
-					Text = Properties.Resources.Str_KnowledgeMapLiteral + " " +
+					Text = Application.Current.Resources["Str_KnowledgeMapLiteral"] as string + " " +
 					this._currentWorkingStudy.KnowledgeMaps.Count.ToString(),
 					Tag = t,
 					AllowDrop = true
@@ -2102,7 +2158,7 @@ namespace ejpClient
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Properties.Resources.EX_AddKMFailed_Max);
+				MessageBox.Show(Application.Current.Resources["EX_AddKMFailed_Max"] as string);//Properties.Resources.EX_AddKMFailed_Max);
 			}
 		}
 
@@ -2121,16 +2177,17 @@ namespace ejpClient
 				bool deleteCurrentGuide = false;
 				if (this._currentKnowledgeMapControl == null)
 				{
-					MessageBox.Show(Properties.Resources.ERR_ChooseKMToImportGuide,
-						Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+					MessageBox.Show(Application.Current.Resources["ERR_ChooseKMToImportGuide"] as string,//Properties.Resources.ERR_ChooseKMToImportGuide,
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Information);
 					return;
 				}
 
 				if (this._currentKnowledgeMapControl.HasGuide)
 				{
 					if (MessageBox.Show(
-						Properties.Resources.Q_ReplaceCurrentKMGuide,
-						Properties.Resources.Str_WarnTitle, MessageBoxButton.YesNo, MessageBoxImage.Question)
+						Application.Current.Resources["Q_ReplaceCurrentKMGuide"] as string,
+						Application.Current.Resources["Str_WarnTitle"] as string, MessageBoxButton.YesNo, MessageBoxImage.Question)
 						== MessageBoxResult.Yes)
 						deleteCurrentGuide = true;
 					else
@@ -2142,14 +2199,17 @@ namespace ejpClient
 				if (this._currentWorkingStudy.PackageRelationshipIDString == null)
 				{
 					MessageBox.Show(
-						Properties.Resources.ERR_MustSaveStudyBeforeAddingGuide,
-						Properties.Resources.Str_WarnTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+						Application.Current.Resources["ERR_MustSaveStudyBeforeAddingGuide"] as string,//Properties.Resources.ERR_MustSaveStudyBeforeAddingGuide,
+						Application.Current.Resources["Str_WarnTitle"] as string,//Properties.Resources.Str_WarnTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Error);
 					return;
 				}
 
 				winForms.OpenFileDialog imageFileDialog = new System.Windows.Forms.OpenFileDialog();
 
-				imageFileDialog.Filter = "Image " + Properties.Resources.Str_UiLbl_FileLiteral + "|*.png;*.bmp;*.jpg;";
+				imageFileDialog.Filter = "Image " + 
+					Application.Current.Resources["Str_UiLbl_FileLiteral"] as string 
+					+ "|*.png;*.bmp;*.jpg;";
 				//imageFileDialog.Filter = "Png Images (*.png)|*.png";
 
 				if (imageFileDialog.ShowDialog() == winForms.DialogResult.OK)
@@ -2166,7 +2226,9 @@ namespace ejpClient
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Properties.Resources.EX_LoadImageFileFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["EX_LoadImageFileFailed"] as string,//Properties.Resources.EX_LoadImageFileFailed, 
+					Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
@@ -2182,15 +2244,18 @@ namespace ejpClient
 				bool deleteCurrentGuide = false;
 				if (this._currentKnowledgeMapControl == null)
 				{
-					MessageBox.Show(Properties.Resources.ERR_ChooseKMToImportGuide,
-						Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+					MessageBox.Show(Application.Current.Resources["ERR_ChooseKMToImportGuide"] as string, //Properties.Resources.ERR_ChooseKMToImportGuide,
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Information);
 					return;
 				}
 
 				if (this._currentKnowledgeMapControl.HasGuide)
 				{
 					if (MessageBox.Show(
-						Properties.Resources.Q_DelGuide, Properties.Resources.Str_WarnTitle, MessageBoxButton.YesNo, MessageBoxImage.Question)
+						Application.Current.Resources["Q_DelGuide"] as string, 
+						Application.Current.Resources["Str_WarnTitle"] as string, 
+						MessageBoxButton.YesNo, MessageBoxImage.Question)
 						== MessageBoxResult.Yes)
 						deleteCurrentGuide = true;
 					else
@@ -2199,8 +2264,9 @@ namespace ejpClient
 				else
 				{
 					MessageBox.Show(
-						Properties.Resources.ERR_SelectedKMHasNoGuide,
-						Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+						Application.Current.Resources["ERR_SelectedKMHasNoGuide"] as string,//Properties.Resources.ERR_SelectedKMHasNoGuide,
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Information);
 					return;
 				}
 
@@ -2209,7 +2275,9 @@ namespace ejpClient
 			}
 			catch (Exception)
 			{
-				MessageBox.Show(Properties.Resources.EX_DelGuideFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["EX_DelGuideFailed"] as string,//Properties.Resources.EX_DelGuideFailed, 
+					Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
@@ -2226,7 +2294,8 @@ namespace ejpClient
 			try
 			{
 				winForms.OpenFileDialog imageFileDialog = new System.Windows.Forms.OpenFileDialog();
-				imageFileDialog.Filter = "Image " + Properties.Resources.Str_UiLbl_FileLiteral + "|*.png;*.bmp;*.jpg;";
+				imageFileDialog.Filter = "Image " + Application.Current.Resources["Str_UiLbl_FileLiteral"] as string 
+					+ "|*.png;*.bmp;*.jpg;";
 				//imageFileDialog.Filter = "Png Images (*.png)|*.png";
 
 				if (imageFileDialog.ShowDialog() == winForms.DialogResult.OK)
@@ -2256,7 +2325,9 @@ namespace ejpClient
 			catch (Exception)
 			{
 
-				MessageBox.Show(Properties.Resources.EX_LoadImageFileFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["EX_LoadImageFileFailed"] as string, 
+					Application.Current.Resources["Str_ErrorTitle"] as string, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 
 
@@ -2271,7 +2342,7 @@ namespace ejpClient
 
 			if (this._currentWorkingStudy == null)
 			{
-				MessageBox.Show(Properties.Resources.ERR_MustChooseStudyToAddXps);
+				MessageBox.Show(Application.Current.Resources["ERR_MustChooseStudyToAddXps"] as string);//Properties.Resources.ERR_MustChooseStudyToAddXps);
 				return;
 			}
 
@@ -2279,7 +2350,7 @@ namespace ejpClient
 			{
 				EjsBridge.ejsBridgeManager.EjsAddress = App._ejpSettings.EjsAddress;
 				ejpWindows.NewAssignmentWindow newDocuementW = new ejpWindows.NewAssignmentWindow();
-				newDocuementW.WindowHeadline = Properties.Resources.Str_DlgTitle_AddXps;
+				newDocuementW.WindowHeadline = Application.Current.Resources["Str_DlgTitle_AddXps"] as string;
 				newDocuementW.DisableNoSelect();
 				newDocuementW.Closed += delegate(object ws, EventArgs we)
 				{
@@ -2311,7 +2382,8 @@ namespace ejpClient
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(Properties.Resources.ERR_UnknownError + "\n" + ex.Message);
+				MessageBox.Show(Application.Current.Resources["ERR_UnknownError"] as string//Properties.Resources.ERR_UnknownError 
+					+ "\n" + ex.Message);
 			}
 
 		}
@@ -2819,11 +2891,11 @@ namespace ejpClient
 					winForms.SaveFileDialog saveAssignmentDialog = new winForms.SaveFileDialog();
 					if (this._currentWorkingAssingment.MetaData.AssignmentContentType ==
 						SiliconStudio.Meet.EjpLib.Enumerations.AssignmentType.WorkingAssignment)
-						saveAssignmentDialog.Filter = "Ejp " + Properties.Resources.Str_UiLbl_FileLiteral + " (*.ejp)|*.ejp";
+						saveAssignmentDialog.Filter = "Ejp " + Application.Current.Resources["Str_UiLbl_FileLiteral"] as string + " (*.ejp)|*.ejp";
 					else
 						if (this._currentWorkingAssingment.MetaData.AssignmentContentType ==
 							SiliconStudio.Meet.EjpLib.Enumerations.AssignmentType.CommentedAssignment)
-							saveAssignmentDialog.Filter = "CEjp " + Properties.Resources.Str_UiLbl_FileLiteral + " (*.cejp)|*.cejp";
+							saveAssignmentDialog.Filter = "CEjp " + Application.Current.Resources["Str_UiLbl_FileLiteral"] as string + " (*.cejp)|*.cejp";
 
 					saveAssignmentDialog.AddExtension = true;
 
@@ -2833,7 +2905,7 @@ namespace ejpClient
 						bool runOverWrite = false;
 						if (saveAssignmentDialog.FileName == this._currentWorkingAssingment.FilePackagePath)
 						{
-							if (MessageBox.Show(Properties.Resources.Q_OverwriteCurrentAsg, Properties.Resources.Str_WarnTitle,
+							if (MessageBox.Show(Application.Current.Resources["Q_OverwriteCurrentAsg"] as string, Application.Current.Resources["Str_WarnTitle"] as string,
 								MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
 								runSave = false;
 							else
@@ -2886,7 +2958,8 @@ namespace ejpClient
 				}
 				catch (Exception)
 				{
-					MessageBox.Show(Properties.Resources.EX_AsgSaveFailed, Properties.Resources.Str_ErrorTitle,
+					MessageBox.Show(Application.Current.Resources["EX_AsgSaveFailed"] as string,//Properties.Resources.EX_AsgSaveFailed, 
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle,
 						MessageBoxButton.OK, MessageBoxImage.Error);
 					this._canAutoSave = false;
 				}
@@ -2908,7 +2981,8 @@ namespace ejpClient
 				}
 				catch (Exception)
 				{
-					MessageBox.Show(Properties.Resources.EX_AsgSaveFailed, Properties.Resources.Str_ErrorTitle,
+					MessageBox.Show(Application.Current.Resources["EX_AsgSaveFailed"] as string,//Properties.Resources.EX_AsgSaveFailed, 
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle,
 						MessageBoxButton.OK, MessageBoxImage.Error);
 					this._canAutoSave = false;
 				}
@@ -2921,8 +2995,9 @@ namespace ejpClient
 		/// <returns>Returns true if the current assignment was closed without problems.</returns>
 		private bool CloseCurrentAssignment()
 		{
-			MessageBoxResult respons = MessageBox.Show(Properties.Resources.Q_SaveChangesToAsg,
-				Properties.Resources.Str_WarnTitle, MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+			MessageBoxResult respons = MessageBox.Show(Application.Current.Resources["Q_SaveChangesToAsg"] as string,
+				Application.Current.Resources["Str_WarnTitle"] as string, 
+				MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
 
 			bool saveOnClose = false;
 
@@ -2982,9 +3057,13 @@ namespace ejpClient
 			catch (Exception)
 			{
 				if (saveOnClose)
-					MessageBox.Show(Properties.Resources.EX_AsgSaveFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+					MessageBox.Show(Application.Current.Resources["EX_AsgSaveFailed"] as string,//Properties.Resources.EX_AsgSaveFailed, 
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Error);
 				else
-					MessageBox.Show(Properties.Resources.EX_CloseAppFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+					MessageBox.Show(Application.Current.Resources["EX_CloseAppFailed"] as string,//Properties.Resources.EX_CloseAppFailed,
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Error);
 
 				return false;
 			}
@@ -3009,7 +3088,8 @@ namespace ejpClient
 				"TempEjpPackage" + DateTime.Now.Ticks.ToString() + ".ejp";
 
 			this._currentWorkingAssingment = ejpAssignment.Create(
-				Properties.Resources.Str_NoNameAssignmentTitle, firstXpsPath, firstXpsTitle, owner,
+				Application.Current.Resources["Str_NoNameAssignmentTitle"] as string, 
+				firstXpsPath, firstXpsTitle, owner,
 				isManagedByEJournalServer, xpsDocumentId, saveDir);
 			this.LoadCurrentAssignment();
 			this.UpdateWindowTitle();
@@ -3030,8 +3110,9 @@ namespace ejpClient
 			{
 				if (this._currentWorkingAssingment.IsPersisted == false)
 				{
-					MessageBox.Show(Properties.Resources.ERR_MustSaveBeforeMerge,
-						Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Information);
+					MessageBox.Show(Application.Current.Resources["ERR_MustSaveBeforeMerge"] as string,//Properties.Resources.ERR_MustSaveBeforeMerge,
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Information);
 					return;
 				}
 				List<ejpStudy> importedStudies = this._currentWorkingAssingment.Import(targetPath);
@@ -3062,13 +3143,15 @@ namespace ejpClient
 					this._currentXpsDocumentViewer.HasInputFocus = true;
 				}
 				else
-					MessageBox.Show(Properties.Resources.ERR_AsgToMergeAlreadyExists,
-						Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+					MessageBox.Show(Application.Current.Resources["ERR_AsgToMergeAlreadyExists"] as string,//Properties.Resources.ERR_AsgToMergeAlreadyExists,
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(Properties.Resources.EX_AsgMergeFailed,
-					Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["EX_AsgMergeFailed"] as string,//Properties.Resources.EX_AsgMergeFailed,
+					Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
@@ -3090,7 +3173,7 @@ namespace ejpClient
 		private void LoadCurrentAssignment()
 		{
 			if (this._currentWorkingAssingment == null)
-				throw new ApplicationException(Properties.Resources.EX_WorkingAsgNotSet);
+				throw new ApplicationException(Application.Current.Resources["EX_WorkingAsgNotSet"] as string);
 
 			this.ClearUi();
 
@@ -3221,7 +3304,7 @@ namespace ejpClient
 				if (study.KnowledgeMaps.Count < 2)
 				{
 					TabItem t = new TabItem();
-					t.ToolTip = Properties.Resources.Str_ToolTip_NewKMTab;
+					t.ToolTip = Application.Current.Resources["Str_ToolTip_NewKMTab"] as string;
 					t.Name = "newKMTab";
 					t.Tag = study.MetaData.Id;
 					t.MouseLeftButtonUp += delegate(object sender, MouseButtonEventArgs e)
@@ -3243,7 +3326,7 @@ namespace ejpClient
 				if (study.Reports.Count < 2)
 				{
 					TabItem t = new TabItem();
-					t.ToolTip = Properties.Resources.Str_ToolTip_NewReportTab;
+					t.ToolTip = Application.Current.Resources["Str_ToolTip_NewReportTab"] as string;
 					t.Name = "newReportTab";
 					t.Tag = study.MetaData.Id;
 					t.MouseLeftButtonUp += delegate(object sender, MouseButtonEventArgs e)
@@ -3285,7 +3368,7 @@ namespace ejpClient
 				if (!App._ejpSettings.ShowMapLock)
 					m.HideMapLock();
 
-				TextBlock headerT = new TextBlock { Text = Properties.Resources.Str_KnowledgeMapLiteral + " " + kmCounter.ToString(), Tag = t, AllowDrop = true };
+				TextBlock headerT = new TextBlock { Text = Application.Current.Resources["Str_KnowledgeMapLiteral"] as string + " " + kmCounter.ToString(), Tag = t, AllowDrop = true };
 				headerT.DragEnter += new DragEventHandler(headerT_PreviewDragEnter);
 				headerT.MouseLeftButtonUp += new MouseButtonEventHandler(KM_GotFocus);
 				t.Header = headerT;
@@ -3469,7 +3552,7 @@ namespace ejpClient
 				TabItem t = new TabItem();
 				t.Tag = study.MetaData.Id;
 
-				TextBlock headerT = new TextBlock { Text = Properties.Resources.Str_ReportLiteral + " " + repCounter.ToString(), Tag = t, AllowDrop = true };
+				TextBlock headerT = new TextBlock { Text = Application.Current.Resources["Str_ReportLiteral"] as string + " " + repCounter.ToString(), Tag = t, AllowDrop = true };
 				headerT.DragEnter += new DragEventHandler(headerT_PreviewDragEnter);
 				headerT.MouseLeftButtonUp += new MouseButtonEventHandler(Report_GotFocus);
 				t.Header = headerT;
@@ -3710,9 +3793,9 @@ namespace ejpClient
 			this._tb_KnowledgeMaps.Items.Clear();
 			this._tb_XpsDocumentsAndReports.Items.Clear();
 			this.UnCheckEntireToolbar();
-			this._M_ML_ColorSwatchButton.SetCurrentColor(this._documentAreaMarkerColorsList[Properties.Resources.Str_UiLbl_Red]);
-			this._M_PL_ColorSwatchButton.SetCurrentColor(this._documentAreaPenColorsList[Properties.Resources.Str_UiLbl_Red]);
-			this._M_km_ColorSwatchButton.SetCurrentColor(this._kmAreaColorsList[Properties.Resources.Str_UiLbl_Red]);
+			this._M_ML_ColorSwatchButton.SetCurrentColor(this._documentAreaMarkerColorsList[Application.Current.Resources["Str_UiLbl_Red"] as string]);
+			this._M_PL_ColorSwatchButton.SetCurrentColor(this._documentAreaPenColorsList[Application.Current.Resources["Str_UiLbl_Red"] as string]);
+			this._M_km_ColorSwatchButton.SetCurrentColor(this._kmAreaColorsList[Application.Current.Resources["Str_UiLbl_Red"] as string]);
 			this._previousKmTool = Tool.Select;
 
 			this.SetToolBoxState(ToolBoxState.None);
@@ -3724,13 +3807,13 @@ namespace ejpClient
 
 		private void UpdateWindowTitle()
 		{
-			string versionPart = Properties.Resources.Str_AppVersionString;
+			string versionPart = Application.Current.Resources["Str_AppVersionString"] as string;
 			if (this._currentWorkingAssingment == null)
-				this.Title = versionPart + Properties.Resources.Str_NoAsgOpenedCreated;
+				this.Title = versionPart + Application.Current.Resources["Str_NoAsgOpenedCreated"] as string;
 			else if (this._currentWorkingAssingment.IsPersisted)
 				this.Title = versionPart + this._currentWorkingAssingment.FilePackagePath;
 			else
-				this.Title = versionPart + Properties.Resources.Str_Wrn_UnsavedAsg;
+				this.Title = versionPart + Application.Current.Resources["Str_Wrn_UnsavedAsg"] as string;
 		}
 
 		private string GetOpenFileName(string extensionMask, string dialogTitle)
@@ -3985,8 +4068,8 @@ namespace ejpClient
 		private bool ReqConsent_SwitchToCommentAMode()
 		{
 			if (MessageBox.Show(
-					Properties.Resources.Q_SwtichToCommentMode,
-					Properties.Resources.Str_WarnTitle,
+					Application.Current.Resources["Q_SwtichToCommentMode"] as string,
+					Application.Current.Resources["Str_WarnTitle"] as string,
 					MessageBoxButton.YesNo,
 					MessageBoxImage.Question) == MessageBoxResult.Yes)
 				return true;
@@ -4002,8 +4085,8 @@ namespace ejpClient
 		private bool ReqConsent_SwitchToNormalAMode()
 		{
 			if (MessageBox.Show(
-					Properties.Resources.Q_SwtichToNormalMode,
-					Properties.Resources.Str_WarnTitle,
+					Application.Current.Resources["Q_SwtichToNormalMode"] as string,
+					Application.Current.Resources["Str_WarnTitle"] as string,
 					MessageBoxButton.YesNo,
 					MessageBoxImage.Question) == MessageBoxResult.Yes)
 				return true;
@@ -4025,7 +4108,7 @@ namespace ejpClient
 			catch (Exception)
 			{
 				//TODO: something
-				throw new ApplicationException(Properties.Resources.EX_GetCommentCountFailed);
+				throw new ApplicationException(Application.Current.Resources["EX_GetCommentCountFailed"] as string);//Properties.Resources.EX_GetCommentCountFailed);
 			}
 			return totalCommentCount;
 		}
@@ -4247,8 +4330,9 @@ namespace ejpClient
 		private void OnRemoveStudyFromAssignment(object sender, RoutedEventArgs e)
 		{
 			if (
-				MessageBox.Show(Properties.Resources.Q_DelStudy,
-				Properties.Resources.Str_WarnTitle, MessageBoxButton.YesNo, MessageBoxImage.Warning)
+				MessageBox.Show(Application.Current.Resources["Q_DelStudy"] as string,
+					Application.Current.Resources["Str_WarnTitle"] as string, 
+					MessageBoxButton.YesNo, MessageBoxImage.Warning)
 				== MessageBoxResult.Yes)
 			{
 				this._currentWorkingAssingment.RemoveStudy(

@@ -136,13 +136,13 @@ namespace ejpClient.ejpWindows
 			}
 			if (App.IsCurrentUserEJSAuthenticated() == false)
 			{
-				MessageBox.Show(Properties.Resources.ERR_MustLogInBeforePublishAsg);
+				MessageBox.Show(Application.Current.Resources["ERR_MustLogInBeforePublishAsg"] as string);//Properties.Resources.ERR_MustLogInBeforePublishAsg);
 			}
 			else
 			{
 				if (this._l_SaveFileName.Text.Length == 0)
 				{
-					MessageBox.Show(Properties.Resources.ERR_NameNeededToPusblishAsg);
+					MessageBox.Show(Application.Current.Resources["ERR_NameNeededToPusblishAsg"] as string);//Properties.Resources.ERR_NameNeededToPusblishAsg);
 					return;
 				}
 				this.DocumentLocalPath = this._l_SaveFileName.Text;

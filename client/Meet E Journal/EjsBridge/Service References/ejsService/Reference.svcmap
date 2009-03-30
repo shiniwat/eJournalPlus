@@ -17,21 +17,22 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://133.11.55.170/EJS/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost/EjsWcfService/EjsPublic.svc/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="services.wsdl" MetadataType="Wsdl" ID="ae77548e-30dc-46f1-87b6-2f2af037cf75" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="e06b2431-7050-406d-88fb-cc7e7706915c" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
-    <MetadataFile FileName="services.xsd" MetadataType="Schema" ID="1bf6e748-7ff0-4601-b3a3-ad4b2837b443" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="649414ba-f6e5-41e0-ad03-50353209f971" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
-    <MetadataFile FileName="EjsPublicService.xsd" MetadataType="Schema" ID="aacf2a6c-faf8-4b02-bac2-38a1d7a093c2" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
-    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="c7c81de3-72e3-4d17-af7c-5158212f416a" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
-    <MetadataFile FileName="EjsPublicService.UserOp.xsd" MetadataType="Schema" ID="a6f4e502-930e-4e51-9c2c-6d9c3078a3fb" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
-    <MetadataFile FileName="EjsPublicService.AssignmentOp.xsd" MetadataType="Schema" ID="d9bcd643-4d9f-4e21-8620-8e86d6df2cd4" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
-    <MetadataFile FileName="EjsPublicService.CourseOp.xsd" MetadataType="Schema" ID="87d38c79-140e-4eff-8c45-ae417844479f" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
-    <MetadataFile FileName="EjsPublicService.ServerOp.xsd" MetadataType="Schema" ID="ef94db53-5636-4d07-88d4-9483f67f571b" SourceId="1" SourceUrl="http://133.11.55.170/EJS/mex" />
+    <MetadataFile FileName="services1.wsdl" MetadataType="Wsdl" ID="049c5fd5-9074-4513-92a3-27e80bc36e80" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="4148896d-df5f-4fc1-b186-067502340eb8" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
+    <MetadataFile FileName="services1.xsd" MetadataType="Schema" ID="8e473c9e-e04a-440f-92c6-012ef6faf669" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="672f9c8e-2886-4ab6-b7de-187e806e1e2c" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
+    <MetadataFile FileName="EjsWcfService.xsd" MetadataType="Schema" ID="74953de5-8aef-4639-9594-d120ef3a44d7" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
+    <MetadataFile FileName="System1.xsd" MetadataType="Schema" ID="6af0b089-baa8-42a6-befc-2288eed608d9" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
+    <MetadataFile FileName="EjsWcfService.UserOp.xsd" MetadataType="Schema" ID="0adcb421-735d-4453-9b6c-99ebcfd0fa7f" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
+    <MetadataFile FileName="EjsWcfService.AssignmentOp.xsd" MetadataType="Schema" ID="ea808dd4-29bf-46b0-8ead-acb76e6a21ad" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
+    <MetadataFile FileName="EjsWcfService.CourseOp.xsd" MetadataType="Schema" ID="57cbb388-01a8-4ca2-a5de-0aead22e2183" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
+    <MetadataFile FileName="EjsWcfService.ServerOp.xsd" MetadataType="Schema" ID="05164443-6a8b-42de-ae76-ff8ba3133744" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
   </Extensions>
 </ReferenceGroup>

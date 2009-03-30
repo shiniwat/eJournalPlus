@@ -29,7 +29,7 @@ namespace ejpClient.ejpWindows
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(ex.Message, Properties.Resources.Str_AuthErrorTitle);
+				MessageBox.Show(ex.Message, Application.Current.Resources["Str_AuthErrorTitle"] as string);
 			}
 			finally
 			{

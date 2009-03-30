@@ -92,8 +92,8 @@ namespace ejpClient.ejpWindows
 
 		private void On_RbDocLocNoneChecked(object sender, RoutedEventArgs e)
 		{
-			this._l_FirstXpsName.Text = Properties.Resources.Str_UiLblNone;
-			this._l_XpsLocation.Text = Properties.Resources.Str_UiLblNone;
+			this._l_FirstXpsName.Text = Application.Current.Resources["Str_UiLblNone"] as string;
+			this._l_XpsLocation.Text = Application.Current.Resources["Str_UiLblNone"] as string;
 			this._isDocumentSet = true;
 			this._createLocation = CreateAssignmentStartLocation.None;
 			this.EnableDisableOKButton();
@@ -101,7 +101,7 @@ namespace ejpClient.ejpWindows
 
 		private void On_RbDocLocLocalChecked(object sender, RoutedEventArgs e)
 		{
-			string path = this.GetOpenFileName("XPS Documents (*.xps)|*.xps", Properties.Resources.Str_DlgTitle_OpenXPS);
+			string path = this.GetOpenFileName("XPS Documents (*.xps)|*.xps", Application.Current.Resources["Str_DlgTitle_OpenXPS"] as string);
 			if (path != "cancel")
 			{
 				this._isDocumentSet = true;
@@ -172,7 +172,7 @@ namespace ejpClient.ejpWindows
 			}
 			catch (Exception)
 			{
-				throw new ApplicationException(Properties.Resources.EX_AsgCreateFromXPSFailed);
+				throw new ApplicationException(Application.Current.Resources["EX_AsgCreateFromXPSFailed"] as string);//Application.Current.Resources["EX_AsgCreateFromXPSFailed);
 			}
 		}
 
@@ -188,8 +188,8 @@ namespace ejpClient.ejpWindows
 				this._b_Ok.IsEnabled = true;
 			else
 			{
-				this._l_FirstXpsName.Text = Properties.Resources.Str_UiLbl_FirstXPSName;
-				this._l_XpsLocation.Text = Properties.Resources.Str_UiLbl_FirstXPSLocation;
+				this._l_FirstXpsName.Text = Application.Current.Resources["Str_UiLbl_FirstXPSName"] as string;
+				this._l_XpsLocation.Text = Application.Current.Resources["Str_UiLbl_FirstXPSLocation"] as string;
 				this._createLocation = CreateAssignmentStartLocation.NotSet;
 				this._b_Ok.IsEnabled = false;
 			}

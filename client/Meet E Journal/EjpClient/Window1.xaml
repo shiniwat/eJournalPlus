@@ -7,7 +7,8 @@
     xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
     x:Class="ejpClient.Window1" WindowState="Maximized"
     Title="MEET eJournalPlus" Height="700" Width="1000" Closing="OnApplicationClosing"
-    PreviewMouseMove="OnMagnifierMove">
+    PreviewMouseMove="OnMagnifierMove"
+    Icon="Resources\meet_tm.png">
     
     <Window.Resources>
 

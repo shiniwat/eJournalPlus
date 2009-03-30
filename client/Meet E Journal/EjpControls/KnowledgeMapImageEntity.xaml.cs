@@ -67,7 +67,7 @@ namespace SiliconStudio.Meet.EjpControls
 							this._imageMemoryStream.Flush();
 						}
 						else
-							throw new InvalidCastException(Properties.Resources.EX_LoadKMIMGEntityFailed);
+							throw new InvalidCastException(Application.Current.Resources["EX_LoadKMIMGEntityFailed"] as string);//Properties.Resources.EX_LoadKMIMGEntityFailed);
 					}
 				}
 

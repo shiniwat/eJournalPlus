@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <sys:String x:Key="ERR_AddKMEntityFailed_Locked">このナレジマップは今ロックされていますので、新しい項目を追加出来ません。</sys:String>
+  <sys:String x:Key="ERR_ReportEditFailed_Locked">このリポートは、現在編集出来ません</sys:String>
+  <sys:String x:Key="ERR_UrlWinAddFailed_Format">正しいUrlを入力して下さい。必ず「http://」から入力して下さい。</sys:String>
+  <sys:String x:Key="ERR_UrlWinAddFailed_NoExpl">説明を入力して下さい!</sys:String>
+  <sys:String x:Key="EX_DelGuideFailed">ガイドを削除することが出来ませんでした。</sys:String>
+  <sys:String x:Key="EX_LoadGuideFailed">Guide Image source stream is not accessable. The source is not a BitmapImage/Uri.</sys:String>
+  <sys:String x:Key="EX_LoadKMIMGEntityFailed">Image entity source stream is not accessable. The source is not a BitmapImage/Uri.</sys:String>
+  <sys:String x:Key="EX_ReportAddUrlFailed">リンクを作成する際に失敗しました。\nUrlを正しく入力したかどうかを確かめた上もう一度試してみてください。</sys:String>
+  <sys:String x:Key="EX_ReportExportFailed">レポートを書き出すする際に失敗しました。</sys:String>
+  <sys:String x:Key="EX_ReportLoadFailed_Version">Failed to load a Report in the current Assignment. Perhaps the Assignment was created with an earlier version of eJournalPlus?</sys:String>
+  <sys:String x:Key="EX_ReportPrintFailed">印刷する際に失敗しました。</sys:String>
+  <sys:String x:Key="EX_ReportReferenceAddFailed">この位置に引用出来ませんでした。もう一度他の位置で試して見て下さい。なお，引用部分の上に新しい引用を重ねることはできません．ずらして引用してください。</sys:String>
+  <sys:String x:Key="EX_SetGuideFailed">選択された画像をガイドにすることが出来ませんでした。</sys:String>
+  <sys:String x:Key="Q_DelPushPinComment">このプッシュピンコメントをすべて消しますが宜しいですか？</sys:String>
+  <sys:String x:Key="Q_DocVDelConnectedLine">いま、あなたが消そうとしている線は、ナレッジマップ上にある１つ以上のオブジェクトと関連しています。この線を消すと、関連するすべてのオブジェクトがナレッジマップからも削除されます。この動作は取り消せません。それでもこの線を消しますか？</sys:String>
+  <sys:String x:Key="Q_DocVUndoConnectedLine">元に戻せば線が消えます。その線は、ナレッジマップ上にある１つ以上のオブジェクトと関連しています。この線を消すと、関連するすべてのオブジェクトがナレッジマップからも削除されます。それでもこの線を消しますか？</sys:String>
+  <sys:String x:Key="Str_ConvertedCommentNodeTitle">Comment</sys:String>
+  <sys:String x:Key="Str_ErrorDlgTitle">エラー</sys:String>
+  <sys:String x:Key="Str_MsgTitle_KMLocked">ナレッジマップがロックされている。</sys:String>
+  <sys:String x:Key="Str_MsgTitle_ReportLocked">レポートがロックされている。</sys:String>
+  <sys:String x:Key="Str_NewKMIMGEntityTitle">名称未設定</sys:String>
+  <sys:String x:Key="Str_NewKMLabelDefaultContent">入力して下さい。</sys:String>
+  <sys:String x:Key="Str_NewKMSelfNodeTitle">No Title</sys:String>
+  <sys:String x:Key="Str_NewKMTextEntityTitle">名称未設定</sys:String>
+  <sys:String x:Key="Str_ToolTip_DocVScaleBar">スケールバー</sys:String>
+  <sys:String x:Key="Str_ToolTip_ReportUrl">コントロールボタン＋クリックでリンク先を表示します</sys:String>
+  <sys:String x:Key="Str_UiLbl_CharacterLiteral">文字</sys:String>
+  <sys:String x:Key="Str_UiLbl_ReportReferencedSelfNodeTitle">コメント：</sys:String>
+  <sys:String x:Key="Str_WarnDlgTitle">警告</sys:String>
+</ResourceDictionary>

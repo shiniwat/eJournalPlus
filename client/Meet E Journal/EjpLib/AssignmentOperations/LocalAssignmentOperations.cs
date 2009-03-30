@@ -5,6 +5,7 @@ using System.IO.Packaging;
 using System.Net.Mime;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security;
+using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Markup;
 using System.Windows.Media.Imaging;
@@ -62,7 +63,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 			}
 			catch (IOException)
 			{
-				throw new ApplicationException(Properties.Resources.EX_SaveFailed);
+				throw new ApplicationException(Application.Current.Resources["EX_SaveFailed"].ToString());//Properties.Resources.EX_SaveFailed);
 			}
 
 			targetPackage.PackageProperties.Created = assignment.MetaData.CreationDate;
@@ -112,7 +113,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 		public static void SaveAssignmentAs(BaseClasses.ejpAssignment assignment)
 		{
 			if (LocalAssignmentFileOperations.targetPackage == null)
-				throw new ApplicationException(Properties.Resources.EX_SaveFailed);
+				throw new ApplicationException(Application.Current.Resources["EX_SaveFailed"].ToString());//Properties.Resources.EX_SaveFailed);
 
 			LocalAssignmentFileOperations.targetPackagePath = assignment.FilePackagePath;
 
@@ -169,7 +170,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 		public static void ExportAssignment(BaseClasses.ejpAssignment assignment, string path)
 		{
 			if (LocalAssignmentFileOperations.targetPackage == null)
-				throw new ApplicationException(Properties.Resources.EX_SaveFailed);
+				throw new ApplicationException(Application.Current.Resources["EX_SaveFailed"].ToString());//Properties.Resources.EX_SaveFailed);
 
 			LocalAssignmentFileOperations.targetPackagePath = path;
 
@@ -827,7 +828,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 					}
 					catch (SecurityException)
 					{
-						throw new SecurityException(Properties.Resources.EX_Sec_OpenFileFailed);
+						throw new SecurityException(Application.Current.Resources["EX_Sec_OpenFileFailed"].ToString());//Properties.Resources.EX_Sec_OpenFileFailed);
 					}
 				}
 
@@ -929,7 +930,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 			}
 
 			if (iParentKMPart == null)
-				throw new ApplicationException(Properties.Resources.EX_Pack_SaveFailed);
+				throw new ApplicationException(Application.Current.Resources["EX_Pack_SaveFailed"].ToString());//Properties.Resources.EX_Pack_SaveFailed);
 
 			// Create Package Relationship
 			PackageRelationship imageRel = iParentKMPart.CreateRelationship(
@@ -1052,11 +1053,13 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 		/// <returns></returns>
 		public static ejpAssignment OpenAssignment(string path)
 		{
+			//	just a test.
+			//System.Diagnostics.Debug.WriteLine("test: " + Application.Current.Resources["EX_Fnf_OpenFailed"].ToString());
 			Package p;
 			if (File.Exists(path))
 				p = Package.Open(path, System.IO.FileMode.Open, System.IO.FileAccess.ReadWrite);
 			else
-				throw new FileNotFoundException(Properties.Resources.EX_Fnf_OpenFailed);
+				throw new FileNotFoundException(Application.Current.Resources["EX_Fnf_OpenFailed"].ToString());//Properties.Resources.EX_Fnf_OpenFailed);
 
 			ejpAssignment assignment = new ejpAssignment();
 
@@ -1086,7 +1089,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 			if (File.Exists(path))
 				p = Package.Open(path, System.IO.FileMode.Open, System.IO.FileAccess.ReadWrite);
 			else
-				throw new FileNotFoundException(Properties.Resources.EX_Fnf_OpenFailed);
+				throw new FileNotFoundException(Application.Current.Resources["EX_Fnf_OpenFailed"].ToString());//Properties.Resources.EX_Fnf_OpenFailed);
 
 			ejpAssignment assignment = new ejpAssignment();
 
@@ -1136,7 +1139,7 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 					false, Guid.Empty);
 			}
 			if (md == null)
-				throw new ApplicationException(Properties.Resources.EX_MDnf_OpenFailed);
+				throw new ApplicationException(Application.Current.Resources["EX_MDnf_OpenFailed"].ToString());//Properties.Resources.EX_MDnf_OpenFailed);
 			else
 				targetAssignment.MetaData = md;
 		}//end: ImportMetaDataFromPackage()
@@ -1402,10 +1405,13 @@ namespace SiliconStudio.Meet.EjpLib.AssignmentOperations
 
 				targetStudy.KnowledgeMaps.Add(map);
 			}
-			catch (Exception)
+			//	[shiniwa] Let's do not translate the exception like this..
+			catch (Exception ex)
 			{
-
-				throw new Exception(Properties.Resources.Ex_Pack_OpenFailed);
+			//
+			//	throw new Exception(Properties.Resources.Ex_Pack_OpenFailed);
+				System.Diagnostics.Debug.Assert(false, ex.Message);
+				throw;
 			}
 		}
 

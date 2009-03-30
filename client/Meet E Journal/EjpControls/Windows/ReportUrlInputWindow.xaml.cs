@@ -38,13 +38,14 @@ namespace SiliconStudio.Meet.EjpControls.Windows
 			bool doIt = true;
 			if (this._tb_Explanation.Text.Length == 0)
 			{
-				this._tb_Explanation.Text = Properties.Resources.ERR_UrlWinAddFailed_NoExpl;
+				this._tb_Explanation.Text = Application.Current.Resources["ERR_UrlWinAddFailed_NoExpl"] as string;//Properties.Resources.ERR_UrlWinAddFailed_NoExpl;
 				doIt = false;
 			}
 			if (this._tb_Url.Text.Length == 0 || this._tb_Url.Text.StartsWith(@"http://") == false)
 			{
-				MessageBox.Show(Properties.Resources.ERR_UrlWinAddFailed_Format,
-					Properties.Resources.Str_ErrorDlgTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["ERR_UrlWinAddFailed_Format"] as string,//Properties.Resources.ERR_UrlWinAddFailed_Format,
+					Application.Current.Resources["Str_ErrorDlgTitle"] as string,//Properties.Resources.Str_ErrorDlgTitle, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 				doIt = false;
 			}
 			if (doIt)

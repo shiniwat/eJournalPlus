@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <!-- Failed to open Assignment. File Not Found.-->
+  <sys:String x:Key="EX_Fnf_OpenFailed">Failed to open Assignment. File Not Found.</sys:String>
+  <sys:String x:Key="EX_Fnf_XPSNotFound">Xps Document could not be loaded/opened. File or Part not found.</sys:String>
+  <sys:String x:Key="EX_KMCount">No more than 2 knowledgemaps are allowed.</sys:String>
+  <sys:String x:Key="EX_MDnf_OpenFailed">Failed to open Assignment. Assignment Meta Data not found.</sys:String>
+  <sys:String x:Key="Ex_Pack_OpenFailed">Failed to open Assignment. All the necessary parts could not be read.</sys:String>
+  <sys:String x:Key="EX_Pack_SaveFailed">Could not construct all necessary parts of the Assignment Package.</sys:String>
+  <sys:String x:Key="EX_ReportCount">No more than 2 reports are allowed.</sys:String>
+  <sys:String x:Key="EX_SaveFailed">Failed to save the file in the given location. Make sure you are not trying to overwrite an assignment that is already open in another instance of E Journal Plus.</sys:String>
+  <sys:String x:Key="EX_Sec_OpenFileFailed">You do not have file persmissions sufficient to fully qualify the path to the given XPS Document. Move the file to another location and try opening it again.</sys:String>
+  <!-- noname-->
+  <sys:String x:Key="Str_UnnamedStudyTitle">名称未設定</sys:String>
+</ResourceDictionary>

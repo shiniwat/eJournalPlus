@@ -65,7 +65,7 @@ namespace ejpClient.ejpWindows
 				}
 				else
 				{
-					this.ShowSettingsFormatError(Properties.Resources.ERR_EjsUrlInvalid);
+					this.ShowSettingsFormatError(Application.Current.Resources["ERR_EjsUrlInvalid"] as string);//Properties.Resources.ERR_EjsUrlInvalid);
 					return true;
 				}
 			}
@@ -81,7 +81,7 @@ namespace ejpClient.ejpWindows
 					App._ejpSettings.LiveSpaceUri = this._tb_LiveSpaceUrl.Text;
 				else
 				{
-					this.ShowSettingsFormatError(Properties.Resources.ERR_WlsUrlInvalid);
+					this.ShowSettingsFormatError(Application.Current.Resources["ERR_WlsUrlInvalid"] as string);//Properties.Resources.ERR_WlsUrlInvalid);
 					return true;
 				}
 			}
@@ -91,7 +91,7 @@ namespace ejpClient.ejpWindows
 				App._ejpSettings.UndoCount = undoCount;
 			else
 			{
-				this.ShowSettingsFormatError(Properties.Resources.ERR_UndoCountInvalid);
+				this.ShowSettingsFormatError(Application.Current.Resources["ERR_UndoCountInvalid"] as string);//Properties.Resources.ERR_UndoCountInvalid);
 				return true;
 			}
 
@@ -106,7 +106,9 @@ namespace ejpClient.ejpWindows
 
 		private void ShowSettingsFormatError(string message)
 		{
-			MessageBox.Show(message, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+			MessageBox.Show(message,
+				Application.Current.Resources["Str_ErrorTitle"] as string, 
+				MessageBoxButton.OK, MessageBoxImage.Error);
 		}
 
 		private void On_BtnCancelClick(object sender, RoutedEventArgs e)
@@ -135,7 +137,10 @@ namespace ejpClient.ejpWindows
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(Properties.Resources.EX_CourseRegFailed + ex.Message, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["EX_CourseRegFailed"] as string//Properties.Resources.EX_CourseRegFailed 
+					+ ex.Message,
+					Application.Current.Resources["Str_ErrorTitle"] as string, 
+					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 
@@ -157,12 +162,14 @@ namespace ejpClient.ejpWindows
 				this._tb_NewPassword.Password = "";
 				this._tb_OldPassword.Password = "";
 
-				MessageBox.Show(Properties.Resources.Str_PasswdUpdated);
+				MessageBox.Show(Application.Current.Resources["Str_PasswdUpdated"] as string);
 
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show(Properties.Resources.Str_UndefinedError + ex.Message, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show(Application.Current.Resources["Str_UndefinedError"] as string + ex.Message,
+				Application.Current.Resources["Str_ErrorTitle"] as string, 
+				MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 		}
 	}

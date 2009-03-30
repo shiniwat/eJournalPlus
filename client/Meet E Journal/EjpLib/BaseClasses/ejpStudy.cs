@@ -1,6 +1,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Windows;
 
 namespace SiliconStudio.Meet.EjpLib.BaseClasses
 {
@@ -129,7 +130,7 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 		internal void ImportKnowledgeMap(ejpKnowledgeMap map)
 		{
 			if (this._knowledgeMaps.Count == 2)
-				throw new Exception(Properties.Resources.EX_KMCount);
+				throw new Exception(Application.Current.Resources["EX_KMCount"] as string);//Properties.Resources.EX_KMCount);
 
 			this._knowledgeMaps.Add(map);
 		}
@@ -140,7 +141,7 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 		internal void ImportReport(ejpReport report)
 		{
 			if (this._reports.Count == 2)
-				throw new Exception(Properties.Resources.EX_ReportCount);
+				throw new Exception(Application.Current.Resources["EX_ReportCount"] as string);//Properties.Resources.EX_ReportCount);
 
 			this._reports.Add(report);
 		}
@@ -232,7 +233,7 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 		public ejpKnowledgeMap AddKnowledgeMap()
 		{
 			if (this._knowledgeMaps.Count == 2)
-				throw new Exception(Properties.Resources.EX_KMCount);
+				throw new Exception(Application.Current.Resources["EX_KMCount"].ToString());//Properties.Resources.EX_KMCount);
 
 			ejpKnowledgeMap m = new ejpKnowledgeMap(this.MetaData.Id);
 			this._knowledgeMaps.Add(m);
@@ -246,7 +247,7 @@ namespace SiliconStudio.Meet.EjpLib.BaseClasses
 		public ejpReport AddReport()
 		{
 			if (this._reports.Count == 2)
-				throw new Exception(Properties.Resources.EX_ReportCount);
+				throw new Exception(Application.Current.Resources["EX_ReportCount"].ToString());//Properties.Resources.EX_ReportCount);
 
 			ejpReport r = new ejpReport(this._metaData.Id);
 			this._reports.Add(r);

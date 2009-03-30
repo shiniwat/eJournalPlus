@@ -195,7 +195,7 @@ namespace SiliconStudio.Meet.EjpControls
 			this._dA_DV_DocumentViewer.StylusOutOfRange +=
 				new StylusEventHandler(_dA_DV_DocumentViewer_StylusOutOfRange);
 
-			this._sl_ZoomSlider.ToolTip = Properties.Resources.Str_ToolTip_DocVScaleBar;
+			this._sl_ZoomSlider.ToolTip = Application.Current.Resources["Str_ToolTip_DocVScaleBar"] as string;//Properties.Resources.Str_ToolTip_DocVScaleBar;
 		}
 
 		//Added to acurately de-hover lines when the stylus goes out of range 081204
@@ -511,7 +511,8 @@ namespace SiliconStudio.Meet.EjpControls
 						{
 							if (
 							MessageBox.Show(
-							Properties.Resources.Q_DocVDelConnectedLine, Properties.Resources.Str_WarnDlgTitle,
+							Application.Current.Resources["Q_DocVDelConnectedLine"] as string,//Properties.Resources.Q_DocVDelConnectedLine, 
+							Application.Current.Resources["Str_WarnDlgTitle"] as string,//Properties.Resources.Str_WarnDlgTitle,
 							MessageBoxButton.YesNo, MessageBoxImage.Warning)
 							== MessageBoxResult.No)
 								return;
@@ -1816,7 +1817,8 @@ namespace SiliconStudio.Meet.EjpControls
 						{
 							if (
 							MessageBox.Show(
-							Properties.Resources.Q_DocVDelConnectedLine, Properties.Resources.Str_WarnDlgTitle,
+							Application.Current.Resources["Q_DocVDelConnectedLine"] as string,//Properties.Resources.Q_DocVDelConnectedLine, 
+							Application.Current.Resources["Str_WarnDlgTitle"] as string,//Properties.Resources.Str_WarnDlgTitle,
 							MessageBoxButton.YesNo, MessageBoxImage.Warning)
 							== MessageBoxResult.No)
 								return;
@@ -2152,7 +2154,8 @@ namespace SiliconStudio.Meet.EjpControls
 							{
 								if (
 								   MessageBox.Show(
-									Properties.Resources.Q_DocVUndoConnectedLine, Properties.Resources.Str_WarnDlgTitle,
+									Application.Current.Resources["Q_DocVUndoConnectedLine"] as string,//Properties.Resources.Q_DocVUndoConnectedLine, 
+									Application.Current.Resources["Str_WarnDlgTitle"] as string,//Properties.Resources.Str_WarnDlgTitle,
 									MessageBoxButton.YesNo, MessageBoxImage.Warning)
 									== MessageBoxResult.No)
 								{
@@ -2176,7 +2179,8 @@ namespace SiliconStudio.Meet.EjpControls
 							{
 								if (
 								   MessageBox.Show(
-									Properties.Resources.Q_DocVUndoConnectedLine, Properties.Resources.Str_WarnDlgTitle,
+									Application.Current.Resources["Q_DocVUndoConnectedLine"] as string,//Properties.Resources.Q_DocVUndoConnectedLine, 
+									Application.Current.Resources["Str_WarnDlgTitle"] as string,//Properties.Resources.Str_WarnDlgTitle,
 									MessageBoxButton.YesNo, MessageBoxImage.Warning)
 									== MessageBoxResult.No)
 								{
@@ -3070,7 +3074,8 @@ namespace SiliconStudio.Meet.EjpControls
 					{
 						if (
 							MessageBox.Show(
-							Properties.Resources.Q_DocVDelConnectedLine, Properties.Resources.Str_WarnDlgTitle,
+							Application.Current.Resources["Q_DocVDelConnectedLine"] as string,//Properties.Resources.Q_DocVDelConnectedLine, 
+							Application.Current.Resources["Str_WarnDlgTitle"] as string,//Properties.Resources.Str_WarnDlgTitle,
 							MessageBoxButton.YesNo, MessageBoxImage.Warning)
 							== MessageBoxResult.No)
 							return;

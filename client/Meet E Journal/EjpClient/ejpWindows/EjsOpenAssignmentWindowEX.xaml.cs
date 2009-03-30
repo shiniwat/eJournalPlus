@@ -82,7 +82,7 @@ namespace ejpClient.ejpWindows
 				this._b_DeleteAssignment.IsEnabled = false;
 				this._b_MergeAndOpen.IsEnabled = true;
 				this._b_OpenCommentedAssignment.IsEnabled = false;
-				this._b_OpenAssignment.Content = Properties.Resources.Str_UI_BtnOpenAsgForMerge;
+				this._b_OpenAssignment.Content = Application.Current.Resources["Str_UI_BtnOpenAsgForMerge"] as string;
 				this.OpenForMerge = true;
 			}
 			else
@@ -90,7 +90,7 @@ namespace ejpClient.ejpWindows
 				this._b_DeleteAssignment.IsEnabled = true;
 				this._b_MergeAndOpen.IsEnabled = true;
 				this._b_OpenCommentedAssignment.IsEnabled = true;
-				this._b_OpenAssignment.Content = Properties.Resources.Str_UI_BtnOpen;
+				this._b_OpenAssignment.Content = Application.Current.Resources["Str_UI_BtnOpen"] as string;
 				this.OpenForMerge = false;
 			}
 
@@ -212,7 +212,7 @@ namespace ejpClient.ejpWindows
 				foreach (AssignmentTreeViewItem ParentAssignment in this._tv_Assignments.Items)
 				{
 					ParentAssignment.TextDetails.Text +=
-						Properties.Resources.Str_Ui_LblComments + ParentAssignment.Assignment.CommentCount.ToString();
+						Application.Current.Resources["Str_Ui_LblComments"] as string + ParentAssignment.Assignment.CommentCount.ToString();
 				}
 			}
 		}
@@ -257,13 +257,15 @@ namespace ejpClient.ejpWindows
 				ejsAssignment assToDelete = selectedAss.Assignment;
 
 				if (assToDelete.OwnerUserId != App._currentEjpStudent.Id)
-					MessageBox.Show(Properties.Resources.ERR_CannotDelOthersAsg, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Stop);
+					MessageBox.Show(Application.Current.Resources["ERR_CannotDelOthersAsg"] as string,//Properties.Resources.ERR_CannotDelOthersAsg, 
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Stop);
 				else
 				{
 					try
 					{
 						int selectedCoursItemId = this._cb_Courses.SelectedIndex;
-						if (MessageBox.Show(Properties.Resources.Q_DelAsg, Properties.Resources.Str_WarnTitle,
+						if (MessageBox.Show(Application.Current.Resources["Q_DelAsg"] as string, Application.Current.Resources["Str_WarnTitle"] as string,
 							MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
 						{
 							EjsBridge.ejsBridgeManager.HideAssignment(
@@ -279,7 +281,9 @@ namespace ejpClient.ejpWindows
 					}
 					catch (ApplicationException)
 					{
-						MessageBox.Show(Properties.Resources.EX_AsgDelFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+						MessageBox.Show(Application.Current.Resources["EX_AsgDelFailed"] as string,//Properties.Resources.EX_AsgDelFailed, 
+							Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+							MessageBoxButton.OK, MessageBoxImage.Error);
 					}
 				}
 			}
@@ -296,8 +300,8 @@ namespace ejpClient.ejpWindows
 				if (selectedAss is CommentedAssignmentTreeViewItem)
 				{
 					if (
-					MessageBox.Show(Properties.Resources.Q_OpenAsComAsg,
-						Properties.Resources.Str_WarnTitle, MessageBoxButton.YesNo, MessageBoxImage.Question)
+					MessageBox.Show(Application.Current.Resources["Q_OpenAsComAsg"] as string,
+						Application.Current.Resources["Str_WarnTitle"] as string, MessageBoxButton.YesNo, MessageBoxImage.Question)
 						== MessageBoxResult.No)
 						return;
 				}
@@ -311,7 +315,9 @@ namespace ejpClient.ejpWindows
 					this.Close();
 				}
 				else
-					MessageBox.Show(Properties.Resources.EX_AsgOpenFailed, Properties.Resources.Str_ErrorTitle, MessageBoxButton.OK, MessageBoxImage.Error);
+					MessageBox.Show(Application.Current.Resources["EX_AsgOpenFailed"] as string,//Properties.Resources.EX_AsgOpenFailed, 
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 			else
 			{
@@ -339,8 +345,9 @@ namespace ejpClient.ejpWindows
 				//be opened as a Commented Assignment with this version of EJP.
 				if (selectedAss.Assignment.ExternalAssignmentId == Guid.Empty)
 				{
-					MessageBox.Show(Properties.Resources.ERR_AsgOpenFailed_Version,
-						Properties.Resources.Str_VersionErrorTitle, MessageBoxButton.OK, MessageBoxImage.Stop);
+					MessageBox.Show(Application.Current.Resources["ERR_AsgOpenFailed_Version"] as string,//Properties.Resources.ERR_AsgOpenFailed_Version,
+						Application.Current.Resources["Str_VersionErrorTitle"] as string,//Properties.Resources.Str_VersionErrorTitle, 
+						MessageBoxButton.OK, MessageBoxImage.Stop);
 					return;
 				}
 
@@ -352,7 +359,8 @@ namespace ejpClient.ejpWindows
 					this.Close();
 				}
 				else
-					MessageBox.Show(Properties.Resources.EX_AsgOpenFailed, Properties.Resources.Str_ErrorTitle,
+					MessageBox.Show(Application.Current.Resources["EX_AsgOpenFailed"] as string,//Properties.Resources.EX_AsgOpenFailed, 
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle,
 						MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 			else
@@ -398,7 +406,8 @@ namespace ejpClient.ejpWindows
 					this.Close();
 				}
 				else
-					MessageBox.Show(Properties.Resources.EX_AsgOpenFailed, Properties.Resources.Str_ErrorTitle,
+					MessageBox.Show(Application.Current.Resources["EX_AsgOpenFailed"] as string,//Properties.Resources.EX_AsgOpenFailed, 
+						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle,
 						MessageBoxButton.OK, MessageBoxImage.Error);
 			}
 			else
@@ -576,7 +585,7 @@ namespace ejpClient.ejpWindows
 			if (this._assignment != null)
 				return this.GetItemText();
 			else
-				return Properties.Resources.Str_NoAsgSet;
+				return Application.Current.Resources["Str_NoAsgSet"] as string;
 		}
 
 		protected virtual string GetItemText()
@@ -608,7 +617,7 @@ namespace ejpClient.ejpWindows
 			this.TextDetails.Text =
 				this._assignment.CreationDate.ToShortDateString() +
 					" " + this._assignment.CreationDate.ToLongTimeString() +
-					Properties.Resources.Str_Ui_LblComments + this._assignment.CommentCount.ToString();
+					Application.Current.Resources["Str_Ui_LblComments"] as string + this._assignment.CommentCount.ToString();
 		}
 	}
 }
