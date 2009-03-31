@@ -5,6 +5,7 @@ using SiliconStudio.Meet.EjpLib.BaseClasses;
 using System.IO;
 using System.Globalization;
 using System.Threading;
+using System.Configuration;
 
 namespace ejpClient
 {
@@ -59,10 +60,24 @@ namespace ejpClient
 
 		protected override void OnStartup(StartupEventArgs e)
 		{
-			CultureInfo ci = new CultureInfo("ja-JP");
-			Thread.CurrentThread.CurrentCulture = ci;
-			Thread.CurrentThread.CurrentUICulture = ci;
-
+			try
+			{
+				string uiCultureSetting = ConfigurationManager.AppSettings.Get("UICulture");
+				if (!string.IsNullOrEmpty(uiCultureSetting))
+				{
+					CultureInfo culture = new CultureInfo(uiCultureSetting);
+					Thread.CurrentThread.CurrentUICulture = culture;
+				}
+			}
+			catch(ArgumentException ae)
+			{
+				//	OK, the specified culture is invalid. Let's ignore, and rely on current user UI culture.
+				System.Diagnostics.Debug.WriteLine(ae.Message);
+			}
+			catch(ConfigurationException ce)
+			{
+				System.Diagnostics.Debug.WriteLine(ce.Message);
+			}
 			base.OnStartup(e);
 
 			if (e.Args.Length == 0)

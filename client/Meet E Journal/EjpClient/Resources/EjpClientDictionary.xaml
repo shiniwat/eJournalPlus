@@ -1,99 +1,99 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<ResourceDictionary x:Uid="ResourceDictionary_1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sys="clr-namespace:System;assembly=mscorlib">
-  <sys:String x:Key="ERR_AsgOpenFailed_Version">This assignment was created with an earlier version of EJournal Plus, therefor it cannot be opened in Comment Mode. If you wish do upgrade this Assignment, first open it in Normal Mode, then re-publish it to E Journal Server. After this you can open the new Published version in Comment Mode.</sys:String>
-  <sys:String x:Key="ERR_AsgToMergeAlreadyExists">読み込もうとしたアサインメントは以前からこのアサインメントに含まれている。</sys:String>
-  <sys:String x:Key="ERR_CannotDelOthersAsg">他人のアサインメントは削除出来ません。</sys:String>
-  <sys:String x:Key="ERR_ChooseKMToImportGuide">ガイドを設定したいナレッジマップを選択して下さい。</sys:String>
-  <sys:String x:Key="ERR_ChooseReportToExport">書き出したいレポートを選択して下さい。</sys:String>
-  <sys:String x:Key="ERR_ChooseReportToPrint">印刷したいレポートを選択して下さい。</sys:String>
-  <sys:String x:Key="ERR_ChooseReportToPublish">公開したいレポートを選択して下さい。</sys:String>
-  <sys:String x:Key="ERR_EjsUrlInvalid">The E Journal Server address is invald. Make sure you include the http:// part of the Url.</sys:String>
-  <sys:String x:Key="ERR_ErrorReportNetworkFailed">只今報告のサイトに接続出来ません。ネットワークの接続を確認して下さい。</sys:String>
-  <sys:String x:Key="ERR_ExportKMFailed">ナレッジマップを書き出しする際に失敗しました。</sys:String>
-  <sys:String x:Key="ERR_ExportReportFailed">レポートを書き出しする際に失敗しました。</sys:String>
-  <sys:String x:Key="ERR_MustChooseStudyToAddXps">まず最初にXPSドキュメントを追加したいスタディを選んでください。</sys:String>
-  <sys:String x:Key="ERR_MustLogInBeforePublishAsg">公開するためログインが必要です。</sys:String>
-  <sys:String x:Key="ERR_MustSaveBefireAddingKM">ナレッジマップを追加するためファイルを保存しなければなりません。ファイルを保存して、ナレッジマップを追加しますか？</sys:String>
-  <sys:String x:Key="ERR_MustSaveBeforeMerge">別のアサインメントをマージする前に，アサインメントを保存してください。</sys:String>
-  <sys:String x:Key="ERR_MustSaveStudyBeforeAddingGuide">新しく追加したスタディにガイドを読み込む前はアサインメントを一度保存して下さい。このガイドを削除しなければなりません。</sys:String>
-  <sys:String x:Key="ERR_NameNeededToPusblishAsg">公開するアサインメントの名前を必ず入力して下さい。</sys:String>
-  <sys:String x:Key="ERR_SelectedKMHasNoGuide">選択してあるナレッジマップはまだガイド設定されていません。</sys:String>
-  <sys:String x:Key="ERR_UndoCountInvalid">Undo Count does not contain a valid number.</sys:String>
-  <sys:String x:Key="ERR_UnknownError">失敗しました。</sys:String>
-  <sys:String x:Key="ERR_WlsUrlInvalid">The Windows Live Spaces address is invald. Make sure you include the http:// part of the Url.</sys:String>
-  <sys:String x:Key="ERR_NoLiveSpaceUriSet">Erronous or No Live Space Url. You must specify the Url to your Live Space first. This is done under the main menu, Application Settings.</sys:String>
-  <sys:String x:Key="EX_AddKMFailed_Max">ナレッジマップは二枚より作成出来ません。</sys:String>
-  <sys:String x:Key="EX_AddReportFailed_Max">レポートは二枚より作成出来ません。</sys:String>
-  <sys:String x:Key="EX_AsgCreateFromXPSFailed">Could not Create new Assignment from the given document.</sys:String>
-  <sys:String x:Key="EX_AsgDelFailed">選択されたアサインメントは削除できません。</sys:String>
-  <sys:String x:Key="EX_AsgMergeFailed">アサインメントを読み込もうとしたら失敗しました。</sys:String>
-  <sys:String x:Key="EX_AsgOpenFailed">選択されたアサインメントが開けません。</sys:String>
-  <sys:String x:Key="EX_AsgPublishFailed">アサインメントを公開する際に失敗しました。</sys:String>
-  <sys:String x:Key="EX_AsgSaveFailed">アサインメントを保存する際に失敗しました。</sys:String>
-  <sys:String x:Key="EX_AutoSavedDisabled">このアサインメントのファイルに問題を発見したため、オートセーブが出来ません。改めて別の名前でファイルを保存して下さい。</sys:String>
-  <sys:String x:Key="EX_CloseAppFailed">アプリケーションを閉じる際に失敗しました。</sys:String>
-  <sys:String x:Key="EX_CourseRegFailed">コースに登録出来ませんでした。しばらくしたら、もう一度試してみて下さい。</sys:String>
-  <sys:String x:Key="EX_CreateAppDownloadFolderFailed">ダウンロードするためのフォルダを作成できません。作業を続けることができません。</sys:String>
-  <sys:String x:Key="EX_CreateAppFoldersFailed">アプリケーションのデータを保存するフォルダを作成できません。このため，自動保存をすることはできません。</sys:String>
-  <sys:String x:Key="EX_CreateAppTempFolderFailed">一時保存のためのフォルダを作成できません。作業を続けることができません。</sys:String>
-  <sys:String x:Key="EX_DelGuideFailed">ガイドの削除に失敗しました。</sys:String>
-  <sys:String x:Key="EX_ExportAsgFailed">アサインメントを書き出しする際に失敗しました。</sys:String>
-  <sys:String x:Key="EX_GetCommentCountFailed">Failed to get the comment count for the current working assignment.</sys:String>
-  <sys:String x:Key="EX_LoadImageFileFailed">画像の読み込みに失敗しました。</sys:String>
-  <sys:String x:Key="EX_NoSettingsFile">設定ファイルがありません。デフォルト設定で実行します。</sys:String>
-  <sys:String x:Key="EX_PrintKMFailed">ナレッジマップを印刷する際に失敗しました。</sys:String>
-  <sys:String x:Key="EX_PrintReportFailed">レポートを印刷する際に失敗しました。</sys:String>
-  <sys:String x:Key="EX_UnhandledException">原因が不明な問題が発生しました。eJournalPlusを閉じます。オートセーブされたファイルを確認して下さい。（マイドキュメント￥eJournalPlus￥AutoSave） メッセージは:</sys:String>
-  <sys:String x:Key="EX_UnhandledSaveFailed">保存に失敗した場合は、オートセーブを開いてみて下さい。</sys:String>
-  <sys:String x:Key="EX_WlsDLLLoadFailed">Windows Live Spacesと接続するための必要なファイルが見つかりませんでした。Windows Live Spacesに公開することが出来ません。eJournalPlusを再インストールして下さい。(Windows Live Spaces以外の機能には影響がありません。)</sys:String>
-  <sys:String x:Key="EX_WorkingAsgNotSet">The Current Working Assignment is not set.</sys:String>
-  <sys:String x:Key="Q_DelAsg">選択されたアサインメントを削除しますか？</sys:String>
-  <sys:String x:Key="Q_DelGuide">ガイドは削除しますか？</sys:String>
-  <sys:String x:Key="Q_DelStudy">スタッディを削除しますか？</sys:String>
-  <sys:String x:Key="Q_OpenAsComAsg">選択したファイルにはコメントがあるためコメントモードに開きます。宜しいですか？</sys:String>
-  <sys:String x:Key="Q_OverwriteCurrentAsg">入力したパスは今の開いているファイルと一緒です。上書き保存は宜しいですか？</sys:String>
-  <sys:String x:Key="Q_ReplaceCurrentKMGuide">ガイドはすでに設定してあります。新しいガイドを設定するためこのガイドを削除しなければなりません。現在のガイドを削除して、新しいガイドを設定しますか？</sys:String>
-  <sys:String x:Key="Q_SaveChangesToAsg">編集された項目を保存しますか？</sys:String>
-  <sys:String x:Key="Q_SwtichToCommentMode">コメントモードに切り替えます。宜しいですか？</sys:String>
-  <sys:String x:Key="Q_SwtichToNormalMode">普通のモードに切り替えるとコメントは全てなくなります！宜しいですか？</sys:String>
-  <sys:String x:Key="Str_AppVersionString">MEET eJournalPlus 1.1.0</sys:String>
-  <sys:String x:Key="Str_AuthErrorTitle">Authentication Error</sys:String>
-  <sys:String x:Key="Str_ConnFailedTitle">Connection Failed</sys:String>
-  <sys:String x:Key="Str_DlgTitle_AddStudy">スタディの追加</sys:String>
-  <sys:String x:Key="Str_DlgTitle_AddXps">スタディにドキュメントの追加</sys:String>
-  <sys:String x:Key="Str_DlgTitle_OpenAsg">ejpファイルを選択</sys:String>
-  <sys:String x:Key="Str_DlgTitle_OpenComAsg">コメントモードで開くファイルを選択</sys:String>
-  <sys:String x:Key="Str_DlgTitle_OpenXPS">XPSドキュメントを選択</sys:String>
-  <sys:String x:Key="Str_DlgTitle_StartNew">新規作成</sys:String>
-  <sys:String x:Key="Str_ErrorTitle">Error</sys:String>
-  <sys:String x:Key="Str_KnowledgeMapLiteral">ナレッジマップ</sys:String>
-  <sys:String x:Key="Str_Msg_AsgPublished">公開が無事終わりました。</sys:String>
-  <sys:String x:Key="Str_NoAsgOpenedCreated">- ファイル未作成</sys:String>
-  <sys:String x:Key="Str_NoAsgSet">No Assignment Set</sys:String>
-  <sys:String x:Key="Str_NoNameAssignmentTitle">No Name</sys:String>
-  <sys:String x:Key="Str_PasswdUpdated">パスワードを更新しました。再ログインが必要となります。</sys:String>
-  <sys:String x:Key="Str_ProcessingEndedTitle">処理完了</sys:String>
-  <sys:String x:Key="Str_ReportLiteral">レポート</sys:String>
-  <sys:String x:Key="Str_ToolTip_NewKMTab">新しいナレッジマップ</sys:String>
-  <sys:String x:Key="Str_ToolTip_NewReportTab">新しいレポート</sys:String>
-  <sys:String x:Key="Str_UiLblDownloadingAsg">アサインメントをダウンロード中。</sys:String>
-  <sys:String x:Key="Str_UiLblIdle">Idle</sys:String>
-  <sys:String x:Key="Str_UiLblNone">なし</sys:String>
-  <sys:String x:Key="Str_UiLbl_Black">黒</sys:String>
-  <sys:String x:Key="Str_UiLbl_Blue">青</sys:String>
-  <sys:String x:Key="Str_UiLbl_FileLiteral">ファイル</sys:String>
-  <sys:String x:Key="Str_UiLbl_FirstXPSLocation">ドキュメントを選択して下さい。。。</sys:String>
-  <sys:String x:Key="Str_UiLbl_FirstXPSName">ドキュメントを選択して下さい。。。</sys:String>
-  <sys:String x:Key="Str_UiLbl_Green">緑</sys:String>
-  <sys:String x:Key="Str_UiLbl_Red">赤</sys:String>
-  <sys:String x:Key="Str_UiLbl_Yellow">黄</sys:String>
-  <sys:String x:Key="Str_UI_BtnOpen">開く</sys:String>
-  <sys:String x:Key="Str_UI_BtnOpenAsgForMerge">読み込む</sys:String>
-  <sys:String x:Key="Str_Ui_LblComments"> Comments: </sys:String>
-  <sys:String x:Key="Str_UndefinedError">失敗しました。</sys:String>
-  <sys:String x:Key="Str_VersionErrorTitle">Version Error</sys:String>
-  <sys:String x:Key="Str_WarnTitle">Warning</sys:String>
-  <sys:String x:Key="Str_WlsPostTitle">eJournalPlus - レポート</sys:String>
-  <sys:String x:Key="Str_Wrn_UnsavedAsg">注意：まだ1度も保存されていません</sys:String>    
+  <sys:String x:Uid="sys:String_1" x:Key="ERR_AsgOpenFailed_Version">This assignment was created with an earlier version of EJournal Plus, therefor it cannot be opened in Comment Mode. If you wish do upgrade this Assignment, first open it in Normal Mode, then re-publish it to E Journal Server. After this you can open the new Published version in Comment Mode.</sys:String>
+  <sys:String x:Uid="sys:String_2" x:Key="ERR_AsgToMergeAlreadyExists">読み込もうとしたアサインメントは以前からこのアサインメントに含まれている。</sys:String>
+  <sys:String x:Uid="sys:String_3" x:Key="ERR_CannotDelOthersAsg">他人のアサインメントは削除出来ません。</sys:String>
+  <sys:String x:Uid="sys:String_4" x:Key="ERR_ChooseKMToImportGuide">ガイドを設定したいナレッジマップを選択して下さい。</sys:String>
+  <sys:String x:Uid="sys:String_5" x:Key="ERR_ChooseReportToExport">書き出したいレポートを選択して下さい。</sys:String>
+  <sys:String x:Uid="sys:String_6" x:Key="ERR_ChooseReportToPrint">印刷したいレポートを選択して下さい。</sys:String>
+  <sys:String x:Uid="sys:String_7" x:Key="ERR_ChooseReportToPublish">公開したいレポートを選択して下さい。</sys:String>
+  <sys:String x:Uid="sys:String_8" x:Key="ERR_EjsUrlInvalid">The E Journal Server address is invald. Make sure you include the http:// part of the Url.</sys:String>
+  <sys:String x:Uid="sys:String_9" x:Key="ERR_ErrorReportNetworkFailed">只今報告のサイトに接続出来ません。ネットワークの接続を確認して下さい。</sys:String>
+  <sys:String x:Uid="sys:String_10" x:Key="ERR_ExportKMFailed">ナレッジマップを書き出しする際に失敗しました。</sys:String>
+  <sys:String x:Uid="sys:String_11" x:Key="ERR_ExportReportFailed">レポートを書き出しする際に失敗しました。</sys:String>
+  <sys:String x:Uid="sys:String_12" x:Key="ERR_MustChooseStudyToAddXps">まず最初にXPSドキュメントを追加したいスタディを選んでください。</sys:String>
+  <sys:String x:Uid="sys:String_13" x:Key="ERR_MustLogInBeforePublishAsg">公開するためログインが必要です。</sys:String>
+  <sys:String x:Uid="sys:String_14" x:Key="ERR_MustSaveBefireAddingKM">ナレッジマップを追加するためファイルを保存しなければなりません。ファイルを保存して、ナレッジマップを追加しますか？</sys:String>
+  <sys:String x:Uid="sys:String_15" x:Key="ERR_MustSaveBeforeMerge">別のアサインメントをマージする前に，アサインメントを保存してください。</sys:String>
+  <sys:String x:Uid="sys:String_16" x:Key="ERR_MustSaveStudyBeforeAddingGuide">新しく追加したスタディにガイドを読み込む前はアサインメントを一度保存して下さい。このガイドを削除しなければなりません。</sys:String>
+  <sys:String x:Uid="sys:String_17" x:Key="ERR_NameNeededToPusblishAsg">公開するアサインメントの名前を必ず入力して下さい。</sys:String>
+  <sys:String x:Uid="sys:String_18" x:Key="ERR_SelectedKMHasNoGuide">選択してあるナレッジマップはまだガイド設定されていません。</sys:String>
+  <sys:String x:Uid="sys:String_19" x:Key="ERR_UndoCountInvalid">Undo Count does not contain a valid number.</sys:String>
+  <sys:String x:Uid="sys:String_20" x:Key="ERR_UnknownError">失敗しました。</sys:String>
+  <sys:String x:Uid="sys:String_21" x:Key="ERR_WlsUrlInvalid">The Windows Live Spaces address is invald. Make sure you include the http:// part of the Url.</sys:String>
+  <sys:String x:Uid="sys:String_22" x:Key="ERR_NoLiveSpaceUriSet">Erronous or No Live Space Url. You must specify the Url to your Live Space first. This is done under the main menu, Application Settings.</sys:String>
+  <sys:String x:Uid="sys:String_23" x:Key="EX_AddKMFailed_Max">ナレッジマップは二枚より作成出来ません。</sys:String>
+  <sys:String x:Uid="sys:String_24" x:Key="EX_AddReportFailed_Max">レポートは二枚より作成出来ません。</sys:String>
+  <sys:String x:Uid="sys:String_25" x:Key="EX_AsgCreateFromXPSFailed">Could not Create new Assignment from the given document.</sys:String>
+  <sys:String x:Uid="sys:String_26" x:Key="EX_AsgDelFailed">選択されたアサインメントは削除できません。</sys:String>
+  <sys:String x:Uid="sys:String_27" x:Key="EX_AsgMergeFailed">アサインメントを読み込もうとしたら失敗しました。</sys:String>
+  <sys:String x:Uid="sys:String_28" x:Key="EX_AsgOpenFailed">選択されたアサインメントが開けません。</sys:String>
+  <sys:String x:Uid="sys:String_29" x:Key="EX_AsgPublishFailed">アサインメントを公開する際に失敗しました。</sys:String>
+  <sys:String x:Uid="sys:String_30" x:Key="EX_AsgSaveFailed">アサインメントを保存する際に失敗しました。</sys:String>
+  <sys:String x:Uid="sys:String_31" x:Key="EX_AutoSavedDisabled">このアサインメントのファイルに問題を発見したため、オートセーブが出来ません。改めて別の名前でファイルを保存して下さい。</sys:String>
+  <sys:String x:Uid="sys:String_32" x:Key="EX_CloseAppFailed">アプリケーションを閉じる際に失敗しました。</sys:String>
+  <sys:String x:Uid="sys:String_33" x:Key="EX_CourseRegFailed">コースに登録出来ませんでした。しばらくしたら、もう一度試してみて下さい。</sys:String>
+  <sys:String x:Uid="sys:String_34" x:Key="EX_CreateAppDownloadFolderFailed">ダウンロードするためのフォルダを作成できません。作業を続けることができません。</sys:String>
+  <sys:String x:Uid="sys:String_35" x:Key="EX_CreateAppFoldersFailed">アプリケーションのデータを保存するフォルダを作成できません。このため，自動保存をすることはできません。</sys:String>
+  <sys:String x:Uid="sys:String_36" x:Key="EX_CreateAppTempFolderFailed">一時保存のためのフォルダを作成できません。作業を続けることができません。</sys:String>
+  <sys:String x:Uid="sys:String_37" x:Key="EX_DelGuideFailed">ガイドの削除に失敗しました。</sys:String>
+  <sys:String x:Uid="sys:String_38" x:Key="EX_ExportAsgFailed">アサインメントを書き出しする際に失敗しました。</sys:String>
+  <sys:String x:Uid="sys:String_39" x:Key="EX_GetCommentCountFailed">Failed to get the comment count for the current working assignment.</sys:String>
+  <sys:String x:Uid="sys:String_40" x:Key="EX_LoadImageFileFailed">画像の読み込みに失敗しました。</sys:String>
+  <sys:String x:Uid="sys:String_41" x:Key="EX_NoSettingsFile">設定ファイルがありません。デフォルト設定で実行します。</sys:String>
+  <sys:String x:Uid="sys:String_42" x:Key="EX_PrintKMFailed">ナレッジマップを印刷する際に失敗しました。</sys:String>
+  <sys:String x:Uid="sys:String_43" x:Key="EX_PrintReportFailed">レポートを印刷する際に失敗しました。</sys:String>
+  <sys:String x:Uid="sys:String_44" x:Key="EX_UnhandledException">原因が不明な問題が発生しました。eJournalPlusを閉じます。オートセーブされたファイルを確認して下さい。（マイドキュメント￥eJournalPlus￥AutoSave） メッセージは:</sys:String>
+  <sys:String x:Uid="sys:String_45" x:Key="EX_UnhandledSaveFailed">保存に失敗した場合は、オートセーブを開いてみて下さい。</sys:String>
+  <sys:String x:Uid="sys:String_46" x:Key="EX_WlsDLLLoadFailed">Windows Live Spacesと接続するための必要なファイルが見つかりませんでした。Windows Live Spacesに公開することが出来ません。eJournalPlusを再インストールして下さい。(Windows Live Spaces以外の機能には影響がありません。)</sys:String>
+  <sys:String x:Uid="sys:String_47" x:Key="EX_WorkingAsgNotSet">The Current Working Assignment is not set.</sys:String>
+  <sys:String x:Uid="sys:String_48" x:Key="Q_DelAsg">選択されたアサインメントを削除しますか？</sys:String>
+  <sys:String x:Uid="sys:String_49" x:Key="Q_DelGuide">ガイドは削除しますか？</sys:String>
+  <sys:String x:Uid="sys:String_50" x:Key="Q_DelStudy">スタッディを削除しますか？</sys:String>
+  <sys:String x:Uid="sys:String_51" x:Key="Q_OpenAsComAsg">選択したファイルにはコメントがあるためコメントモードに開きます。宜しいですか？</sys:String>
+  <sys:String x:Uid="sys:String_52" x:Key="Q_OverwriteCurrentAsg">入力したパスは今の開いているファイルと一緒です。上書き保存は宜しいですか？</sys:String>
+  <sys:String x:Uid="sys:String_53" x:Key="Q_ReplaceCurrentKMGuide">ガイドはすでに設定してあります。新しいガイドを設定するためこのガイドを削除しなければなりません。現在のガイドを削除して、新しいガイドを設定しますか？</sys:String>
+  <sys:String x:Uid="sys:String_54" x:Key="Q_SaveChangesToAsg">編集された項目を保存しますか？</sys:String>
+  <sys:String x:Uid="sys:String_55" x:Key="Q_SwtichToCommentMode">コメントモードに切り替えます。宜しいですか？</sys:String>
+  <sys:String x:Uid="sys:String_56" x:Key="Q_SwtichToNormalMode">普通のモードに切り替えるとコメントは全てなくなります！宜しいですか？</sys:String>
+  <sys:String x:Uid="sys:String_57" x:Key="Str_AppVersionString">MEET eJournalPlus 1.1.0</sys:String>
+  <sys:String x:Uid="sys:String_58" x:Key="Str_AuthErrorTitle">Authentication Error</sys:String>
+  <sys:String x:Uid="sys:String_59" x:Key="Str_ConnFailedTitle">Connection Failed</sys:String>
+  <sys:String x:Uid="sys:String_60" x:Key="Str_DlgTitle_AddStudy">スタディの追加</sys:String>
+  <sys:String x:Uid="sys:String_61" x:Key="Str_DlgTitle_AddXps">スタディにドキュメントの追加</sys:String>
+  <sys:String x:Uid="sys:String_62" x:Key="Str_DlgTitle_OpenAsg">ejpファイルを選択</sys:String>
+  <sys:String x:Uid="sys:String_63" x:Key="Str_DlgTitle_OpenComAsg">コメントモードで開くファイルを選択</sys:String>
+  <sys:String x:Uid="sys:String_64" x:Key="Str_DlgTitle_OpenXPS">XPSドキュメントを選択</sys:String>
+  <sys:String x:Uid="sys:String_65" x:Key="Str_DlgTitle_StartNew">新規作成</sys:String>
+  <sys:String x:Uid="sys:String_66" x:Key="Str_ErrorTitle">Error</sys:String>
+  <sys:String x:Uid="sys:String_67" x:Key="Str_KnowledgeMapLiteral">ナレッジマップ</sys:String>
+  <sys:String x:Uid="sys:String_68" x:Key="Str_Msg_AsgPublished">公開が無事終わりました。</sys:String>
+  <sys:String x:Uid="sys:String_69" x:Key="Str_NoAsgOpenedCreated">- ファイル未作成</sys:String>
+  <sys:String x:Uid="sys:String_70" x:Key="Str_NoAsgSet">No Assignment Set</sys:String>
+  <sys:String x:Uid="sys:String_71" x:Key="Str_NoNameAssignmentTitle">No Name</sys:String>
+  <sys:String x:Uid="sys:String_72" x:Key="Str_PasswdUpdated">パスワードを更新しました。再ログインが必要となります。</sys:String>
+  <sys:String x:Uid="sys:String_73" x:Key="Str_ProcessingEndedTitle">処理完了</sys:String>
+  <sys:String x:Uid="sys:String_74" x:Key="Str_ReportLiteral">レポート</sys:String>
+  <sys:String x:Uid="sys:String_75" x:Key="Str_ToolTip_NewKMTab">新しいナレッジマップ</sys:String>
+  <sys:String x:Uid="sys:String_76" x:Key="Str_ToolTip_NewReportTab">新しいレポート</sys:String>
+  <sys:String x:Uid="sys:String_77" x:Key="Str_UiLblDownloadingAsg">アサインメントをダウンロード中。</sys:String>
+  <sys:String x:Uid="sys:String_78" x:Key="Str_UiLblIdle">Idle</sys:String>
+  <sys:String x:Uid="sys:String_79" x:Key="Str_UiLblNone">なし</sys:String>
+  <sys:String x:Uid="sys:String_80" x:Key="Str_UiLbl_Black">黒</sys:String>
+  <sys:String x:Uid="sys:String_81" x:Key="Str_UiLbl_Blue">青</sys:String>
+  <sys:String x:Uid="sys:String_82" x:Key="Str_UiLbl_FileLiteral">ファイル</sys:String>
+  <sys:String x:Uid="sys:String_83" x:Key="Str_UiLbl_FirstXPSLocation">ドキュメントを選択して下さい。。。</sys:String>
+  <sys:String x:Uid="sys:String_84" x:Key="Str_UiLbl_FirstXPSName">ドキュメントを選択して下さい。。。</sys:String>
+  <sys:String x:Uid="sys:String_85" x:Key="Str_UiLbl_Green">緑</sys:String>
+  <sys:String x:Uid="sys:String_86" x:Key="Str_UiLbl_Red">赤</sys:String>
+  <sys:String x:Uid="sys:String_87" x:Key="Str_UiLbl_Yellow">黄</sys:String>
+  <sys:String x:Uid="sys:String_88" x:Key="Str_UI_BtnOpen">開く</sys:String>
+  <sys:String x:Uid="sys:String_89" x:Key="Str_UI_BtnOpenAsgForMerge">読み込む</sys:String>
+  <sys:String x:Uid="sys:String_90" x:Key="Str_Ui_LblComments"> Comments: </sys:String>
+  <sys:String x:Uid="sys:String_91" x:Key="Str_UndefinedError">失敗しました。</sys:String>
+  <sys:String x:Uid="sys:String_92" x:Key="Str_VersionErrorTitle">Version Error</sys:String>
+  <sys:String x:Uid="sys:String_93" x:Key="Str_WarnTitle">Warning</sys:String>
+  <sys:String x:Uid="sys:String_94" x:Key="Str_WlsPostTitle">eJournalPlus - レポート</sys:String>
+  <sys:String x:Uid="sys:String_95" x:Key="Str_Wrn_UnsavedAsg">注意：まだ1度も保存されていません</sys:String>    
 </ResourceDictionary>

@@ -5,12 +5,13 @@
     >
     <Application.Resources>
 
-      <ResourceDictionary>
+      <ResourceDictionary x:Uid="ResourceDictionary_1">
         <ResourceDictionary.MergedDictionaries>
-          <ResourceDictionary Source="Resources\EjpLibDictionary.xaml"/>
-          <ResourceDictionary Source="Resources\EjsBridgeDictionary.xaml"/>
-          <ResourceDictionary Source="Resources\AppDefaultResDict.xaml"/>
-          <ResourceDictionary Source="Resources\EjpClientDictionary.xaml"/>
+          <ResourceDictionary x:Uid="ResourceDictionary_2" Source="Resources\EjpLibDictionary.xaml"/>
+          <ResourceDictionary x:Uid="ResourceDictionary_3" Source="Resources\EjsBridgeDictionary.xaml"/>
+          <ResourceDictionary x:Uid="ResourceDictionary_4" Source="Resources\AppDefaultResDict.xaml"/>
+          <ResourceDictionary x:Uid="ResourceDictionary_5" Source="Resources\EjpClientDictionary.xaml"/>
+          <ResourceDictionary x:Uid="ResourceDictionary_6" Source="Resources\EjpControlsDictionary.xaml"/>
         </ResourceDictionary.MergedDictionaries>
       </ResourceDictionary>
       

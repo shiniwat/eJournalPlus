@@ -204,7 +204,7 @@ namespace SiliconStudio.Meet.EjpControls
 
 		private void _b_Close_Click(object sender, RoutedEventArgs e)
 		{
-			if (MessageBox.Show(Application.Current.Resources[".Q_DelPushPinComment"] as string,
+			if (MessageBox.Show(Application.Current.Resources["Q_DelPushPinComment"] as string,
 				"", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
 			{
 				this.DeleteComment();
@@ -284,7 +284,9 @@ namespace SiliconStudio.Meet.EjpControls
 
 		private void OnRemoveComment(object sender, RoutedEventArgs e)
 		{
-			if (MessageBox.Show(Application.Current.Resources[".Q_DelPushPinComment"] as string,
+			string msg = Application.Current.Resources["Q_DelPushPinComment"] as string;
+			System.Diagnostics.Debug.Write("Q_DelPushPinComment = " + msg);
+			if (MessageBox.Show(Application.Current.Resources["Q_DelPushPinComment"] as string,
 				"", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
 			{
 				this.DeleteComment();
