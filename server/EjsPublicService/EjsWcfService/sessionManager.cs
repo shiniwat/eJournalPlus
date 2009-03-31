@@ -25,7 +25,10 @@ namespace EjsWcfService
 		{
 			if (_isoStore == null)
 			{
-				_isoStore = IsolatedStorageFile.GetStore(IsolatedStorageScope.Application, null, null);
+				// user store doesn't always work especially if it runs under ASP.NET context.
+				// Should use GetMachineStoreForDomain() instead.
+				//sessionManager._isoStore = IsolatedStorageFile.GetStore(IsolatedStorageScope.Domain | IsolatedStorageScope.Assembly | IsolatedStorageScope.User, null, null);
+				sessionManager._isoStore = IsolatedStorageFile.GetMachineStoreForDomain();
 			}
 			try
 			{

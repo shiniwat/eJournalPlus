@@ -174,7 +174,7 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8A133E5E81784EBA8100BDB8FBF256C9"
             {
-            "SourcePath" = "8:..\\..\\..\\svn\\client\\Meet E Journal\\EjpClient\\Resources\\ApplicationIconRound.ico"
+            "SourcePath" = "8:..\\..\\..\\client\\Meet E Journal\\EjpClient\\Resources\\ApplicationIconRound.ico"
             "TargetName" = "8:ApplicationIconRound.ico"
             "Tag" = "8:"
             "Folder" = "8:_6534DF1C29794992BD978BB005C94820"

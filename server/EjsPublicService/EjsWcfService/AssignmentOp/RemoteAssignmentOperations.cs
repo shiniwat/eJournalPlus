@@ -186,7 +186,10 @@ namespace EjsWcfService.AssignmentOp
 					string newName = Guid.NewGuid() + ".tejp";
 					if (sessionManager._isoStore == null)
 					{
-						sessionManager._isoStore = IsolatedStorageFile.GetStore(IsolatedStorageScope.Domain | IsolatedStorageScope.Assembly | IsolatedStorageScope.User, null, null);
+						// user store doesn't always work especially if it runs under ASP.NET context.
+						// Should use GetMachineStoreForDomain() instead.
+						//sessionManager._isoStore = IsolatedStorageFile.GetStore(IsolatedStorageScope.Domain | IsolatedStorageScope.Assembly | IsolatedStorageScope.User, null, null);
+						sessionManager._isoStore = IsolatedStorageFile.GetMachineStoreForDomain();
 					}
 					using (IsolatedStorageFileStream fs = new IsolatedStorageFileStream(newName, FileMode.Create, FileAccess.ReadWrite, sessionManager._isoStore))
 					{
