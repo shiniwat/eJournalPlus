@@ -250,7 +250,10 @@ namespace EjsWcfService.AssignmentOp
 			//090109
 			try
 			{
-				parent.Close(true);
+				// [shiniwa] We need to save this into IsolatedStorageOnce, and close the package explicitly.
+				store.SaveAssignment(parent, AssignmentSaveMode.Save);
+				//parent.Close(true);
+				parent.Close(false);
 			}
 			catch (Exception ex)
 			{
