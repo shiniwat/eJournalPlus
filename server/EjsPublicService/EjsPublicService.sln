@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjpLib", "..\EjpLib_forEJS\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjsBridge", "..\..\client\Meet E Journal\EjsBridge\EjsBridge.csproj", "{95B1EA17-CD2C-4CED-8CE4-20CAD148293C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerSetup", "..\ServerSetup\ServerSetup.csproj", "{D4EACD30-240C-4656-BC48-25A19B3E9BEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{95B1EA17-CD2C-4CED-8CE4-20CAD148293C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95B1EA17-CD2C-4CED-8CE4-20CAD148293C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95B1EA17-CD2C-4CED-8CE4-20CAD148293C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4EACD30-240C-4656-BC48-25A19B3E9BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4EACD30-240C-4656-BC48-25A19B3E9BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4EACD30-240C-4656-BC48-25A19B3E9BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4EACD30-240C-4656-BC48-25A19B3E9BEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
