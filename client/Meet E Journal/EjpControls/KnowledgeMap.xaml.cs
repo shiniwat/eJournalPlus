@@ -2361,8 +2361,10 @@ namespace SiliconStudio.Meet.EjpControls
 					OriginalAuthorName = comment.AuthorName,
 					OriginalAuthorId = comment.AuthorId,
 					CommentId = comment.CommentId,
+					Width = 200,
+					Height = 300,
 					OriginalCoordinates = new Point(comment.OriginalPositionX, comment.OriginalPositionY),
-					PushPinCoordinates = new Point(comment.PositionX - 12, comment.PositionY - 12)
+                    PushPinCoordinates = new Point((comment.PositionX + 200) - 25, comment.PositionY)
 				};
 
 				if (comment.Messages != null) //== empty comment box..

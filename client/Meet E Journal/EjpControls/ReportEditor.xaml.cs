@@ -898,8 +898,11 @@ namespace SiliconStudio.Meet.EjpControls
 			commentToAdd.EndHandleRectangle.SetValue(Canvas.TopProperty, tEndRect.TopLeft.Y);
 			commentToAdd.EndHandleRectangle.SetValue(Canvas.LeftProperty, tEndRect.TopLeft.X);
 
-			this._c_FakeAdornerLayer.Children.Add(commentToAdd.StartHandleRectangle);
-			this._c_FakeAdornerLayer.Children.Add(commentToAdd.EndHandleRectangle);
+			// [shiniwa] Looks like it's been changed to Insert...
+			//this._c_FakeAdornerLayer.Children.Add(commentToAdd.StartHandleRectangle);
+			//this._c_FakeAdornerLayer.Children.Add(commentToAdd.EndHandleRectangle);
+			this._c_FakeAdornerLayer.Children.Insert(0, commentToAdd.StartHandleRectangle);
+			this._c_FakeAdornerLayer.Children.Insert(0, commentToAdd.EndHandleRectangle);
 
 			this._comments.Add(commentToAdd);
 		}
@@ -1000,10 +1003,11 @@ namespace SiliconStudio.Meet.EjpControls
 				comment.EndHandleRectangle.SetValue(Canvas.LeftProperty,
 				tEndRect.TopLeft.X);
 
-
-				this._c_FakeAdornerLayer.Children.Add(comment.StartHandleRectangle);
-
-				this._c_FakeAdornerLayer.Children.Add(comment.EndHandleRectangle);
+				//	 [shiniwa] appears to be changed to Insert...
+				//this._c_FakeAdornerLayer.Children.Add(comment.StartHandleRectangle);
+				//this._c_FakeAdornerLayer.Children.Add(comment.EndHandleRectangle);
+				this._c_FakeAdornerLayer.Children.Insert(0, comment.StartHandleRectangle);
+				this._c_FakeAdornerLayer.Children.Insert(0, comment.EndHandleRectangle);
 
 				return;
 			}
