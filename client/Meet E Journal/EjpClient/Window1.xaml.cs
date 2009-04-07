@@ -3808,6 +3808,7 @@ namespace ejpClient
 		private void UpdateWindowTitle()
 		{
 			string versionPart = Application.Current.Resources["Str_AppVersionString"] as string;
+			versionPart += ";  ";
 			if (this._currentWorkingAssingment == null)
 				this.Title = versionPart + Application.Current.Resources["Str_NoAsgOpenedCreated"] as string;
 			else if (this._currentWorkingAssingment.IsPersisted)
@@ -4322,9 +4323,24 @@ namespace ejpClient
 			}
 		}
 
+		/// <summary>
+		/// Mouse handlers for menu button
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
 		{
 			this.topmenuItem.IsSubmenuOpen = true;
+		}
+		
+		private void Image_MouseEnter(object sender, MouseEventArgs args)
+		{
+			_menuButtonImage.Fill = this.Resources["menuImageHot"] as ImageBrush;
+		}
+		
+		private void Image_MouseLeave(object sender, MouseEventArgs args)
+		{
+			_menuButtonImage.Fill = this.Resources["menuImage"] as ImageBrush;
 		}
 
 		private void OnRemoveStudyFromAssignment(object sender, RoutedEventArgs e)

@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 //the NeutralResourceLanguage attribute below.  Update the "en-US" in
 //the line below to match the UICulture setting in the project file.
 
-//[assembly: NeutralResourcesLanguage("ja-JP", UltimateResourceFallbackLocation.Satellite)]
+[assembly: NeutralResourcesLanguage("ja-JP", UltimateResourceFallbackLocation.Satellite)]
 
 
 // Specifies the location in which theme dictionaries are stored for types in an assembly.

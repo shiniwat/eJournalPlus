@@ -327,6 +327,9 @@
   <ItemGroup>
     <Resource Include="Resources\meet_tm.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="imgData\logo_0918_hot.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildBinPath)\Microsoft.WinFX.targets" />
 </Project>

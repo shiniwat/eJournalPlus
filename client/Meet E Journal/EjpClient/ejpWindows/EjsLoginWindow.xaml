@@ -3,7 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="E Journal Server Login"
 	ResizeMode="NoResize" WindowStyle="ToolWindow" WindowStartupLocation="CenterOwner"
-	Width="503" Height="334">
+	Width="503" Height="334"
+  Loaded="OnLoaded">
     <Window.Background>
         <ImageBrush x:Uid="ImageBrush_1" Stretch="None" TileMode="Tile" Viewport="0,0,20,20" ViewportUnits="Absolute" 
                            ImageSource="pack://application:,,,/imgData/bgtile.png" />
@@ -20,13 +21,13 @@
         </Rectangle>
         <Rectangle x:Uid="Rectangle_2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Fill="#FFFFFFFF" Stroke="#FF7FB2F0" Margin="10,16,10,16" RadiusX="13.5" RadiusY="13.5"/>
         <Canvas x:Uid="Canvas_1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Margin="10,16,10,16">
-            <Rectangle x:Uid="Rectangle_3" Fill="{StaticResource MainToudaiLogo}" Width="215" Height="30" Canvas.Top="7" Canvas.Left="11" />
-            <Button x:Uid="Button_1" Width="78.59" Height="Auto" Content="キャンセル" Canvas.Left="186.41" Canvas.Top="191" Click="On_BtnCancelClick"/>
-            <Button x:Uid="Button_2" Width="78.59" Height="Auto" Content="OK" Canvas.Left="281" Canvas.Top="191" Click="On_BtnOKClick"/>
-            <TextBlock x:Uid="TextBlock_1" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="User Name:" Canvas.Left="87.867" Canvas.Top="85"/>
-			<TextBox x:Uid="_tb_UserName" FontSize="12" Width="165" Height="24" Text="" TextWrapping="NoWrap" MaxLength="50" MaxLines="1" x:Name="_tb_UserName" Canvas.Left="194.59" Canvas.Top="82"/>
-			<TextBlock x:Uid="TextBlock_2" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="Password:" Canvas.Left="97.69" Canvas.Top="136"/>
-			<PasswordBox x:Uid="_tbPw_Password" Width="165" Height="24" Canvas.Left="194.59" Canvas.Top="133" MaxLength="50" x:Name="_tbPw_Password"/>
-		</Canvas>
+          <Rectangle x:Uid="Rectangle_3" Fill="{StaticResource MainToudaiLogo}" Width="215" Height="30" Canvas.Top="7" Canvas.Left="11" />
+          <Button x:Uid="Button_1" Width="78.59" Height="Auto" Content="キャンセル" Canvas.Left="281" Canvas.Top="191" Click="On_BtnCancelClick" TabIndex="4"/>
+          <Button x:Uid="Button_2" Width="78.59" Height="Auto" Content="OK" Canvas.Left="186.41" Canvas.Top="191" Click="On_BtnOKClick" TabIndex="3" IsDefault="True"/>
+          <TextBlock x:Uid="TextBlock_1" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="User Name:" Canvas.Left="87.867" Canvas.Top="85"/>
+          <TextBox x:Uid="_tb_UserName" FontSize="12" Width="165" Height="24" Text="" TextWrapping="NoWrap" MaxLength="50" MaxLines="1" x:Name="_tb_UserName" Canvas.Left="194.59" Canvas.Top="82" TabIndex="1"/>
+          <TextBlock x:Uid="TextBlock_2" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="Password:" Canvas.Left="97.69" Canvas.Top="136"/>
+          <PasswordBox x:Uid="_tbPw_Password" Width="165" Height="24" Canvas.Left="194.59" Canvas.Top="133" MaxLength="50" x:Name="_tbPw_Password" TabIndex="2"/>
+        </Canvas>
     </Grid>
 </Window>

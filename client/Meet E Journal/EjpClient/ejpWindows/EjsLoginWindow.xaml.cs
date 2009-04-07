@@ -13,6 +13,11 @@ namespace ejpClient.ejpWindows
 			InitializeComponent();
 		}
 
+		private void OnLoaded(object sender, RoutedEventArgs args)
+		{
+			_tb_UserName.Focus();
+		}
+		
 		private void On_BtnOKClick(object sender, RoutedEventArgs e)
 		{
 			try

@@ -162,6 +162,8 @@
             </DataTemplate.Triggers>
         </DataTemplate>
 
+      <ImageBrush x:Uid="ImageBrush_2" x:Key="menuImage" ImageSource="pack://application:,,,/imgData/logo_0918.png"/>
+      <ImageBrush x:Uid="ImageBrush_3" x:Key="menuImageHot" ImageSource="pack://application:,,,/imgData/logo_0918_hot.png"/>
     </Window.Resources>
     
     <Grid x:Uid="Grid_3">
@@ -396,11 +398,17 @@
             </Grid>
         </Grid>
 
-        <Image x:Uid="Image_15" MouseLeftButtonUp="Image_MouseLeftButtonUp" Width="81" Height="81" HorizontalAlignment="Left" 
+        <!--
+        <Image x:Uid="Image_15" x:Name="_menuButtonImage" MouseLeftButtonUp="Image_MouseLeftButtonUp" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" Width="81" Height="81" HorizontalAlignment="Left" 
                Margin="-20,-20,0,0" VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" 
-               Grid.RowSpan="2" Source="pack://application:,,,/imgData/logo_0918.png" />
-        
-        <!--Main tool Box-->
+               Grid.RowSpan="2" Source="{Binding Source={StaticResource menuImage}}" />
+               -->
+        <Rectangle x:Uid="Image_15" x:Name="_menuButtonImage" MouseLeftButtonUp="Image_MouseLeftButtonUp"
+                   MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" Width="81" Height="81" 
+                   HorizontalAlignment="Left" Margin="-20,-20,0,0" VerticalAlignment="Top" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0"
+                   Grid.RowSpan="2" Fill="{StaticResource menuImage}" />
+
+      <!--Main tool Box-->
 		<ToolBar x:Uid="_meet_MainToolBox" x:Name="_meet_MainToolBox" ToolBarTray.IsLocked="True" Margin="140,0,0,1" 
                  Grid.Column="1" HorizontalContentAlignment="Right">
 			<ToolBar.Background>
