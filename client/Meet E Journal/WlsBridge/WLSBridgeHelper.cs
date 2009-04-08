@@ -31,6 +31,8 @@ namespace WlsBridge
 
 		private const string _localAppIDString =
 			"EJournalPlus";
+			
+		private string _liveSpaceUri;
 
 		/// <summary>
 		/// Constructor, parameterless
@@ -38,6 +40,7 @@ namespace WlsBridge
 		/// looks like the newer version takes some string as parameter, but doesn't seem to be submitted.
 		public WLSBridgeHelper(string uriString)
 		{
+			_liveSpaceUri = uriString;
 			_manager = IdentityManager.CreateInstance(_localAppIDString, "eJournalPlus");
 		}
 
@@ -171,6 +174,20 @@ namespace WlsBridge
 			if (this.LastStatusCode == WlsBridgeStatusCode.AuthenticationError)
 				return "";
 
+			if (!string.IsNullOrEmpty(_liveSpaceUri))
+			{
+				if (_liveSpaceUri.StartsWith("http://"))
+				{
+					_liveSpaceUri = _liveSpaceUri.Substring(("http://").Length);
+				}
+				//	pick up the first token.
+				string delimiter = "./";
+				string[] tokens = _liveSpaceUri.Split(delimiter.ToCharArray());
+				if (tokens.Length > 1)
+				{
+					return tokens[0];
+				}
+			}
 			const string SPACES_ROOT = "http://cid-{0}.spaces.live.com/";
 
 			string targetUrl = string.Format(SPACES_ROOT, _userId.cId);
