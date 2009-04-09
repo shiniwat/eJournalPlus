@@ -1269,7 +1269,7 @@ namespace SiliconStudio.Meet.EjpControls
 				{
 					if (this._knowledgeMapGuideControl != null)
 					{
-						//The Guide responds to none of our fance effects :)
+						//The Guide responds to none of our fancy effects :)
 						if (uie == this._knowledgeMapGuideControl)
 							continue;
 					}
