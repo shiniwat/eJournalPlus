@@ -818,10 +818,10 @@ namespace SiliconStudio.Meet.EjpControls
 
 		private void ImportComment(EjpLib.BaseClasses.ejpCAComment comment)
 		{
-			TextPointer commentStart = this._textArea.GetPositionFromPoint(
-				new Point(comment.OriginalPositionX, comment.OriginalPositionY), true);
+			TextPointer commentStart = this._textArea.Document.ContentStart.GetPositionAtOffset(Math.Abs((int)comment.OriginalPositionX));
+            TextPointer commentEnd = commentStart.GetPositionAtOffset(Math.Abs((int)comment.OriginalPositionY));
 
-			TextPointer commentEnd = commentStart.GetPositionAtOffset(comment.CommentedTextInDocument.Length);
+            Point commmentInsertPoint = commentStart.GetCharacterRect(LogicalDirection.Forward).TopLeft;
 
 			KnowledgeMapComment commentToAdd = new KnowledgeMapComment()
 			{
@@ -898,9 +898,6 @@ namespace SiliconStudio.Meet.EjpControls
 			commentToAdd.EndHandleRectangle.SetValue(Canvas.TopProperty, tEndRect.TopLeft.Y);
 			commentToAdd.EndHandleRectangle.SetValue(Canvas.LeftProperty, tEndRect.TopLeft.X);
 
-			// [shiniwa] Looks like it's been changed to Insert...
-			//this._c_FakeAdornerLayer.Children.Add(commentToAdd.StartHandleRectangle);
-			//this._c_FakeAdornerLayer.Children.Add(commentToAdd.EndHandleRectangle);
 			this._c_FakeAdornerLayer.Children.Insert(0, commentToAdd.StartHandleRectangle);
 			this._c_FakeAdornerLayer.Children.Insert(0, commentToAdd.EndHandleRectangle);
 
@@ -935,6 +932,9 @@ namespace SiliconStudio.Meet.EjpControls
 				TextPointer tp2 = this._textArea.Selection.End;
 				TextRange range = new TextRange(tp1, tp2);
 
+                int cStartOffset = tp1.GetOffsetToPosition(this._textArea.Document.ContentStart);
+                int cEndOffset = tp2.GetOffsetToPosition(tp1);
+
 				KnowledgeMapComment comment = new KnowledgeMapComment()
 				{
 					OriginalAuthorId = this.CurrentOwnerId,
@@ -945,7 +945,7 @@ namespace SiliconStudio.Meet.EjpControls
 					Width = 200,
 					Height = 300,
 					CommentTextInDocument = range.Text,
-					OriginalCoordinates = tStartRect.TopLeft,
+					OriginalCoordinates = new Point(cStartOffset, cEndOffset),
 					CommentedTextStart = tp1
 				};
 
@@ -1003,9 +1003,7 @@ namespace SiliconStudio.Meet.EjpControls
 				comment.EndHandleRectangle.SetValue(Canvas.LeftProperty,
 				tEndRect.TopLeft.X);
 
-				//	 [shiniwa] appears to be changed to Insert...
-				//this._c_FakeAdornerLayer.Children.Add(comment.StartHandleRectangle);
-				//this._c_FakeAdornerLayer.Children.Add(comment.EndHandleRectangle);
+
 				this._c_FakeAdornerLayer.Children.Insert(0, comment.StartHandleRectangle);
 				this._c_FakeAdornerLayer.Children.Insert(0, comment.EndHandleRectangle);
 
