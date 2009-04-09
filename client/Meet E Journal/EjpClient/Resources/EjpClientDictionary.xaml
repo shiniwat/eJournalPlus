@@ -95,5 +95,6 @@
   <sys:String x:Uid="sys:String_92" x:Key="Str_VersionErrorTitle">Version Error</sys:String>
   <sys:String x:Uid="sys:String_93" x:Key="Str_WarnTitle">Warning</sys:String>
   <sys:String x:Uid="sys:String_94" x:Key="Str_WlsPostTitle">eJournalPlus - レポート</sys:String>
-  <sys:String x:Uid="sys:String_95" x:Key="Str_Wrn_UnsavedAsg">注意：まだ1度も保存されていません</sys:String>    
+  <sys:String x:Uid="sys:String_95" x:Key="Str_Wrn_UnsavedAsg">注意：まだ1度も保存されていません</sys:String>
+  <sys:String x:Uid="sys:String_96" x:Key="Str_Wrn_ChooseReportToBlog">LiveSpaceに公開したいレポートの内容を表示させてから実行してください．</sys:String>
 </ResourceDictionary>

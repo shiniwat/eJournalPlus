@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.WindowsLive.Id.Client, Version=4.200.519.1, Culture=neutral, PublicKeyToken=764a17f5635b5cf9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Common Files\Microsoft Shared\WLIDClient\Microsoft.WindowsLive.Id.Client.dll</HintPath>
     </Reference>
     <Reference Include="System" />

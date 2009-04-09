@@ -1781,8 +1781,8 @@ namespace ejpClient
 					}
 				}
 				if (!foundReportToPublish)
-					MessageBox.Show("", Application.Current.Resources["Str_ErrorTitle"] as string, 
-						MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show(Application.Current.Resources["Str_Wrn_ChooseReportToBlog"] as string, Application.Current.Resources["Str_WarnTitle"] as string, 
+						MessageBoxButton.OK, MessageBoxImage.Warning);
 			}
 			catch (ApplicationException ex)
 			{

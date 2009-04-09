@@ -48,6 +48,28 @@ namespace ejpClient
 		public static bool _requestedDocumentIsCA;
 		public static string _defaultDocumentPath;
 
+        public App()
+        {
+            try
+            {
+                string uiCultureSetting = ConfigurationManager.AppSettings.Get("UICulture");
+                if (!string.IsNullOrEmpty(uiCultureSetting))
+                {
+                    CultureInfo culture = new CultureInfo(uiCultureSetting);
+                    Thread.CurrentThread.CurrentUICulture = culture;
+                }
+            }
+            catch (ArgumentException ae)
+            {
+                //	OK, the specified culture is invalid. Let's ignore, and rely on current user UI culture.
+                System.Diagnostics.Debug.WriteLine(ae.Message);
+            }
+            catch (ConfigurationException ce)
+            {
+                System.Diagnostics.Debug.WriteLine(ce.Message);
+            }
+        }
+
 		protected override void OnExit(ExitEventArgs e)
 		{
 			base.OnExit(e);
@@ -60,24 +82,6 @@ namespace ejpClient
 
 		protected override void OnStartup(StartupEventArgs e)
 		{
-			try
-			{
-				string uiCultureSetting = ConfigurationManager.AppSettings.Get("UICulture");
-				if (!string.IsNullOrEmpty(uiCultureSetting))
-				{
-					CultureInfo culture = new CultureInfo(uiCultureSetting);
-					Thread.CurrentThread.CurrentUICulture = culture;
-				}
-			}
-			catch(ArgumentException ae)
-			{
-				//	OK, the specified culture is invalid. Let's ignore, and rely on current user UI culture.
-				System.Diagnostics.Debug.WriteLine(ae.Message);
-			}
-			catch(ConfigurationException ce)
-			{
-				System.Diagnostics.Debug.WriteLine(ce.Message);
-			}
 			base.OnStartup(e);
 
 			if (e.Args.Length == 0)

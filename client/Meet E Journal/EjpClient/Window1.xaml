@@ -464,7 +464,8 @@
                 <ToggleButton x:Uid="_mtb_Moji" x:Name="_mtb_Moji" Template="{DynamicResource MTB_moji}" Margin="0.3,2,0.3,2" Width="40" Height="41" Checked="_M_da_OnSetModeLabel" Unchecked="_M_km_OnSetMode_None">
                 <ToggleButton.ToolTip>
                         <StackPanel x:Uid="StackPanel_4">
-                            <Label x:Uid="Label_8" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">テキストボックス</Label>
+                            <Label x:Uid="Label_8"
+                                   Padding="1,5,1,1" FontSize="12" FontWeight="Bold">テキストボックス</Label>
                         </StackPanel>
                     </ToggleButton.ToolTip>
                 </ToggleButton>
@@ -598,8 +599,8 @@
                 <Button x:Uid="_mtbCA_SetDocumentModeNormal" x:Name="_mtbCA_SetDocumentModeNormal" Template="{DynamicResource MB_goToNormalAssignmentMode}"  Margin="0.3,2,0.3,2" Width="40" Height="41" Click="_M_A_SetDocumentModeNormal">
                     <Button.ToolTip>
                         <StackPanel x:Uid="StackPanel_17">
-                            <Label x:Uid="Label_21" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">タイトル</Label>
-                            <TextBlock x:Uid="TextBlock_27" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >説明</TextBlock>
+                            <Label x:Uid="Label_21" Padding="1,5,1,1" FontSize="12" FontWeight="Bold">ふつうモードに切替</Label>
+                            <TextBlock x:Uid="TextBlock_27" Margin="5,2,3,0" Padding="1,1,1,5" FontSize="10" >内容を編集するために切り替えます．ナレッジマップのコメントは全てノードに変わります。</TextBlock>
                         </StackPanel>
                     </Button.ToolTip>
                 </Button>
