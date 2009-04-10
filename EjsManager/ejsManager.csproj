@@ -17,6 +17,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <ProjectGuid>{ADE3E238-E61A-41C1-A32A-AD8702D424EE}</ProjectGuid>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -29,9 +30,16 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Optimize>true</Optimize>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -192,6 +200,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
       <Visible>False</Visible>
       <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
@@ -205,6 +218,11 @@
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
@@ -226,19 +244,19 @@
     <None Include="Service References\ejsServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ejsServiceReference\EjsPublicService.AssignmentOp.xsd" />
-    <None Include="Service References\ejsServiceReference\EjsPublicService.CourseOp.xsd" />
-    <None Include="Service References\ejsServiceReference\EjsPublicService.ServerOp.xsd" />
-    <None Include="Service References\ejsServiceReference\EjsPublicService.UserOp.xsd" />
-    <None Include="Service References\ejsServiceReference\EjsPublicService.xsd" />
+    <None Include="Service References\ejsServiceReference\EjsWcfService.AssignmentOp.xsd" />
+    <None Include="Service References\ejsServiceReference\EjsWcfService.CourseOp.xsd" />
+    <None Include="Service References\ejsServiceReference\EjsWcfService.ServerOp.xsd" />
+    <None Include="Service References\ejsServiceReference\EjsWcfService.UserOp.xsd" />
+    <None Include="Service References\ejsServiceReference\EjsWcfService.xsd" />
     <None Include="Service References\ejsServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\ejsServiceReference\service.wsdl" />
-    <None Include="Service References\ejsServiceReference\service.xsd" />
-    <None Include="Service References\ejsServiceReference\services.wsdl" />
-    <None Include="Service References\ejsServiceReference\services.xsd" />
+    <None Include="Service References\ejsServiceReference\service1.wsdl" />
+    <None Include="Service References\ejsServiceReference\service1.xsd" />
+    <None Include="Service References\ejsServiceReference\services1.wsdl" />
+    <None Include="Service References\ejsServiceReference\services1.xsd" />
     <None Include="Service References\ejsServiceReference\SiliconStudio.Meet.EjsManager.ejsServiceReference.ejsAssignment.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -260,7 +278,7 @@
     <None Include="Service References\ejsServiceReference\SiliconStudio.Meet.EjsManager.ejsServiceReference.ejsUserInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ejsServiceReference\System.xsd" />
+    <None Include="Service References\ejsServiceReference\System1.xsd" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Stages\imgData\aTvD.png" />
@@ -276,5 +294,8 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ApplicationIconRound.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ejsServiceReference\configuration91.svcinfo" />
   </ItemGroup>
 </Project>
