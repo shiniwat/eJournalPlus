@@ -81,7 +81,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\client\Meet E Journal\EjsBridge\EjsBridge.csproj">
+    <ProjectReference Include="..\..\client\Meet E Journal\EjsBridge\EjsBridge.csproj">
       <Project>{95B1EA17-CD2C-4CED-8CE4-20CAD148293C}</Project>
       <Name>EjsBridge</Name>
     </ProjectReference>
