@@ -46,10 +46,18 @@
                     </GridView>
                 </ListView.View>
             </ListView>
+            <!--
             <TextBlock x:Uid="TextBlock_3" Text="課題名：" FontSize="12" Height="15.827" Canvas.Left="38.583" Canvas.Top="484.806" Width="48.586" />
             <TextBox x:Uid="_l_SaveFileName" x:Name="_l_SaveFileName" MaxLength="25" MaxLines="1" TextWrapping="NoWrap" Width="253" Height="22" Canvas.Left="96" Canvas.Top="483" />
             <Button x:Uid="Button_1" Width="78.595" Height="24.293" Content="キャンセル" Canvas.Left="488.718" Canvas.Top="481.573" Click="OnCancel"/>
             <Button x:Uid="Button_2" Width="79" Height="24.293" Content="公開" Canvas.Left="365" Canvas.Top="481.573" Click="OnPublishAssignment"/>
+            -->
+            <StackPanel x:Uid="StackPanel_1" Orientation="Horizontal" HorizontalAlignment="Right" Canvas.Right="48" Canvas.Top="480">
+                <TextBlock x:Uid="TextBlock_3" Text="課題名：" FontSize="12" Height="Auto" Margin="38,5,5,0" Width="Auto" />
+                <TextBox x:Uid="_l_SaveFileName" x:Name="_l_SaveFileName" MaxLength="25" MaxLines="1" TextWrapping="NoWrap" Width="270" Height="Auto" Margin="5,3,5,0" />
+                <Button x:Uid="Button_2" Width="Auto" Height="Auto" Content="公開" Margin="5,3,5,0" Padding="20,0,20,0" Click="OnPublishAssignment"/>
+                <Button x:Uid="Button_1" Width="Auto" Height="Auto" Content="キャンセル" Margin="5,3,0,0" Padding="5,0,5,0" Click="OnCancel"/>
+            </StackPanel> 
         </Canvas>
     </Grid>
 </Window>

@@ -51,7 +51,7 @@
             
             <TreeView x:Uid="_tv_Assignments" x:Name="_tv_Assignments" Background="White" Width="645.878" Height="385" Canvas.Left="21.435" 
                       Canvas.Top="89" SelectedItemChanged="_tv_Assignments_SelectedItemChanged" />
-            
+            <!--
             <Button x:Uid="_b_Cancel" Width="79" Height="24.293" Content="キャンセル" Canvas.Left="588.718" 
                     Canvas.Top="481.573" Click="OnCancel" x:Name="_b_Cancel"/>
             <Button x:Uid="_b_OpenAssignment" Width="106" Height="24.293" Content="開く (普通モード)" Canvas.Left="21.435" 
@@ -62,6 +62,23 @@
                     Canvas.Top="481.573" Click="OnMergeCommentsAndOpen" x:Name="_b_MergeAndOpen"/>
             <Button x:Uid="_b_DeleteAssignment" Width="79" Height="24.293" Content="削除" Canvas.Left="465" 
                     Canvas.Top="481.573" Click="OnDeleteAssignment" x:Name="_b_DeleteAssignment"/>
+            <Button x:Uid="_b_Cancel" Width="79" Height="24.293" Content="キャンセル" Canvas.Left="588.718" 
+                    Canvas.Top="481.573" Click="OnCancel" x:Name="_b_Cancel"/>
+            -->
+
+            <StackPanel Orientation="Horizontal" Canvas.Top="481" Canvas.Right="48" HorizontalAlignment="Right" >
+                <Button x:Uid="_b_OpenAssignment" Width="Auto" Height="Auto" Content="開く (普通モード)" Margin="21,0,5,0" Padding="20,0,20,0"
+                    Click="OnOpenAssignment" x:Name="_b_OpenAssignment"/>
+                <Button x:Uid="_b_OpenCommentedAssignment" Width="Auto" Height="Auto" Content="開く (コメントモード)" Margin="5,0,5,0" Padding="5,0,5,0"
+                    Click="OnOpenAssignmentAsCA" x:Name="_b_OpenCommentedAssignment"/>
+                <Button x:Uid="_b_MergeAndOpen" Width="Auto" Height="Auto" Content="コメントマージ開く" Margin="5,0,5,0" Padding="5,0,5,0"
+                    Click="OnMergeCommentsAndOpen" x:Name="_b_MergeAndOpen"/>
+                <Button x:Uid="_b_DeleteAssignment" Width="Auto" Height="Auto" Content="削除" Margin="20,0,20,0" Padding="25,0,25,0" 
+                    Click="OnDeleteAssignment" x:Name="_b_DeleteAssignment"/>
+                <Button x:Uid="_b_Cancel" Width="Auto" Height="Auto" Content="キャンセル" Margin="20,0,0,0" Padding="7,0,7,0"   
+                    Click="OnCancel" x:Name="_b_Cancel"/>
+
+            </StackPanel>
         </Canvas>
     </Grid>
 </Window>

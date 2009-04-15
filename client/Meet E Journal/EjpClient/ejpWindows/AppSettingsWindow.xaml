@@ -32,8 +32,8 @@
 			<CheckBox x:Uid="_cb_SavePass" Width="Auto" Height="Auto" Content="On / Off" Padding="4,1,0,0" Canvas.Left="229" Canvas.Top="242" Checked="_cb_SavePass_Checked" Unchecked="_cb_SavePass_Unchecked" x:Name="_cb_SavePass" Visibility="Collapsed" />
 			<Canvas x:Uid="_cv_UserSettings" IsEnabled="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="368" Height="210" 
                     Canvas.Left="46" Canvas.Top="247" x:Name="_cv_UserSettings">
-				<TextBlock x:Uid="TextBlock_8" Width="Auto" Height="18" TextWrapping="Wrap" Text="コース登録設定" Canvas.Left="51.359" Canvas.Top="47"/>
-				<Button x:Uid="Button_1" IsEnabled="True" Width="164" Height="22" Content="コース登録" Canvas.Left="147" Canvas.Top="43" Click="On_BtnRegisterToCourse" />
+				<TextBlock x:Uid="TextBlock_8" Width="Auto" Height="18" TextWrapping="Wrap" Text="コース登録設定" Canvas.Left="20" Canvas.Top="47"/>
+				<Button x:Uid="Button_1" IsEnabled="True" Width="Auto" Height="22" Content="コース登録" Canvas.Left="147" Canvas.Top="43" Click="On_BtnRegisterToCourse" Padding="30,0,30,0"/>
 				<TextBlock x:Uid="TextBlock_9" Width="180" Height="18" TextWrapping="Wrap" Text="E Journal Server 個人情報変更" Canvas.Left="23" Canvas.Top="3"/>
 				<TextBlock x:Uid="TextBlock_10" Width="Auto" Height="18" TextWrapping="Wrap" Text="User Name:" Canvas.Left="65.366" Canvas.Top="80"/>
 				<TextBox x:Uid="_tb_UserName" IsEnabled="True" FontSize="12" Width="165" Height="22" Text="" TextWrapping="NoWrap" Canvas.Left="147" Canvas.Top="77" 
@@ -47,7 +47,7 @@
                 <Button x:Uid="Button_2" IsEnabled="True" Canvas.Left="194.12" Canvas.Top="168" Height="23" Width="118.036" Content="Update Password" Click="On_BtnUpdatePasswordClick"/>
 			</Canvas>
 			<Button x:Uid="Button_3" Width="79" Height="23.345" Content="キャンセル" Canvas.Left="336" Canvas.Top="476.905" Click="On_BtnCancelClick" />
-			<Button x:Uid="Button_4" Width="79" Height="23.345" Content="OK" Canvas.Left="248" Canvas.Top="476.905" Click="On_BtnOKClick"/>
+			<Button x:Uid="Button_4" Width="79" Height="23.345" Content="OK" Canvas.Left="248" Canvas.Top="476.905" Click="On_BtnOKClick" IsDefault="True"/>
             
 		</Canvas>
     </Grid>

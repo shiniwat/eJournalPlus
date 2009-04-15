@@ -26,15 +26,18 @@
                        HorizontalAlignment="Left" x:Name="_l_WindowTitle" VerticalAlignment="Top" Text="ドキュメントを開く"/>
             
             <TextBlock x:Uid="TextBlock_1" Width="Auto" Height="Auto" Canvas.Left="27" Canvas.Top="71" TextWrapping="Wrap" Text="スタディに読み込むドキュメントを選択します。"/>
-            <TextBlock x:Uid="TextBlock_2" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="場所：" Canvas.Left="27.867" Canvas.Top="98"/>
-            
-            <!--<RadioButton Checked="On_RbDocLocNoneChecked" x:Name="_rb_DocLocNone" Width="Auto" Height="Auto" Content="読み込まない" Canvas.Left="80" Canvas.Top="95"/>
-            <RadioButton Checked="On_RbDocLocLocalChecked" x:Name="_rb_DocLocLocal" Width="Auto" Height="Auto" Content="ローカルPC" Canvas.Left="195" Canvas.Top="95"/>
-            <RadioButton Checked="On_RbDocLocEjsChecked" x:Name="_rb_DocLocEjs" Width="Auto" Height="Auto" Content="公開サーバー" Canvas.Left="304" Canvas.Top="95"/>-->
-            
-            <Button x:Uid="_rb_DocLocNone" Click="On_RbDocLocNoneChecked" x:Name="_rb_DocLocNone" Width="90" Height="Auto" Content="読み込まない" Canvas.Left="80" Canvas.Top="95"/>
-            <Button x:Uid="_rb_DocLocLocal" Click="On_RbDocLocLocalChecked" x:Name="_rb_DocLocLocal" Width="90" Height="Auto" Content="ローカルPC" Canvas.Left="195" Canvas.Top="95"/>
-            <Button x:Uid="_rb_DocLocEjs" Click="On_RbDocLocEjsChecked" x:Name="_rb_DocLocEjs" Width="90" Height="Auto" Content="公開サーバー" Canvas.Left="304" Canvas.Top="95"/>
+            <StackPanel x:Uid="StackPanel_1" Orientation="Horizontal" Canvas.Top="90">
+                <TextBlock x:Uid="TextBlock_2" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="場所：" Margin="27.8,7,20,0" />
+                <!--
+                <Button x:Uid="_rb_DocLocNone" Click="On_RbDocLocNoneChecked" x:Name="_rb_DocLocNone" Width="90" Height="Auto" Content="読み込まない" Canvas.Left="80" Canvas.Top="95"/>
+                <Button x:Uid="_rb_DocLocLocal" Click="On_RbDocLocLocalChecked" x:Name="_rb_DocLocLocal" Width="90" Height="Auto" Content="ローカルPC" Canvas.Left="195" Canvas.Top="95"/>
+                <Button x:Uid="_rb_DocLocEjs" Click="On_RbDocLocEjsChecked" x:Name="_rb_DocLocEjs" Width="90" Height="Auto" Content="公開サーバー" Canvas.Left="304" Canvas.Top="95"/>
+                -->
+                <Button x:Uid="_rb_DocLocNone" Click="On_RbDocLocNoneChecked" x:Name="_rb_DocLocNone" Width="Auto" Height="Auto" Content="読み込まない" Margin="5" Padding="10,0,10,0"/>
+                <Button x:Uid="_rb_DocLocLocal" Click="On_RbDocLocLocalChecked" x:Name="_rb_DocLocLocal" Width="Auto" Height="Auto" Content="ローカルPC" Margin="5" Padding="10,0,10,0"/>
+                <Button x:Uid="_rb_DocLocEjs" Click="On_RbDocLocEjsChecked" x:Name="_rb_DocLocEjs" Width="Auto" Height="Auto" Content="公開サーバー" Margin="5" Padding="10,0,10,0"/>
+
+            </StackPanel>
             
             <TextBlock x:Uid="TextBlock_3" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="ドキュメント名：" Canvas.Left="27.867" Canvas.Top="134"/>
             <TextBlock x:Uid="_l_FirstXpsName" x:Name="_l_FirstXpsName" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="ドキュメントを選択して下さい。。。" Canvas.Left="132.867" Canvas.Top="134"/>
@@ -42,8 +45,8 @@
             <TextBlock x:Uid="TextBlock_4" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="場所：" Canvas.Left="27.867" Canvas.Top="157"/>
             <TextBlock x:Uid="_l_XpsLocation" x:Name="_l_XpsLocation" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="ドキュメントを選択して下さい。。。" Canvas.Left="132.867" Canvas.Top="157"/>
             
-            <Button x:Uid="_b_Cancel" x:Name="_b_Cancel" Width="78.59" Height="Auto" Content="キャンセル" Canvas.Left="186.41" Canvas.Top="191" Click="On_BtnCancelClick"/>
-            <Button x:Uid="_b_Ok" x:Name="_b_Ok" Width="78.59" Height="Auto" Content="OK" Canvas.Left="281" Canvas.Top="191" Click="On_BtnOKClick" IsEnabled="False"/>
+            <Button x:Uid="_b_Ok" x:Name="_b_Ok" Width="78.59" Height="Auto" Content="OK" Canvas.Left="186" Canvas.Top="191" Click="On_BtnOKClick" IsEnabled="False"/>
+            <Button x:Uid="_b_Cancel" x:Name="_b_Cancel" Width="78.59" Height="Auto" Content="キャンセル" Canvas.Left="281" Canvas.Top="191" Click="On_BtnCancelClick"/>
         </Canvas>
     </Grid>
 </Window>

@@ -24,6 +24,7 @@
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle x:Uid="Rectangle_2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Fill="#FFFFFFFF" Stroke="#FF7FB2F0" Margin="10,16,10,16" RadiusX="13.5" RadiusY="13.5"/>
+        <!--
         <Canvas x:Uid="Canvas_1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Margin="8,16,12,16" 
                 DataContext="{Binding Path=SelectedValue, ElementName=_cb_Courses, Mode=Default}">
             <Button x:Uid="Button_1" Width="78.5949999999999" Height="21" Content="閉じる" Canvas.Left="431.803" Canvas.Top="166" Click="On_BtnCancelClick"/>
@@ -37,6 +38,33 @@
             <TextBlock x:Uid="TextBlock_5" Canvas.Left="76.398" Canvas.Top="58.548" Height="Auto" Text="{Binding Path=_description, Mode=Default, FallbackValue={StaticResource Str_Info_ChooseTheCourse}}" TextWrapping="NoWrap" Width="434" />
             <TextBlock x:Uid="TextBlock_6" Canvas.Left="76.398" Canvas.Top="92.106" Height="15.96" Text="{Binding Path=_owner, Mode=Default, FallbackValue={StaticResource Str_Info_ChooseTheCourse}}" TextWrapping="NoWrap" Width="434" />
             <TextBlock x:Uid="_l_Date" Canvas.Left="76.398" Canvas.Top="125.664" Height="15.96" x:Name="_l_Date" Text="" TextWrapping="NoWrap" Width="434" />
-        </Canvas>
+        </Canvas>-->
+        <Grid x:Uid="Grid_2" Margin="8,16,12,16" DataContext="{Binding Path=SelectedValue, ElementName=_cb_Courses, Mode=Default}">
+            <Grid.ColumnDefinitions x:Uid="ColDefs_0">
+                <ColumnDefinition x:Uid="ColumnDefinition_1" Width="110"/>
+                <ColumnDefinition x:Uid="ColumnDefinition_2" Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions x:Uid="RowDefs_0">
+                <RowDefinition x:Uid="RowDef_1" Height="0.2*"/>
+                <RowDefinition x:Uid="RowDef_2" Height="0.2*"/>
+                <RowDefinition x:Uid="RowDef_3" Height="0.2*"/>
+                <RowDefinition x:Uid="RowDef_4" Height="0.2*"/>
+                <RowDefinition x:Uid="RowDef_5" Height="0.2*"/>
+            </Grid.RowDefinitions>
+            <!-- row=0 -->        
+            <TextBlock x:Uid="TextBlock_1" Grid.Row="0" Grid.Column="0" Margin="14,16,5,0" Text="コース名：" TextWrapping="Wrap" Width="Auto" />
+            <ComboBox x:Uid="_cb_Courses" Grid.Row="0" Grid.Column="1" Margin="10,10,5,0" Height="22" DisplayMemberPath="_name" IsSynchronizedWithCurrentItem="True" 
+                      ItemsSource="{Binding Mode=OneWay, Source={StaticResource CourseList}}" Name="_cb_Courses" Width="410" />
+            <TextBlock x:Uid="TextBlock_2" Grid.Row="1" Grid.Column="0" Margin="14,10,5,0" Text="説明：" TextWrapping="Wrap" Width="Auto" />
+            <TextBlock x:Uid="TextBlock_5" Grid.Row="1" Grid.Column="1" Margin="14,10,5,0" Height="Auto" Text="{Binding Path=_description, Mode=Default, FallbackValue={StaticResource Str_Info_ChooseTheCourse}}" TextWrapping="NoWrap" />
+            <TextBlock x:Uid="TextBlock_3" Grid.Row="2" Grid.Column="0" Margin="14,10,5,0" Height="Auto" Text="担当教師：" TextWrapping="Wrap" Width="Auto" />
+            <TextBlock x:Uid="TextBlock_6" Grid.Row="2" Grid.Column="1" Margin="14,10,5,0" Text="{Binding Path=_owner, Mode=Default, FallbackValue={StaticResource Str_Info_ChooseTheCourse}}" TextWrapping="NoWrap" />
+            <TextBlock x:Uid="TextBlock_4" Grid.Row="3" Grid.Column="0" Margin="14,10,5,0" Height="Auto" Text="登録日時：" TextWrapping="Wrap" Width="Auto" />
+            <TextBlock x:Uid="_l_Date" Grid.Row="3" Grid.Column="1" Margin="14,10,5,0" x:Name="_l_Date" Text="" TextWrapping="NoWrap" />
+            <StackPanel x:Uid="StackPanel_1" Orientation="Horizontal" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right">
+                <Button x:Uid="Button_2" Margin="10,10,10,10" Padding="10,0,10,0" Click="On_BtnRegisterClick">登録</Button>
+                <Button x:Uid="Button_1" Width="Auto" Content="閉じる" Margin="10,10,10,10" Padding="20,0,20,0" Click="On_BtnCancelClick"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
