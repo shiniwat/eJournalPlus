@@ -3272,6 +3272,11 @@ namespace ejpClient
 							this._currentXpsDocumentViewer = x;
 						}
 					}
+                    if (dispStudy.XpsDocuments.Count == 0)
+                    {
+                        ti.Focus();
+                        (ti.Content as ReportEditor).DelayImportComment();
+                    }
 				}
 				else
 				{

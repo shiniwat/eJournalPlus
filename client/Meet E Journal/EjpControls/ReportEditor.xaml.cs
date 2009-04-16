@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Navigation;
 using System.Windows.Xps;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using SiliconStudio.Meet.EjpControls.Enumerations;
 
 namespace SiliconStudio.Meet.EjpControls
@@ -59,6 +60,9 @@ namespace SiliconStudio.Meet.EjpControls
 		//This is used to tell the wehter the control has been
 		//rendered and the comments have been added.
 		private bool _isCommentLoadingComplete;
+
+        private DispatcherTimer _delayTimer;
+        private int _delayLoadingTrials;
 
 		private EjpLib.BaseClasses.ejpReport _reportObject;
 
@@ -171,18 +175,50 @@ namespace SiliconStudio.Meet.EjpControls
 		//control has not yet been rendered.
 		void ReportEditor_GotFocus(object sender, RoutedEventArgs e)
 		{
-			if (this._isCommentLoadingComplete == false)
-			{
-				if (this._reportObject.Comments != null)
-				{
-					foreach (EjpLib.BaseClasses.ejpCAComment comment in this._reportObject.Comments)
-					{
-						this.ImportComment(comment);
-					}
-				}
-				this._isCommentLoadingComplete = true;
-			}
+            EnsureImportComment();
 		}
+
+        private void EnsureImportComment()
+        {
+            if (this._isCommentLoadingComplete == false)
+            {
+                if (this._reportObject.Comments != null)
+                {
+                    foreach (EjpLib.BaseClasses.ejpCAComment comment in this._reportObject.Comments)
+                    {
+                        if (!this.ImportComment(comment))
+                        {
+                            // don't mark "isImportComplete" in this case.
+                            return;
+                        }
+                    }
+                }
+                this._isCommentLoadingComplete = true;
+            }
+        }
+
+        public void DelayImportComment()
+        {
+            _delayTimer = new DispatcherTimer();
+            _delayTimer.Interval = TimeSpan.FromMilliseconds(500);
+            _delayTimer.Tick += new EventHandler(DelayImportComment_Tick);
+            _delayLoadingTrials = 0;
+            _delayTimer.Start();
+        }
+
+        private void DelayImportComment_Tick(object sender, EventArgs e)
+        {
+            EnsureImportComment();
+            const int _maxTrials = 4;
+            if (_isCommentLoadingComplete || ++_delayLoadingTrials > _maxTrials)
+            {
+                _delayTimer.Stop();
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("comment were not loaded");
+            }
+        }
 
 		private void PasteExecuted(object sender, ExecutedRoutedEventArgs e)
 		{
@@ -816,11 +852,14 @@ namespace SiliconStudio.Meet.EjpControls
 			this._textArea.Focus();
 		}
 
-		private void ImportComment(EjpLib.BaseClasses.ejpCAComment comment)
+		private bool ImportComment(EjpLib.BaseClasses.ejpCAComment comment)
 		{
 			TextPointer commentStart = this._textArea.Document.ContentStart.GetPositionAtOffset(Math.Abs((int)comment.OriginalPositionX));
             TextPointer commentEnd = commentStart.GetPositionAtOffset(Math.Abs((int)comment.OriginalPositionY));
-
+            if (commentStart == null || commentEnd == null)
+            {
+                return false;
+            }
             Point commmentInsertPoint = commentStart.GetCharacterRect(LogicalDirection.Forward).TopLeft;
 
 			KnowledgeMapComment commentToAdd = new KnowledgeMapComment()
@@ -902,6 +941,7 @@ namespace SiliconStudio.Meet.EjpControls
 			this._c_FakeAdornerLayer.Children.Insert(0, commentToAdd.EndHandleRectangle);
 
 			this._comments.Add(commentToAdd);
+            return true;
 		}
 
 

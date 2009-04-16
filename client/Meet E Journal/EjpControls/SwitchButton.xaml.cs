@@ -37,11 +37,19 @@ namespace SiliconStudio.Meet.EjpControls
                     
                     foreach (KeyValuePair<string, SolidColorBrush> kv in value)
                     {
-                        Grid g = new Grid { Width = 55 };
+                        //Grid g = new Grid { Width = 55 };
+                        Grid g = new Grid();
+                        ColumnDefinition d1 = new ColumnDefinition();
+                        d1.Width = new GridLength(32d);
+                        ColumnDefinition d2 = new ColumnDefinition();
+                        d2.Width = new GridLength(0, GridUnitType.Star);
+                        g.ColumnDefinitions.Add(d1);
+                        g.ColumnDefinitions.Add(d2);
                         
                         Rectangle r = new Rectangle();
                         r.Width = 32;
                         r.Height = 20;
+                        Grid.SetColumn(r, 0);
                         r.Fill = kv.Value;
                         r.Margin = new Thickness(2,4,2,4);
                         r.HorizontalAlignment = HorizontalAlignment.Left;
@@ -49,12 +57,12 @@ namespace SiliconStudio.Meet.EjpControls
 
                         Label l = new Label();
                         l.Padding = new Thickness(0);
-                        l.Margin = new Thickness(0,4,2,4);
+                        l.Margin = new Thickness(4,4,6,4);
                         l.HorizontalAlignment = HorizontalAlignment.Right;
                         l.VerticalAlignment = VerticalAlignment.Center;
                         l.Content = kv.Key;
                         l.FontWeight = FontWeights.Bold;
-
+                        Grid.SetColumn(l, 1);
                         g.Children.Add(r);
                         g.Children.Add(l);
                         g.MouseLeftButtonUp += new MouseButtonEventHandler(this.ColorIconClicked);
