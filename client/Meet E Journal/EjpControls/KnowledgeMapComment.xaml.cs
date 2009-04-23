@@ -5,312 +5,315 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Shapes;
 using System.Windows.Documents;
+using System.Diagnostics;
 
 namespace SiliconStudio.Meet.EjpControls
 {
-	public delegate void DeleteKnowledgeMapComment(KnowledgeMapComment comment);
-	public delegate void KnowledgeMapCommentViewStateChanged(KnowledgeMapComment comment);
+    public delegate void DeleteKnowledgeMapComment(KnowledgeMapComment comment);
+    public delegate void KnowledgeMapCommentViewStateChanged(KnowledgeMapComment comment);
 
-	public enum KnowledgeMapCommentViewState
-	{
-		Minimized,
-		Maximized
-	}
+    public enum KnowledgeMapCommentViewState
+    {
+        Minimized,
+        Maximized
+    }
 
-	/// <summary>
-	/// Interaction logic for KnowledgeMapComment.xaml
-	/// </summary>
-	public partial class KnowledgeMapComment : UserControl
-	{
-		public event DeleteKnowledgeMapComment OnDeleteComment;
-		public event KnowledgeMapCommentViewStateChanged OnMinimizeComment;
-		public event KnowledgeMapCommentViewStateChanged OnMaximizeComment;
+    /// <summary>
+    /// Interaction logic for KnowledgeMapComment.xaml
+    /// </summary>
+    public partial class KnowledgeMapComment : UserControl
+    {
+        public event DeleteKnowledgeMapComment OnDeleteComment;
+        public event KnowledgeMapCommentViewStateChanged OnMinimizeComment;
+        public event KnowledgeMapCommentViewStateChanged OnMaximizeComment;
 
-		ObservableCollection<CommentMessage>
-			_messages = new ObservableCollection<CommentMessage>();
+        ObservableCollection<CommentMessage>
+            _messages = new ObservableCollection<CommentMessage>();
 
-		public ObservableCollection<CommentMessage> Messages
-		{
-			get { return _messages; }
-			set { _messages = value; }
-		}
+        public ObservableCollection<CommentMessage> Messages
+        {
+            get { return _messages; }
+            set { _messages = value; }
+        }
 
-		public bool IsDragging { get; set; }
+        public bool IsDragging { get; set; }
 
-		public Rectangle BackgroundRectangle
-		{
-			get { return this._r_BG; }
-		}
+        public Rectangle BackgroundRectangle
+        {
+            get { return this._r_BG; }
+        }
 
-		private KnowledgeMapCommentViewState _currentViewState;
-		public KnowledgeMapCommentViewState CurrentViewState
-		{
-			get { return _currentViewState; }
-			set
-			{
-				switch (value)
-				{
-					case KnowledgeMapCommentViewState.Minimized:
-						this.MinimizeComment();
-						break;
-					case KnowledgeMapCommentViewState.Maximized:
-						this.MaximizeComment();
-						break;
-					default:
-						break;
-				}
-				_currentViewState = value;
-			}
-		}
+        private KnowledgeMapCommentViewState _currentViewState;
+        public KnowledgeMapCommentViewState CurrentViewState
+        {
+            get { return _currentViewState; }
+            set
+            {
+                switch (value)
+                {
+                    case KnowledgeMapCommentViewState.Minimized:
+                        this.MinimizeComment();
+                        break;
+                    case KnowledgeMapCommentViewState.Maximized:
+                        this.MaximizeComment();
+                        break;
+                    default:
+                        break;
+                }
+                _currentViewState = value;
+            }
+        }
 
-		public string OriginalAuthorName { get; set; }
+        public string OriginalAuthorName { get; set; }
 
-		/// <summary>
-		/// Original Creater of this comment tree
-		/// </summary>
-		private Guid _originalAuthorId;
-		public Guid OriginalAuthorId
-		{
-			get { return _originalAuthorId; }
-			set
-			{
-				_originalAuthorId = value;
-				if (this._currentAuthorId != value)
-					this._b_Close.Visibility = Visibility.Collapsed;
-				else
-					this._b_Close.Visibility = Visibility.Visible;
-			}
-		}
+        /// <summary>
+        /// Original Creater of this comment tree
+        /// </summary>
+        private Guid _originalAuthorId;
+        public Guid OriginalAuthorId
+        {
+            get { return _originalAuthorId; }
+            set
+            {
+                _originalAuthorId = value;
+                if (this._currentAuthorId != value)
+                    this._b_Close.Visibility = Visibility.Collapsed;
+                else
+                    this._b_Close.Visibility = Visibility.Visible;
+            }
+        }
 
-		private Guid _currentAuthorId;
-		public Guid CurrentAuthorId
-		{
-			get { return _currentAuthorId; }
-			set
-			{
-				_currentAuthorId = value;
-				if (this._originalAuthorId != value)
-					this._b_Close.Visibility = Visibility.Collapsed;
-				else
-					this._b_Close.Visibility = Visibility.Visible;
-			}
-		}
-
-
-		public string CurrentAuthorName { get; set; }
-		public Guid CommentId { get; set; }
-		public Point PushPinCoordinates { get; set; }
-		public Point OriginalCoordinates { get; set; }
-		public string CommentTextInDocument { get; set; }
-
-		//Report Specific
-		public TextPointer CommentedTextStart { get; set; }
-		//Only used for reportComments, to show
-		//the beginning and end of commented text.
-		public Rectangle StartHandleRectangle;
-		public Rectangle EndHandleRectangle;
+        private Guid _currentAuthorId;
+        public Guid CurrentAuthorId
+        {
+            get { return _currentAuthorId; }
+            set
+            {
+                _currentAuthorId = value;
+                if (this._originalAuthorId != value)
+                    this._b_Close.Visibility = Visibility.Collapsed;
+                else
+                    this._b_Close.Visibility = Visibility.Visible;
+            }
+        }
 
 
-		private bool _isAnchorPointVisible;
-		public bool IsAnchorPointVisible
-		{
-			get { return this._isAnchorPointVisible; }
-			set
-			{
-				this._isAnchorPointVisible = value;
-				this.UpdateAnchorVisibility();
-			}
-		}
+        public string CurrentAuthorName { get; set; }
+        public Guid CommentId { get; set; }
+        public Point PushPinCoordinates { get; set; }
+        public Point OriginalCoordinates { get; set; }
+        public string CommentTextInDocument { get; set; }
 
-		public KnowledgeMapComment()
-		{
-			InitializeComponent();
-			this._currentViewState = KnowledgeMapCommentViewState.Maximized;
-			this._lb_Messages.ItemsSource = this._messages;
-		}
+        //Report Specific
+        public TextPointer CommentedTextStart { get; set; }
+        //Only used for reportComments, to show
+        //the beginning and end of commented text.
+        public Rectangle StartHandleRectangle;
+        public Rectangle EndHandleRectangle;
 
-		private void MaximizeComment()
-		{
-			try
-			{
-				if (this._currentViewState == KnowledgeMapCommentViewState.Minimized)
-				{
-					this.SetValue(Canvas.LeftProperty, (double)this.GetValue(Canvas.LeftProperty) - (175));
-					this.Width = 200;
-					this.Height = 300;
-					this._currentViewState = KnowledgeMapCommentViewState.Maximized;
-					if (this.OnMaximizeComment != null)
-						this.OnMaximizeComment(this);
-				}
-			}
-			catch (Exception)
-			{
-				this.Height = 200;
-			}
-		}
 
-		private void MinimizeComment()
-		{
-			this.SetValue(Canvas.LeftProperty, (double)this.GetValue(Canvas.LeftProperty) + (this.ActualWidth - 25));
+        private bool _isAnchorPointVisible;
+        public bool IsAnchorPointVisible
+        {
+            get { return this._isAnchorPointVisible; }
+            set
+            {
+                this._isAnchorPointVisible = value;
+                this.UpdateAnchorVisibility();
+            }
+        }
 
-			this.Height = 25;
-			this.Width = 25;
+        public KnowledgeMapComment()
+        {
+            InitializeComponent();
+            this._currentViewState = KnowledgeMapCommentViewState.Maximized;
+            this._lb_Messages.ItemsSource = this._messages;
+        }
 
-			this._currentViewState = KnowledgeMapCommentViewState.Minimized;
-			if (this.OnMinimizeComment != null)
-				this.OnMinimizeComment(this);
-		}
+        private void MaximizeComment()
+        {
+            try
+            {
+                if (this._currentViewState == KnowledgeMapCommentViewState.Minimized)
+                {
+                    this.SetValue(Canvas.LeftProperty, (double)this.GetValue(Canvas.LeftProperty) - (175));
+                    this.Width = 200;
+                    this.Height = 300;
+                    this._currentViewState = KnowledgeMapCommentViewState.Maximized;
+                    if (this.OnMaximizeComment != null)
+                        this.OnMaximizeComment(this);
+                }
+            }
+            catch (Exception)
+            {
+                this.Height = 200;
+            }
+        }
 
-		private void UpdateAnchorVisibility()
-		{
-			if (this._isAnchorPointVisible)
-			{
-			}
-			else
-			{
-			}
-		}
 
-		private void OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-		{
-			// e.Handled = true;
-		}
+        private void MinimizeComment()
+        {
+            Debug.Print("In Comment");
+            this.SetValue(Canvas.LeftProperty, (double)this.GetValue(Canvas.LeftProperty) + (this.ActualWidth - 25));
 
-		private void OnStylusUp(object sender, StylusEventArgs e)
-		{
-			// e.Handled = true;
-		}
+            this.Height = 25;
+            this.Width = 25;
 
-		private void _b_Enter_Click(object sender, RoutedEventArgs e)
-		{
-			if (this._tb_Message.Text.Length != 0)
-			{
-				CommentMessage c = new CommentMessage()
-				{
-					Author = this.CurrentAuthorName,
-					Date = DateTime.Now,
-					Message = this._tb_Message.Text
-				};
+            this._currentViewState = KnowledgeMapCommentViewState.Minimized;
+            if (this.OnMinimizeComment != null)
+                this.OnMinimizeComment(this);
+        }
 
-				this._messages.Add(c);
-				this._tb_Message.Text = "";
-			}
-		}
+        private void UpdateAnchorVisibility()
+        {
+            if (this._isAnchorPointVisible)
+            {
+            }
+            else
+            {
+            }
+        }
 
-		private void _b_Clear_Click(object sender, RoutedEventArgs e)
-		{
-			this._tb_Message.Text = "";
-		}
+        private void OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            // e.Handled = true;
+        }
 
-		private void _b_Close_Click(object sender, RoutedEventArgs e)
-		{
-			if (MessageBox.Show(Application.Current.Resources["Q_DelPushPinComment"] as string,
-				"", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
-			{
-				this.DeleteComment();
-			}
-		}
+        private void OnStylusUp(object sender, StylusEventArgs e)
+        {
+            // e.Handled = true;
+        }
 
-		private void _b_Minimize_Click(object sender, RoutedEventArgs e)
-		{
-			this.MinimizeComment();
-		}
+        private void _b_Enter_Click(object sender, RoutedEventArgs e)
+        {
+            if (this._tb_Message.Text.Length != 0)
+            {
+                CommentMessage c = new CommentMessage()
+                {
+                    Author = this.CurrentAuthorName,
+                    Date = DateTime.Now,
+                    Message = this._tb_Message.Text
+                };
 
-		private void _r_PushPin_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-		{
-			if (this.IsDragging == true)
-				return;
+                this._messages.Add(c);
+                this._tb_Message.Text = "";
+            }
+        }
 
-			switch (this._currentViewState)
-			{
-				case KnowledgeMapCommentViewState.Minimized:
-					this.MaximizeComment();
-					break;
-				case KnowledgeMapCommentViewState.Maximized:
-					this.MinimizeComment();
-					break;
-				default:
-					break;
-			}
-		}
+        private void _b_Clear_Click(object sender, RoutedEventArgs e)
+        {
+            this._tb_Message.Text = "";
+        }
 
-		private void _r_PushPinStylusOutOfRange(object sender, StylusEventArgs e)
-		{
-			if (this.IsDragging == true)
-				return;
+        private void _b_Close_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show(Application.Current.Resources["Q_DelPushPinComment"] as string,
+                "", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
+            {
+                this.DeleteComment();
+            }
+        }
 
-			switch (this._currentViewState)
-			{
-				case KnowledgeMapCommentViewState.Minimized:
-					this.MaximizeComment();
-					break;
-				case KnowledgeMapCommentViewState.Maximized:
-					this.MinimizeComment();
-					break;
-				default:
-					break;
-			}
-		}
+        private void _b_Minimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.MinimizeComment();
+        }
 
-		/// <summary>
-		/// Handles the ContextMenu for the PushPin.
-		/// </summary>
-		private void OnPushPinMenuOpen(object sender, RoutedEventArgs e)
-		{
-			ContextMenu cm = sender as ContextMenu;
+        private void _r_PushPin_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (this.IsDragging == true)
+                return;
 
-			if (this.OriginalAuthorId == this.CurrentAuthorId)
-			{
-				this._ppCMenu_RemoveComment.IsEnabled = true;
-				this._ppCMenu_ReturnPosition.IsEnabled = true;
-			}
-			else
-			{
-				this._ppCMenu_RemoveComment.IsEnabled = false;
-				this._ppCMenu_ReturnPosition.IsEnabled = false;
-			}
-		}
+            switch (this._currentViewState)
+            {
+                case KnowledgeMapCommentViewState.Minimized:
+                    this.MaximizeComment();
+                    break;
+                case KnowledgeMapCommentViewState.Maximized:
+                    this.MinimizeComment();
+                    break;
+                default:
+                    break;
+            }
+        }
 
-		public void DisableReturnToOriginalPosition()
-		{
-			this._ppCMenu_ReturnPosition.IsEnabled = false;
-		}
+        private void _r_PushPinStylusOutOfRange(object sender, StylusEventArgs e)
+        {
+            if (this.IsDragging == true)
+                return;
 
-		private void OnReturnToOriginalPosition(object sender, RoutedEventArgs e)
-		{
-			this.SetValue(Canvas.LeftProperty, this.OriginalCoordinates.X);
-			this.SetValue(Canvas.TopProperty, this.OriginalCoordinates.Y);
-		}
+            switch (this._currentViewState)
+            {
+                case KnowledgeMapCommentViewState.Minimized:
+                    this.MaximizeComment();
+                    break;
+                case KnowledgeMapCommentViewState.Maximized:
+                    this.MinimizeComment();
+                    break;
+                default:
+                    break;
+            }
+        }
 
-		private void OnRemoveComment(object sender, RoutedEventArgs e)
-		{
-			string msg = Application.Current.Resources["Q_DelPushPinComment"] as string;
-			System.Diagnostics.Debug.Write("Q_DelPushPinComment = " + msg);
-			if (MessageBox.Show(Application.Current.Resources["Q_DelPushPinComment"] as string,
-				"", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
-			{
-				this.DeleteComment();
-			}
-		}
+        /// <summary>
+        /// Handles the ContextMenu for the PushPin.
+        /// </summary>
+        private void OnPushPinMenuOpen(object sender, RoutedEventArgs e)
+        {
+            ContextMenu cm = sender as ContextMenu;
 
-		/// <summary>
-		/// Fire the events to delete this comment.
-		/// </summary>
-		private void DeleteComment()
-		{
-			if (this.OriginalAuthorId == this.CurrentAuthorId)
-			{
-				if (this.OnDeleteComment != null)
-					this.OnDeleteComment(this);
-			}
-		}
-	}
+            if (this.OriginalAuthorId == this.CurrentAuthorId)
+            {
+                this._ppCMenu_RemoveComment.IsEnabled = true;
+                this._ppCMenu_ReturnPosition.IsEnabled = true;
+            }
+            else
+            {
+                this._ppCMenu_RemoveComment.IsEnabled = false;
+                this._ppCMenu_ReturnPosition.IsEnabled = false;
+            }
+        }
 
-	public class CommentMessage
-	{
-		public DateTime Date { get; set; }
-		public String Message { get; set; }
-		public String Author { get; set; }
-		public Guid AuthorId { get; set; }
-	}
+        public void DisableReturnToOriginalPosition()
+        {
+            this._ppCMenu_ReturnPosition.IsEnabled = false;
+        }
+
+        private void OnReturnToOriginalPosition(object sender, RoutedEventArgs e)
+        {
+            this.SetValue(Canvas.LeftProperty, this.OriginalCoordinates.X);
+            this.SetValue(Canvas.TopProperty, this.OriginalCoordinates.Y);
+        }
+
+        private void OnRemoveComment(object sender, RoutedEventArgs e)
+        {
+            string msg = Application.Current.Resources["Q_DelPushPinComment"] as string;
+            System.Diagnostics.Debug.Write("Q_DelPushPinComment = " + msg);
+            if (MessageBox.Show(Application.Current.Resources["Q_DelPushPinComment"] as string,
+                "", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.OK)
+            {
+                this.DeleteComment();
+            }
+        }
+
+        /// <summary>
+        /// Fire the events to delete this comment.
+        /// </summary>
+        private void DeleteComment()
+        {
+            if (this.OriginalAuthorId == this.CurrentAuthorId)
+            {
+                if (this.OnDeleteComment != null)
+                    this.OnDeleteComment(this);
+            }
+        }
+    }
+
+    public class CommentMessage
+    {
+        public DateTime Date { get; set; }
+        public String Message { get; set; }
+        public String Author { get; set; }
+        public Guid AuthorId { get; set; }
+    }
 }
