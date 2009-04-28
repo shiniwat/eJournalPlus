@@ -3415,7 +3415,8 @@ namespace SiliconStudio.Meet.EjpControls
                 Canvas.SetLeft(comment, 10);
 
             double newTop = Canvas.GetTop(comment);
-            if ((newTop + 300) > this._IC_MapCanvas.ActualHeight)
+            // [shiniwa] Need to check if the size of _IC_MapCanvas is 0 here.. Or, the comment will unexpectedly go away.
+            if ((newTop + 300) > this._IC_MapCanvas.ActualHeight && this._IC_MapCanvas.ActualHeight > 1.0d)
                 Canvas.SetTop(comment, this._IC_MapCanvas.ActualHeight - 310);
         }
 
