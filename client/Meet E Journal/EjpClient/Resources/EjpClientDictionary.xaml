@@ -57,7 +57,7 @@
   <sys:String x:Uid="sys:String_54" x:Key="Q_SaveChangesToAsg">編集された項目を保存しますか？</sys:String>
   <sys:String x:Uid="sys:String_55" x:Key="Q_SwtichToCommentMode">コメントモードに切り替えます。宜しいですか？</sys:String>
   <sys:String x:Uid="sys:String_56" x:Key="Q_SwtichToNormalMode">普通のモードに切り替えるとコメントは全てなくなります！宜しいですか？</sys:String>
-  <sys:String x:Uid="sys:String_57" x:Key="Str_AppVersionString">MEET eJournalPlus 1.2.2</sys:String>
+  <sys:String x:Uid="sys:String_57" x:Key="Str_AppVersionString">MEET eJournalPlus 1.2.3</sys:String>
   <sys:String x:Uid="sys:String_58" x:Key="Str_AuthErrorTitle">Authentication Error</sys:String>
   <sys:String x:Uid="sys:String_59" x:Key="Str_ConnFailedTitle">Connection Failed</sys:String>
   <sys:String x:Uid="sys:String_60" x:Key="Str_DlgTitle_AddStudy">スタディの追加</sys:String>

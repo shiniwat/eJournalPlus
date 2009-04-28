@@ -326,7 +326,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:eJournalPlus.resources, Version=2.7.3393.2826, Culture=en-US, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:eJournalPlus.resources, Version=2.7.3400.36345, Culture=en-US, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_0323852EFE2D4F4BB2520F241D4B6D39"
@@ -623,7 +623,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:EjpControls, Version=2.7.3393.2823, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:EjpControls, Version=2.7.3400.36339, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_CDC496628E712A7C04C0A57218B80475"
@@ -654,7 +654,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:EjpControls.resources, Version=2.7.3393.2823, Culture=en-US, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:EjpControls.resources, Version=2.7.3400.35974, Culture=en-US, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_DB0076B6EFD04FB69B95B450FFF362B3"
@@ -857,7 +857,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:MEET eJournalPlus Client"
         "ProductCode" = "8:{5A235C82-728A-4E0F-86C9-A3A93C25C9D3}"
-        "PackageCode" = "8:{066019C5-CAFB-4392-B2F3-6F52A779FE3A}"
+        "PackageCode" = "8:{CD996EF2-F899-41A5-A817-6349BA0F3AA2}"
         "UpgradeCode" = "8:{2C2E7242-3938-4654-8703-706491D59237}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
