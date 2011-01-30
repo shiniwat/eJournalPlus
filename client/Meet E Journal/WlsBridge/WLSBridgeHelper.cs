@@ -39,10 +39,11 @@ namespace WlsBridge
 		/// </summary>
 		/// looks like the newer version takes some string as parameter, but doesn't seem to be submitted.
 		public WLSBridgeHelper(string uriString)
-		{
+		{            
 			_liveSpaceUri = uriString;
 			_manager = IdentityManager.CreateInstance(_localAppIDString, "eJournalPlus");
 		}
+
 
 		/// <summary>
 		/// Clear authenticated user, forces login at next connection attempt.

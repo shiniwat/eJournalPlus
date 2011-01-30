@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
+  <asmv1:assemblyIdentity name="eJournalPlus.exe" version="2.1.0.2" publicKeyToken="260075ba14360382" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Resources\ApplicationIconRound.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="eJournalPlus" version="2.7.4044.35360" language="neutral" processorArchitecture="msil" />
+    <commandLine file="eJournalPlus.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.WindowsLive.Id.Client" version="4.200.519.1" publicKeyToken="764A17F5635B5CF9" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="eJournalPlus.exe" size="172032">
+      <assemblyIdentity name="eJournalPlus" version="2.7.4044.35360" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Roi8jgcbv9bSCUTU2z+u7Dfjh9c=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ja-JP\eJournalPlus.resources.dll" size="1126400">
+      <assemblyIdentity name="eJournalPlus.resources" version="2.7.4044.35360" language="ja-JP" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>AV9OsVMXU4LPzqkgGNiINLwEpGk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EjpControls.dll" size="191488">
+      <assemblyIdentity name="EjpControls" version="2.7.4044.34644" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>8XuMCy6lzQu3G9hn3kqqYQLn/s8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ja-JP\EjpControls.resources.dll" size="208896">
+      <assemblyIdentity name="EjpControls.resources" version="2.7.4044.34644" language="ja-JP" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>2WBHMZDp79sY1F9bps+FV93DNVg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EjpLib.dll" size="65024">
+      <assemblyIdentity name="EjpLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>wGyKqr3ObqwE5vEvea3QXhjPfqM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EjsBridge.dll" size="46592">
+      <assemblyIdentity name="EjsBridge" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>e+0uCg1rYovsanZqqmpBBpoFlas=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WlsBridge.dll" size="12800">
+      <assemblyIdentity name="WlsBridge" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>OwW8to+72qthniNNuwE51bILmr0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="eJournalPlus.exe.config" size="2458">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>EUpv8+iDWhHQcoMK28yQLO7pZE8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\ApplicationIconRound.ico" size="47112">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>nyA6Bo1W8uUX0oYI3k8QKMsQ0+U=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=shiniwa2U\shiniwa" issuerKeyHash="d63f406214f9e09b4702479bf96d5da8a7728951" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>NYqvWVZJ6+DrbKoTpG4gfRYLhyg=</DigestValue></Reference></SignedInfo><SignatureValue>mdQhNm6HKctH3R/emMAEsja1DSMKktAFd4Pd1ySJ31ab4VNcV4MaD1ZO14wrPXx6G7J8JmsWeY7w/ZflMXygGifJ4jpdwSrX5WdzaECpexzhHV0gTrnUmlf5V4yAg8Z9F8zVqSteUd0+cYIc8j0cjnEX9V9DEBLSaT60xe+VhzY=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>zfabcBFAYZvd7Ae6DR5yc56uU/3bRY5lTjoys6A85mWB97Vy+wCIZgxFvdkSfqq1KyzzFZKdGS+CqVCmuwquMA5IsOD9JGk2vX4EqqHDzdD9anN2vqToz5V9Wi0+zXJt5okznQ/mqUsJlpMPjLeQ1MORNT9TJSHiYdlvGd/BW1c=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="28870b167d206ea413aa6cebe0eb495659af8a35" Description="" Url=""><as:assemblyIdentity name="eJournalPlus.exe" version="2.1.0.2" publicKeyToken="260075ba14360382" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=shiniwa2U\shiniwa</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>h0Kx1B8FAgPwDhBbKukGgiyEuF0=</DigestValue></Reference></SignedInfo><SignatureValue>WKNCkfzC6Tlup4Ts+gA5EYSpM8mnQjV+vy6zy48Yc9GG47mIMw11m/Cno9t0DroZkCH0q2Pej+7wHToosWed4e4tq7wRdhc6dwvj0akRvddV4mTdjNbESJFSEmRvCyDn/ecBMGP0xOKG3g/nsiIVOoU9DzKMLzSy75AroGqX8e4=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>zfabcBFAYZvd7Ae6DR5yc56uU/3bRY5lTjoys6A85mWB97Vy+wCIZgxFvdkSfqq1KyzzFZKdGS+CqVCmuwquMA5IsOD9JGk2vX4EqqHDzdD9anN2vqToz5V9Wi0+zXJt5okznQ/mqUsJlpMPjLeQ1MORNT9TJSHiYdlvGd/BW1c=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB3TCCAUagAwIBAgIQGmztYQh+HqhDFGWoYTaVOzANBgkqhkiG9w0BAQUFADAtMSswKQYDVQQDHiIAcwBoAGkAbgBpAHcAYQAyAFUAXABzAGgAaQBuAGkAdwBhMB4XDTExMDEyNzEwMzIzNFoXDTEyMDEyNzE2MzIzNFowLTErMCkGA1UEAx4iAHMAaABpAG4AaQB3AGEAMgBVAFwAcwBoAGkAbgBpAHcAYTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAzfabcBFAYZvd7Ae6DR5yc56uU/3bRY5lTjoys6A85mWB97Vy+wCIZgxFvdkSfqq1KyzzFZKdGS+CqVCmuwquMA5IsOD9JGk2vX4EqqHDzdD9anN2vqToz5V9Wi0+zXJt5okznQ/mqUsJlpMPjLeQ1MORNT9TJSHiYdlvGd/BW1cCAwEAATANBgkqhkiG9w0BAQUFAAOBgQBd0HTuZbXpsvbKsqNCEKxPE1Zf+VfAarHGyPunFdlq+vZVFzDWelJsRaeqgb5s1UYxIKVNqCF1dNBHJCdCHRv5MY+QdM4teviAWwkX71gLsaggUe7U9bn0MDcjE2rqZyJ0h0lmQoeJH+G0zN3KmM4COzTuzhYWGmut01/K71BSmg==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

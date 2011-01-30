@@ -11,25 +11,26 @@
     <CollectionMappings />
     <GenerateSerializableTypes>true</GenerateSerializableTypes>
     <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
     <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
     <ReferencedAssemblies />
     <ReferencedDataContractTypes />
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/EjsWcfService/EjsPublic.svc/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost/EjsWcfSvc/EjsPublic.svc/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="services1.wsdl" MetadataType="Wsdl" ID="049c5fd5-9074-4513-92a3-27e80bc36e80" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
-    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="4148896d-df5f-4fc1-b186-067502340eb8" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
-    <MetadataFile FileName="services1.xsd" MetadataType="Schema" ID="8e473c9e-e04a-440f-92c6-012ef6faf669" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="672f9c8e-2886-4ab6-b7de-187e806e1e2c" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
-    <MetadataFile FileName="EjsWcfService.xsd" MetadataType="Schema" ID="74953de5-8aef-4639-9594-d120ef3a44d7" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
-    <MetadataFile FileName="System1.xsd" MetadataType="Schema" ID="6af0b089-baa8-42a6-befc-2288eed608d9" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
-    <MetadataFile FileName="EjsWcfService.UserOp.xsd" MetadataType="Schema" ID="0adcb421-735d-4453-9b6c-99ebcfd0fa7f" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
-    <MetadataFile FileName="EjsWcfService.AssignmentOp.xsd" MetadataType="Schema" ID="ea808dd4-29bf-46b0-8ead-acb76e6a21ad" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
-    <MetadataFile FileName="EjsWcfService.CourseOp.xsd" MetadataType="Schema" ID="57cbb388-01a8-4ca2-a5de-0aead22e2183" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
-    <MetadataFile FileName="EjsWcfService.ServerOp.xsd" MetadataType="Schema" ID="05164443-6a8b-42de-ae76-ff8ba3133744" SourceId="1" SourceUrl="http://localhost/EjsWcfService/EjsPublic.svc/mex" />
+    <MetadataFile FileName="services1.wsdl" MetadataType="Wsdl" ID="75264859-52fe-49df-91f2-c77d523c62ce" SourceId="1" SourceUrl="http://localhost/EjsWcfSvc/EjsPublic.svc/mex" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="b77956a2-fb3c-4f4e-a9f0-906ed994f5fa" SourceId="1" SourceUrl="http://localhost/EjsWcfSvc/EjsPublic.svc/mex" />
+    <MetadataFile FileName="services1.xsd" MetadataType="Schema" ID="adec7828-a105-4ac6-83be-8701cfeeb377" SourceId="1" SourceUrl="http://localhost/EjsWcfSvc/EjsPublic.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="13d94265-19f8-48f6-9579-dfdc2e533094" SourceId="1" SourceUrl="http://localhost/EjsWcfSvc/EjsPublic.svc/mex" />
+    <MetadataFile FileName="EjsWcfService1.xsd" MetadataType="Schema" ID="1f78db8e-494c-433e-b64c-1eef26cf0d18" SourceId="1" SourceUrl="http://localhost/EjsWcfSvc/EjsPublic.svc/mex" />
+    <MetadataFile FileName="System1.xsd" MetadataType="Schema" ID="a73c8ed0-57eb-44dd-9c03-a4fdba774504" SourceId="1" SourceUrl="http://localhost/EjsWcfSvc/EjsPublic.svc/mex" />
+    <MetadataFile FileName="EjsWcfService.UserOp1.xsd" MetadataType="Schema" ID="e2f7c929-3eee-4a91-aa22-14b4f1d09cfb" SourceId="1" SourceUrl="http://localhost/EjsWcfSvc/EjsPublic.svc/mex" />
+    <MetadataFile FileName="EjsWcfService.AssignmentOp1.xsd" MetadataType="Schema" ID="be4f89c2-4ca3-4b88-98fc-7c1e6e4d6bf7" SourceId="1" SourceUrl="http://localhost/EjsWcfSvc/EjsPublic.svc/mex" />
+    <MetadataFile FileName="EjsWcfService.CourseOp1.xsd" MetadataType="Schema" ID="2e55fe65-fc6d-44d1-86af-c5b9bacd7708" SourceId="1" SourceUrl="http://localhost/EjsWcfSvc/EjsPublic.svc/mex" />
+    <MetadataFile FileName="EjsWcfService.ServerOp1.xsd" MetadataType="Schema" ID="2f4e02ae-a7ee-4a39-b820-ce6adf81b429" SourceId="1" SourceUrl="http://localhost/EjsWcfSvc/EjsPublic.svc/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />

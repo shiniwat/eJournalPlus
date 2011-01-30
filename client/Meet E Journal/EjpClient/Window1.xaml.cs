@@ -24,7 +24,9 @@ using Microsoft.Win32;
 using SiliconStudio.Meet.EjpControls;
 using SiliconStudio.Meet.EjpLib.BaseClasses;
 using SiliconStudio.Meet.EjpLib.Helpers;
-using WlsBridge;
+//using WlsBridge;
+// [shiniwa] Let's use stub version for the time being...
+using WlsBridgeStub;
 using winForms = System.Windows.Forms;
 using SiliconStudio.Meet.EjpControls.Enumerations;
 
@@ -1742,7 +1744,8 @@ namespace ejpClient
 							byte[] kmByteArray = this._currentKnowledgeMapControl.ExportMapToByteArray();
 							foundReportToPublish = true;
 
-							WlsBridge.WLSBridgeHelper wlsbh = new WLSBridgeHelper(App._ejpSettings.LiveSpaceUri);
+							//WlsBridge.WLSBridgeHelper wlsbh = new WLSBridgeHelper(App._ejpSettings.LiveSpaceUri);
+                            WlsBridgeStub.WLSBridgeHelper wlsbh = new WLSBridgeHelper(App._ejpSettings.LiveSpaceUri);
 
 							wlsbh.EnsureAlbumExist();
 

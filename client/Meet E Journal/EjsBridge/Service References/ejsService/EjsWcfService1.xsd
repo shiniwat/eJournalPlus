@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/EjsWcfService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EjsWcfService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:complexType name="ejsSessionToken">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_creationTimeStamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="_expireTimeStamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="_firstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_id" type="ser:guid" />
+      <xs:element minOccurs="0" name="_isAuthenticated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="_lastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_sourceHostId" type="ser:guid" />
+      <xs:element minOccurs="0" name="_userId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ejsSessionToken" nillable="true" type="tns:ejsSessionToken" />
+  <xs:complexType name="ejsFailureReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_failureCode" type="xs:int" />
+      <xs:element minOccurs="0" name="_header" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="_isHandled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="_message" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="_originalException" nillable="true" type="q1:Exception" />
+      <xs:element minOccurs="0" name="_timeStamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ejsFailureReport" nillable="true" type="tns:ejsFailureReport" />
+  <xs:complexType name="ArrayOfejsSessionToken">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ejsSessionToken" nillable="true" type="tns:ejsSessionToken" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfejsSessionToken" nillable="true" type="tns:ArrayOfejsSessionToken" />
+</xs:schema>

@@ -17,7 +17,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("The University of Tokyo")]
 [assembly: AssemblyProduct("eJournalPlus")]
-[assembly: AssemblyCopyright("Copyright @  2008")]
+[assembly: AssemblyCopyright("Copyright @  2008 - 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

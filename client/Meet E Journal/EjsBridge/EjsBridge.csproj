@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -13,6 +13,11 @@
     <AssemblyName>EjsBridge</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,6 +55,12 @@
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>shiniwa.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -90,14 +101,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ejsService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ejsService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\ejsService\EjsBridge.ejsService.ejsAssignment.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -119,6 +122,41 @@
     <None Include="Service References\ejsService\EjsBridge.ejsService.ejsUserInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ejsService\EjsWcfService.AssignmentOp1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ejsService\EjsWcfService.CourseOp1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ejsService\EjsWcfService.ServerOp1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ejsService\EjsWcfService.UserOp1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ejsService\EjsWcfService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ejsService\service1.wsdl" />
+    <None Include="Service References\ejsService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ejsService\services1.wsdl" />
+    <None Include="Service References\ejsService\services1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ejsService\System1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="shiniwa.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ejsService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ejsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Service References\ejsService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -126,16 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ejsService\configuration91.svcinfo" />
-    <None Include="Service References\ejsService\EjsWcfService.AssignmentOp.xsd" />
-    <None Include="Service References\ejsService\EjsWcfService.CourseOp.xsd" />
-    <None Include="Service References\ejsService\EjsWcfService.ServerOp.xsd" />
-    <None Include="Service References\ejsService\EjsWcfService.UserOp.xsd" />
-    <None Include="Service References\ejsService\EjsWcfService.xsd" />
-    <None Include="Service References\ejsService\service1.wsdl" />
-    <None Include="Service References\ejsService\service1.xsd" />
-    <None Include="Service References\ejsService\services1.wsdl" />
-    <None Include="Service References\ejsService\services1.xsd" />
-    <None Include="Service References\ejsService\System1.xsd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
