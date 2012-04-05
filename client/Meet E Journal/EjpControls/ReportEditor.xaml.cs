@@ -855,8 +855,12 @@ namespace SiliconStudio.Meet.EjpControls
 		private bool ImportComment(EjpLib.BaseClasses.ejpCAComment comment)
 		{
 			TextPointer commentStart = this._textArea.Document.ContentStart.GetPositionAtOffset(Math.Abs((int)comment.OriginalPositionX));
+            if (commentStart == null)
+            {
+                return false;
+            }
             TextPointer commentEnd = commentStart.GetPositionAtOffset(Math.Abs((int)comment.OriginalPositionY));
-            if (commentStart == null || commentEnd == null)
+            if (commentEnd == null)
             {
                 return false;
             }
