@@ -217,6 +217,18 @@ namespace SiliconStudio.Meet.EjpControls
             this._IC_MapCanvas.StrokeErasing += new InkCanvasStrokeErasingEventHandler(_IC_MapCanvas_StrokeErasing);
         }
 
+        #region helper debug method
+        private void EnumVisuals(Visual v)
+        {
+            Debug.WriteLine("EnumVisual:" + v.ToString());
+            for (int i = 0; i < VisualTreeHelper.GetChildrenCount(v); i++)
+            {
+                Visual child = (Visual)VisualTreeHelper.GetChild(v, i);
+                EnumVisuals(child);
+            }
+        }
+        #endregion
+
         #region Map Canvas Specific callbacks
 
         private void _IC_MapCanvas_StrokeErasing(object sender, InkCanvasStrokeErasingEventArgs e)
@@ -666,6 +678,17 @@ namespace SiliconStudio.Meet.EjpControls
                         {
                             this._IC_MapCanvas.Strokes.Remove(this._selectionLoopStroke);
                             this._selectionLoopStroke = null;
+                        }
+                        foreach (UIElement elm in this._IC_MapCanvas.GetSelectedElements())
+                        {
+                            if (elm is Image)
+                            {
+                                Debug.WriteLine("Image element is selected! let's blur focus!");
+                                if (this._currentlyHoveringUiElement != null)
+                                {
+                                    _IC_MapCanvas.Select(new UIElement[] { this._currentlyHoveringUiElement});
+                                }
+                            }
                         }
                     }
                     this._isDrawingSelectionLoop = false;
@@ -1560,8 +1583,11 @@ namespace SiliconStudio.Meet.EjpControls
                     return;
                 }
                 Helpers.DragDropQuote q = (Helpers.DragDropQuote)e.Data.GetData(typeof(Helpers.DragDropQuote));
+                String dropText = (q.UnicodeString.Contains("\n "))
+                    ? q.UnicodeString.Replace("\n ", " ")
+                    : q.UnicodeString;
                 Color newColor = Color.FromArgb(255, q.Color.R, q.Color.G, q.Color.B);
-                this.AddTextEntity(Application.Current.Resources["Str_NewKMTextEntityTitle"] as string, q.UnicodeString, q.Reference, q.CommentString,
+                this.AddTextEntity(Application.Current.Resources["Str_NewKMTextEntityTitle"] as string, dropText, q.Reference, q.CommentString,
                     KnowledgeMapEntityType.ConnectedToDocument, new SolidColorBrush(newColor),
                     this._currentMousePoint.X, this._currentMousePoint.Y, 200, 250);
             }
@@ -2210,6 +2236,7 @@ namespace SiliconStudio.Meet.EjpControls
                 this._nonShapeEntities.Add(k);
             }
 
+            #region import image entities
             foreach (EjpLib.BaseClasses.ejpKMImageEntity kmi in map.ImageEntities)
             {
                 if (map.Guide != null) //basically a version check...
@@ -2282,6 +2309,7 @@ namespace SiliconStudio.Meet.EjpControls
                 this._IC_MapCanvas.Children.Add(ie);
                 this._nonShapeEntities.Add(ie);
             }
+            #endregion
 
             //Import all the shapes.
             foreach (EjpLib.BaseClasses.ejpKMShape kmshape in map.ShapeEntities)
@@ -2289,6 +2317,10 @@ namespace SiliconStudio.Meet.EjpControls
                 foreach (Stroke s in kmshape.Strokes)
                     this._IC_MapCanvas.Strokes.Add(s);
             }
+
+            // [shiniwa] debug
+            //Debug.WriteLine("ImportMapObject: after shapes");
+            //EnumVisuals(_IC_MapCanvas);
 
             //Import all the Connected Lines.
             foreach (EjpLib.BaseClasses.ejpKMConnectedStroke kmcs in map.ConnectedStrokes)
