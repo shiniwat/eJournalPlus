@@ -688,6 +688,15 @@ namespace SiliconStudio.Meet.EjpControls
                                 {
                                     _IC_MapCanvas.Select(new UIElement[] { this._currentlyHoveringUiElement});
                                 }
+                                else
+                                {
+                                    Point ptMouse = e.GetPosition(this._IC_MapCanvas);
+                                    Stroke result = this.HitTestShapes(ptMouse);
+                                    if (result != null)
+                                    {
+                                        this.SelectShapes(new List<Stroke>() { result });
+                                    }
+                                }
                             }
                         }
                     }
@@ -1319,6 +1328,19 @@ namespace SiliconStudio.Meet.EjpControls
             return result;
         }
 
+        private Stroke HitTestShapes(Point p)
+        {
+            foreach (Stroke s in this._IC_MapCanvas.Strokes)
+            {
+                if (s.GetBounds().Left <= p.X && s.GetBounds().Right >= p.X &&
+                    s.GetBounds().Top <= p.Y && s.GetBounds().Bottom >= p.Y)
+                {
+                    return s;
+                }
+            }
+            return null;
+        }
+
         private void SelectEnteties(List<UIElement> enteties)
         {
             this._IC_MapCanvas.Select(enteties);
@@ -1583,9 +1605,25 @@ namespace SiliconStudio.Meet.EjpControls
                     return;
                 }
                 Helpers.DragDropQuote q = (Helpers.DragDropQuote)e.Data.GetData(typeof(Helpers.DragDropQuote));
-                String dropText = (q.UnicodeString.Contains("\n "))
-                    ? q.UnicodeString.Replace("\n ", " ")
-                    : q.UnicodeString;
+                // [shiniwa] looking into drop text.
+                string dropText = q.UnicodeString;
+                if (q.UnicodeString.Contains("\n "))
+                {
+                    string[] strs = q.UnicodeString.Split('\n');
+                    StringBuilder builder = new StringBuilder();
+                    for (int i = 0; i < strs.Length; i++)
+                    {
+                        builder.Append(strs[i]);
+                        if (strs[i].TrimEnd().EndsWith(".") || strs[i].TrimEnd().EndsWith(","))
+                        {
+                            if (i < strs.Length - 1)
+                            {
+                                builder.Append("\n");
+                            }
+                        }
+                    }
+                    dropText = builder.ToString();
+                }
                 Color newColor = Color.FromArgb(255, q.Color.R, q.Color.G, q.Color.B);
                 this.AddTextEntity(Application.Current.Resources["Str_NewKMTextEntityTitle"] as string, dropText, q.Reference, q.CommentString,
                     KnowledgeMapEntityType.ConnectedToDocument, new SolidColorBrush(newColor),
