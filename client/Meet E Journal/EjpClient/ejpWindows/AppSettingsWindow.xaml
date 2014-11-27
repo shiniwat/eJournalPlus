@@ -17,38 +17,47 @@
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle x:Uid="Rectangle_2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Fill="#FFFFFFFF" Stroke="#FF7FB2F0" Margin="10,16,10,16" RadiusX="13.5" RadiusY="13.5"/>
-        <Canvas x:Uid="Canvas_1" IsEnabled="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Margin="10,16,10,16">
-            <TextBlock x:Uid="TextBlock_1" Width="Auto" Height="Auto" TextWrapping="Wrap" Canvas.Left="8" FontSize="20" Canvas.Top="8" HorizontalAlignment="Left" VerticalAlignment="Top"><Run x:Uid="Run_1" Language="ja-jp" Text="システム設定"/></TextBlock>
-            <TextBlock x:Uid="TextBlock_2" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="機能設定　：" Canvas.Left="34" Canvas.Top="45" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-			<TextBlock x:Uid="TextBlock_3" Width="Auto" Height="Auto" TextWrapping="Wrap" Canvas.Left="69" Canvas.Top="77" Text="マップロック表示設定" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-			<CheckBox x:Uid="_cb_DisplayMapLock" IsEnabled="True" Width="Auto" Height="Auto" Content="On / Off" Canvas.Left="229" Canvas.Top="76" Padding="4,1,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="_cb_DisplayMapLock"/>
-			<TextBlock x:Uid="TextBlock_4" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="Undo回数設定" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="69" Canvas.Top="105"/>
-			<TextBox x:Uid="_tb_UndoCount" IsEnabled="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="26" Height="Auto" Text="50" TextWrapping="NoWrap" Canvas.Left="223" Canvas.Top="102" x:Name="_tb_UndoCount" MaxLength="2" MaxLines="1" IsUndoEnabled="False"/>
-			<TextBlock x:Uid="TextBlock_5" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="LiveSpaceUrl設定" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="69" Canvas.Top="133"/>
-			<TextBox x:Uid="_tb_LiveSpaceUrl" IsEnabled="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="264" Height="Auto" Text="http://" TextWrapping="NoWrap" Canvas.Left="93" Canvas.Top="155" x:Name="_tb_LiveSpaceUrl" MaxLength="250" MaxLines="1"/>
-			<TextBlock x:Uid="TextBlock_6" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="E Journal Server Address設定" Canvas.Left="69" Canvas.Top="185"/>
-			<TextBox x:Uid="_tb_EJSAddress" IsEnabled="True" Width="264" Height="Auto" Text="http://" TextWrapping="NoWrap" Canvas.Left="93" Canvas.Top="207" x:Name="_tb_EJSAddress" MaxLength="250" MaxLines="1"/>
-			<TextBlock x:Uid="TextBlock_7" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="パス保存" Canvas.Left="69" Canvas.Top="243" Visibility="Collapsed" />
-			<CheckBox x:Uid="_cb_SavePass" Width="Auto" Height="Auto" Content="On / Off" Padding="4,1,0,0" Canvas.Left="229" Canvas.Top="242" Checked="_cb_SavePass_Checked" Unchecked="_cb_SavePass_Unchecked" x:Name="_cb_SavePass" Visibility="Collapsed" />
-			<Canvas x:Uid="_cv_UserSettings" IsEnabled="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="368" Height="210" 
-                    Canvas.Left="46" Canvas.Top="247" x:Name="_cv_UserSettings">
-				<TextBlock x:Uid="TextBlock_8" Width="Auto" Height="18" TextWrapping="Wrap" Text="コース登録設定" Canvas.Left="20" Canvas.Top="47"/>
-				<Button x:Uid="Button_1" IsEnabled="True" Width="Auto" Height="22" Content="コース登録" Canvas.Left="147" Canvas.Top="43" Click="On_BtnRegisterToCourse" Padding="30,0,30,0"/>
-				<TextBlock x:Uid="TextBlock_9" Width="180" Height="18" TextWrapping="Wrap" Text="E Journal Server 個人情報変更" Canvas.Left="23" Canvas.Top="3"/>
-				<TextBlock x:Uid="TextBlock_10" Width="Auto" Height="18" TextWrapping="Wrap" Text="User Name:" Canvas.Left="65.366" Canvas.Top="80"/>
-				<TextBox x:Uid="_tb_UserName" IsEnabled="True" FontSize="12" Width="165" Height="22" Text="" TextWrapping="NoWrap" Canvas.Left="147" Canvas.Top="77" 
-                         MaxLength="50" MaxLines="1" x:Name="_tb_UserName"/>
-                <TextBlock x:Uid="TextBlock_11" Canvas.Left="52.026" Canvas.Top="111" Height="18" Text="Old Password:" TextWrapping="Wrap" Width="Auto" />
-                <PasswordBox x:Uid="_tb_OldPassword" IsEnabled="True" Canvas.Left="146" Canvas.Top="108" FontSize="12" Height="20" MaxLength="50"
-                         Name="_tb_OldPassword" Width="165" />
-                <TextBlock x:Uid="TextBlock_12" Canvas.Left="45.356" Canvas.Top="143" Height="18" Text="New Password:" TextWrapping="Wrap" Width="Auto" />
-                <PasswordBox x:Uid="_tb_NewPassword" IsEnabled="True" Canvas.Left="147" Canvas.Top="141" FontSize="12" Height="20" MaxLength="50"
-                         Name="_tb_NewPassword" Width="165" />
-                <Button x:Uid="Button_2" IsEnabled="True" Canvas.Left="194.12" Canvas.Top="168" Height="23" Width="118.036" Content="Update Password" Click="On_BtnUpdatePasswordClick"/>
-			</Canvas>
-			<Button x:Uid="Button_3" Width="79" Height="23.345" Content="キャンセル" Canvas.Left="336" Canvas.Top="476.905" Click="On_BtnCancelClick" />
-			<Button x:Uid="Button_4" Width="79" Height="23.345" Content="OK" Canvas.Left="248" Canvas.Top="476.905" Click="On_BtnOKClick" IsDefault="True"/>
-            
-		</Canvas>
+      <Canvas x:Uid="Canvas_1" IsEnabled="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Margin="10,16,10,16">
+        <TextBlock x:Uid="TextBlock_1" Width="Auto" Height="Auto" TextWrapping="Wrap" Canvas.Left="8" FontSize="20" Canvas.Top="8" HorizontalAlignment="Left" VerticalAlignment="Top">
+          <Run x:Uid="Run_1" Language="ja-jp" Text="システム設定"/>
+        </TextBlock>
+        <TextBlock x:Uid="TextBlock_2" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="機能設定　：" Canvas.Left="34" Canvas.Top="45" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock x:Uid="TextBlock_3" Width="Auto" Height="Auto" TextWrapping="Wrap" Canvas.Left="69" Canvas.Top="77" Text="マップロック表示設定" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <CheckBox x:Uid="_cb_DisplayMapLock" IsEnabled="True" Width="Auto" Height="Auto" Content="On / Off" Canvas.Left="229" Canvas.Top="76" Padding="4,1,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="_cb_DisplayMapLock"/>
+        <TextBlock x:Uid="TextBlock_4" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="Undo回数設定" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="69" Canvas.Top="105"/>
+        <TextBox x:Uid="_tb_UndoCount" IsEnabled="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="26" Height="Auto" Text="50" TextWrapping="NoWrap" Canvas.Left="223" Canvas.Top="102" x:Name="_tb_UndoCount" MaxLength="2" MaxLines="1" IsUndoEnabled="False"/>
+        <TextBlock x:Uid="TextBlock_5" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="LiveSpaceUrl設定" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="69" Canvas.Top="133" Visibility="Hidden" />
+        <TextBox x:Uid="_tb_LiveSpaceUrl" IsEnabled="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="264" Height="Auto" Text="http://" TextWrapping="NoWrap" Canvas.Left="93" Canvas.Top="155" Visibility="Hidden" x:Name="_tb_LiveSpaceUrl" MaxLength="250" MaxLines="1"/>
+        <TextBlock x:Uid="TextBlock_6" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="E Journal Server Address設定" Canvas.Left="69" Canvas.Top="185"/>
+        <TextBox x:Uid="_tb_EJSAddress" IsEnabled="True" Width="264" Height="Auto" Text="http://" TextWrapping="NoWrap" Canvas.Left="93" Canvas.Top="207" x:Name="_tb_EJSAddress" MaxLength="250" MaxLines="1"/>
+        <TextBlock x:Uid="TextBlock_7" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="パス保存" Canvas.Left="69" Canvas.Top="243" Visibility="Collapsed" />
+        <CheckBox x:Uid="_cb_SavePass" Width="Auto" Height="Auto" Content="On / Off" Padding="4,1,0,0" Canvas.Left="229" Canvas.Top="242" Checked="_cb_SavePass_Checked" Unchecked="_cb_SavePass_Unchecked" x:Name="_cb_SavePass" Visibility="Collapsed" />
+        <StackPanel VerticalAlignment="Center" Canvas.Top="133" Canvas.Left="69" Orientation="Vertical">
+           <TextBlock Text="自動保存間隔（秒）" TextAlignment="Left" />
+           <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+             <Slider Maximum="1800"  TickPlacement="BottomRight" TickFrequency="60" IsSnapToTickEnabled="True" Name="AutoSaveSlider" Width="270"/>
+             <TextBlock Text="{Binding ElementName=AutoSaveSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Right" Width="30" />
+           </StackPanel>
+        </StackPanel>
+        <Canvas x:Uid="_cv_UserSettings" IsEnabled="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="368" Height="210"
+                      Canvas.Left="46" Canvas.Top="247" x:Name="_cv_UserSettings">
+          <TextBlock x:Uid="TextBlock_8" Width="Auto" Height="18" TextWrapping="Wrap" Text="コース登録設定" Canvas.Left="20" Canvas.Top="47"/>
+          <Button x:Uid="Button_1" IsEnabled="True" Width="Auto" Height="22" Content="コース登録" Canvas.Left="147" Canvas.Top="43" Click="On_BtnRegisterToCourse" Padding="30,0,30,0"/>
+          <TextBlock x:Uid="TextBlock_9" Width="180" Height="18" TextWrapping="Wrap" Text="E Journal Server 個人情報変更" Canvas.Left="23" Canvas.Top="3"/>
+          <TextBlock x:Uid="TextBlock_10" Width="Auto" Height="18" TextWrapping="Wrap" Text="User Name:" Canvas.Left="65.366" Canvas.Top="80"/>
+          <TextBox x:Uid="_tb_UserName" IsEnabled="True" FontSize="12" Width="165" Height="22" Text="" TextWrapping="NoWrap" Canvas.Left="147" Canvas.Top="77"
+                           MaxLength="50" MaxLines="1" x:Name="_tb_UserName"/>
+          <TextBlock x:Uid="TextBlock_11" Canvas.Left="52.026" Canvas.Top="111" Height="18" Text="Old Password:" TextWrapping="Wrap" Width="Auto" />
+          <PasswordBox x:Uid="_tb_OldPassword" IsEnabled="True" Canvas.Left="146" Canvas.Top="108" FontSize="12" Height="20" MaxLength="50"
+                   Name="_tb_OldPassword" Width="165" />
+          <TextBlock x:Uid="TextBlock_12" Canvas.Left="45.356" Canvas.Top="143" Height="18" Text="New Password:" TextWrapping="Wrap" Width="Auto" />
+          <PasswordBox x:Uid="_tb_NewPassword" IsEnabled="True" Canvas.Left="147" Canvas.Top="141" FontSize="12" Height="20" MaxLength="50"
+                   Name="_tb_NewPassword" Width="165" />
+          <Button x:Uid="Button_2" IsEnabled="True" Canvas.Left="194.12" Canvas.Top="168" Height="23" Width="118.036" Content="Update Password" Click="On_BtnUpdatePasswordClick"/>
+        </Canvas>
+        <Button x:Uid="Button_3" Width="79" Height="23.345" Content="キャンセル" Canvas.Left="336" Canvas.Top="476.905" Click="On_BtnCancelClick" />
+        <Button x:Uid="Button_4" Width="79" Height="23.345" Content="OK" Canvas.Left="248" Canvas.Top="476.905" Click="On_BtnOKClick" IsDefault="True"/>
+
+      </Canvas>
     </Grid>
 </Window>
