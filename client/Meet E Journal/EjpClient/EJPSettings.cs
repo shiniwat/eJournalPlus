@@ -13,6 +13,8 @@ namespace ejpClient
         public bool SaveUserSettings { get; set; }
         public bool ShowMapLock { get; set; }
         public int UndoCount { get; set; }
+        public bool IsAutoSaveToDesktop { get; set; }
+        public int AutoSaveInterval { get; set; }
 
         public EJPSettings()
         {

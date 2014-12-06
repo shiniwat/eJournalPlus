@@ -76,7 +76,7 @@
     <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>CEB572D7CAC6FE8A4317DF8CF7C7DC7A68B0CC6D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>7ADBB3DB798CB0407C584D6D7070F84F9522423C</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>EJPClient_1_TemporaryKey.pfx</ManifestKeyFile>
@@ -299,6 +299,7 @@
     <Compile Include="Enumerations\E_ApplicationState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="app.config" />
+    <None Include="EJPClient_1_TemporaryKey.pfx" />
     <None Include="EJPClient_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -324,10 +325,6 @@
     <ProjectReference Include="..\EjsBridge\EjsBridge.csproj">
       <Project>{95B1EA17-CD2C-4CED-8CE4-20CAD148293C}</Project>
       <Name>EjsBridge</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WlsBridgeStub\WlsBridgeStub.csproj">
-      <Project>{DF4F4103-2F86-4809-89E3-8BCC10F95F37}</Project>
-      <Name>WlsBridgeStub</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

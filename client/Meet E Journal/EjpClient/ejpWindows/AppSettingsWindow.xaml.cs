@@ -37,6 +37,20 @@ namespace ejpClient.ejpWindows
 				this._tb_UserName.Text = App._ejpSettings.UserName;
 #endif
 				this._tb_UndoCount.Text = App._ejpSettings.UndoCount.ToString();
+                this._rd_Documents.IsChecked = !App._ejpSettings.IsAutoSaveToDesktop;
+                this._rd_Desktop.IsChecked = App._ejpSettings.IsAutoSaveToDesktop;
+                if (App._ejpSettings.AutoSaveInterval < 0)
+                {
+                    this._slider_Interval.Value = 0;
+                }
+                else if (App._ejpSettings.AutoSaveInterval == 0)
+                {
+                    this._slider_Interval.Value = 180; // default
+                }
+                else
+                {
+                    this._slider_Interval.Value = App._ejpSettings.AutoSaveInterval;
+                }
 			}
 			catch (Exception)
 			{
@@ -100,6 +114,9 @@ namespace ejpClient.ejpWindows
 				if (App._ejpSettings.SaveUserSettings)
 					App._ejpSettings.UserName = this._tb_UserName.Text;
 			}
+
+            App._ejpSettings.AutoSaveInterval = ((int)this._slider_Interval.Value == 0) ? -1 : (int)this._slider_Interval.Value;
+            App._ejpSettings.IsAutoSaveToDesktop = this._rd_Desktop.IsChecked == true;
 
 			return false;
 		}

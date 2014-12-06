@@ -250,7 +250,7 @@
                                 <Image x:Uid="Image_7" Height="40" Source="pack://application:,,,/imgData/05-opening.png"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem x:Uid="_menuI_PublishToWLS" IsEnabled="True" x:Name="_menuI_PublishToWLS" Click="_M_meet_OnPublishToWLS">
+                        <MenuItem x:Uid="_menuI_PublishToWLS" IsEnabled="False" x:Name="_menuI_PublishToWLS" Click="_M_meet_OnPublishToWLS">
                             <MenuItem.Header>
                                 <TextBlock x:Uid="TextBlock_7" Text="Live Spaceに公開" VerticalAlignment="Center" />
                         </MenuItem.Header>

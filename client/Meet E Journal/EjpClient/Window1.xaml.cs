@@ -26,7 +26,7 @@ using SiliconStudio.Meet.EjpLib.BaseClasses;
 using SiliconStudio.Meet.EjpLib.Helpers;
 //using WlsBridge;
 // [shiniwa] Let's use stub version for the time being...
-using WlsBridgeStub;
+//using WlsBridgeStub; [shiniwa] Windows Live is no longer valid -- removing.
 using winForms = System.Windows.Forms;
 using SiliconStudio.Meet.EjpControls.Enumerations;
 
@@ -157,11 +157,7 @@ namespace ejpClient
 				new CommandBinding(ApplicationCommands.Redo, HandleKMDMRedo));
 
 			//this.SetApplicationWidePaths();
-			this._autoSaveTimer = new System.Timers.Timer(180000);
-			this._autoSaveTimer.Elapsed += new ElapsedEventHandler(_autoSaveTimer_Elapsed);
-			this._autoSaveTimer.Start();
-
-			this._canAutoSave = true;
+            initAutosave();
 
 			//#if INTERNAL_BUILD
 			//            Application.Current.DispatcherUnhandledException +=
@@ -179,6 +175,22 @@ namespace ejpClient
 			mg_b.Viewbox = viewBox;
 		}
 
+        private void initAutosave()
+        {
+            int autosave_Interval = App._ejpSettings.AutoSaveInterval;
+            if (autosave_Interval == 0)
+            {
+                autosave_Interval = 180;
+            }
+            if (autosave_Interval > 0)
+            {
+                this._autoSaveTimer = new System.Timers.Timer(autosave_Interval * 1000);
+                this._autoSaveTimer.Elapsed += new ElapsedEventHandler(_autoSaveTimer_Elapsed);
+                this._autoSaveTimer.Start();
+
+                this._canAutoSave = true;
+            }
+        }
 		/// <summary>
 		/// Need to keep track of when the machine sleeps to make sure that 
 		/// it does not try to pile up AutoSave events...
@@ -256,7 +268,11 @@ namespace ejpClient
 
 			//Create AutoSave dir
 			string autoSaveBaseDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); //081226 My Documents is easer to find...
-			this._autoSaveFilePath = autoSaveBaseDir + @"\eJournalPlus\AutoSave\";
+            if (App._ejpSettings.IsAutoSaveToDesktop)
+            {
+                autoSaveBaseDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            }
+            this._autoSaveFilePath = autoSaveBaseDir + @"\eJournalPlus\AutoSave\";
 			if (!Directory.Exists(this._autoSaveFilePath))
 			{
 				try
@@ -1527,7 +1543,7 @@ namespace ejpClient
 			if (e != null)
 				e.Handled = true;
 
-			this._M_meet_OnPublishToWLS(null, null);
+			//this._M_meet_OnPublishToWLS(null, null);
 		}
 
 		private void _M_meet_OnPublishToEjs(object sender, RoutedEventArgs e)
@@ -1710,8 +1726,10 @@ namespace ejpClient
 				MessageBoxButton.OK, MessageBoxImage.Information);
 		}
 
+        #region legacy_windows_live
 		private void _M_meet_OnPublishToWLS(object sender, RoutedEventArgs e)
 		{
+#if __LEGCY_WINDOWS_LIVE__
 			//Need to set this to handled to prevent
 			//menu group default action from being invoked.
 			if (e != null)
@@ -1793,9 +1811,11 @@ namespace ejpClient
 					Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle, 
 					MessageBoxButton.OK, MessageBoxImage.Error);
 			}
-		}
+#endif
+        }
+        #endregion
 
-		private void _M_meet_DefaultPrintCommand(object sender, MouseButtonEventArgs e)
+        private void _M_meet_DefaultPrintCommand(object sender, MouseButtonEventArgs e)
 		{
 			//Need to set this to handled to prevent
 			//menu group default action from being invoked.
@@ -3890,7 +3910,7 @@ namespace ejpClient
 					this._menuI_Publish.IsEnabled = true;
 					this._menuI_Close.IsEnabled = true;
 					this._menuI_Print.IsEnabled = true;
-					this._menuI_PublishToWLS.IsEnabled = true;
+					this._menuI_PublishToWLS.IsEnabled = false;//true; no longer enabled.
 					this._menuI_CloseCurrentFile.IsEnabled = true;
 
 					this._mtbCA_AddPushPinTool.IsEnabled = false;

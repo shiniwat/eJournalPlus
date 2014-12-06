@@ -33,10 +33,15 @@
         <TextBlock x:Uid="TextBlock_7" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="パス保存" Canvas.Left="69" Canvas.Top="243" Visibility="Collapsed" />
         <CheckBox x:Uid="_cb_SavePass" Width="Auto" Height="Auto" Content="On / Off" Padding="4,1,0,0" Canvas.Left="229" Canvas.Top="242" Checked="_cb_SavePass_Checked" Unchecked="_cb_SavePass_Unchecked" x:Name="_cb_SavePass" Visibility="Collapsed" />
         <StackPanel VerticalAlignment="Center" Canvas.Top="133" Canvas.Left="69" Orientation="Vertical">
-           <TextBlock Text="自動保存間隔（秒）" TextAlignment="Left" />
+          <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+            <TextBlock Text="自動保存場所" TextAlignment="Left" />
+            <RadioButton GroupName="autosave_location" Content="ドキュメント" Margin="20,0,0,0" IsChecked="True" x:Name="_rd_Documents"/>
+            <RadioButton GroupName="autosave_location" Content="デスクトップ" Margin="20,0,0,0" x:Name="_rd_Desktop"/>
+          </StackPanel>
            <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
-             <Slider Maximum="1800"  TickPlacement="BottomRight" TickFrequency="60" IsSnapToTickEnabled="True" Name="AutoSaveSlider" Width="270"/>
-             <TextBlock Text="{Binding ElementName=AutoSaveSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Right" Width="30" />
+             <TextBlock Text="間隔（秒）" TextAlignment="Left" />
+             <Slider Maximum="1800"  TickPlacement="BottomRight" TickFrequency="60" IsSnapToTickEnabled="True" Width="220" x:Name="_slider_Interval"/>
+             <TextBlock Text="{Binding ElementName=_slider_Interval, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Right" Width="30" />
            </StackPanel>
         </StackPanel>
         <Canvas x:Uid="_cv_UserSettings" IsEnabled="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="368" Height="210"
@@ -53,7 +58,7 @@
           <TextBlock x:Uid="TextBlock_12" Canvas.Left="45.356" Canvas.Top="143" Height="18" Text="New Password:" TextWrapping="Wrap" Width="Auto" />
           <PasswordBox x:Uid="_tb_NewPassword" IsEnabled="True" Canvas.Left="147" Canvas.Top="141" FontSize="12" Height="20" MaxLength="50"
                    Name="_tb_NewPassword" Width="165" />
-          <Button x:Uid="Button_2" IsEnabled="True" Canvas.Left="194.12" Canvas.Top="168" Height="23" Width="118.036" Content="Update Password" Click="On_BtnUpdatePasswordClick"/>
+          <Button x:Uid="Button_2" IsEnabled="True" Canvas.Left="194.12" Canvas.Top="168" Height="23" Width="118.036" Content="パスワードの変更" Click="On_BtnUpdatePasswordClick"/>
         </Canvas>
         <Button x:Uid="Button_3" Width="79" Height="23.345" Content="キャンセル" Canvas.Left="336" Canvas.Top="476.905" Click="On_BtnCancelClick" />
         <Button x:Uid="Button_4" Width="79" Height="23.345" Content="OK" Canvas.Left="248" Canvas.Top="476.905" Click="On_BtnOKClick" IsDefault="True"/>
