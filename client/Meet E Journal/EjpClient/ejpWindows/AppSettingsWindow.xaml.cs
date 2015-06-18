@@ -61,7 +61,10 @@ namespace ejpClient.ejpWindows
 		private void On_BtnOKClick(object sender, RoutedEventArgs e)
 		{
 			bool cancel = this.SaveSettings();
-			if (!cancel) this.Close();
+            if (!cancel)
+            {
+                this.Close();
+            }
 		}
 
 		private bool SaveSettings()
@@ -117,7 +120,7 @@ namespace ejpClient.ejpWindows
 
             App._ejpSettings.AutoSaveInterval = ((int)this._slider_Interval.Value == 0) ? -1 : (int)this._slider_Interval.Value;
             App._ejpSettings.IsAutoSaveToDesktop = this._rd_Desktop.IsChecked == true;
-
+            this.DialogResult = true;
 			return false;
 		}
 

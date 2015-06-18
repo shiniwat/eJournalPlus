@@ -27,7 +27,7 @@
             <TextBlock x:Uid="TextBlock_1" Foreground="Gray" FontSize="12" Width="121" Height="18" TextWrapping="Wrap" Text="eJournalPlus Client." Canvas.Left="212" Canvas.Top="96"/>
             <TextBlock x:Uid="TextBlock_2" Foreground="Gray" FontSize="12" Width="87" Height="16" TextWrapping="Wrap" Text="2009.04.23" Canvas.Left="238" Canvas.Top="113"/>
             
-            <TextBlock x:Uid="_tb_PublicVNum" x:Name="_tb_PublicVNum" FontSize="14" Width="222" Height="24" TextWrapping="Wrap" Text="バージョン番号：1.2.4" Canvas.Left="175" Canvas.Top="145"/>
+            <TextBlock x:Uid="_tb_PublicVNum" x:Name="_tb_PublicVNum" FontSize="14" Width="222" Height="24" TextWrapping="Wrap" Text="バージョン番号：1.2.5" Canvas.Left="175" Canvas.Top="145"/>
             <Label x:Uid="_l_reportBugLink" x:Name="_l_reportBugLink" Height="34" Canvas.Top="164" Canvas.Left="177" Width="175">
                 <Hyperlink x:Uid="Hyperlink_1" RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="http://www.codeplex.com/ejournalplus">
                     <Hyperlink.Resources>

@@ -157,7 +157,7 @@ namespace ejpClient
 				new CommandBinding(ApplicationCommands.Redo, HandleKMDMRedo));
 
 			//this.SetApplicationWidePaths();
-            initAutosave();
+            updateAutosaveInterval();
 
 			//#if INTERNAL_BUILD
 			//            Application.Current.DispatcherUnhandledException +=
@@ -175,17 +175,32 @@ namespace ejpClient
 			mg_b.Viewbox = viewBox;
 		}
 
-        private void initAutosave()
+        private void updateAutosaveInterval()
         {
+            if (this._autoSaveTimer != null)
+            {
+                this._autoSaveTimer.Stop();
+            }
             int autosave_Interval = App._ejpSettings.AutoSaveInterval;
+            if (autosave_Interval < 0)
+            {
+                if (this._autoSaveTimer != null)
+                {
+                    this._autoSaveTimer = null;
+                }
+            }
             if (autosave_Interval == 0)
             {
                 autosave_Interval = 180;
             }
             if (autosave_Interval > 0)
             {
-                this._autoSaveTimer = new System.Timers.Timer(autosave_Interval * 1000);
-                this._autoSaveTimer.Elapsed += new ElapsedEventHandler(_autoSaveTimer_Elapsed);
+                if (this._autoSaveTimer == null)
+                {
+                    this._autoSaveTimer = new System.Timers.Timer(autosave_Interval * 1000);
+                    this._autoSaveTimer.Elapsed += new ElapsedEventHandler(_autoSaveTimer_Elapsed);
+                }
+                Debug.WriteLine("Autosave timer started with " + autosave_Interval.ToString());
                 this._autoSaveTimer.Start();
 
                 this._canAutoSave = true;
@@ -267,34 +282,7 @@ namespace ejpClient
 			}
 
 			//Create AutoSave dir
-			string autoSaveBaseDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); //081226 My Documents is easer to find...
-            if (App._ejpSettings.IsAutoSaveToDesktop)
-            {
-                autoSaveBaseDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            }
-            this._autoSaveFilePath = autoSaveBaseDir + @"\eJournalPlus\AutoSave\";
-			if (!Directory.Exists(this._autoSaveFilePath))
-			{
-				try
-				{
-					Directory.CreateDirectory(this._autoSaveFilePath);
-				}
-				catch (Exception)
-				{
-					MessageBox.Show(Application.Current.Resources["EX_CreateAppFoldersFailed"] as string, //Properties.Resources.EX_CreateAppFoldersFailed, 
-						Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle,
-						MessageBoxButton.OK, MessageBoxImage.Warning);
-					this._canAutoSave = false;
-				}
-			}
-			else
-			{
-				if (this._currentAppState == ApplicationState.ComAssignmentLoaded)
-					this._autoSaveFilePath += "AutoSaveEjp" + Guid.NewGuid().ToString() + ".cejp";
-				else
-					this._autoSaveFilePath += "AutoSaveEjp" + Guid.NewGuid().ToString() + ".ejp";
-				this._canAutoSave = true;
-			}
+            updateAutosaveSettings(false);
 
 			//Create Settings dir
 			this._localAppSettingsaPath = baseDir + @"\Settings\";
@@ -349,6 +337,43 @@ namespace ejpClient
 			//Store the path if we made it here.
 			this._localAppDataPath = baseDir;
 		}
+
+        public void updateAutosaveSettings(bool updateIntervalToo)
+        {
+            string autoSaveBaseDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); //081226 My Documents is easer to find...
+            if (App._ejpSettings.IsAutoSaveToDesktop)
+            {
+                autoSaveBaseDir = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            }
+            this._autoSaveFilePath = autoSaveBaseDir + @"\eJournalPlus\AutoSave\";
+            if (!Directory.Exists(this._autoSaveFilePath))
+            {
+                try
+                {
+                    Directory.CreateDirectory(this._autoSaveFilePath);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(Application.Current.Resources["EX_CreateAppFoldersFailed"] as string, //Properties.Resources.EX_CreateAppFoldersFailed, 
+                        Application.Current.Resources["Str_ErrorTitle"] as string,//Properties.Resources.Str_ErrorTitle,
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    this._canAutoSave = false;
+                }
+            }
+            else
+            {
+                if (this._currentAppState == ApplicationState.ComAssignmentLoaded)
+                    this._autoSaveFilePath += "AutoSaveEjp" + Guid.NewGuid().ToString() + ".cejp";
+                else
+                    this._autoSaveFilePath += "AutoSaveEjp" + Guid.NewGuid().ToString() + ".ejp";
+                this._canAutoSave = true;
+                Debug.WriteLine("Autosave turned on at " + this._autoSaveFilePath);
+            }
+            if (updateIntervalToo)
+            {
+                updateAutosaveInterval();
+            }
+        }
 
 		/// <summary>
 		/// Catch all exceptions safety net. NOT good practice but necessary for now...
@@ -959,7 +984,11 @@ namespace ejpClient
 		{
 			ejpClient.ejpWindows.AppSettingsWindow appSetWin = new ejpClient.ejpWindows.AppSettingsWindow();
 			appSetWin.Closing += new CancelEventHandler(appSetWin_Closing);
-			appSetWin.ShowDialog();
+            appSetWin.ShowDialog();
+            if (appSetWin.DialogResult == true)
+            {
+                this.updateAutosaveSettings(true);
+            }
 		}
 
 		/// <summary>

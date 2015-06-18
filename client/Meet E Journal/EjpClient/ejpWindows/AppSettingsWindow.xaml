@@ -32,16 +32,16 @@
         <TextBox x:Uid="_tb_EJSAddress" IsEnabled="True" Width="264" Height="Auto" Text="http://" TextWrapping="NoWrap" Canvas.Left="93" Canvas.Top="207" x:Name="_tb_EJSAddress" MaxLength="250" MaxLines="1"/>
         <TextBlock x:Uid="TextBlock_7" Width="Auto" Height="Auto" TextWrapping="Wrap" Text="パス保存" Canvas.Left="69" Canvas.Top="243" Visibility="Collapsed" />
         <CheckBox x:Uid="_cb_SavePass" Width="Auto" Height="Auto" Content="On / Off" Padding="4,1,0,0" Canvas.Left="229" Canvas.Top="242" Checked="_cb_SavePass_Checked" Unchecked="_cb_SavePass_Unchecked" x:Name="_cb_SavePass" Visibility="Collapsed" />
-        <StackPanel VerticalAlignment="Center" Canvas.Top="133" Canvas.Left="69" Orientation="Vertical">
-          <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-            <TextBlock Text="自動保存場所" TextAlignment="Left" />
-            <RadioButton GroupName="autosave_location" Content="ドキュメント" Margin="20,0,0,0" IsChecked="True" x:Name="_rd_Documents"/>
-            <RadioButton GroupName="autosave_location" Content="デスクトップ" Margin="20,0,0,0" x:Name="_rd_Desktop"/>
+        <StackPanel x:Uid="StackPanael_1" VerticalAlignment="Center" Canvas.Top="133" Canvas.Left="69" Orientation="Vertical">
+          <StackPanel x:Uid="StackPanael_2" Orientation="Horizontal" Margin="0,0,0,0">
+            <TextBlock x:Uid="TextBlock_13" Text="自動保存場所" TextAlignment="Left" />
+            <RadioButton x:Uid="RadioButton_1" GroupName="autosave_location" Content="ドキュメント" Margin="20,0,0,0" x:Name="_rd_Documents"/>
+            <RadioButton x:Uid="RadioButton_2" GroupName="autosave_location" Content="デスクトップ" Margin="20,0,0,0" IsChecked="True" x:Name="_rd_Desktop"/>
           </StackPanel>
-           <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
-             <TextBlock Text="間隔（秒）" TextAlignment="Left" />
-             <Slider Maximum="1800"  TickPlacement="BottomRight" TickFrequency="60" IsSnapToTickEnabled="True" Width="220" x:Name="_slider_Interval"/>
-             <TextBlock Text="{Binding ElementName=_slider_Interval, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Right" Width="30" />
+           <StackPanel x:Uid="StackPanael_3" Orientation="Horizontal" Margin="20,0,0,0">
+             <TextBlock x:Uid="TextBlock_14" Text="間隔（秒）" TextAlignment="Left" />
+             <Slider x:Uid="Slider_1" Maximum="1800"  TickPlacement="BottomRight" TickFrequency="60" IsSnapToTickEnabled="True" Width="220" x:Name="_slider_Interval"/>
+             <TextBlock x:Uid="TextBlock_15" Text="{Binding ElementName=_slider_Interval, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Right" Width="30" />
            </StackPanel>
         </StackPanel>
         <Canvas x:Uid="_cv_UserSettings" IsEnabled="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="368" Height="210"
