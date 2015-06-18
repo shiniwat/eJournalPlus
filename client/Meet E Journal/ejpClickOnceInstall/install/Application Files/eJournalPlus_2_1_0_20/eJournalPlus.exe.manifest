@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="eJournalPlus.exe" version="2.1.0.20" publicKeyToken="8e64f2cbe5b9e4f9" language="ja-JP" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Resources\ApplicationIconRound.ico" asmv2:publisher="MEET Project" asmv2:product="MEET eJournalPlus Client" asmv2:supportUrl="http://ejournalplus.codeplex.com/" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="eJournalPlus" version="2.7.5579.42712" language="neutral" processorArchitecture="msil" />
+    <commandLine file="eJournalPlus.exe" parameters="" />
+  </entryPoint>
+  <co.v1:useManifestForTrust xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet class="System.Security.PermissionSet" version="1" ID="Custom" SameSite="site" Unrestricted="true" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+            If you want to change the Windows User Account Control level replace the 
+            requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel node will disable file and registry virtualization.
+            If you want to utilize File and Registry Virtualization for backward 
+            compatibility then delete the requestedExecutionLevel node.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Core" version="3.5.0.0" publicKeyToken="b77a5c561934e089" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="eJournalPlus.exe" size="172032">
+      <assemblyIdentity name="eJournalPlus" version="2.7.5579.42712" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>VTEFmNxOQaO//EJhNFnPK/MPpLQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ja-JP\eJournalPlus.resources.dll" size="1126400">
+      <assemblyIdentity name="eJournalPlus.resources" version="2.7.5579.42712" language="ja-JP" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>d+YJ3KtnDWfnNy4N/Fo3S7lXYVE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EjpControls.dll" size="193024">
+      <assemblyIdentity name="EjpControls" version="2.7.5568.43072" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>fAbPn33lKt8CcUjtRFIB+WYARQY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ja-JP\EjpControls.resources.dll" size="208896">
+      <assemblyIdentity name="EjpControls.resources" version="2.7.5568.43072" language="ja-JP" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>EtmGQgZxkis1ftnymnLCmcBsHMA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EjpLib.dll" size="65024">
+      <assemblyIdentity name="EjpLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>W1oIhbj+XIOqgm8nWNEtIkpYqtM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EjsBridge.dll" size="47104">
+      <assemblyIdentity name="EjsBridge" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>lq8E5YdCTxtFb+X64PdtVA+UfOg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="eJournalPlus.exe.config" size="2458">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>EUpv8+iDWhHQcoMK28yQLO7pZE8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\ApplicationIconRound.ico" size="47112">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>nyA6Bo1W8uUX0oYI3k8QKMsQ0+U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of all Windows versions that this application is designed to work with. Windows will automatically select the most compatible environment.-->
+      <!-- If your application is designed to work with Windows 7, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=SHINIWA81X86\Shinichi" issuerKeyHash="373f8eeb31e05ece8034ee73481cf5edf1ac28b6" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>r/Nz74IVkmm5jVgg3ICRMKBpyUA=</DigestValue></Reference></SignedInfo><SignatureValue>gHQuFbLJXuQis06lgvdpGGn82ugwjSRr8J/Wr4t+EmPIiEnsbS75FMITDvNidgmR+T8+pU9xtdOx0dUBLjfOGhZ7g/mF2hJWZWR/pGmxp9AQClrN9Rtw68KJE5OHiV4HPJJ3rETFxLbGZev3Z3k3CcMxbdeCvc7PuMjSRYFaFpM=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>x4JrbgR50BueZH57MWQEdkn94sQ6NFxp+hkBWtAu/w6u5Ep1Rz0yeF6jCxbH2s3qWokzxIuI4W8O4FCqbCOkz8W315GhKrKZ7jj6bUTl+yL0cuQGIpuPQiPQyPnxJ1BTET1xd269kdOOzNjCXpQXoNw9lJ5x+7iFxM99aF8S72c=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="40c969a0309180dc20588db969921582ef73f3af" Description="" Url=""><as:assemblyIdentity name="eJournalPlus.exe" version="2.1.0.20" publicKeyToken="8e64f2cbe5b9e4f9" language="ja-JP" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=SHINIWA81X86\Shinichi</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>y//rTbyPwYG497a3FvhjSSLezZY=</DigestValue></Reference></SignedInfo><SignatureValue>ROBIrgFIOt6GpTb4a6of6PUdg8TfFRBfFiHsOsbAD/bCJOD//T/zIbJtvbei/NyI1rfIIOpzwVFpNc3FgIwIsACQV3NAvXTPHEl6RDvBeTzPo9Z0FAEMMwstUCcFBFz7IsZEU4WXQIYWTcIOxlYQWEpgPbBlf/bJCnu6hRIUD90=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>x4JrbgR50BueZH57MWQEdkn94sQ6NFxp+hkBWtAu/w6u5Ep1Rz0yeF6jCxbH2s3qWokzxIuI4W8O4FCqbCOkz8W315GhKrKZ7jj6bUTl+yL0cuQGIpuPQiPQyPnxJ1BTET1xd269kdOOzNjCXpQXoNw9lJ5x+7iFxM99aF8S72c=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQKO7UR/tdLJ5LLrGgZwH1VzANBgkqhkiG9w0BAQUFADA1MTMwMQYDVQQDHioAUwBIAEkATgBJAFcAQQA4ADEAWAA4ADYAXABTAGgAaQBuAGkAYwBoAGkwHhcNMTQxMTAxMDQyMDQ3WhcNMTUxMTAxMTAyMDQ3WjA1MTMwMQYDVQQDHioAUwBIAEkATgBJAFcAQQA4ADEAWAA4ADYAXABTAGgAaQBuAGkAYwBoAGkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMeCa24EedAbnmR+ezFkBHZJ/eLEOjRcafoZAVrQLv8OruRKdUc9MnheowsWx9rN6lqJM8SLiOFvDuBQqmwjpM/Ft9eRoSqyme44+m1E5fsi9HLkBiKbj0Ij0Mj58SdQUxE9cXduvZHTjszYwl6UF6DcPZSecfu4hcTPfWhfEu9nAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAZ5BXTYtaP5XHC/lBGCJUZy3wH3ZOa3Jhod6uMupo6UMePWREgFdq+6DCJFCffRwiX3RGi/wckg8NdxQFYTtbS5/FN5diLA40PT8pLxYkbt2P+2JGJKubQJNCXQ6qjOttwRhR1hwudrr9CertgJLgYcUQ0r5aT/bhABfSmybdQ64=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
