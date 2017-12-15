@@ -12,3 +12,5 @@ More constructive and critical reading of a text is promoted through dialogue of
 *English version (globarized) and eJournalPlus Server has just been published as a stable version!
 *日本語によるプロジェクト概要およびソフトウェアのダウンロード
 -> http://www.mochi-lab.net/meet/projects/ejournalplus.html
+
+<img src="ejp_cycle_2_small.png" alt="eJournalPlus process image" />
